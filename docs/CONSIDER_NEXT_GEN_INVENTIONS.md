@@ -11,8 +11,8 @@
 
 To elevate **CONSIDER-1** and **CONSIDER-2** from single-node edge performers into resilient planetary-scale autonomous swarms, three foundational inventions have been designed, mathematically proven, and implemented into the Zymatica engine:
 
-1. **Dynamic Noise Adaptation (DNA-v2)**: Epistemic Shannon entropy shielding that dynamically resizes 6D Voronoi decision boundaries under harsh $-125\text{ dBm}$ RF noise margins to guarantee zero bit flips.
-2. **Recursive ZK-Nullifier Batch Aggregation (Halo-BN254 Fold)**: Multi-node proof folding that consolidates $N$ edge nullifiers into a single succinct 64-byte payload settling in a single 150 CU Solana transaction ($O(1)$ on-chain cost).
+1. **Dynamic Noise Adaptation (DNA-v2)**: Epistemic Shannon entropy shielding that dynamically resizes 6D Voronoi decision boundaries under harsh -125 dBm RF noise margins to guarantee zero bit flips.
+2. **Recursive ZK-Nullifier Batch Aggregation (Halo-BN254 Fold)**: Multi-node proof folding that consolidates $N$ edge nullifiers into a single succinct 64-byte payload settling in a single 150 CU Solana transaction (O(1) on-chain cost).
 3. **Dual-Consciousness Metacognitive Auto-Correction Engine (DCM-ACE)**: Zero-latency runtime self-reflection that evaluates generated hardware control tokens against physical pinout specifications (Raspberry Pi 4 / SX1302) and automatically heals hallucinations before SPI bus dispatch.
 
 ---
@@ -20,7 +20,7 @@ To elevate **CONSIDER-1** and **CONSIDER-2** from single-node edge performers in
 ## 2. Invention 1: Dynamic Noise Adaptation (DNA-v2)
 
 ### The Challenge
-In urban canyons and contested RF environments (e.g. Manhattan's high-rise topography in *200 Amsterdam*), the sub-GHz radio spectrum suffers severe Rayleigh multipath fading and burst noise. Static radical quantization leads to boundary ambiguity when the Signal-to-Noise Ratio (SNR) degrades between $-10\text{ dB}$ and $-20\text{ dB}$.
+In urban canyons and contested RF environments (e.g. Manhattan's high-rise topography in *200 Amsterdam*), the sub-GHz radio spectrum suffers severe Rayleigh multipath fading and burst noise. Static radical quantization leads to boundary ambiguity when the Signal-to-Noise Ratio (SNR) degrades between -10 dB and -20 dB.
 
 ### The Mathematical Innovation
 DNA-v2 continuously samples the RF preamble's energy distribution across $M$ frequency bins and calculates the empirical Shannon noise entropy:
@@ -39,7 +39,7 @@ $$\Delta\tau = \kappa \cdot \sqrt{\mathcal{H}_{\text{noise}}} \cdot e^{-\frac{\t
 ### Implementation
 - Rust Engine: [`crates/zymatica-engine/src/dna_v2_entropy.rs`](../crates/zymatica-engine/src/dna_v2_entropy.rs)
 - Python Verification: [`tests/test_consider_inventions.py`](../tests/test_consider_inventions.py)
-- Result: **100% Zero-Bit-Flip Guarantee (ZBFG)** under extreme $-124.5\text{ dBm}$ RSSI and $-18.2\text{ dB}$ SNR.
+- Result: **100% Zero-Bit-Flip Guarantee (ZBFG)** under extreme -124.5 dBm RSSI and -18.2 dB SNR.
 
 ---
 
@@ -65,9 +65,9 @@ $$\Sigma_{\text{batch}} = [\mathcal{A}_N \parallel (\mathcal{A}_N \oplus \mathbf
 
 | Metric | Traditional LoRaWAN / Chain | CONSIDER with Halo-BN254 Fold | Improvement |
 | :--- | :--- | :--- | :--- |
-| **Transactions for $N=100$ Nodes** | 100 on-chain txs | **1 aggregated tx** | **100x Transaction Reduction** |
+| **Transactions for $N=100$ Nodes** | 100 on-chain txs | **1 aggregated tx** | **100× Transaction Reduction** |
 | **Solana Compute Units (CU)** | 16,500,000 CU | **150 CU** | **99.99% Cost Reduction** |
-| **Over-the-Air Payload** | 12,800 bytes | **64 bytes** | **200x Wire Compression** |
+| **Over-the-Air Payload** | 12,800 bytes | **64 bytes** | **200× Wire Compression** |
 | **Anti-Replay Security** | Per-packet mempool query | O(1) Accumulator Set Membership | Cryptographically Sound |
 
 ### Implementation
@@ -89,7 +89,7 @@ $$\mathcal{L}_{\text{HW}} = \left\{ \text{Pin} = 25, \text{Bus} = \texttt{"/dev/
 If any token tuple deviates:
 1. The deviation is intercepted before the Linux `/dev/spidev0.0` ioctl call.
 2. The parameter is dynamically clamped to the closest resonant boundary on $\mathcal{L}_{\text{HW}}$.
-3. The self-healing event is logged with zero rollback overhead ($< 0.05\text{ ms}$ latency).
+3. The self-healing event is logged with zero rollback overhead ($< 0.05\text{ ms}$ / $55.50\ \mu\text{s}$ latency).
 
 ### Implementation
 - Rust Engine: [`crates/zymatica-engine/src/dcm_ace_guardrail.rs`](../crates/zymatica-engine/src/dcm_ace_guardrail.rs)
