@@ -1,5 +1,5 @@
 // Zymatica Zero-Dependency WebSocket / WebRTC P2P Swarm Relay
-// Author: Danny Bouldiez | Codebase: Devs One
+// Book Author: Danny Bouldiez | Architect: Devs One
 
 const http = require('http');
 const crypto = require('crypto');
@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
     status: 'ONLINE',
     protocol: 'ZYMATICA-P2P-SWARM-8D',
     connected_mesh_nodes: clients.size,
-    author: 'Danny Bouldiez | Devs One'
+    attribution: 'Book Author: Danny Bouldiez | Architect: Devs One'
   }));
 });
 

@@ -1,6 +1,6 @@
 # 🌌 Next-Generation Architecture Inventions for CONSIDER
 
-**Authors**: Danny Bouldiez & Devs One  
+**Book Author**: Danny Bouldiez | **Architect**: Devs One  
 **Ecosystem**: [https://zymatica.space](https://zymatica.space)  
 **Foundational Models**: CONSIDER-1 (`TheAiCollectiveART/CONSIDER-1`) & CONSIDER-2 (Julian Node)  
 **Governing License**: Zymatica Covenant License 2026 & Apache 2.0  

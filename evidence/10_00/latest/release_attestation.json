@@ -1,9 +1,9 @@
 {
   "schema": "zymatica.release-attestation.v2",
   "release_tag": "v10.1.1-evidence",
-  "source_commit_sha": "19ba2c14bdf5edc023982bcd52fdb2644aaf57ca",
-  "source_git_tree_sha": "b42a621c4ddeb85af95a35089129c3b62c08e3bd",
-  "timestamp_utc": "2026-09-05T21:58:28Z",
+  "source_commit_sha": "29f0f969530b684481d8ba2f8c0413c0f7197bc7",
+  "source_git_tree_sha": "27ad65d9dee9533208a219f20a48040c196033f1",
+  "timestamp_utc": "2026-09-05T22:11:54Z",
   "release_gate_status": "PASS",
   "all_required_checks_passed": true,
   "subsystems": [
@@ -168,5 +168,5 @@
       "metrics_verified": true
     }
   },
-  "elapsed_seconds": 8.323561668395996
+  "elapsed_seconds": 10.489225149154663
 }

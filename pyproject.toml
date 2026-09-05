@@ -8,7 +8,8 @@ version = "1.0.0"
 description = "Zymatica Semantic Communication & High-Performance Inference Engine"
 readme = "README.md"
 authors = [
-    { name = "Danny Bouldiez | Devs One", email = "contact@zymatica.space" }
+    { name = "Devs One (Architect)", email = "devs@zymatica.space" },
+    { name = "Danny Bouldiez (Book Author)", email = "contact@zymatica.space" }
 ]
 license = { text = "Zymatica Commercial & Novel-Holder Covenant License 2.0" }
 keywords = ["semantic-communication", "lora", "compression", "inference-engine", "cuneiform"]

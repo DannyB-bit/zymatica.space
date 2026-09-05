@@ -1,6 +1,6 @@
 {
   "cargo": "cargo 1.96.1 (356927216 2026-06-26)",
-  "created_utc": "2026-09-05T21:58:16.959637+00:00",
+  "created_utc": "2026-09-05T22:10:13.581951+00:00",
   "files": [
     {
       "path": "claims_audit.json",
@@ -10,42 +10,42 @@
     {
       "path": "complex_stress_experiment_results.json",
       "sha256": "aec12ce0fc3ec1e0d624538446432ae647fd29591c92247f6fb596ca67a88b24",
-      "size": 2016
+      "size": 1955
     },
     {
       "path": "cuneiform_semantic.json",
       "sha256": "21a3623395dd61badf07ee96ed424d9d397a2b599b9b7b9c18f10ab88dfdd6a3",
-      "size": 474
+      "size": 457
     },
     {
       "path": "dna_grow_transmission_experiment_receipt.json",
       "sha256": "169bd2215db1b65696a509c71c0eed305354967c327e266bdbbc1344370e2cb8",
-      "size": 1402
+      "size": 1374
     },
     {
       "path": "epigenetic.json",
       "sha256": "0e23019695231018378f66e9067e69a9c6261111c825a82a33b0b74b733bc79b",
-      "size": 421
+      "size": 409
     },
     {
       "path": "fec.json",
       "sha256": "6ee9a26f4f014899b5215ec0535e461b1b2a02a8670690df07a809dbc14e1738",
-      "size": 138
+      "size": 132
     },
     {
       "path": "groth16.json",
       "sha256": "de819897f45e6a07504ba721363a967c6ea03185b81e451f1b1610ed3be64216",
-      "size": 179
+      "size": 172
     },
     {
       "path": "hyper_kv.json",
       "sha256": "7ffb34f6704c7990b4c6de3583f61c17d10784ca10410443661a84057a083235",
-      "size": 395
+      "size": 382
     },
     {
       "path": "lean4_theorem.json",
       "sha256": "d9239d09c79a8b91353e3fd4be0416ea0f16ed3b15d90039241ee12877370963",
-      "size": 173
+      "size": 166
     },
     {
       "path": "license_audit.json",
@@ -55,77 +55,77 @@
     {
       "path": "mcts.json",
       "sha256": "1d308cea488358acb504bfb851d5251859b8582eb9f63fe39a8bdaa36ae03d77",
-      "size": 301
+      "size": 291
     },
     {
       "path": "multi_agent_consider_execution_matrix.json",
       "sha256": "b53ef0b3d865515f1773dc2688bcc6ce8d5e48c55ba9d9d4062f50c6e8cc651f",
-      "size": 3162
+      "size": 3086
     },
     {
       "path": "multi_agent_consider_julian_devnet_execution.json",
       "sha256": "e419608b5024e06d27c861207fd89f73ec594797efa22f5e0ce35f699508223f",
-      "size": 1852
+      "size": 1785
     },
     {
       "path": "multi_agent_solana_demo.json",
       "sha256": "ecc7b7a4c25db8df6c978294d34ac79b9f23a0d27bfc6e6e0be3c8f649365685",
-      "size": 2526
+      "size": 2423
     },
     {
       "path": "node_c_live_devnet_execution.json",
       "sha256": "f85f0a9638c6789b75b82f798ef29dc242542a0e720e93ee73e24feb500763ea",
-      "size": 733
+      "size": 722
     },
     {
       "path": "real_devnet_onchain_transactions.json",
       "sha256": "29abb4027db3414405bd0f89f6ee9b1ba69e4bec694908af4137241ba6203754",
-      "size": 1489
+      "size": 1459
     },
     {
       "path": "rf_phase16.json",
       "sha256": "2d7a5588786d90aee40c8a182a89ecbf6f14993cf7233f063d04d2276fdeac82",
-      "size": 820
+      "size": 792
     },
     {
       "path": "sbom.spdx.json",
       "sha256": "cb14a303164995a9bc333aef8853b4cfd751eb76f2b17b605259986c7cab5573",
-      "size": 134020
+      "size": 130344
     },
     {
       "path": "solana_tps_benchmark_results.json",
       "sha256": "c56afbd3f8881b977200fe49be2c167719b84869ec41d4c74b1f86e053cd4228",
-      "size": 676
+      "size": 656
     },
     {
       "path": "ten_evidentiary_experiments_audit.json",
       "sha256": "548a3d6170638dfb9ce2472530f0f1b82daf7661fb1eef7657b08ceb11ccc6ec",
-      "size": 4296
+      "size": 4150
     },
     {
       "path": "wormhole.json",
       "sha256": "e4b06010beb78a2d81226543fc6a04040ef08626ee04b04a6d800e22db9cb7cf",
-      "size": 6045990
+      "size": 5836437
     },
     {
       "path": "z_turnstile_recursive_folding_advancement.json",
       "sha256": "2c156167f4b7af5d417a48545c0849e3e38ad66da49503ddcf8365909491f60d",
-      "size": 1290
+      "size": 1243
     },
     {
       "path": "zhqspec.json",
       "sha256": "8d7e31ccc69b33b2281784a537e95b744149f3bca2b8a65bddab6ed91d4731bf",
-      "size": 232
+      "size": 224
     }
   ],
-  "git_head": "19ba2c14bdf5edc023982bcd52fdb2644aaf57ca",
-  "git_status_porcelain": "M README.md\n M SOUL.md\n M evidence/10_00/latest/claims_audit.json",
-  "git_tree": "b42a621c4ddeb85af95a35089129c3b62c08e3bd",
+  "git_head": "29f0f969530b684481d8ba2f8c0413c0f7197bc7",
+  "git_status_porcelain": "M README.md\n M docs/CONSIDER_NEXT_GEN_INVENTIONS.md\n M pyproject.toml\n M visualizer/index.html\n M visualizer/mesh_relay.js\n?? audit_master_dataset.py\n?? audit_qwen35_model.py\n?? build_full_consider1_master_dataset.py\n?? build_full_consider2_master_dataset.py\n?? check_4cde_ci_now.py\n?? check_all_deployments.py\n?? check_ci_status_fast.py\n?? check_commit_4cde6c4_status.py\n?? check_commit_ci.py\n?? check_everything.py\n?? check_hf_model_card.py\n?? check_hf_models.py\n?? check_hf_space.py\n?? check_job_steps.py\n?? check_kernel_clean.py\n?? check_kernel_runs.py\n?? check_latest_runs.py\n?? check_prod_jobs.py\n?? check_run_details.py\n?? check_single_run.py\n?? check_token_paths.py\n?? check_win_steps.py\n?? consider-1-full-production-trainer.log\n?? create_private_dataset.py\n?? download_qwen35_model.py\n?? execute_kaggle_push.py\n?? failed_job.log\n?? failed_job_7cf.log\n?? failed_step13.log\n?? fetch_hf_readme.py\n?? fetch_logs_safe.py\n?? fetch_raw_kaggle_output.py\n?? find_consider_sovereign.py\n?? find_sov_readme.py\n?? generate_master_consider1_dataset.py\n?? get_run_steps.py\n?? hf_consider1_final.md\n?? hf_readme_local.md\n?? hf_readme_updated.md\n?? hf_zymatica_readme.md\n?? inject_deep_reasoning_cot.py\n?? inject_language_u_rag.py\n?? inject_maximum_frontier_superpowers.py\n?? inject_tool_calling_reasoning.py\n?? inspect_ci.py\n?? kaggle_deploy/\n?? live_forensic_model_audit.py\n?? models/\n?? monitor_and_resolve.py\n?? monitor_consider2_live.py\n?? monitor_training_live.py\n?? package_and_deploy_consider2.py\n?? package_kaggle_consider1.py\n?? prepare_kaggle_submission.py\n?? push_consider2_to_kaggle.py\n?? safe_resolve_and_check.py\n?? sync_harness_components.py\n?? sync_hermes_to_zymatica_cli.py\n?? sync_hf_zymatica_readme.py\n?? test_fwd.py\n?? test_hf_upload.py\n?? update_private_dataset.py\n?? upload_dataset.py\n?? upload_hf_readme.py\n?? verify_exact_qwen35.py",
+  "git_tree": "27ad65d9dee9533208a219f20a48040c196033f1",
   "platform": "Windows-10-10.0.19045-SP0",
   "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
   "rustc": "rustc 1.96.1 (31fca3adb 2026-06-26)",
   "schema": "zymatica.evidence-manifest.v2",
-  "source_commit_sha": "19ba2c14bdf5edc023982bcd52fdb2644aaf57ca",
-  "source_git_tree_sha": "b42a621c4ddeb85af95a35089129c3b62c08e3bd",
-  "source_tree_sha256": "6c30e5f51081455e3005bb744099976cbbfe1c634a88f94868cbb53f9d47fd5b"
+  "source_commit_sha": "29f0f969530b684481d8ba2f8c0413c0f7197bc7",
+  "source_git_tree_sha": "27ad65d9dee9533208a219f20a48040c196033f1",
+  "source_tree_sha256": "562232e61b2b3814bbfffee57c56e1309bbdd239da1451be39705959c5a02151"
 }
