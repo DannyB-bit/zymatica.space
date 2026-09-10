@@ -445,7 +445,7 @@ This repository contains the compressed **Gemma-4-31B-it SubZero** model weights
 - `gemma4_31b_subzero.genesis`: Reconstructed SVD weights file (~1.8 GB)
 - `tokenizer_kit/`: Tokenizer capsules and packets, along with language implementation files.
 
-*Licensed under Apache License 2.0. Patent pending. © 2026 Zymatica.*
+*Governed by Zymatica Covenant License 2.0. Patent pending. © 2026 Zymatica.*
 """
             readme_path = os.path.join(output_dir, "README.md")
             with open(readme_path, "w", encoding="utf-8") as rf:

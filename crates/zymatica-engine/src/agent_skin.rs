@@ -43,17 +43,19 @@ impl SkinEngine {
         let reset = "\x1b[0m";
         format!(
             "{}{}\n============================================================\n          {}\n============================================================{}",
-            self.theme.primary_color,
-            self.theme.secondary_color,
-            self.theme.banner_title,
-            reset
+            self.theme.primary_color, self.theme.secondary_color, self.theme.banner_title, reset
         )
     }
 
     pub fn tick_spinner(&mut self) -> String {
         let face = &self.theme.spinner_faces[self.spinner_idx % self.theme.spinner_faces.len()];
         self.spinner_idx += 1;
-        format!("{}{}{}\x1b[0m", self.theme.primary_color, face, reset_ansi())
+        format!(
+            "{}{}{}\x1b[0m",
+            self.theme.primary_color,
+            face,
+            reset_ansi()
+        )
     }
 
     pub fn render_response_box(&self, title: &str, content: &str) -> String {

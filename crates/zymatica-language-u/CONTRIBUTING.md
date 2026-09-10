@@ -56,7 +56,7 @@ python scripts/run_all_proofs.py
 ---
 
 ## 🔒 Licensing
-All contributions are licensed under the **Apache License 2.0**. By submitting a PR, you agree that your contribution is released under this license.
+All contributions are licensed under the **Zymatica Commercial & Novel-Holder Covenant License 2.0 (zymatica.space)**. By submitting a PR, you agree that your contribution is released under this license.
 
 ---
 

@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Class 29: Hyper-Manifold KV Folding (Hyper-KV) Standalone Verifier
+Class 29: Hyper-Manifold KV Folding (Hyper-KV) Algorithmic Verifier
+Scope: Validates mathematical knot representation, interpolation stability, and in-SRAM
+unfolding throughput on generated continuous attention trajectories.
 """
 
 import math
@@ -29,6 +31,7 @@ class HyperKvKnot:
 def test_proof():
     print("=" * 65)
     print("  ZYMATICA CLASS 29: HYPER-MANIFOLD KV FOLDING (HYPER-KV)")
+    print("  Scope: Algorithmic Simulation & In-SRAM Unfold Benchmark")
     print("=" * 65)
 
     head_dim = 128
@@ -64,7 +67,7 @@ def test_proof():
 
     print(f"[+] In-SRAM Unfold Speed: {unfold_throughput:,.0f} tokens/sec ({elapsed/reconstructed_tokens*1e9:.1f} ns/token)")
     assert reconstructed_tokens == seq_len, "All tokens unfolded"
-    print("\n[PASS] CLASS 29 VERIFICATION: 100% MATHEMATICAL STABILITY & SPEED VERIFIED!")
+    print("\n[PASS] CLASS 29 VERIFICATION: MATHEMATICAL STABILITY & RECONSTRUCTION CONFIRMED")
     print("=" * 65)
 
 if __name__ == "__main__":

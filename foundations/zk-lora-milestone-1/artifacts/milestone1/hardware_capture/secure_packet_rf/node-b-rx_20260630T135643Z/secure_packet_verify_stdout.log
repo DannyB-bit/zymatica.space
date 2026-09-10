@@ -1,0 +1,18 @@
+{
+  "packet_auth_ok": true,
+  "replay_ok": true,
+  "decrypt_ok": true,
+  "zk_reference_proof_verify_ok": true,
+  "plaintext": "ZK-LoRa M1 secure packet: proof reference plus encrypted payload over RAK LoRa RF.",
+  "packet_bytes": 217,
+  "packet_sha256": "874ff62e365dd9d90e460c8c51c475e319968e62bc9c03836e9ae98c9d0f4137",
+  "payload_sha256": "13c8d9b00cfabb23ca91f0e502fb6068f13eaf133930846e834e796bac41dd1d",
+  "nonce": "13decf0e33a26bdaa0610fff6f54c640",
+  "public_input": "3e629f0c35ec9f73c8bd16a55164843fcea8092253036ed1d5514765ec986da7",
+  "proof_hash": "947b821aa8355797b2112c717961030c",
+  "ceremony_hash": "ac5bb8b7ddcd8702",
+  "rx_plaintext_bytes": 82,
+  "end_to_end_secure_packet_ok": true,
+  "tamper_rejected": true,
+  "wrong_key_rejected": true
+}

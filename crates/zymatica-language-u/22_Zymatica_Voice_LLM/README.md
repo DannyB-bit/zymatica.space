@@ -1,7 +1,7 @@
 ---
 language:
 - en
-license: apache-2.0
+license: LicenseRef-Zymatica-Covenant-2.0
 tags:
 - voice
 - text-to-speech

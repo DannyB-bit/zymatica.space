@@ -1,5 +1,5 @@
 # Perpetual Motion Eigenspace Loops
-*IP Class 25 | Apache License 2.0*
+*IP Class 25 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

@@ -1,0 +1,1 @@
+ls: cannot access '/dev/spidev*': No such file or directory

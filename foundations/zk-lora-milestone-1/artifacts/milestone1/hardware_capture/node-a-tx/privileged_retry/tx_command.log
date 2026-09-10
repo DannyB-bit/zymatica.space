@@ -1,0 +1,13 @@
+COMMAND: /home/strawberry-z-model-1/LANGUAGEU_28CHIRPS_RF_PROOF_A/lora_tx_driver/A_LORA_TX_FILE --file /home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/node-a-tx/privileged_retry/zk_lora_tx_payload.bin --frequency-mhz 903.9 --sf 9 --bandwidth-khz 125 --power-dbm 14 --reset-script /home/strawberry-z-model-1/LANGUAGEU_28CHIRPS_RF_PROOF_A/scripts/A_RESET_KNOWN_GOOD_GPIO25_GPIO22.sh
+START_UTC: Mon Jun 29 23:46:44 UTC 2026
+A_RESET_STARTED_UTC=2026-06-29T23:46:44Z
+A_RESET_SX1302_GPIO=25
+A_RESET_SX1261_GPIO=22
+sudo: a password is required
+ERROR: SX1302 reset failed
+A_LORA_TX_FILE_INPUT=/home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/node-a-tx/privileged_retry/zk_lora_tx_payload.bin
+A_LORA_TX_FILE_BYTES=240
+A_LORA_TX_FILE_FNV1A32=33ce1629
+A_RESET_STOP_NOOP=YES
+END_UTC: Mon Jun 29 23:46:44 UTC 2026
+EXIT_STATUS: 1

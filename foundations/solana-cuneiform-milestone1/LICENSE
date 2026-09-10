@@ -1,0 +1,45 @@
+# Solana Cuneiform License Agreement
+## Conditional Open-Source Grant License
+
+Copyright (c) 2026 DannyB-bit / TheAiCollective.art / Zymatica. All rights reserved.
+
+### 1. PRE-APPROVAL PERIOD (PROPRIETARY & RESTRICTED)
+Until the "Trigger Event" (defined in Section 3) occurs, this Software and all associated documentation files (the "Software") are proprietary and confidential. All rights are reserved by the Copyright Holders. 
+
+During this Pre-Approval Period, the Copyright Holders hereby grant a limited, non-transferable, non-exclusive, royalty-free license to:
+*   **Superteam USA**, the **Solana Foundation**, and their designated technical evaluators, for the sole and exclusive purpose of reviewing, compiling, and evaluating the Software in connection with the Solana Foundation / Superteam USA grant application.
+*   Any individual or entity explicitly authorized in writing by the Copyright Holders.
+
+Under this Pre-Approval Period, you may **NOT**:
+1.  Distribute, copy, publish, sublicense, sell, or lease the Software or any portion thereof.
+2.  Use the Software for any commercial, production, or public deployment purposes.
+3.  Modify, adapt, translate, or create derivative works based upon the Software, except as necessary for grant evaluation.
+
+---
+
+### 2. POST-APPROVAL PERIOD (AUTOMATIC APACHE 2.0 LICENSE TRANSITION)
+Immediately and automatically upon the occurrence of the "Trigger Event" (defined in Section 3), the proprietary restrictions in Section 1 shall expire, and this Software shall be licensed under the terms of the Apache License, Version 2.0 set forth below:
+
+> **Apache License, Version 2.0**
+>
+> Licensed under the Apache License, Version 2.0 (the "License");
+> you may not use this file except in compliance with the License.
+> You may obtain a copy of the License at
+>
+>     http://www.apache.org/licenses/LICENSE-2.0
+>
+> Unless required by applicable law or agreed to in writing, software
+> distributed under the License is distributed on an "AS IS" BASIS,
+> WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+> See the License for the specific language governing permissions and
+> limitations under the License.
+
+---
+
+### 3. TRIGGER EVENT
+The "Trigger Event" is defined as the formal, written approval of the Solana Cuneiform project grant, the execution of the corresponding grant agreement, and the disbursement of the initial milestone funding by Superteam USA or the Solana Foundation.
+
+---
+
+### 4. LIMITATION OF LIABILITY
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

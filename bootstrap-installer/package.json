@@ -1,0 +1,8 @@
+{
+  "name": "zymatica-bootstrap-installer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Bootstrap Installer Web Portal build complete'"
+  }
+}

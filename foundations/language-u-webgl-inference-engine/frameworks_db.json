@@ -1,0 +1,737 @@
+[
+  {
+    "name": "three.js",
+    "url": "https://github.com/mrdoob/three.js",
+    "attributes": {
+      "Primary Dimension": "3D (with 2D capabilities)",
+      "Philosophy": "Monolithic, High-Level Engine",
+      "Rendering Model": "3D Scene Graph (`Scene` / `Object3D`)",
+      "Ease of Use": "High (handles lighting, materials, loaders)",
+      "Control Level": "Medium (abstractions mask WebGL state)",
+      "Performance (2D)": "Moderate (via orthographic camera & planes)",
+      "Performance (3D)": "High (highly optimized rendering pipelines)",
+      "Importing Models": "Out-of-the-box (glTF, OBJ, FBX loaders)",
+      "Ecosystem Status": "Dominant, actively maintained"
+    }
+  },
+  {
+    "name": "stack.gl",
+    "url": "https://stack.gl/",
+    "attributes": {
+      "Primary Dimension": "N/A (Direct WebGL/Shader level)",
+      "Philosophy": "Modular, Unix-like npm components",
+      "Rendering Model": "Direct Buffer & Shader binding",
+      "Ease of Use": "Low (requires math & GLSL expertise)",
+      "Control Level": "High (full access to WebGL context)",
+      "Performance (2D)": "High (developer optimized)",
+      "Performance (3D)": "Extremely High (zero overhead)",
+      "Importing Models": "Manual parsing required",
+      "Ecosystem Status": "Legacy / Fragmented, highly educational"
+    }
+  },
+  {
+    "name": "PixiJS",
+    "url": "https://github.com/pixijs/pixijs",
+    "attributes": {
+      "Primary Dimension": "2D (with WebGL acceleration)",
+      "Philosophy": "Monolithic 2D Display List Engine",
+      "Rendering Model": "2D Display List (`Container` / `Sprite`)",
+      "Ease of Use": "High (intuitive for 2D animations/games)",
+      "Control Level": "Medium (abstractions for sprites & filters)",
+      "Performance (2D)": "Extremely High (auto-batching, sprite pools)",
+      "Performance (3D)": "N/A (not natively supported)",
+      "Importing Models": "N/A",
+      "Ecosystem Status": "Dominant for 2D, actively maintained"
+    }
+  },
+  {
+    "name": "Pex",
+    "url": "https://github.com/pex-gl/pex",
+    "attributes": {
+      "Primary Dimension": "3D (Modular core)",
+      "Philosophy": "Semi-Modular, Creative Coding",
+      "Rendering Model": "Command-Based GPU Context (`pex-context`)",
+      "Ease of Use": "Medium (requires custom pipeline assembly)",
+      "Control Level": "High (explicit state wrapping & GPU commands)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "High (low overhead API wrapper)",
+      "Importing Models": "Modular loaders (e.g., `pex-gltf`)",
+      "Ecosystem Status": "Active in creative coding / multimedia"
+    }
+  },
+  {
+    "name": "Babylon.js",
+    "url": "https://github.com/BabylonJS/Babylon.js",
+    "attributes": {
+      "Primary Dimension": "3D (Game-focused Engine)",
+      "Philosophy": "Comprehensive Monolithic Engine",
+      "Rendering Model": "3D Entity-Component-like Scene Graph",
+      "Ease of Use": "Very High (rich editor tools, physics integration)",
+      "Control Level": "Medium (heavy engine wrapper)",
+      "Performance (2D)": "Moderate (via orthographic viewports)",
+      "Performance (3D)": "Extremely High (rich performance debuggers & WebGPU)",
+      "Importing Models": "Out-of-the-box (industry standard loaders + sandbox)",
+      "Ecosystem Status": "Active, robust (backed by Microsoft)"
+    }
+  },
+  {
+    "name": "Filament",
+    "url": "https://github.com/google/filament/",
+    "attributes": {
+      "Primary Dimension": "3D (PBR specialist)",
+      "Philosophy": "Native PBR Engine (WASM-based)",
+      "Rendering Model": "Entity-Component-System (ECS) & View-based",
+      "Ease of Use": "Low-Medium (strict material compiles, C++/WASM API)",
+      "Control Level": "High (direct memory control, raw material files)",
+      "Performance (2D)": "N/A (not optimized for 2D sprites)",
+      "Performance (3D)": "Outstanding (C++ backend compiled to WebAssembly)",
+      "Importing Models": "Native glTF parser (`gltfio` library bindings)",
+      "Ecosystem Status": "Active (developed & backed by Google)"
+    }
+  },
+  {
+    "name": "SceneJS",
+    "url": "https://github.com/xeolabs/scenejs",
+    "attributes": {
+      "Primary Dimension": "3D (Engineering/Detail visualization)",
+      "Philosophy": "Declarative Scene Graph (JSON-driven)",
+      "Rendering Model": "Declarative JSON State Nodes Tree",
+      "Ease of Use": "High (JSON configuration, simple state tree)",
+      "Control Level": "Medium (driven strictly by JSON nodes)",
+      "Performance (2D)": "Low (not built for 2D sprites)",
+      "Performance (3D)": "Moderate (older optimization patterns, high CPU overhead)",
+      "Importing Models": "JSON geometry structures",
+      "Ecosystem Status": "Legacy / Archived (historically significant)"
+    }
+  },
+  {
+    "name": "Zymatica-3D",
+    "url": "https://github.com/TheAiCollectiveART/zymatica-3d",
+    "attributes": {
+      "Primary Dimension": "3D & WebGPU accelerated",
+      "Philosophy": "High-Performance Modular ECS Design",
+      "Rendering Model": "Entity Component System (ECS) with State Cache",
+      "Ease of Use": "High (upgraded with unified glTF loader & parameters)",
+      "Control Level": "High (unlocked GPU context buffers)",
+      "Performance (2D)": "High (sprite-batch optimized)",
+      "Performance (3D)": "Outstanding (WebGPU/WebGL2 state cached)",
+      "Importing Models": "Out-of-the-box (glTF 2.0 native)",
+      "Ecosystem Status": "Active, cutting-edge"
+    }
+  },
+  {
+    "name": "ClayGL",
+    "url": "https://github.com/pissang/claygl",
+    "attributes": {
+      "Primary Dimension": "3D (Data Visualization & Scalable Web3D)",
+      "Philosophy": "Scalable, Modern & High-Performance",
+      "Rendering Model": "3D Scene Graph (`Scene` / `Node`)",
+      "Ease of Use": "High (intuitive Application abstraction)",
+      "Control Level": "Medium-High (modular with direct shader/geometry APIs)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "High (highly optimized shader pipeline, built for WebGL 2)",
+      "Importing Models": "Out-of-the-box glTF support",
+      "Ecosystem Status": "Active/Stable (used heavily in Apache ECharts 3D)"
+    }
+  },
+  {
+    "name": "AwayJS",
+    "url": "https://github.com/awayjs/awayjs-full",
+    "attributes": {
+      "Primary Dimension": "3D & 2D (Flash migration)",
+      "Philosophy": "Flash/Stage3D emulation in JS/TS",
+      "Rendering Model": "Stage3D-like Display Hierarchy",
+      "Ease of Use": "Medium (intuitive for legacy Flash developers)",
+      "Control Level": "Medium (wrapped around Stage3D/DisplayObject state)",
+      "Performance (2D)": "High (optimized Flash Display List recreation)",
+      "Performance (3D)": "Moderate-High (similar to native Stage3D limits)",
+      "Importing Models": "AWD, OBJ, MD5, and Flash SWF vector assets",
+      "Ecosystem Status": "Active/Legacy (mainly used for legacy Flash/Stage3D migration)"
+    }
+  },
+  {
+    "name": "PlayCanvas",
+    "url": "https://github.com/playcanvas/engine",
+    "attributes": {
+      "Primary Dimension": "3D (High-performance web games)",
+      "Philosophy": "Cloud-collaborative, Lightweight ECS",
+      "Rendering Model": "Entity-Component System (ECS)",
+      "Ease of Use": "Very High (with cloud editor interface, clean scripts)",
+      "Control Level": "Medium-High (flexible script extensions)",
+      "Performance (2D)": "High (dedicated screen-space UI layouts)",
+      "Performance (3D)": "Outstanding (lightweight runtime, WebGPU support)",
+      "Importing Models": "Native glTF loaders & editor asset converter",
+      "Ecosystem Status": "Dominant in web games, actively maintained"
+    }
+  },
+  {
+    "name": "Turbulenz",
+    "url": "https://github.com/turbulenz/turbulenz_engine",
+    "attributes": {
+      "Primary Dimension": "3D & 2D (Scalable Game Engine)",
+      "Philosophy": "Ultra-performance, Modular TS/JS",
+      "Rendering Model": "Device/Viewport low-level Renderer",
+      "Ease of Use": "Low-Medium (highly technical, custom compilation tooling)",
+      "Control Level": "High (direct access to custom WebGL device caches)",
+      "Performance (2D)": "High (includes custom 2D canvas draw devices)",
+      "Performance (3D)": "Outstanding (hardware-squeezing optimizations)",
+      "Importing Models": "JSON engine geometry & asset pipelines",
+      "Ecosystem Status": "Legacy / Archived (historically important)"
+    }
+  },
+  {
+    "name": "Hilo3d",
+    "url": "https://github.com/hiloteam/Hilo3d",
+    "attributes": {
+      "Primary Dimension": "3D (Mobile WebGL campaigns)",
+      "Philosophy": "Mobile-First, High-Performance, Compact",
+      "Rendering Model": "3D Scene Graph (`Stage` / `Node`)",
+      "Ease of Use": "High (clean API)",
+      "Control Level": "Medium (clean stage wrapper)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "High (tailored for low-latency rendering on mobile GPUs)",
+      "Importing Models": "Robust glTF and asset parser tools",
+      "Ecosystem Status": "Stable (backed and used heavily in mobile apps at Alibaba)"
+    }
+  },
+  {
+    "name": "litescene.js",
+    "url": "https://github.com/jagenjo/litescene.js",
+    "attributes": {
+      "Primary Dimension": "3D (Editor-integrated Graphics)",
+      "Philosophy": "Component-Based WYSIWYG Engine",
+      "Rendering Model": "Component-based Scene Graph (`SceneNode`)",
+      "Ease of Use": "Very High (when paired with WebGLStudio UI editor)",
+      "Control Level": "Medium-High (extensible node components + script nodes)",
+      "Performance (2D)": "N/A",
+      "Performance (3D)": "High (supports deferred shading, light pre-passes)",
+      "Importing Models": "Native DAE (Collada), OBJ parsing, serializer",
+      "Ecosystem Status": "Legacy / Archived (historically significant)"
+    }
+  },
+  {
+    "name": "regl",
+    "url": "https://github.com/regl-project/regl",
+    "attributes": {
+      "Primary Dimension": "N/A (Functional WebGL wrapper)",
+      "Philosophy": "Functional, Declarative, Minimal",
+      "Rendering Model": "Declarative functional GPU draw commands",
+      "Ease of Use": "Medium-Low (requires GPU/GLSL knowledge, removes boilerplates)",
+      "Control Level": "Extremely High (exposes full WebGL state keys)",
+      "Performance (2D)": "Extremely High (zero overhead wrapper)",
+      "Performance (3D)": "Extremely High (zero-overhead caching of WebGL states)",
+      "Importing Models": "Manual parsing required",
+      "Ecosystem Status": "Stable, widely used in data-vis & shader art"
+    }
+  },
+  {
+    "name": "TWGL",
+    "url": "https://github.com/greggman/twgl.js",
+    "attributes": {
+      "Primary Dimension": "N/A (Tiny WebGL helper)",
+      "Philosophy": "Direct Raw WebGL helper",
+      "Rendering Model": "Raw WebGL API (enhanced helper abstractions)",
+      "Ease of Use": "Medium-High (makes raw WebGL easy, retains raw control)",
+      "Control Level": "Max (you are writing raw WebGL with shortcuts)",
+      "Performance (2D)": "Extremely High (native calls compiled directly)",
+      "Performance (3D)": "Extremely High (native calls compiled directly)",
+      "Importing Models": "Manual parsing required (creates buffer arrays easily)",
+      "Ecosystem Status": "Stable, widely used in custom graphics engines & shaders"
+    }
+  },
+  {
+    "name": "Four",
+    "url": "https://github.com/allotrop3/four",
+    "attributes": {
+      "Primary Dimension": "3D (Low-level wrapper)",
+      "Philosophy": "Intermediate WebGL wrapper",
+      "Rendering Model": "Command-free custom buffer bindings",
+      "Ease of Use": "Medium (reduces WebGL 1.0 boilerplate code)",
+      "Control Level": "High (provides lightweight rendering pipelines)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "High (lightweight wrapper, direct compilation)",
+      "Importing Models": "Manual parsing required",
+      "Ecosystem Status": "Legacy / Archived (WebGL 1.0 era)"
+    }
+  },
+  {
+    "name": "TDL",
+    "url": "https://github.com/greggman/tdl",
+    "attributes": {
+      "Primary Dimension": "N/A (Low-level WebGL helper)",
+      "Philosophy": "WebGL helper (precursor to TWGL)",
+      "Rendering Model": "Raw WebGL API (light program/buffer helper)",
+      "Ease of Use": "Low-Medium (heavy boilerplate compared to TWGL)",
+      "Control Level": "Max (direct raw WebGL execution wrapper)",
+      "Performance (2D)": "Extremely High",
+      "Performance (3D)": "Extremely High",
+      "Importing Models": "Manual parsing required",
+      "Ecosystem Status": "Legacy / Archived (completely superseded by TWGL)"
+    }
+  },
+  {
+    "name": "KickJS",
+    "url": "https://github.com/mortennobel/KickJS",
+    "attributes": {
+      "Primary Dimension": "3D (Extensible Game Engine)",
+      "Philosophy": "Component-Based WebGL Engine",
+      "Rendering Model": "Entity-Component Game Object structure",
+      "Ease of Use": "Medium-High (intuitive Unity-like component APIs)",
+      "Control Level": "Medium (driven through game objects and renderer nodes)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "High (supports shadow maps, skeletal animations)",
+      "Importing Models": "Custom JSON mesh serializer and shader files",
+      "Ecosystem Status": "Legacy / Archived (WebGL 1.0 era game engine)"
+    }
+  },
+  {
+    "name": "nanogl",
+    "url": "https://github.com/plepers/nanogl",
+    "attributes": {
+      "Primary Dimension": "N/A (WebGL micro-framework)",
+      "Philosophy": "Modular, Un-opinionated Micro-helpers",
+      "Rendering Model": "Raw WebGL API (lightweight class wrappers)",
+      "Ease of Use": "Medium (simplifies buffers/textures/VAOs, keeps raw WebGL)",
+      "Control Level": "Extremely High (raw WebGL access through wrappers)",
+      "Performance (2D)": "Extremely High (zero framework overhead)",
+      "Performance (3D)": "Extremely High (optimized and extremely lightweight)",
+      "Importing Models": "Manual parsing required (integrates with custom loaders)",
+      "Ecosystem Status": "Active/Stable (heavily used in portfolios)"
+    }
+  },
+  {
+    "name": "Alfrid",
+    "url": "https://github.com/yiwenl/Alfrid",
+    "attributes": {
+      "Primary Dimension": "N/A (WebGL 2 tool set)",
+      "Philosophy": "WebGL 2 wrappers for shader art",
+      "Rendering Model": "Raw WebGL 2 API (thin wrapper classes)",
+      "Ease of Use": "Medium (thin shortcuts for shaders, FBOs, and meshes)",
+      "Control Level": "Extremely High (wraps raw WebGL 2 context directly)",
+      "Performance (2D)": "Extremely High",
+      "Performance (3D)": "Extremely High (zero framework overhead, WebGL 2 optimized)",
+      "Importing Models": "Manual parsing required",
+      "Ecosystem Status": "Active/Stable (hugely popular in experimental creative coding)"
+    }
+  },
+  {
+    "name": "Medium",
+    "url": "https://github.com/davidpaulrosser/medium",
+    "attributes": {
+      "Primary Dimension": "N/A (WebGL 2 tool set)",
+      "Philosophy": "Progressive WebGL 2 toolkit",
+      "Rendering Model": "Raw WebGL 2 API (thin ES6 wrappers)",
+      "Ease of Use": "Medium (clean TS wrappers for attributes and pipelines)",
+      "Control Level": "Extremely High (wraps WebGL 2 context directly)",
+      "Performance (2D)": "Extremely High",
+      "Performance (3D)": "Extremely High (optimized wrappers, TS compiled)",
+      "Importing Models": "Manual parsing required",
+      "Ecosystem Status": "Legacy / Archived (historically interesting WebGL 2 wrapper)"
+    }
+  },
+  {
+    "name": "PicoGL.js",
+    "url": "https://github.com/tsherif/picogl.js",
+    "attributes": {
+      "Primary Dimension": "N/A (WebGL 2 only library)",
+      "Philosophy": "Minimal, WebGL 2 GPGPU-focused",
+      "Rendering Model": "Direct WebGL 2 draw calls & feedbacks",
+      "Ease of Use": "Medium-High (cleans up WebGL 2 entity bindings)",
+      "Control Level": "Extremely High (unlocked WebGL 2 context + GPGPU)",
+      "Performance (2D)": "Extremely High",
+      "Performance (3D)": "Extremely High (highly efficient WebGL 2 mapping)",
+      "Importing Models": "Manual parsing required",
+      "Ecosystem Status": "Active/Stable (popular for custom WebGL 2 / GPGPU render pipelines)"
+    }
+  },
+  {
+    "name": "mini-webgl",
+    "url": "https://github.com/jsantell/mini-webgl",
+    "attributes": {
+      "Primary Dimension": "3D (with 2D capabilities)",
+      "Philosophy": "Educational / Three.js-inspired toy",
+      "Rendering Model": "3D Scene Graph (Scene / Model / Camera)",
+      "Ease of Use": "High (extremely simple Three.js-like API)",
+      "Control Level": "High (unoptimized, direct code execution)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "Low-Moderate (strictly educational, unoptimized)",
+      "Importing Models": "Manual parsing required (provides Basic shapes)",
+      "Ecosystem Status": "Legacy / Educational (inactive)"
+    }
+  },
+  {
+    "name": "phenomenon-px",
+    "url": "https://github.com/vaneenige/phenomenon-px",
+    "attributes": {
+      "Primary Dimension": "N/A (Pixel shaders only)",
+      "Philosophy": "Minimalist pixel shader runner (~2kB)",
+      "Rendering Model": "Fullscreen quad frag shading (render callback)",
+      "Ease of Use": "Very High (simplest way to run pixel shaders)",
+      "Control Level": "High (direct GLSL fragment shader editing)",
+      "Performance (2D)": "Extremely High (screenspace pixel rendering)",
+      "Performance (3D)": "N/A",
+      "Importing Models": "N/A",
+      "Ecosystem Status": "Stable / Niche (archived/inactive)"
+    }
+  },
+  {
+    "name": "zen-3d",
+    "url": "https://github.com/shawn0326/zen-3d",
+    "attributes": {
+      "Primary Dimension": "3D (with 2D capabilities)",
+      "Philosophy": "Lightweight, performance-oriented three.js alternative",
+      "Rendering Model": "3D Scene Graph (Scene / Node / Camera)",
+      "Ease of Use": "High (clean API, lightweight)",
+      "Control Level": "Medium-High (lightweight wrappers, easy custom passes)",
+      "Performance (2D)": "High",
+      "Performance (3D)": "High (lightweight engine, minimal CPU state overhead)",
+      "Importing Models": "Out-of-the-box (gltf, obj loaders in extensions)",
+      "Ecosystem Status": "Active (widely known as `t3d.js` in modern dev)"
+    }
+  },
+  {
+    "name": "GLOW",
+    "url": "https://github.com/empaempa/GLOW",
+    "attributes": {
+      "Primary Dimension": "N/A (WebGL/Shader wrapper)",
+      "Philosophy": "Object-oriented shader and context wrapper",
+      "Rendering Model": "Direct shaders & context wrapper",
+      "Ease of Use": "Medium (requires shader expertise, simplifies program linking)",
+      "Control Level": "Extremely High (direct GPU shader inputs control)",
+      "Performance (2D)": "Extremely High (zero framework overhead)",
+      "Performance (3D)": "Extremely High",
+      "Importing Models": "Manual parsing required",
+      "Ecosystem Status": "Legacy / Archived (historical WebGL 1.0 helper)"
+    }
+  },
+  {
+    "name": "helixjs",
+    "url": "https://github.com/DerSchmale/helixjs",
+    "attributes": {
+      "Primary Dimension": "3D (Game Engine)",
+      "Philosophy": "Modular ECS game engine with strict materials",
+      "Rendering Model": "Entity-Component-System (ECS) & HDR Pipeline",
+      "Ease of Use": "Medium (strict material design & ECS system setup)",
+      "Control Level": "Medium (abstracted pipelines/post-processing)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "High (optimized WebGL 2 HDR renderer)",
+      "Importing Models": "Out-of-the-box (`helix-io` loaders)",
+      "Ecosystem Status": "Legacy / Inactive (archived personal project)"
+    }
+  },
+  {
+    "name": "GrimoireJS",
+    "url": "https://github.com/GrimoireGL/GrimoireJS",
+    "attributes": {
+      "Primary Dimension": "3D (Web-oriented)",
+      "Philosophy": "XML/GOML-driven DOM-like 3D rendering",
+      "Rendering Model": "Component-oriented scene tree via GOML XML",
+      "Ease of Use": "Very High (familiar XML markup for web developers)",
+      "Control Level": "Low-Medium (XML abstracted; requires custom JS component writing)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "High (optimized node-state cache compiler)",
+      "Importing Models": "Out-of-the-box (via `grimoirejs-gltf` plugins)",
+      "Ecosystem Status": "Legacy / Inactive"
+    }
+  },
+  {
+    "name": "litegl.js",
+    "url": "https://github.com/jagenjo/litegl.js",
+    "attributes": {
+      "Primary Dimension": "3D (with 2D capabilities)",
+      "Philosophy": "Direct OOP GPU buffer/shader wrapper",
+      "Rendering Model": "Direct WebGL entity abstraction classes (Mesh, Shader)",
+      "Ease of Use": "Medium-High (easy OOP wrappers, requires GL context knowledge)",
+      "Control Level": "Extremely High (thin direct buffers and shader program manipulation)",
+      "Performance (2D)": "Extremely High (direct buffer manipulation)",
+      "Performance (3D)": "Extremely High",
+      "Importing Models": "Modular (helper parsers for OBJ files)",
+      "Ecosystem Status": "Active / Stable (underpins WebGLStudio & Rendeer)"
+    }
+  },
+  {
+    "name": "CraZyPG",
+    "url": "https://github.com/PrincessGod/CraZyPG",
+    "attributes": {
+      "Primary Dimension": "N/A (WebGL 2.0 helper wrapper)",
+      "Philosophy": "Low-level WebGL 2.0 helper/loader",
+      "Rendering Model": "Raw WebGL 2.0 context with loader adapters",
+      "Ease of Use": "Low-Medium (low-level helpers)",
+      "Control Level": "Extremely High (close to raw WebGL 2.0)",
+      "Performance (2D)": "High",
+      "Performance (3D)": "High (direct WebGL 2 execution)",
+      "Importing Models": "Out-of-the-box (built-in GLTFLoader.js for WebGL 2)",
+      "Ecosystem Status": "Legacy / Inactive"
+    }
+  },
+  {
+    "name": "GLBoost",
+    "url": "https://github.com/emadurandal/GLBoost",
+    "attributes": {
+      "Primary Dimension": "3D (Render pipeline library)",
+      "Philosophy": "Balance high-level usability & low-level control",
+      "Rendering Model": "Scene Graph and Custom Render Pass / Expression",
+      "Ease of Use": "High (classic material helpers, convenient loops)",
+      "Control Level": "Medium-High (can override custom shaders cleanly)",
+      "Performance (2D)": "Moderate-High",
+      "Performance (3D)": "High",
+      "Importing Models": "Out-of-the-box (glTF 1.0/2.0 and OBJ loaders)",
+      "Ecosystem Status": "Legacy / Deprecated (superseded by new standards)"
+    }
+  },
+  {
+    "name": "redcube",
+    "url": "https://github.com/Reon90/redcube",
+    "attributes": {
+      "Primary Dimension": "3D (glTF 2.0 specialized viewer)",
+      "Philosophy": "Minimalist glTF 2.0 WebGL2/WebGPU renderer",
+      "Rendering Model": "Direct glTF 2.0 model rendering",
+      "Ease of Use": "Very High (load glTF and point to canvas)",
+      "Control Level": "Low-Medium (focuses on parsing/rendering glTF scene graph)",
+      "Performance (2D)": "N/A",
+      "Performance (3D)": "Extremely High (optimized glTF drawing & WebGL2/WebGPU)",
+      "Importing Models": "Out-of-the-box (purpose-built glTF 2.0 viewer)",
+      "Ecosystem Status": "Active (supports WebGL2 & modern WebGPU)"
+    }
+  },
+  {
+    "name": "RedGL2",
+    "url": "https://github.com/redcamel/RedGL2",
+    "attributes": {
+      "Primary Dimension": "3D (with GPGPU capabilities)",
+      "Philosophy": "High-performance comprehensive WebGL 3D library",
+      "Rendering Model": "View / Scene / Camera controller hierarchy",
+      "Ease of Use": "High (intuitive API and factory-style creation)",
+      "Control Level": "Medium-High (rich engine framework with context tools)",
+      "Performance (2D)": "High (high optimized draw arrays calls)",
+      "Performance (3D)": "Extremely High (PBR/glTF optimizations, state cachers)",
+      "Importing Models": "Out-of-the-box (comprehensive glTF loader)",
+      "Ecosystem Status": "Active / Stable (highly popular Korean WebGL engine)"
+    }
+  },
+  {
+    "name": "lightgl.js",
+    "url": "https://github.com/evanw/lightgl.js",
+    "attributes": {
+      "Primary Dimension": "3D",
+      "Philosophy": "Minimal OOP WebGL micro-helper wrapper",
+      "Rendering Model": "Direct OOP buffers & shaders (Mesh, Shader, Matrix)",
+      "Ease of Use": "Medium-High (easy OOP shapes/matrices)",
+      "Control Level": "Extremely High (direct GPU resource adapters)",
+      "Performance (2D)": "Extremely High",
+      "Performance (3D)": "Extremely High",
+      "Importing Models": "Manual parsing",
+      "Ecosystem Status": "Legacy / Archived (Evan Wallace's classic helper)"
+    }
+  },
+  {
+    "name": "p5.js",
+    "url": "https://github.com/processing/p5.js",
+    "attributes": {
+      "Primary Dimension": "2D & 3D (via WEBGL canvas option)",
+      "Philosophy": "Drawing canvas for artists & beginner coders",
+      "Rendering Model": "Immediate-mode canvas context draw commands",
+      "Ease of Use": "Extremely High (intuitive immediate drawing)",
+      "Control Level": "Low-Medium (hides context, exposes light sketch commands)",
+      "Performance (2D)": "High",
+      "Performance (3D)": "Moderate-High (for simple geometry sketching)",
+      "Importing Models": "Out-of-the-box (supports OBJ files)",
+      "Ecosystem Status": "Dominant in creative coding, actively maintained"
+    }
+  },
+  {
+    "name": "O-GL",
+    "url": "https://github.com/oframe/ogl",
+    "attributes": {
+      "Primary Dimension": "3D (with 2D capabilities)",
+      "Philosophy": "Modern, lightweight ES6 boilerplate reducer",
+      "Rendering Model": "Minimal Scene Graph (Transform / Mesh / Program)",
+      "Ease of Use": "High (very clean, light API)",
+      "Control Level": "Extremely High (unlocked context access)",
+      "Performance (2D)": "Extremely High",
+      "Performance (3D)": "Extremely High (minimal CPU frame graph)",
+      "Importing Models": "Modular (has GLTFLoader modules)",
+      "Ecosystem Status": "Active / Stable (widely popular in web agencies)"
+    }
+  },
+  {
+    "name": "WhitestormJS",
+    "url": "https://github.com/WhitestormJS/whitestorm.js",
+    "attributes": {
+      "Primary Dimension": "3D",
+      "Philosophy": "Component-oriented game engine on Three.js",
+      "Rendering Model": "Component Scene Graph with integrated Ammo.js physics",
+      "Ease of Use": "Very High (modular components, built-in physics)",
+      "Control Level": "Medium (wrapped around Three.js engine)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "High (Three.js optimized)",
+      "Importing Models": "Out-of-the-box (uses Three.js file loader backend)",
+      "Ecosystem Status": "Legacy / Archived"
+    }
+  },
+  {
+    "name": "Phaser",
+    "url": "https://github.com/photonstorm/phaser",
+    "attributes": {
+      "Primary Dimension": "2D (with WebGL acceleration)",
+      "Philosophy": "Fast, fun 2D game framework",
+      "Rendering Model": "2D Display List via WebGL sprite batcher",
+      "Ease of Use": "Very High (rich game-making features out-of-the-box)",
+      "Control Level": "Medium-Low (abstractions for sprites & physics systems)",
+      "Performance (2D)": "Extremely High (highly optimized sprite batch overlays)",
+      "Performance (3D)": "N/A (strictly 2D)",
+      "Importing Models": "Out-of-the-box (image and sprite maps loaders)",
+      "Ecosystem Status": "Dominant, actively maintained (HTML5 2D industry standard)"
+    }
+  },
+  {
+    "name": "OSG.js",
+    "url": "https://github.com/cedricpinson/osgjs",
+    "attributes": {
+      "Primary Dimension": "3D",
+      "Philosophy": "High-fidelity tree graphs (OpenSceneGraph port)",
+      "Rendering Model": "Node Scene Graph with culling and StateSets",
+      "Ease of Use": "Medium-Low (requires familiarity with C++ OSG syntax)",
+      "Control Level": "High (explicit state sets, culling control)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "Extremely High (culling/state optimization tree)",
+      "Importing Models": "Out-of-the-box (osgjs json parsing loaders)",
+      "Ecosystem Status": "Legacy / Archived"
+    }
+  },
+  {
+    "name": "Ammo.js",
+    "url": "https://github.com/kripken/ammo.js/",
+    "attributes": {
+      "Primary Dimension": "N/A (Physics Engine wrapper)",
+      "Philosophy": "Physics engine bindings via Emscripten",
+      "Rendering Model": "N/A (rigid-body solver matrices)",
+      "Ease of Use": "Low (direct Bullet port with raw pointers)",
+      "Control Level": "Extremely High (full physics calculations parameter details)",
+      "Performance (2D)": "N/A",
+      "Performance (3D)": "Outstanding (WASM physics loop solver)",
+      "Importing Models": "N/A",
+      "Ecosystem Status": "Active / Stable (foundational WebGL physics port)"
+    }
+  },
+  {
+    "name": "gl-engine",
+    "url": "https://github.com/gl-engine/gl-engine",
+    "attributes": {
+      "Primary Dimension": "3D",
+      "Philosophy": "Experimental modular ECS built on stack.gl",
+      "Rendering Model": "stack.gl modular bindings within ES6 classes",
+      "Ease of Use": "Medium (undocumented modular ES6 setup)",
+      "Control Level": "High (exposes stack.gl bindings)",
+      "Performance (2D)": "Moderate-High",
+      "Performance (3D)": "High (caches stack.gl buffers)",
+      "Importing Models": "Manual parsing (OBJ loading)",
+      "Ecosystem Status": "Legacy / Archived"
+    }
+  },
+  {
+    "name": "GLAM",
+    "url": "https://github.com/tparisi/glam",
+    "attributes": {
+      "Primary Dimension": "3D (Markup-driven)",
+      "Philosophy": "Declarative HTML/CSS style 3D document structure",
+      "Rendering Model": "Component markup trees parsed into Three.js nodes",
+      "Ease of Use": "Extremely High (familiar HTML/CSS styles)",
+      "Control Level": "Low (declarative styling maps)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "High (three.js compiled backend)",
+      "Importing Models": "Out-of-the-box (gltf, obj tags)",
+      "Ecosystem Status": "Legacy / Archived"
+    }
+  },
+  {
+    "name": "Deck.gl",
+    "url": "https://github.com/uber/deck.gl",
+    "attributes": {
+      "Primary Dimension": "2D & 3D (Geospatial overlays)",
+      "Philosophy": "WebGL2-powered layers for massive visual datasets",
+      "Rendering Model": "Custom layer pipelines rendering instanced geometries",
+      "Ease of Use": "High (layer configurations, integrated maps)",
+      "Control Level": "Medium (highly structured layer draw configurations)",
+      "Performance (2D)": "Extremely High (GPU aggregated scatterplot projections)",
+      "Performance (3D)": "Extremely High (renders millions of points on the GPU)",
+      "Importing Models": "Out-of-the-box (loaders.gl GeoJSON / 3D Tiles)",
+      "Ecosystem Status": "Dominant in geospatial visual analytics, active"
+    }
+  },
+  {
+    "name": "LumaGL",
+    "url": "https://github.com/uber/luma.gl",
+    "attributes": {
+      "Primary Dimension": "N/A (WebGL2/WebGPU wrapper)",
+      "Philosophy": "Performance-first context caching data-vis backend",
+      "Rendering Model": "Device models compiling attributes & device states",
+      "Ease of Use": "Medium (GPU device logic, shader hooks)",
+      "Control Level": "Extremely High (low-level GPU devices control)",
+      "Performance (2D)": "Extremely High",
+      "Performance (3D)": "Extremely High (optimizes WebGL2/WebGPU buffers)",
+      "Importing Models": "N/A (uses loaders.gl integration)",
+      "Ecosystem Status": "Active / Stable (underpins the vis.gl suite)"
+    }
+  },
+  {
+    "name": "Cesium",
+    "url": "http://cesiumjs.org/",
+    "attributes": {
+      "Primary Dimension": "3D (Geospatial Globe mapping)",
+      "Philosophy": "Professional virtual globes & GIS streaming terrain",
+      "Rendering Model": "Dynamic level-of-detail ellipsoidal tile trees",
+      "Ease of Use": "High (easy entities tracking, globe mapping)",
+      "Control Level": "Medium-High (viewer handles ellipsoidal matrix math)",
+      "Performance (2D)": "Extremely High",
+      "Performance (3D)": "Outstanding (streaming terrain tiles and 3D Tiles models)",
+      "Importing Models": "Out-of-the-box (industry standard glTF and 3D Tiles streaming)",
+      "Ecosystem Status": "Dominant in virtual globe Mapping, active"
+    }
+  },
+  {
+    "name": "xeogl",
+    "url": "https://github.com/xeolabs/xeogl",
+    "attributes": {
+      "Primary Dimension": "3D (Data-driven CAD visualizations)",
+      "Philosophy": "CAD/BIM friendly entity component visuals",
+      "Rendering Model": "Declarative data component CAD hierarchy",
+      "Ease of Use": "High (CAD/BIM assembly configurations)",
+      "Control Level": "Medium-High (CAD metadata and visual mappings control)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "Extremely High (optimized CAD hierarchy culling)",
+      "Importing Models": "Out-of-the-box (obj, gltf data components loaders)",
+      "Ecosystem Status": "Legacy / Stable (superseded by xeokit)"
+    }
+  },
+  {
+    "name": "PhiloGL",
+    "url": "https://github.com/senchalabs/philogl",
+    "attributes": {
+      "Primary Dimension": "3D (with data visualization layers)",
+      "Philosophy": "WebGL framework for visual charts & animation",
+      "Rendering Model": "Scene compilation with array shader options",
+      "Ease of Use": "High (simplifies setups, good animations)",
+      "Control Level": "High (granular shader compiles)",
+      "Performance (2D)": "High",
+      "Performance (3D)": "High (minimal wrapper)",
+      "Importing Models": "Manual parsing",
+      "Ecosystem Status": "Legacy / Archived"
+    }
+  },
+  {
+    "name": "A-Frame",
+    "url": "https://github.com/aframevr/aframe/",
+    "attributes": {
+      "Primary Dimension": "3D & VR",
+      "Philosophy": "DOM-driven Entity-Component-System VR layout",
+      "Rendering Model": "Three.js Scene Graph compiled from DOM elements",
+      "Ease of Use": "Extremely High (VR scenes via inline HTML tags)",
+      "Control Level": "Low-Medium (controlled via components; customizable in Three.js)",
+      "Performance (2D)": "Moderate",
+      "Performance (3D)": "Outstanding (Three.js WebXR pipelines optimized)",
+      "Importing Models": "Out-of-the-box (native gltf-model and obj-model nodes)",
+      "Ecosystem Status": "Dominant in WebXR/VR experiences, active"
+    }
+  }
+]

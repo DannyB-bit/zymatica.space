@@ -272,8 +272,8 @@ export class CuneiformClient {
     if (!info) return null;
 
     const data = info.data;
-    if (data.length < 72) {
-      throw new Error("Invalid state account length. Expected at least 72 bytes.");
+    if (data.length < 80) {
+      throw new Error("Invalid state account length. Expected at least 80 bytes.");
     }
 
     const expectedDiscriminator = this.getDiscriminator("account", "ProgramState");

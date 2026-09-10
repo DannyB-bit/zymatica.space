@@ -1,0 +1,29 @@
+{
+    "node_id": "cuneiform-node-02",
+    "description": "Solar-Powered Mountainous Terrain Relay",
+    "location": {
+        "name": "Adirondack Mountainous State Park",
+        "latitude": 42.0621,
+        "longitude": -74.4323,
+        "elevation_meters": 980.0
+    },
+    "power_profile": {
+        "power_source": "SOLAR_BATTERY",
+        "battery_capacity_mah": 10000,
+        "solar_panel_watts": 10.0,
+        "battery_voltage_critical": 3.3,
+        "low_power_threshold_percent": 20.0,
+        "active_duty_cycle": 0.05
+    },
+    "lora_parameters": {
+        "frequency_mhz": 915.0,
+        "spreading_factor": 10,
+        "bandwidth_khz": 125.0,
+        "coding_rate": "4/8",
+        "tx_power_dbm": 22
+    },
+    "solana_pay": {
+        "recipient_address": "7WbxAvvjhNoxUX45arx1rj7HjZjSYPL242ePrHuFF7No",
+        "routing_fee_usdc": 0.015
+    }
+}

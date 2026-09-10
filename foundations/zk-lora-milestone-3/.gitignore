@@ -1,0 +1,30 @@
+﻿# Executables and objects
+*.exe
+*.obj
+*.lib
+*.exp
+*.o
+*.class
+*.dll
+*.so
+*.dylib
+proof.obj
+
+# Build directories
+bin/
+obj/
+target/
+node_modules/
+dist/
+build/
+.gradle/
+.anchor/
+
+# Temp files
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc

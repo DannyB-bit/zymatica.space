@@ -1,5 +1,7 @@
 # Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica / TheAiCollective.art. Licensed under Apache 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 """
 ZK-LoRaWAN Device SDK (Firmware Layer)
 ========================================

@@ -1,0 +1,108 @@
+name: Zymatica Production Engine CI/CD & Verification Battery
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: "1"
+
+jobs:
+  multi-arch-build-and-test:
+    name: Multi-Architecture Native Build & Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Setup Rust 1.98.0
+        uses: dtolnay/rust-toolchain@4360b52568e2003a75bf9bc1d59f33a8e3fc893c # pinned 1.98
+        with:
+          toolchain: 1.98.0
+          components: rustfmt, clippy
+
+      - name: Rust Toolchain Evidence
+        shell: bash
+        run: |
+          rustc --version --verbose
+          cargo --version
+          cargo clippy --version
+          cargo fmt --version
+
+      - name: Rustfmt Check
+        run: cargo fmt --all -- --check
+
+      - name: Rust Clippy Verification
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
+
+      - name: Run Native Rust Workspace Tests
+        run: cargo test --workspace --locked --verbose
+
+      - name: Build Production Release Artifacts
+        run: cargo build --workspace --release --locked
+
+      - name: Build & Run C++20 Z-SPAR Tests (Linux / macOS)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          cmake -S crates/zymatica-language-u/33_Z_SPAR_Semantic_Parity -B build_zspar -DCMAKE_BUILD_TYPE=Release
+          cmake --build build_zspar --parallel
+          ctest --test-dir build_zspar --output-on-failure
+
+      - name: Build & Run C++20 Z-SPAR Tests (Windows)
+        if: runner.os == 'Windows'
+        shell: bash
+        run: |
+          cmake -S crates/zymatica-language-u/33_Z_SPAR_Semantic_Parity -B build_zspar
+          cmake --build build_zspar --config Release --parallel
+          ctest --test-dir build_zspar -C Release --output-on-failure
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Python Syntax Gate
+        shell: bash
+        run: |
+          python -m compileall -q \
+            crates/zymatica-language-u \
+            tools/ten_out_of_ten
+
+      - name: Install Lightweight Verification Dependencies
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy
+
+      - name: Numerical Helper Self-Test
+        run: python tools/ten_out_of_ten/real_model_validation.py self-test
+
+      - name: Run Master 4-Pillars Verification Suite
+        run: python crates/zymatica-language-u/unified_polyglot_pillars/unified_four_pillars_engine.py
+
+      - name: Execute Class 31 Algorithmic Proof
+        run: python crates/zymatica-language-u/31_Epigenetic_Weight_Crystallizer/run_proof.py
+
+      - name: Execute Class 32 Stress Harness
+        run: python crates/zymatica-language-u/32_8D_Octonion_Hypercube/run_proof.py
+
+      - name: Execute Z-SPAR Golden Vector Cross-Validation
+        run: python crates/zymatica-language-u/33_Z_SPAR_Semantic_Parity/tools/reference_vectors.py
+
+      - name: Execute Class 34 Algorithmic Proof
+        run: python crates/zymatica-language-u/34_Z_WORMHOLE_Latent_Transfer/run_proof.py
+
+      - name: Execute Class 35 Algorithmic Proof
+        run: python crates/zymatica-language-u/35_Z_MCTS_Latent_Reasoning/run_proof.py

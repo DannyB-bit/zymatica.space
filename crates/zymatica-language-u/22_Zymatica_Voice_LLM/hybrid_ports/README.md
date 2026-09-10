@@ -1,6 +1,8 @@
 # Zymatica Voice LLM - Quindecim-Architecture (15-Stack Paradigm Showcase Kit)
 Watermark: ip zymatica.space | astronautshe.com
-Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+Copyright (c) 2026 Zymatica.
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
 
 This directory houses the fifteen optimal architectural combinations of the Zymatica Voice LLM, showcasing the pipeline deployed across various domains, runtimes, hardware profiles, and security environments.
 

@@ -59,8 +59,8 @@ impl McpClientEngine {
     }
 
     pub fn handle_response(&self, raw_json: &str) -> Result<Value> {
-        let resp: McpResponse = serde_json::from_str(raw_json)
-            .context("Failed to parse MCP JSON-RPC response")?;
+        let resp: McpResponse =
+            serde_json::from_str(raw_json).context("Failed to parse MCP JSON-RPC response")?;
         if let Some(err) = resp.error {
             anyhow::bail!("MCP Server Error: {:?}", err);
         }

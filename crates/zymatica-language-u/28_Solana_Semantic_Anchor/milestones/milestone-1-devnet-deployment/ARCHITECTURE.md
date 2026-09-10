@@ -25,7 +25,7 @@ sequenceDiagram
     Node->>Node: SHA-256 Merkle attestation
     Node->>Program: register_coordinates(session_id, coords, merkle_root)
     Program->>State: Read fee_lamports & treasury
-    Program->>Treasury: CPI Transfer (10,000 lamports)
+    Program->>Treasury: CPI Transfer (150,000 lamports)
     Program->>Record: Create PDA [seed: "cuneiform" + authority + session_id]
     Record-->>Node: On-chain confirmation
 
@@ -100,7 +100,7 @@ The protocol is extremely efficient — a single transaction costs less than 8% 
 
 | Parameter | Value |
 |---|---|
-| Registration fee | 10,000 lamports (~$0.002) |
+| Registration fee | 150,000 lamports (~$0.002) |
 | Update fee | Free (no protocol fee) |
 | PDA rent (per record) | ~1,100 lamports |
 | Total cost per registration | ~0.003 SOL |

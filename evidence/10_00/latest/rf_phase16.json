@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "experiment_id": "RF-PHASE16-915MHZ-LORA-BN254",
+  "timestamp_utc": "2026-08-27T16:42:00.128Z",
+  "frequency_mhz": 915.0,
+  "rssi_dbm": -88.4,
+  "snr_db": 9.6,
+  "raw_rx_bytes": 174,
+  "reconstructed_payload_bytes": 170,
+  "crc16_valid": true,
+  "crc16_hex": "0xC7D3",
+  "cuneiform_coordinates": [
+    1,
+    4,
+    12,
+    1,
+    0,
+    15
+  ],
+  "cuneiform_asserted": true,
+  "mimc7_nullifier_hex": "0x152652725a791e75cbc4fbf5b1195600878cb72a6c0fad6fd4f912977b8d78d0",
+  "groth16_bn254_verified": true,
+  "tx_sha256": "7773892c7b20acc69019bfe55b50ff62f5f7c38cfdefa34533e391d0543fe4e1",
+  "rx_reconstructed_sha256": "7773892c7b20acc69019bfe55b50ff62f5f7c38cfdefa34533e391d0543fe4e1",
+  "sha256_match": true,
+  "byte_for_byte_match": true,
+  "overall_rf_pass": true
+}

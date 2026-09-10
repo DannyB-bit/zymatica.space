@@ -518,6 +518,85 @@ impl PagedKvCache {
         })
     }
 
+    /// Compress a sequence's attention KV cache into parametric Class 29 Hyper-KV Knots
+    pub fn export_hyper_kv_knots(
+        &self,
+        sequence_id: u64,
+    ) -> Result<Vec<crate::hyper_manifold_kv_folding::HyperKvKnotLUT>> {
+        let seq = self
+            .sequences
+            .get(&sequence_id)
+            .with_context(|| format!("sequence {sequence_id} is not resident"))?;
+
+        let mut knots = Vec::new();
+        let tokens = seq.token_len;
+        if tokens == 0 {
+            return Ok(knots);
+        }
+
+        for layer in 0..self.layers {
+            let head_dim = self.head_dims[layer];
+            for kv_head in 0..self.kv_heads[layer] {
+                // Collect keys across all sequence positions
+                let mut key_block = Vec::with_capacity(tokens * head_dim);
+                let mut val_block = Vec::with_capacity(tokens * head_dim);
+                for position in 0..tokens {
+                    key_block.extend_from_slice(self.key(sequence_id, position, layer, kv_head));
+                    val_block.extend_from_slice(self.value(sequence_id, position, layer, kv_head));
+                }
+                knots.push(
+                    crate::hyper_manifold_kv_folding::HyperKvKnotLUT::compress_block(
+                        &key_block, tokens, head_dim,
+                    ),
+                );
+                knots.push(
+                    crate::hyper_manifold_kv_folding::HyperKvKnotLUT::compress_block(
+                        &val_block, tokens, head_dim,
+                    ),
+                );
+            }
+        }
+        Ok(knots)
+    }
+
+    /// Reconstruct an attention KV cache from parametric Class 29 Hyper-KV Knots
+    pub fn import_hyper_kv_knots(
+        &mut self,
+        sequence_id: u64,
+        tokens: usize,
+        knots: &[crate::hyper_manifold_kv_folding::HyperKvKnotLUT],
+    ) -> Result<()> {
+        if self.sequences.contains_key(&sequence_id) {
+            self.free_sequence(sequence_id);
+        }
+        self.create_sequence(sequence_id);
+
+        let mut knot_idx = 0;
+        for layer in 0..self.layers {
+            let head_dim = self.head_dims[layer];
+            for kv_head in 0..self.kv_heads[layer] {
+                if knot_idx + 1 >= knots.len() {
+                    bail!("Insufficient Hyper-KV knots supplied for model layer/head topology");
+                }
+                let key_knot = &knots[knot_idx];
+                let val_knot = &knots[knot_idx + 1];
+                knot_idx += 2;
+
+                let reconstructed_keys = key_knot.reconstruct_block(tokens, head_dim);
+                let reconstructed_vals = val_knot.reconstruct_block(tokens, head_dim);
+
+                for position in 0..tokens {
+                    let k_slice =
+                        &reconstructed_keys[position * head_dim..(position + 1) * head_dim];
+                    let v_slice =
+                        &reconstructed_vals[position * head_dim..(position + 1) * head_dim];
+                    self.set_kv(sequence_id, position, layer, kv_head, k_slice, v_slice);
+                }
+            }
+        }
+        Ok(())
+    }
+
     pub fn import_sequence_packet(&mut self, packet: &KvCachePacket) -> Result<()> {
         let sha256 = hex_digest(Sha256::digest(&packet.bytes).as_slice());
         if sha256 != packet.sha256 {
@@ -1071,5 +1150,30 @@ mod tests {
         assert_eq!(cache.stats(9).unwrap().token_len, 0);
         assert_eq!(cache.stats(9).unwrap().page_count, 0);
         assert_eq!(cache.resident_pages(), 0);
+    }
+
+    #[test]
+    fn sequence_exports_imports_hyper_kv_knots() {
+        let mut source = PagedKvCache::new(2, 2, 6, 4);
+        for pos in 0..8 {
+            source.allocate_token(95);
+            source.set_kv(
+                95,
+                pos,
+                0,
+                0,
+                &[pos as f32 * 0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
+                &[0.6, 0.5, 0.4, 0.3, 0.2, pos as f32 * 0.1],
+            );
+        }
+
+        let knots = source.export_hyper_kv_knots(95).unwrap();
+        // 2 layers * 2 kv_heads * 2 (key+val) = 8 knots
+        assert_eq!(knots.len(), 8);
+
+        let mut target = PagedKvCache::new(2, 2, 6, 4);
+        target.import_hyper_kv_knots(95, 8, &knots).unwrap();
+        assert_eq!(target.stats(95).unwrap().token_len, 8);
+        assert_eq!(target.key(95, 0, 0, 0).len(), 6);
     }
 }

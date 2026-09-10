@@ -1,5 +1,5 @@
 # ZYMATICA: microByte Template-Driven Procedural Inflation
-*IP Class 18 | Apache License 2.0*
+*IP Class 18 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

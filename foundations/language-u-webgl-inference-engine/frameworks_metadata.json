@@ -1,0 +1,25 @@
+{
+  "frameworks_count": 49,
+  "compressed_size": 17667,
+  "sha256": "b0c43fa0714c5f4d03b0e27974c2f0ba5478cf0ba54bc84dbc95571eff7f3e08",
+  "packets_count": 72,
+  "svd_rank": 2,
+  "dct_coefficients": 0,
+  "singular_values": [
+    136.69415283203125,
+    13.627534866333008
+  ],
+  "u_bounds": [
+    -0.06098169460892677,
+    0.3773559033870697
+  ],
+  "vt_bounds": [
+    -0.07248440384864807,
+    0.9955768585205078
+  ],
+  "dct_bounds": [
+    0.0,
+    0.0
+  ],
+  "version": "Sumerian-U-v3"
+}

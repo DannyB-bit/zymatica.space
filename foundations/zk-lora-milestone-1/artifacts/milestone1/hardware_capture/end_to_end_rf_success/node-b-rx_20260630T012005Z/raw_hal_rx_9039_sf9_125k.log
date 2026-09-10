@@ -1,0 +1,226 @@
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 255
+INFO: Select channel mode 0
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 11045121
+  size:     87
+  chan:     3
+  status:   0x01
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:196.0
+  rssi_sig :195.0
+  crc:      0x0000
+40 AB AB AB AB 00 00 00 02 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35 36 37 38 39 3A 3B 3C 3D 3E 3F 40 41 42 43 44 45 46 47 48 49 4A 4B 4C 4D 4E 4F 50 51 52 53 54 55 56 
+Received 1 packets (total:0)
+
+----- LoRa packet -----
+  count_us: 145325911
+  size:     240
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:146.0
+  rssi_sig :145.0
+  crc:      0x1DCE
+54 58 20 61 74 74 65 6D 70 74 20 55 54 43 3A 20 54 75 65 20 4A 75 6E 20 33 30 20 30 30 3A 30 38 3A 32 36 20 55 54 43 20 32 30 32 36 0A 52 65 70 6F 73 69 74 6F 72 79 20 48 45 41 44 3A 20 63 38 33 38 61 36 39 65 36 64 65 38 34 65 62 61 33 34 63 30 32 35 62 35 39 38 62 33 35 35 61 36 63 65 63 39 32 35 65 35 0A 48 6F 73 74 3A 20 52 61 6B 4D 69 6E 65 72 2D 41 0A 55 73 65 72 3A 20 75 69 64 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 69 64 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 72 6F 75 70 73 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 2C 34 28 61 64 6D 29 2C 32 30 28 64 69 61 6C 6F 75 74 29 
+Received 1 packets (total:1)
+
+Nb valid packets received: 1 CRC OK (1)
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 7024615
+  size:     240
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:146.0
+  rssi_sig :146.0
+  crc:      0x1DCE
+54 58 20 61 74 74 65 6D 70 74 20 55 54 43 3A 20 54 75 65 20 4A 75 6E 20 33 30 20 30 30 3A 30 38 3A 32 36 20 55 54 43 20 32 30 32 36 0A 52 65 70 6F 73 69 74 6F 72 79 20 48 45 41 44 3A 20 63 38 33 38 61 36 39 65 36 64 65 38 34 65 62 61 33 34 63 30 32 35 62 35 39 38 62 33 35 35 61 36 63 65 63 39 32 35 65 35 0A 48 6F 73 74 3A 20 52 61 6B 4D 69 6E 65 72 2D 41 0A 55 73 65 72 3A 20 75 69 64 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 69 64 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 72 6F 75 70 73 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 2C 34 28 61 64 6D 29 2C 32 30 28 64 69 61 6C 6F 75 74 29 
+Received 1 packets (total:1)
+
+Nb valid packets received: 1 CRC OK (2)
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no tempeSX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+rature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 7046274
+  size:     240
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.5
+  rssi_chan:147.0
+  rssi_sig :146.0
+  crc:      0x1DCE
+54 58 20 61 74 74 65 6D 70 74 20 55 54 43 3A 20 54 75 65 20 4A 75 6E 20 33 30 20 30 30 3A 30 38 3A 32 36 20 55 54 43 20 32 30 32 36 0A 52 65 70 6F 73 69 74 6F 72 79 20 48 45 41 44 3A 20 63 38 33 38 61 36 39 65 36 64 65 38 34 65 62 61 33 34 63 30 32 35 62 35 39 38 62 33 35 35 61 36 63 65 63 39 32 35 65 35 0A 48 6F 73 74 3A 20 52 61 6B 4D 69 6E 65 72 2D 41 0A 55 73 65 72 3A 20 75 69 64 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 69 64 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 72 6F 75 70 73 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 2C 34 28 61 64 6D 29 2C 32 30 28 64 69 61 6C 6F 75 74 29 
+Received 1 packets (total:1)
+
+Nb valid packets received: 1 CRC OK (3)
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 7061697
+  size:     240
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:146.0
+  rssi_sig :145.0
+  crc:      0x1DCE
+54 58 20 61 74 74 65 6D 70 74 20 55 54 43 3A 20 54 75 65 20 4A 75 6E 20 33 30 20 30 30 3A 30 38 3A 32 36 20 55 54 43 20 32 30 32 36 0A 52 65 70 6F 73 69 74 6F 72 79 20 48 45 41 44 3A 20 63 38 33 38 61 36 39 65 36 64 65 38 34 65 62 61 33 34 63 30 32 35 62 35 39 38 62 33 35 35 61 36 63 65 63 39 32 35 65 35 0A 48 6F 73 74 3A 20 52 61 6B 4D 69 6E 65 72 2D 41 0A 55 73 65 72 3A 20 75 69 64 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 69 64 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 72 6F 75 70 73 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 2C 34 28 61 64 6D 29 2C 32 30 28 64 69 61 6C 6F 75 74 29 
+Received 1 packets (total:1)
+
+Nb valid packets received: 1 CRC OK (4)
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 7032840
+  size:     240
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  12.8
+  rssi_chan:146.0
+  rssi_sig :145.0
+  crc:      0x1DCE
+54 58 20 61 74 74 65 6D 70 74 20 55 54 43 3A 20 54 75 65 20 4A 75 6E 20 33 30 20 30 30 3A 30 38 3A 32 36 20 55 54 43 20 32 30 32 36 0A 52 65 70 6F 73 69 74 6F 72 79 20 48 45 41 44 3A 20 63 38 33 38 61 36 39 65 36 64 65 38 34 65 62 61 33 34 63 30 32 35 62 35 39 38 62 33 35 35 61 36 63 65 63 39 32 35 65 35 0A 48 6F 73 74 3A 20 52 61 6B 4D 69 6E 65 72 2D 41 0A 55 73 65 72 3A 20 75 69 64 3D 31 30 30 30 28 73 74 7SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+2 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 69 64 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 20 67 72 6F 75 70 73 3D 31 30 30 30 28 73 74 72 61 77 62 65 72 72 79 2D 7A 2D 6D 6F 64 65 6C 2D 31 29 2C 34 28 61 64 6D 29 2C 32 30 28 64 69 61 6C 6F 75 74 29 
+Received 1 packets (total:1)
+
+Nb valid packets received: 1 CRC OK (5)
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+Waiting for packets...
+
+Nb valid packets received: 0 CRC OK (6)
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+=========== Test End ===========

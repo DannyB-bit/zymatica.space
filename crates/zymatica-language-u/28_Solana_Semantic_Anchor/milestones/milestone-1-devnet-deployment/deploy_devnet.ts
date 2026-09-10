@@ -5,7 +5,9 @@
  * Sets the cold wallet as the protocol fee treasury.
  * 
  * Watermark: ip zymatica.space | astronautshe.com
- * Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+ * Copyright (c) 2026 Zymatica.
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
  */
 
 import {
@@ -23,14 +25,14 @@ import { CuneiformClient } from "./cuneiform_client.js";
 // ============================================================================
 
 const DEVNET_URL = "https://api.devnet.solana.com";
-const PROGRAM_ID = "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy";
+const PROGRAM_ID = "BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M";
 
 // Cold wallet treasury — all protocol fees route here
-const TREASURY_ADDRESS = "CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ";
+const TREASURY_ADDRESS = "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS";
 
-// Protocol fee: 10,000 lamports (~$0.002 at $200/SOL)
+// Protocol fee: 150,000 lamports (~$0.002 at $200/SOL)
 // Production can be adjusted via update_program_state
-const PROTOCOL_FEE_LAMPORTS = BigInt(10_000);
+const PROTOCOL_FEE_LAMPORTS = BigInt(150_000);
 
 // ============================================================================
 // Helpers

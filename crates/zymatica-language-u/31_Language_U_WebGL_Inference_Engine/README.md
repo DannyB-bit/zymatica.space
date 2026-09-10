@@ -1,6 +1,6 @@
 ---
 language: en
-license: apache-2.0
+license: LicenseRef-Zymatica-Covenant-2.0
 tags:
 - webgl
 - compression
@@ -33,7 +33,7 @@ $$\text{round}\left(U_{\text{dequant}} \Sigma_2 V_{\text{dequant}}^T\right) = M$
 
 This optimizes the coordinate payload size to just **110 Bytes** total for all binary SVD matrices, representing a **70% reduction in SVD/DCT payload size** compared to standard Rank-4 DCT algorithms.
 
-The database is 100% commercial-friendly, containing 49 open-source libraries licensed permissively (including our custom framework Zymatica-3D under the Apache License 2.0, replacing the copyleft Blend4Web framework).
+The database is 100% commercial-friendly, containing 49 open-source libraries licensed permissively (including our custom framework Zymatica-3D under the Zymatica Covenant License 2.0 (zymatica.space), replacing the copyleft Blend4Web framework).
 
 *   **Capsule Size**: `373` bytes
 *   **Checksum (SHA-256)**: `573acd8edada38afa62af9fd8d3621324342db37025b69d77ed45a74c1af24e4`

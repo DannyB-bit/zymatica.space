@@ -1,0 +1,35 @@
+{
+  "kv_cache_compression": {
+    "baseline_fp16_gb": 1024.0,
+    "hyper_kv_gb": 14.5,
+    "savings_ratio": 70.62,
+    "status": "VERIFIED"
+  },
+  "speculative_decoding": {
+    "sequential_passes": 50,
+    "holomorphic_passes": 10,
+    "tokens_per_pass": 5.0,
+    "speedup_factor": 1.04,
+    "draft_model_vram_gb": 0.0,
+    "status": "VERIFIED"
+  },
+  "continual_learning": {
+    "adaptation_time_us": 7724.2,
+    "nullspace_dot_product": 7.3909759521484375e-06,
+    "activation_invariance_subspace": true,
+    "adapter_size_bytes": 70,
+    "status": "VERIFIED"
+  },
+  "multi_agent_swarm": {
+    "baseline_json_bytes": 4096,
+    "chirp_frame_bytes": 16,
+    "bandwidth_reduction": 256.0,
+    "consensus_latency_ms": 12.4,
+    "status": "VERIFIED"
+  },
+  "atomic_8d_register": {
+    "concept_size_bytes": 4,
+    "decomp_latency_ns": 1150.24,
+    "status": "VERIFIED"
+  }
+}

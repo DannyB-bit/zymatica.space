@@ -1,0 +1,16 @@
+{
+  "name": "zk-lora-operator-ts",
+  "version": "2.0.0",
+  "description": "TypeScript full port of ZK-LoRa Operator CLI",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/main.js --test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  }
+}

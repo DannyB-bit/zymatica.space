@@ -1,5 +1,5 @@
 # ZYMATICA: Cognitive Observer Framework (DNA/Curator/Reflexion)
-*IP Class 14 | Apache License 2.0*
+*IP Class 14 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

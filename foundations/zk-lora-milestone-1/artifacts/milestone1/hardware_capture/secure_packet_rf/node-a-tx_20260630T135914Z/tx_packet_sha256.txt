@@ -1,0 +1,1 @@
+874ff62e365dd9d90e460c8c51c475e319968e62bc9c03836e9ae98c9d0f4137  /home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/secure_packet_rf/node-a-tx_20260630T135914Z/tx_secure_packet.bin

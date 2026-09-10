@@ -1,5 +1,5 @@
 # ZYMATICA: Hybrid Real-SVD Loading (HRSL)
-*IP Class 16 | Apache License 2.0*
+*IP Class 16 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

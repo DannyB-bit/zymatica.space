@@ -25,7 +25,7 @@ const SHIELDED_POOL_SEED = Buffer.from("shielded-pool");
 // Match the program ID from lib.rs (non-integration-test)
 const PROGRAM_ID = new PublicKey("4HRP2eV8qtYW54ozQmnGDjF7emwb8MvqFcF89UgSM6iC");
 // Admin authority from lib.rs
-const ADMIN_AUTHORITY = new PublicKey("BrqnKE7S8wY8etChZgUx8GGnYuvqdFoZhUAD7PTL5PV3");
+const ADMIN_AUTHORITY = new PublicKey("7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS");
 
 async function main() {
   console.log("╔══════════════════════════════════════════════════╗");

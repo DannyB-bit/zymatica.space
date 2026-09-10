@@ -1,5 +1,7 @@
 // Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+// Copyright © 2026 Zymatica
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
 
 function simulateZymaticaStep(step: number, b: number, rank: number) {
     console.log(`\n--- CYCLE ${step} | zymatica-inference-engine-typescript ---`);

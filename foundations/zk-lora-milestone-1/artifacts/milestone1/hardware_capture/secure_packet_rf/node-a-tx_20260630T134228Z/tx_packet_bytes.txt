@@ -1,0 +1,1 @@
+217 /home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/secure_packet_rf/node-a-tx_20260630T134228Z/tx_secure_packet.bin

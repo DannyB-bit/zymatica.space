@@ -1,0 +1,210 @@
+{
+  "watermark": "ip zymatica.space | astronautshe.com",
+  "description": "Unified DNA-GROW Level 8/9 Seed Packetization",
+  "original_size_bytes": 8327,
+  "packet_size_bytes": 222,
+  "total_packets": 40,
+  "original_sha256": "fc87ade57e9f1c66b82a63ecda3c68db24162ae322620a862000f1f4435e761c",
+  "packets": [
+    {
+      "index": 0,
+      "filename": "packet_chirp3_0.bin",
+      "sha256": "87d46a072f1215453df993576d395dbe08ebc6ec772e4e769d5ec74615fcde7b"
+    },
+    {
+      "index": 1,
+      "filename": "packet_chirp3_1.bin",
+      "sha256": "7eeb97b041a1bd13828c88b06e3d4801548d10a224819598621be10aae3c384f"
+    },
+    {
+      "index": 2,
+      "filename": "packet_chirp3_2.bin",
+      "sha256": "f54287817f4c102a9b6cf63320d01bd3d9cd94c37e3d5a7ad231934fbdf20edf"
+    },
+    {
+      "index": 3,
+      "filename": "packet_chirp3_3.bin",
+      "sha256": "ef28a9288a4ba33df20263af2ae082e527c883e176ef370d6b765cf754035287"
+    },
+    {
+      "index": 4,
+      "filename": "packet_chirp3_4.bin",
+      "sha256": "e7960a4cddf0c80997edef40c5ca89ae4376276c1dd42350d494e040970886d4"
+    },
+    {
+      "index": 5,
+      "filename": "packet_chirp3_5.bin",
+      "sha256": "5113a870b2c295a84f9e43eb04c6698b6463fe5f6e454e51044301c64c1b67aa"
+    },
+    {
+      "index": 6,
+      "filename": "packet_chirp3_6.bin",
+      "sha256": "6a677e49c0fd16f83847c50fdddbb86383aa774d658485f6cf3b918d71b26130"
+    },
+    {
+      "index": 7,
+      "filename": "packet_chirp3_7.bin",
+      "sha256": "3427c9b82089dde0e944ffe93768835f46f810f76fb3126fcf71c0f6ebbfe468"
+    },
+    {
+      "index": 8,
+      "filename": "packet_chirp3_8.bin",
+      "sha256": "9eebccaadf7d8f4c5908d70ba5495d6c55b8a550ad1d83f1586d698bf4b5d934"
+    },
+    {
+      "index": 9,
+      "filename": "packet_chirp3_9.bin",
+      "sha256": "570d462c3d23bd852406171c91100c83f3ad4cdf7fcef4ad15c5ba6416ef9687"
+    },
+    {
+      "index": 10,
+      "filename": "packet_chirp3_10.bin",
+      "sha256": "66cf69fed4516b5f24520d1ebf95aa55be319def16cf39420e8571ecaaf9c0af"
+    },
+    {
+      "index": 11,
+      "filename": "packet_chirp3_11.bin",
+      "sha256": "92e20049d249d8132ee2c2499691b310e445d8db8a1e13936bdaaee79e523d90"
+    },
+    {
+      "index": 12,
+      "filename": "packet_chirp3_12.bin",
+      "sha256": "e353cf608d2c75b3b76cffbbbb3805b830bd7cd83b2c382f41d35a9e0732c72c"
+    },
+    {
+      "index": 13,
+      "filename": "packet_chirp3_13.bin",
+      "sha256": "cd1d2251e0dfa1d5a94c2a7a21d0101f77581285bb620fdc41cbe72c58a3afd7"
+    },
+    {
+      "index": 14,
+      "filename": "packet_chirp3_14.bin",
+      "sha256": "1ed911ccca6fa3d59746a17f16e0c0190185f8391cf0e06b4016ce6e9823d67d"
+    },
+    {
+      "index": 15,
+      "filename": "packet_chirp3_15.bin",
+      "sha256": "77e06b8f45c1ff94a005c4fb2a6b2604129212b2ead5fc6f3598c380b1f23f01"
+    },
+    {
+      "index": 16,
+      "filename": "packet_chirp3_16.bin",
+      "sha256": "ba6e307d20e4907364c069d1e66b0e222bc3ec0dbb2d4abaf8f9a5d557e0a5ef"
+    },
+    {
+      "index": 17,
+      "filename": "packet_chirp3_17.bin",
+      "sha256": "33df99e42e429d863a31a38cf48d6b9d1292479b1c9c2addd0ddf003de01a284"
+    },
+    {
+      "index": 18,
+      "filename": "packet_chirp3_18.bin",
+      "sha256": "5e277d175a8d734282a5a71dec103f1fb7a1b6a1346a6235ffea6315a31327c5"
+    },
+    {
+      "index": 19,
+      "filename": "packet_chirp3_19.bin",
+      "sha256": "a66a92d18d0f96e5d8b2c672ba30af08bc5f31140c8a6948194c2a57e088f27d"
+    },
+    {
+      "index": 20,
+      "filename": "packet_chirp3_20.bin",
+      "sha256": "632e8628e150124a1f80ba06d52d9a48ca3a378ca4648e79428a49466fd4717e"
+    },
+    {
+      "index": 21,
+      "filename": "packet_chirp3_21.bin",
+      "sha256": "59de3b79022787abe48e655213d638d5fd14466cd696d11bb4731ce2208d0777"
+    },
+    {
+      "index": 22,
+      "filename": "packet_chirp3_22.bin",
+      "sha256": "a6adec2c166371a0ffccc4eb6c133917bfea6548d1e07fe7a6260a307837d5c0"
+    },
+    {
+      "index": 23,
+      "filename": "packet_chirp3_23.bin",
+      "sha256": "e1efa58fca5138bbd804f7973f707652112ee2cf92a46b875532c094a9ec119b"
+    },
+    {
+      "index": 24,
+      "filename": "packet_chirp3_24.bin",
+      "sha256": "2dd15f45bc7285d73627b92dc87f28acbfae5a1d3dbd6df4597faf597d17c1aa"
+    },
+    {
+      "index": 25,
+      "filename": "packet_chirp3_25.bin",
+      "sha256": "75264b236d8d9f7b30f83e4921aa97e23e78981a8458325f10adf7b8605c5c1f"
+    },
+    {
+      "index": 26,
+      "filename": "packet_chirp3_26.bin",
+      "sha256": "fa85dc905926e1e99f880f90140a9a317e0b0a4d535dc023fde6bab3c0446ab3"
+    },
+    {
+      "index": 27,
+      "filename": "packet_chirp3_27.bin",
+      "sha256": "108efb65fe47bdfd409f2b721fb36b7977d3b615e00974169e2484ca9648147c"
+    },
+    {
+      "index": 28,
+      "filename": "packet_chirp3_28.bin",
+      "sha256": "95bd5762acfb1ace3803f0ee4c755a0d6da929ed046f3635b409aed4458d08d4"
+    },
+    {
+      "index": 29,
+      "filename": "packet_chirp3_29.bin",
+      "sha256": "ff84145892fbfa6caa771e6b84ecf3a9233fab27f90f0069989ae62ce70168c8"
+    },
+    {
+      "index": 30,
+      "filename": "packet_chirp3_30.bin",
+      "sha256": "ef937807bea3cedb63dd49c2d6de7395fae766e30bb942305991c114e98f07f5"
+    },
+    {
+      "index": 31,
+      "filename": "packet_chirp3_31.bin",
+      "sha256": "b0a6a30ce2fb48ca4b14c06b968700b9249212a701e3ff29adc6966a0a4e0356"
+    },
+    {
+      "index": 32,
+      "filename": "packet_chirp3_32.bin",
+      "sha256": "8304241e142818d351eeaf75bdd1d38d2aa89f67f4d95aa6e3aff462410a0546"
+    },
+    {
+      "index": 33,
+      "filename": "packet_chirp3_33.bin",
+      "sha256": "d879bc6eb540ab38b6359498cae1ffd20507811c6e3f001c47c7bc38ea2bf52d"
+    },
+    {
+      "index": 34,
+      "filename": "packet_chirp3_34.bin",
+      "sha256": "469738a97109d63ee24b57d53c2d3ad3322c273e621ed2f3e74ced66721e1cb3"
+    },
+    {
+      "index": 35,
+      "filename": "packet_chirp3_35.bin",
+      "sha256": "40ccbcedc519b852e7c27aaee10495fe817bd2dbc25158d140bdca6722e7251b"
+    },
+    {
+      "index": 36,
+      "filename": "packet_chirp3_36.bin",
+      "sha256": "2d45f0c93bad1c2667233e24ef6d6dab74c37e183f1d608aab840eb2d9b57cdc"
+    },
+    {
+      "index": 37,
+      "filename": "packet_chirp3_37.bin",
+      "sha256": "29e4b2367dc0f224ff35b66c7ddbe7c3e3356a40dd5f51d6b88e4a97784f5dfa"
+    },
+    {
+      "index": 38,
+      "filename": "packet_chirp3_38.bin",
+      "sha256": "1207fbf437a6d60bad608c9c4a7397194c4f3768142a32c7e5f3a1415452a992"
+    },
+    {
+      "index": 39,
+      "filename": "packet_chirp3_39.bin",
+      "sha256": "1207fbf437a6d60bad608c9c4a7397194c4f3768142a32c7e5f3a1415452a992"
+    }
+  ]
+}

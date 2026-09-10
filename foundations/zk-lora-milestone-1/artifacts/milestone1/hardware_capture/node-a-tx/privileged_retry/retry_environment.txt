@@ -1,0 +1,19 @@
+NODE_NAME=node-a-tx
+HOSTNAME=RakMiner-A
+START_UTC=Mon Jun 29 23:46:44 UTC 2026
+REPO=/home/strawberry-z-model-1/zk-lora-milestone-1
+GIT_HEAD=998a50d681bdc20b93fbd9020659f803b05d50a9
+TCPDUMP=/usr/bin/tcpdump
+ID=uid=1000(strawberry-z-model-1) gid=1000(strawberry-z-model-1) groups=1000(strawberry-z-model-1),4(adm),20(dialout),24(cdrom),27(sudo),29(audio),44(video),46(plugdev),60(games),100(users),102(netdev),986(gpio),988(i2c),989(spi),992(render),996(input)
+UNAME=Linux RakMiner-A 6.18.33+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.18.33-1+rpt1 (2026-06-01) aarch64 GNU/Linux
+FINISH_UTC=Mon Jun 29 23:46:44 UTC 2026
+capture_result.env 27 bytes
+payload_build.log 462 bytes
+pcap_file_stat.txt 37 bytes
+privileged_tcpdump_udp1680.txt 446 bytes
+privileged_udp1680_capture_command.txt 317 bytes
+retry_environment.txt 611 bytes
+setcap_attempt.txt 325 bytes
+tx_command.log 889 bytes
+zk_lora_payload_source.log 1281 bytes
+zk_lora_tx_payload.bin 240 bytes

@@ -1,5 +1,5 @@
 # ZYMATICA: Word-Boundary Boosting (WBB)
-*IP Class 17 | Apache License 2.0*
+*IP Class 17 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

@@ -26,7 +26,12 @@ impl AgentDoctor {
         checks.push(DiagnosticCheck {
             name: "Git Executable".to_string(),
             passed: git_ok,
-            details: if git_ok { "Git CLI found on PATH" } else { "Git CLI missing" }.to_string(),
+            details: if git_ok {
+                "Git CLI found on PATH"
+            } else {
+                "Git CLI missing"
+            }
+            .to_string(),
         });
 
         // Check 2: Cargo / Rust Compiler
@@ -34,7 +39,12 @@ impl AgentDoctor {
         checks.push(DiagnosticCheck {
             name: "Rust Compiler (rustc)".to_string(),
             passed: rustc_ok,
-            details: if rustc_ok { "Rust toolchain active" } else { "rustc not found" }.to_string(),
+            details: if rustc_ok {
+                "Rust toolchain active"
+            } else {
+                "rustc not found"
+            }
+            .to_string(),
         });
 
         // Check 3: Workspace Directory
@@ -42,7 +52,12 @@ impl AgentDoctor {
         checks.push(DiagnosticCheck {
             name: "Zymatica Workspace Root".to_string(),
             passed: ws_ok,
-            details: if ws_ok { "Valid Cargo workspace root" } else { "Invalid workspace" }.to_string(),
+            details: if ws_ok {
+                "Valid Cargo workspace root"
+            } else {
+                "Invalid workspace"
+            }
+            .to_string(),
         });
 
         let overall = checks.iter().all(|c| c.passed);

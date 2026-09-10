@@ -1,0 +1,1 @@
+artifacts/milestone1/hardware_capture/node-a-tx/interactive_privileged_retry/zk_lora_payload.bin

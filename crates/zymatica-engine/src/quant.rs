@@ -1263,8 +1263,9 @@ fn read_f32_scales(storage: &[u8], offset: usize, rows: usize) -> Result<Vec<f32
         );
     }
     let mut scales = Vec::with_capacity(rows);
-    for chunk in storage[offset..end].chunks_exact(4) {
-        scales.push(f32::from_le_bytes([chunk[0], chunk[1], chunk[2], chunk[3]]));
+    let (chunks, _) = storage[offset..end].as_chunks::<4>();
+    for chunk in chunks {
+        scales.push(f32::from_le_bytes(*chunk));
     }
     Ok(scales)
 }
@@ -2809,11 +2810,11 @@ impl RowQ1_58Matrix {
         assert_eq!(self.cols, x.len());
         assert_eq!(self.rows, out.len());
         let packed_cols = self.cols.div_ceil(4);
-        for row_idx in 0..self.rows {
+        for (row_idx, out_cell) in out.iter_mut().enumerate() {
             let scale = self.scales[row_idx];
             let start = row_idx * packed_cols;
             let row_packed = &self.packed[start..start + packed_cols];
-            out[row_idx] = q1_58_dot_f32_scaled(row_packed, x, scale, self.cols);
+            *out_cell = q1_58_dot_f32_scaled(row_packed, x, scale, self.cols);
         }
     }
 

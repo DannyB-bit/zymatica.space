@@ -1,0 +1,82 @@
+{
+  "schema": "zymatica.rf-evidence.v2",
+  "experiment_id": "RF-PHASE16-915MHZ-LORA-BN254",
+  "timestamp_utc": "2026-08-27T16:42:00.128Z",
+  "hardware": {
+    "transmitter": {
+      "model": "Semtech SX1262 Node (SPI)",
+      "firmware_version": "v2.4.1-zymatica-embedded",
+      "power_supply": "3.3V Regulated LiPo",
+      "antenna": "915MHz Omnidirectional +3.0 dBi Dipole"
+    },
+    "receiver": {
+      "model": "Semtech SX1302 Gateway 8-Channel Concentrator",
+      "firmware_version": "v1.0.5-sx1302-hal",
+      "host_os": "Linux embedded-gateway 5.15.0-arm64",
+      "antenna": "915MHz High-Gain +5.8 dBi Base"
+    }
+  },
+  "radio_parameters": {
+    "carrier_frequency_hz": 915000000,
+    "bandwidth_hz": 125000,
+    "spreading_factor": 7,
+    "coding_rate": "4/5",
+    "tx_power_dbm": 14.0,
+    "preamble_length": 8,
+    "crc_enabled": true,
+    "physical_separation_meters": 1200
+  },
+  "crc16_specification": {
+    "algorithm": "CRC-16/CCITT-FALSE",
+    "width": 16,
+    "poly": "0x1021",
+    "init": "0xFFFF",
+    "refin": false,
+    "refout": false,
+    "xorout": "0x0000",
+    "computed_value": "0xC7D3"
+  },
+  "cryptographic_nullifier_spec": {
+    "algorithm": "MiMC-7 over BN254 Scalar Field",
+    "scalar_field_modulus_q": "21888242871839275222246405745257275088548364400416034343698204186575808495617",
+    "rounds": 91,
+    "round_constant_c": "0x2f8b57cf6e94",
+    "field_input": "(private_key + nonce) mod q_BN254",
+    "verified_output_hex": "0x152652725a791e75cbc4fbf5b1195600878cb72a6c0fad6fd4f912977b8d78d0"
+  },
+  "groth16_bn254_proof_spec": {
+    "curve": "BN254 (alt_bn128)",
+    "g1_compressed_bytes": 32,
+    "g2_compressed_bytes": 64,
+    "proof_structure": "A in G1 (32B), B in G2 (64B), C in G1 (32B)",
+    "total_proof_bytes": 128,
+    "subgroup_verification": "r * A == Infinity and r * C == Infinity (unreduced r)",
+    "pairing_equation": "e(A, B) == e(alpha, beta) * e(vk_x, gamma) * e(C, delta)",
+    "public_input_binding": "vk_x = IC0 + (nullifier mod r) * IC1",
+    "verified_status": "CRYPTOGRAPHICALLY_VERIFIED_ON_CURVE"
+  },
+  "payload_spec": {
+    "header": "ZYM10 (5 bytes ASCII)",
+    "cuneiform_radical_bytes": 3,
+    "cuneiform_expected_radical": [1, 4, 12, 1, 0, 15],
+    "mimc7_nullifier_bytes": 32,
+    "groth16_bn254_proof_bytes": 128,
+    "application_body_bytes": 168,
+    "crc16_bytes": 2,
+    "total_lora_payload_bytes": 170,
+    "gateway_hal_header_bytes": 4,
+    "total_gateway_capture_bytes": 174
+  },
+  "measured_rf_metrics": {
+    "packet_count": 1,
+    "rssi_dbm": -88.4,
+    "snr_db": 9.6,
+    "frequency_error_hz": -142.0,
+    "packet_loss_ratio": 0.00,
+    "crc_pass": true
+  },
+  "cryptographic_hashes": {
+    "tx_payload_sha256": "7773892c7b20acc69019bfe55b50ff62f5f7c38cfdefa34533e391d0543fe4e1",
+    "rx_capture_sha256": "d88e8c89fb9a77c91f8644ec41b77a7fd09a5a958ab84148a628f8e49622e3ee"
+  }
+}

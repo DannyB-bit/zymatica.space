@@ -25,6 +25,6 @@ int main() {
     std::cout << "[2] Total semantic bits: " << total_semantic_bits << "\n";
     std::cout << "[3] Space savings: " << savings << "%\n";
 
-    std::cout << "\n[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.\n";
+    std::cout << "\n[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.\n";
     return 0;
 }

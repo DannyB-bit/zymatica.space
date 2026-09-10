@@ -1,0 +1,25 @@
+SUDO_MODE=sudo
+B_PHASE1A_STOCK_HAL_RX_9039_SF9 start
+UTC=2026-06-30T00:42:38Z
+RX_WORKDIR=/home/strawberry-z-model-1/sx1302_hal/libloragw
+RX_TOOL=/home/strawberry-z-model-1/sx1302_hal/libloragw/test_loragw_hal_rx
+RESET_WRAPPER=/home/strawberry-z-model-1/sx1302_hal/libloragw/reset_lgw.sh
+B_PHASE1D_SELECTED_RESET_VARIANT=C
+B_PHASE1D_SELECTED_RESET_DESCRIPTION=GPIO25 low/high/low + GPIO22 high only
+RX_RF_FREQUENCY_MHZ=903.9
+RX_RF_SPREADING_FACTOR=SF9
+RX_RF_BANDWIDTH_KHZ=125
+RX_RF_CRC=ON
+RX_RF_HEADER_MODE=EXPLICIT
+RX_RF_BUFFER_SIZE=255
+RX_RF_TIMEOUT_SECONDS=130
+STOP_SERVICE=chirpstack-concentratord
+STOP_SERVICE=packet-forwarder
+STOP_SERVICE=lora_pkt_fwd
+STOP_SERVICE=station
+STOP_SERVICE=helium-miner
+KILL_STALE_PATTERN=test_loragw_hal_rx
+KILL_STALE_PATTERN=test_loragw_hal_tx
+CURRENT_DIR=/home/strawberry-z-model-1/sx1302_hal/libloragw
+RUN_RESET_WRAPPER=/home/strawberry-z-model-1/sx1302_hal/libloragw/reset_lgw.sh
+Usage: /home/strawberry-z-model-1/sx1302_hal/libloragw/reset_lgw.sh {start|stop}

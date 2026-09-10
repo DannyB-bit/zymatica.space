@@ -1,0 +1,104 @@
+{
+  "timestamp": 1788105893.2042463,
+  "program_id": "BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M",
+  "treasury_wallet": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS",
+  "protocol_fee_lamports": 150000,
+  "turns": [
+    {
+      "turn": 1,
+      "sender": "Agent A (Qwen-Reasoning)",
+      "receiver": "Agent B (DeepSeek-Actuator)",
+      "raw_thought": "Hypothesis: Quantum state coherence confirmed in 6D manifold knot #42. Requesting immediate autonomous antenna beamforming realignment at azimuth 128.4\u00b0.",
+      "coords": [
+        3,
+        42,
+        7,
+        200,
+        240,
+        15
+      ],
+      "ota_packet_bytes": 170,
+      "crc16": "0xC0DB",
+      "zk_nullifier": "2e6907b94c86ce769989beb7e42407a2c0370f8623fd0f32ef140953201a8be7",
+      "solana_tx": "3h2KtWVwP13iPDJcMYJ6P5n8dKReWd9FjeeDux3K89jcY2SM66YxtKv3BRpTcB5fHuMijwTxVTGud6DkR8RpBzxt",
+      "fee_lamports": 150000,
+      "treasury": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS"
+    },
+    {
+      "turn": 2,
+      "sender": "Agent B (DeepSeek-Actuator)",
+      "receiver": "Agent A (Qwen-Reasoning)",
+      "raw_thought": "Action Executed: Beamforming alignment complete at azimuth 128.4\u00b0. Executing 8-step robotic telemetry scanning sequence.",
+      "trajectory_points": [
+        [
+          4,
+          0,
+          0,
+          255,
+          200,
+          16
+        ],
+        [
+          4,
+          16,
+          32,
+          255,
+          205,
+          16
+        ],
+        [
+          4,
+          32,
+          64,
+          255,
+          210,
+          16
+        ],
+        [
+          4,
+          48,
+          96,
+          255,
+          215,
+          16
+        ],
+        [
+          4,
+          64,
+          128,
+          255,
+          220,
+          16
+        ],
+        [
+          4,
+          80,
+          160,
+          255,
+          225,
+          16
+        ],
+        [
+          4,
+          96,
+          192,
+          255,
+          230,
+          16
+        ],
+        [
+          4,
+          112,
+          224,
+          255,
+          235,
+          16
+        ]
+      ],
+      "merkle_root": "7e1e41b1f3958727e658fc3cce739dba44d4e1c2ecd879eb3c5abe07eac69573",
+      "solana_tx": "GefMpndmRNTxdsnMg1337mBwMwoBNTw9uWWrEx722kRoPYBrpeWSxzT1TLiV4eHiyDxZishyuosTs1pSgnxSHzF",
+      "fee_lamports": 1200000,
+      "treasury": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS"
+    }
+  ]
+}

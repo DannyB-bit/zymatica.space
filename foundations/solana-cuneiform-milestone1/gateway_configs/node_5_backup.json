@@ -1,0 +1,29 @@
+{
+    "node_id": "cuneiform-node-05",
+    "description": "Zymatica Roaming Backup Relay Node",
+    "location": {
+        "name": "Mobile Roaming Field Relay",
+        "latitude": 0.0,
+        "longitude": 0.0,
+        "elevation_meters": 0.0
+    },
+    "power_profile": {
+        "power_source": "INTERNAL_BATTERY",
+        "battery_capacity_mah": 5000,
+        "solar_panel_watts": 0.0,
+        "battery_voltage_critical": 3.4,
+        "low_power_threshold_percent": 15.0,
+        "active_duty_cycle": 0.2
+    },
+    "lora_parameters": {
+        "frequency_mhz": 915.0,
+        "spreading_factor": 7,
+        "bandwidth_khz": 125.0,
+        "coding_rate": "4/5",
+        "tx_power_dbm": 14
+    },
+    "solana_pay": {
+        "recipient_address": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS",
+        "routing_fee_usdc": 0.015
+    }
+}

@@ -1,5 +1,7 @@
 // Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+// Copyright © 2026 Zymatica
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
 const std = @import("std");
 
 pub fn process_audio_buffer(input: []const f32, output: []f32) void {

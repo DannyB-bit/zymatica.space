@@ -41,7 +41,10 @@ impl SubagentOrchestrator {
             status: "RUNNING".to_string(),
         };
 
-        self.active_tasks.lock().unwrap().insert(subagent_id.to_string(), task);
+        self.active_tasks
+            .lock()
+            .unwrap()
+            .insert(subagent_id.to_string(), task);
 
         let sub_id = subagent_id.to_string();
         let instr = instruction.to_string();
@@ -76,7 +79,12 @@ impl SubagentOrchestrator {
     }
 
     pub fn list_active_tasks(&self) -> Vec<SubagentTask> {
-        self.active_tasks.lock().unwrap().values().cloned().collect()
+        self.active_tasks
+            .lock()
+            .unwrap()
+            .values()
+            .cloned()
+            .collect()
     }
 }
 
@@ -87,7 +95,11 @@ pub struct SubAgentToolAdapter {
 }
 
 impl SubAgentToolAdapter {
-    pub fn new(orchestrator: Arc<SubagentOrchestrator>, name: impl Into<String>, description: impl Into<String>) -> Self {
+    pub fn new(
+        orchestrator: Arc<SubagentOrchestrator>,
+        name: impl Into<String>,
+        description: impl Into<String>,
+    ) -> Self {
         Self {
             orchestrator,
             subagent_name: name.into(),
@@ -112,14 +124,19 @@ impl SubAgentToolAdapter {
         }
     }
 
-    pub fn invoke_as_tool(&self, parent_task_id: &str, args: &serde_json::Value) -> anyhow::Result<SubagentResult> {
+    pub fn invoke_as_tool(
+        &self,
+        parent_task_id: &str,
+        args: &serde_json::Value,
+    ) -> anyhow::Result<SubagentResult> {
         let instruction = args
             .get("instruction")
             .and_then(|v| v.as_str())
             .ok_or_else(|| anyhow::anyhow!("Missing 'instruction' argument"))?;
 
         let task_id = format!("{}-{}", self.subagent_name, uuid_short());
-        self.orchestrator.spawn_subagent(&task_id, parent_task_id, instruction);
+        self.orchestrator
+            .spawn_subagent(&task_id, parent_task_id, instruction);
 
         for _ in 0..100 {
             if let Some(res) = self.orchestrator.get_subagent_result(&task_id) {
@@ -134,7 +151,10 @@ impl SubAgentToolAdapter {
 
 fn uuid_short() -> String {
     use std::time::{SystemTime, UNIX_EPOCH};
-    let nanos = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.subsec_nanos()).unwrap_or(0);
+    let nanos = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|d| d.subsec_nanos())
+        .unwrap_or(0);
     format!("{:x}", nanos)
 }
 
@@ -166,7 +186,10 @@ mod tests {
         let spec = adapter.as_tool_spec();
         assert_eq!(spec.name, "subagent_auditor");
 
-        let res = adapter.invoke_as_tool("parent-100", &serde_json::json!({"instruction": "Audit memory"}));
+        let res = adapter.invoke_as_tool(
+            "parent-100",
+            &serde_json::json!({"instruction": "Audit memory"}),
+        );
         assert!(res.is_ok());
         assert!(res.unwrap().output.contains("Audit memory"));
     }

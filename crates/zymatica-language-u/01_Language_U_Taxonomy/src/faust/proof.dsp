@@ -1,9 +1,9 @@
 // Watermark: ip zymatica.space | astronautshe.com
 // Copyright (c) 2026 Zymatica. All rights reserved.
 // ZYMATICA | Language-U Taxonomy Proof (Faust Edition)
-// [VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.
+// [VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.
 
-declare verification "[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.";
+declare verification "[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.";
 import("stdfaust.lib");
 
 // Language-U Taxonomy sound DSP variables

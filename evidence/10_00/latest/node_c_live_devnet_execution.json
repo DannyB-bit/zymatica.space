@@ -1,0 +1,12 @@
+{
+  "wallet_address": "Hg33B9fFkqCZ7bAwrDEBuAxL2KaPU8zL7PABT882Hqgv",
+  "funding_tx": "3XSkuwzTwociCgWFZv7CrYYWK3tHZf11Xw9MkRVWw1faWXWHKovYGArsaUmMddS5YE8wpykxMVvTFmhm5EH5gSXb",
+  "fee_tx": "53aLJetNMBjDm1nxKzqQ5DrcnceMzqkhkn1kvJP2Fkb2BefzRaj5ByNYsdEWRxhiCz59M1iGzPGgKyTKEsWh7uKL",
+  "recipient_treasury": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS",
+  "fee_lamports": 150000,
+  "final_balance_sol": 0.199845,
+  "explorer_links": [
+    "https://explorer.solana.com/tx/3XSkuwzTwociCgWFZv7CrYYWK3tHZf11Xw9MkRVWw1faWXWHKovYGArsaUmMddS5YE8wpykxMVvTFmhm5EH5gSXb?cluster=devnet",
+    "https://explorer.solana.com/tx/53aLJetNMBjDm1nxKzqQ5DrcnceMzqkhkn1kvJP2Fkb2BefzRaj5ByNYsdEWRxhiCz59M1iGzPGgKyTKEsWh7uKL?cluster=devnet"
+  ]
+}

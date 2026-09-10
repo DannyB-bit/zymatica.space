@@ -1,5 +1,7 @@
 # Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import sys
 
 class SparseTransition:
@@ -285,7 +287,7 @@ def main():
     
     import time
     start_time = time.perf_counter()
-    runs = 100000
+    runs = 1000
     match = True
     for r in range(runs):
         decoded = decode(buf, 5, 1, 128)

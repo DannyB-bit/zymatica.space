@@ -9,14 +9,14 @@ use zk_lorawan_groth16::circuit::{
 const MIMC_ROUNDS: usize = 220;
 // 8 public inputs + 1 implicit "one" variable = 9
 const EXPECTED_PUBLIC_INPUTS_WITH_ONE: usize = 9;
-// 4 original hash constraints + deposit_commitment hash + firmware_hash equality = 6 sections
-// Each hash section: (MIMC_ROUNDS * 2) + 2 constraints
-// Plus 1 constraint for firmware_hash equality
-const EXPECTED_CONSTRAINTS: usize = 5 * ((MIMC_ROUNDS * 2) + 2) + 1;
+// 6 hash constraint sections (identity, nullifier, attestation, ciphertext, gateway binding, deposit)
+// + firmware_hash equality = 2652 constraints
+const EXPECTED_CONSTRAINTS: usize = 2652;
 
 #[derive(Clone)]
 struct CircuitFixture {
     private_key: Fr,
+    nonce: Fr,
     decryption_key: Fr,
     coordinate_val: Fr,
     firmware_hash: Fr,
@@ -35,6 +35,7 @@ struct CircuitFixture {
 fn fixture() -> CircuitFixture {
     let constants = generate_mimc_constants(MIMC_ROUNDS);
     let private_key = Fr::from(1_337u64);
+    let nonce = Fr::from(9_999u64);
     let decryption_key = Fr::from(7_331u64);
     let coordinate_val = Fr::from(42u64);
     let firmware_hash = Fr::from(2_026u64);
@@ -47,12 +48,13 @@ fn fixture() -> CircuitFixture {
 
     CircuitFixture {
         identity_hash,
-        nullifier_hash: mimc_hash(private_key, Some(Fr::from(9_999u64)), &constants),
+        nullifier_hash: mimc_hash(private_key, Some(nonce), &constants),
         attestation_hash: mimc_hash(private_key, Some(firmware_hash), &constants),
         ciphertext_hash: mimc_hash(decryption_key, Some(coordinate_val), &constants),
         deposit_commitment,
         firmware_hash_public: firmware_hash,
         private_key,
+        nonce,
         decryption_key,
         coordinate_val,
         firmware_hash,
@@ -66,6 +68,7 @@ fn fixture() -> CircuitFixture {
 fn circuit_from(f: &CircuitFixture) -> ZKLoRaCircuit<Fr> {
     ZKLoRaCircuit {
         private_key: Some(f.private_key),
+        nonce: Some(f.nonce),
         decryption_key: Some(f.decryption_key),
         coordinate_val: Some(f.coordinate_val),
         firmware_hash_witness: Some(f.firmware_hash),
@@ -134,6 +137,7 @@ fn each_public_input_is_bound_by_constraints() {
 #[test]
 fn witness_mutations_are_detected_by_public_bindings() {
     assert_unsatisfied_after(|f| f.private_key += Fr::from(1u64));
+    assert_unsatisfied_after(|f| f.nonce += Fr::from(1u64));
     assert_unsatisfied_after(|f| f.decryption_key += Fr::from(1u64));
     assert_unsatisfied_after(|f| f.coordinate_val += Fr::from(1u64));
     assert_unsatisfied_after(|f| f.firmware_hash += Fr::from(1u64));
@@ -150,6 +154,7 @@ fn groth16_verifier_rejects_mutated_public_inputs() {
     let proof = generate_proof(
         &pk,
         f.private_key,
+        f.nonce,
         f.decryption_key,
         f.coordinate_val,
         f.firmware_hash,
@@ -270,6 +275,7 @@ fn unsatisfied_assignment_cannot_verify_against_its_bad_public_inputs() {
         generate_proof(
             &pk,
             f.private_key,
+            f.nonce,
             f.decryption_key,
             f.coordinate_val,
             f.firmware_hash,

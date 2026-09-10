@@ -40,7 +40,10 @@ impl AgentEvaluator {
             return 1.0;
         }
 
-        let matched = query_words.iter().filter(|w| resp_words.contains(*w)).count();
+        let matched = query_words
+            .iter()
+            .filter(|w| resp_words.contains(*w))
+            .count();
         matched as f32 / query_words.len() as f32
     }
 
@@ -60,7 +63,11 @@ impl AgentEvaluator {
 fn extract_significant_words(text: &str) -> HashSet<String> {
     let mut words = HashSet::new();
     for token in text.split_whitespace() {
-        let clean: String = token.chars().filter(|c| c.is_alphanumeric()).collect::<String>().to_lowercase();
+        let clean: String = token
+            .chars()
+            .filter(|c| c.is_alphanumeric())
+            .collect::<String>()
+            .to_lowercase();
         if clean.len() > 3 {
             words.insert(clean);
         }

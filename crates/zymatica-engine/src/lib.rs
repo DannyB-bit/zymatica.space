@@ -1,8 +1,4 @@
-pub mod holomorphic_speculative_engine;
-pub mod hyper_manifold_kv_folding;
-pub mod neural_swarm_hypergraph;
-pub mod unified_frontier_codec;
-﻿pub mod agent_acp;
+pub mod agent_acp;
 pub mod agent_claw_migration;
 pub mod agent_compression;
 pub mod agent_consensus;
@@ -32,9 +28,9 @@ pub mod agent_skin;
 pub mod agent_speculative_tools;
 pub mod agent_subagent;
 pub mod agent_swe_runner;
-pub mod agent_tools;
 pub mod agent_tool_decoder;
 pub mod agent_tool_router;
+pub mod agent_tools;
 pub mod agent_voice;
 pub mod agent_workflow;
 pub mod capsule;
@@ -42,18 +38,24 @@ pub mod cascade;
 pub mod concept_constraints;
 pub mod concept_rag;
 pub mod cuneiform;
+pub mod cuneiform_8d_octonion_engine;
 pub mod ecosystem;
 pub mod edge_policy;
+pub mod epigenetic_manifold_crystallizer;
 pub mod field_harness;
 pub mod frontier;
 pub mod gemma_hf;
 pub mod gguf;
 #[cfg(feature = "gpu")]
 pub mod gpu;
+pub mod holomorphic_speculative_engine;
+pub mod hyper_manifold_kv_folding;
 pub mod kernels;
 pub mod mcts;
 pub mod mmap_utils;
 pub mod model;
+pub mod neural_swarm_hypergraph;
+pub mod no_std_embedded_8d;
 pub mod ops;
 pub mod paged_kv;
 pub mod production_harness;
@@ -62,6 +64,7 @@ pub mod qwen35;
 pub mod sampling;
 pub mod scheduler;
 pub mod schema_mask;
+pub mod semantic_parity;
 #[cfg(all(feature = "server", not(target_family = "wasm")))]
 pub mod server;
 pub mod speculative;
@@ -70,6 +73,7 @@ pub mod transport;
 pub mod transport_p2p;
 #[cfg(not(target_family = "wasm"))]
 pub mod transport_xdp;
+pub mod unified_frontier_codec;
 pub mod wasm_edge;
 pub mod watermark;
 pub mod weights;
@@ -78,8 +82,13 @@ pub use model::{
     AnyKvCache, GemmaConfig, NativeGemma, QuantMode, QuantizedGemma, QuantizedGemmaQ8,
 };
 
+pub mod dcm_ace_guardrail;
+pub mod dna_v2_entropy;
 pub mod flash_attention;
 pub mod hyper_cuneiform_bridge;
 pub mod jit_fusion;
 pub mod morphogenesis;
+pub mod recursive_nullifier_batch;
+pub mod z_mcts;
+pub mod z_wormhole;
 pub mod zk_barrier;

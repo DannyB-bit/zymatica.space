@@ -1,0 +1,5 @@
+COMMAND: journalctl -u sx1302_hal --since 30 minutes ago --no-pager
+START_UTC: Mon Jun 29 23:15:17 UTC 2026
+-- No entries --
+END_UTC: Mon Jun 29 23:15:17 UTC 2026
+EXIT_STATUS: 0

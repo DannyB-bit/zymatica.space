@@ -58,7 +58,8 @@ def main():
         
         if process.returncode == 0:
             print("\n[+] SUCCESS! Rust tch-rs binary built successfully in release mode.")
-            print("[*] Output binary located at: os.path.join(os.path.dirname(os.path.abspath(__file__)), "run_gemma4_cuda_hybrid.exe")")
+            bin_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "run_gemma4_cuda_hybrid.exe")
+            print(f"[*] Output binary located at: {bin_path}")
         else:
             print(f"\n[-] Error: cargo build failed with exit code: {process.returncode}")
             sys.exit(process.returncode)

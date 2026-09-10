@@ -45,6 +45,12 @@ pub struct GatewayEngine {
     event_queue: Arc<Mutex<Vec<GatewayEvent>>>,
 }
 
+impl Default for GatewayEngine {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl GatewayEngine {
     pub fn new() -> Self {
         Self {
@@ -54,7 +60,8 @@ impl GatewayEngine {
     }
 
     pub fn register_adapter(&mut self, adapter: Box<dyn GatewayAdapter>) {
-        self.adapters.insert(adapter.platform_name().to_string(), adapter);
+        self.adapters
+            .insert(adapter.platform_name().to_string(), adapter);
     }
 
     pub fn push_event(&self, event: GatewayEvent) {

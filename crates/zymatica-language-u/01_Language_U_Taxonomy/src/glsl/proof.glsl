@@ -1,7 +1,7 @@
 // Watermark: ip zymatica.space | astronautshe.com
 // Copyright (c) 2026 Zymatica. All rights reserved.
 // ZYMATICA | Language-U Taxonomy Proof (GLSL Edition)
-// [VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.
+// [VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.
 
 #version 450
 layout(local_size_x = 256) in;

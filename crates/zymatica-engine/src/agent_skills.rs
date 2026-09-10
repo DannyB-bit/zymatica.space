@@ -24,6 +24,12 @@ pub struct SkillStore {
     skills: HashMap<String, Skill>,
 }
 
+impl Default for SkillStore {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl SkillStore {
     pub fn new() -> Self {
         Self {
@@ -42,11 +48,9 @@ impl SkillStore {
             let path = entry.path();
             if path.is_dir() {
                 let skill_md = path.join("SKILL.md");
-                if skill_md.exists() {
-                    if let Ok(skill) = self.parse_skill_file(&skill_md) {
-                        self.skills.insert(skill.metadata.name.clone(), skill);
-                        count += 1;
-                    }
+                if let Ok(skill) = self.parse_skill_file(&skill_md) {
+                    self.skills.insert(skill.metadata.name.clone(), skill);
+                    count += 1;
                 }
             }
         }

@@ -1,0 +1,46 @@
+{
+  "protocol": "7-PAUP Final v7 \u2014 ip zymatica.space",
+  "chain": "L0:Python -> L1:LU4 -> L4:DCT -> L5:Eigen -> L6:Grad -> L7:Qualia",
+  "total_bytes": 1792,
+  "payload_bytes": 1072,
+  "lu4_bytes": 454,
+  "weight_bytes": 586,
+  "layers": [
+    {
+      "name": "model.layers.0.self_attn.q_proj.weight",
+      "level": 4,
+      "bytes": 76
+    },
+    {
+      "name": "model.layers.0.self_attn.k_proj.weight",
+      "level": 4,
+      "bytes": 76
+    },
+    {
+      "name": "model.layers.0.self_attn.v_proj.weight",
+      "level": 4,
+      "bytes": 76
+    },
+    {
+      "name": "model.layers.0.self_attn.o_proj.weight",
+      "level": 4,
+      "bytes": 76
+    },
+    {
+      "name": "model.layers.0.mlp.gate_proj.weight",
+      "level": 4,
+      "bytes": 94
+    },
+    {
+      "name": "model.layers.0.mlp.up_proj.weight",
+      "level": 4,
+      "bytes": 94
+    },
+    {
+      "name": "model.layers.0.mlp.down_proj.weight",
+      "level": 4,
+      "bytes": 94
+    }
+  ],
+  "sha256": "cede7aad855dbc91ac7f19e15554423bf898919b265fedd94a79a447d8d0b807"
+}

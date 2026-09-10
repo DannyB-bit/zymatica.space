@@ -1,5 +1,7 @@
 // Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+// Copyright © 2026 Zymatica
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
 
 fn simulate_ferrari_ufo_step(step: i32, b: i32, rank: i32) {
     println!("\n--- CYCLE {} | Ferrari-UFO Hybrid Quantum Engine ---", step);

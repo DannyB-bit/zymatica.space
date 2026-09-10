@@ -1,0 +1,23 @@
+# B repeated TX retry summary
+
+Captured UTC: Tue Jun 30 00:44:11 UTC 2026
+
+B retry commands run:
+1. timeout 240 bash scripts/B_RX_ONE_FRAME_TEST.sh
+   Log: b_rx_one_frame_test_retry.log
+   Result: completed with timeout inside script; no payload match; no valid packet.
+   Important mismatch: script listens at 903.0 MHz / SF7, not requested A settings 903.9 MHz / SF9.
+
+2. timeout 240 bash scripts/B_PHASE1A_STOCK_HAL_RX_9039_SF9.sh
+   Log: b_stock_hal_rx_9039_sf9_retry.log
+   Result: failed before HAL RX due reset wrapper invocation bug.
+   Failure: reset_lgw.sh requires {start|stop}; script calls it without an argument.
+
+Prior corrected HAL RX in this same artifact directory:
+- Log: real_lora_rx_corrected.log
+- Ran at 903.9 MHz / SF9 / 125 kHz across A TX window.
+- Opened SPI and detected SX1302 chip 0x10.
+- Result: Nb valid packets received: 0 CRC OK (1).
+
+Conclusion:
+No B-side valid received packet was found. This evidence supports Pi/RAK SX1302 TX path on A and SX1302 RX/HAL bring-up on B, but end-to-end RF decode remains pending tuning.

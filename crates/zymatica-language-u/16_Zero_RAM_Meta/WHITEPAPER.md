@@ -1,5 +1,5 @@
 # ZYMATICA: Zero-RAM Meta (Process-level Execution)
-*IP Class 15 | Apache License 2.0*
+*IP Class 15 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

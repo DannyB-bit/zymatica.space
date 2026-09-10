@@ -15,4 +15,4 @@ IO.puts "======================================================================\
     IO.puts "[1] Total raw bits: #{total_raw_bits}"
     IO.puts "[2] Total semantic bits: #{total_semantic_bits}"
     IO.puts :io_lib.format("[3] Space savings: ~.2f%", [savings])
-IO.puts "\n[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit."
+IO.puts "\n[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified."

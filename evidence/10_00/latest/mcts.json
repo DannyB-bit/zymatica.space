@@ -1,0 +1,10 @@
+{
+  "schema": "zymatica.real-model-validation.v1",
+  "prompt_count": 32,
+  "success_fraction": 0.781,
+  "median_reference_logprob_improvement": 0.412,
+  "mean_reference_logprob_improvement": 0.458,
+  "evaluator": "real_lm_head_objective",
+  "search_depth": 4,
+  "simulations_per_step": 16
+}

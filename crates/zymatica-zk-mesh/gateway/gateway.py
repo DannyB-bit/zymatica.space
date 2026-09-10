@@ -1,5 +1,7 @@
 # Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica / TheAiCollective.art. Licensed under Apache 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 """
 ZK-LoRaWAN Gateway Software
 ==============================
@@ -214,8 +216,8 @@ class GatewayConfig:
     # Solana
     solana_rpc: str = "http://127.0.0.1:8899" # Default to local validator
     program_id: str = "4HRP2eV8qtYW54ozQmnGDjF7emwb8MvqFcF89UgSM6iC"
-    treasury_pubkey: str = "CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ" # Protocol treasury
-    gateway_pubkey: str = "BrqnKE7S8wY8etChZgUx8GGnYuvqdFoZhUAD7PTL5PV3"  # This gateway's wallet
+    treasury_pubkey: str = "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS" # Protocol treasury
+    gateway_pubkey: str = "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS"  # This gateway's wallet
     keypair_path: str = "~/.config/solana/id.json"
 
     # Batch settings

@@ -1,0 +1,1 @@
+timeout 540 sudo ./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 1

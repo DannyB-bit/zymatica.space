@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" width="100%" height="100%" style="background:#070B14;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,0.8);font-family:'Courier New',Consolas,monospace;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#0A1224"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#9945FF"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00FF88"/>
+      <stop offset="100%" stop-color="#00C7B7"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0E1B33" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#091020" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1000" height="580" rx="12" fill="url(#bgGrad)" stroke="#1E2C4A" stroke-width="1.5"/>
+
+  <!-- CRT Screen Scanlines / Grid Effect -->
+  <g opacity="0.06">
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00F0FF" stroke-width="0.8"/>
+    </pattern>
+    <rect width="1000" height="580" fill="url(#grid)"/>
+  </g>
+
+  <!-- Terminal Top Navigation Bar -->
+  <rect x="0" y="0" width="1000" height="42" fill="#0A1120" rx="12" stroke="#1E2C4A" stroke-width="1"/>
+  <rect x="0" y="24" width="1000" height="18" fill="#0A1120"/>
+  
+  <!-- Terminal Window Controls -->
+  <circle cx="24" cy="21" r="5.5" fill="#FF5F56"/>
+  <circle cx="42" cy="21" r="5.5" fill="#FFBD2E"/>
+  <circle cx="60" cy="21" r="5.5" fill="#27C93F"/>
+
+  <!-- Header Title & Telemetry -->
+  <text x="500" y="26" fill="#88A0C7" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="2">
+    ZYMATICA KERNEL OS // FORENSIC VANCE DRIVE MONITOR // CUNEIFORM-U 6D MANIFOLD
+  </text>
+  <text x="960" y="26" fill="#00FF88" font-size="11" font-weight="bold" text-anchor="end" filter="url(#glow)">
+    ● ONLINE (AVX-512)
+  </text>
+
+  <!-- Sub-Header Status Ribbon -->
+  <rect x="25" y="55" width="950" height="34" rx="6" fill="#0D1930" stroke="#1B315B" stroke-width="1"/>
+  <text x="40" y="77" fill="#00F0FF" font-size="11" font-weight="bold" filter="url(#glow)">
+    IP CLASS 02: 6-DIMENSIONAL SEMANTIC METRIC HYPERCUBE [D, S, O, M, d, P]
+  </text>
+  <text x="960" y="77" fill="#E2E8F0" font-size="11" text-anchor="end">
+    <tspan fill="#88A0C7">WIRE PROTOCOL:</tspan> <tspan fill="#9945FF" font-weight="bold">3-BYTE RADICAL PACKET</tspan> &nbsp;|&nbsp; <tspan fill="#88A0C7">SHANNON BYPASS:</tspan> <tspan fill="#00FF88" font-weight="bold">7.2x GAIN</tspan>
+  </text>
+
+  <!-- Left Main Panel: 6D Semantic Coordinate Eigenspace -->
+  <g transform="translate(25, 102)">
+    <rect width="465" height="340" rx="8" fill="url(#cardGrad)" stroke="#1B315B" stroke-width="1.2"/>
+    <rect x="0" y="0" width="465" height="30" rx="8" fill="#112344"/>
+    <rect x="0" y="16" width="465" height="14" fill="#112344"/>
+    <text x="18" y="20" fill="#00F0FF" font-size="11" font-weight="bold" letter-spacing="1">
+      ◆ 6D COORDINATE AXES (24-BIT EIGENSPACE)
+    </text>
+
+    <!-- 6D Hypercube Cube Wireframe Graphic (Isometric 6D projection) -->
+    <g transform="translate(232, 185)">
+      <!-- Outer Cube -->
+      <polygon points="-80,-45 0,-90 80,-45 0,0" fill="#00F0FF" fill-opacity="0.08" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <polygon points="-80,-45 0,0 0,90 -80,45" fill="#9945FF" fill-opacity="0.08" stroke="#9945FF" stroke-width="1.5"/>
+      <polygon points="80,-45 0,0 0,90 80,45" fill="#00FF88" fill-opacity="0.08" stroke="#00FF88" stroke-width="1.5"/>
+      
+      <!-- Inner Tesseract Cube -->
+      <polygon points="-40,-22 0,-45 40,-22 0,0" fill="#00F0FF" fill-opacity="0.2" stroke="#00F0FF" stroke-width="1.8" filter="url(#glow)"/>
+      <polygon points="-40,-22 0,0 0,45 -40,22" fill="#9945FF" fill-opacity="0.2" stroke="#9945FF" stroke-width="1.8"/>
+      <polygon points="40,-22 0,0 0,45 40,22" fill="#00FF88" fill-opacity="0.2" stroke="#00FF88" stroke-width="1.8"/>
+
+      <!-- Connecting Tesseract Hyper-Edges -->
+      <line x1="-80" y1="-45" x2="-40" y2="-22" stroke="#00F0FF" stroke-width="1.2" stroke-opacity="0.7"/>
+      <line x1="0" y1="-90" x2="0" y2="-45" stroke="#00F0FF" stroke-width="1.2" stroke-opacity="0.7"/>
+      <line x1="80" y1="-45" x2="40" y2="-22" stroke="#00F0FF" stroke-width="1.2" stroke-opacity="0.7"/>
+      <line x1="-80" y1="45" x2="-40" y2="22" stroke="#9945FF" stroke-width="1.2" stroke-opacity="0.7"/>
+      <line x1="0" y1="90" x2="0" y2="45" stroke="#9945FF" stroke-width="1.2" stroke-opacity="0.7"/>
+      <line x1="80" y1="45" x2="40" y2="22" stroke="#00FF88" stroke-width="1.2" stroke-opacity="0.7"/>
+
+      <!-- Central Pulsing Semantic Anchor -->
+      <circle cx="0" cy="0" r="6" fill="#FFFFFF" filter="url(#strongGlow)"/>
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="2,2"/>
+      
+      <!-- Coordinate Callout Trajectory Vector -->
+      <line x1="0" y1="0" x2="55" y2="-65" stroke="#FFBD2E" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <circle cx="55" cy="-65" r="3.5" fill="#FFBD2E" filter="url(#glow)"/>
+      <rect x="62" y="-78" width="135" height="24" rx="4" fill="#07101E" stroke="#FFBD2E" stroke-width="1"/>
+      <text x="68" y="-62" fill="#FFD700" font-size="9.5" font-weight="bold">COORD: [2, 2, 0, 2, 15, 0]</text>
+    </g>
+
+    <!-- Axis Labels List -->
+    <g transform="translate(18, 48)" font-size="10">
+      <text y="0" fill="#00F0FF" font-weight="bold">1. DOMAIN (D)</text>
+      <text y="14" fill="#88A0C7" font-size="8.5">Macro Category [0..15]</text>
+      
+      <text y="42" fill="#00F0FF" font-weight="bold">2. SUBDOMAIN (S)</text>
+      <text y="56" fill="#88A0C7" font-size="8.5">Micro Context [0..15]</text>
+
+      <text y="84" fill="#9945FF" font-weight="bold">3. OPERATION (O)</text>
+      <text y="98" fill="#88A0C7" font-size="8.5">State Transition [0..15]</text>
+
+      <text y="126" fill="#9945FF" font-weight="bold">4. MODALITY (M)</text>
+      <text y="140" fill="#88A0C7" font-size="8.5">Data Format [0..15]</text>
+
+      <text y="168" fill="#00FF88" font-weight="bold">5. DEPTH (d)</text>
+      <text y="182" fill="#88A0C7" font-size="8.5">Scale / Hierarchy [0..15]</text>
+
+      <text y="210" fill="#00FF88" font-weight="bold">6. POLARITY (P)</text>
+      <text y="224" fill="#88A0C7" font-size="8.5">Intent Vector [0..15]</text>
+    </g>
+
+    <!-- Bottom Status in Panel -->
+    <rect x="15" y="295" width="435" height="32" rx="4" fill="#07101E" stroke="#16294C" stroke-width="1"/>
+    <text x="25" y="315" fill="#88A0C7" font-size="9.5">
+      <tspan fill="#00F0FF">RCRA Resonance:</tspan> ||∇_coord - T_coord||² → 0 (Anti-Hallucination)
+    </text>
+  </g>
+
+  <!-- Right Top Panel: 3-Byte Radical Packing Scheme -->
+  <g transform="translate(510, 102)">
+    <rect width="465" height="195" rx="8" fill="url(#cardGrad)" stroke="#1B315B" stroke-width="1.2"/>
+    <rect x="0" y="0" width="465" height="30" rx="8" fill="#112344"/>
+    <rect x="0" y="16" width="465" height="14" fill="#112344"/>
+    <text x="18" y="20" fill="#00FF88" font-size="11" font-weight="bold" letter-spacing="1">
+      ◆ 3-BYTE RADICAL WIRE PACKING (24-BIT BITSTREAM)
+    </text>
+
+    <!-- Byte 1: Classifier Radical (R_C) -->
+    <g transform="translate(18, 42)">
+      <rect width="429" height="42" rx="5" fill="#091428" stroke="#00F0FF" stroke-width="1.2"/>
+      <rect x="0" y="0" width="130" height="42" rx="5" fill="#00F0FF" fill-opacity="0.25"/>
+      <text x="12" y="25" fill="#00F0FF" font-size="11" font-weight="bold">R_C (0x22)</text>
+      <text x="145" y="19" fill="#E2E8F0" font-size="9.5" font-weight="bold">Classifier Radical: (Domain &lt;&lt; 4) | Subdomain</text>
+      <text x="145" y="33" fill="#88A0C7" font-size="8.5">4-bit Domain [D: 0x2] &nbsp;+&nbsp; 4-bit Subdomain [S: 0x2] → 1 Byte</text>
+    </g>
+
+    <!-- Byte 2: Factor Radical (R_F) -->
+    <g transform="translate(18, 92)">
+      <rect width="429" height="42" rx="5" fill="#091428" stroke="#9945FF" stroke-width="1.2"/>
+      <rect x="0" y="0" width="130" height="42" rx="5" fill="#9945FF" fill-opacity="0.25"/>
+      <text x="12" y="25" fill="#9945FF" font-size="11" font-weight="bold">R_F (0x02)</text>
+      <text x="145" y="19" fill="#E2E8F0" font-size="9.5" font-weight="bold">Factor Radical: (Operation &lt;&lt; 4) | Modality</text>
+      <text x="145" y="33" fill="#88A0C7" font-size="8.5">4-bit Operation [O: 0x0] &nbsp;+&nbsp; 4-bit Modality [M: 0x2] → 1 Byte</text>
+    </g>
+
+    <!-- Byte 3: Active Radical (R_A) -->
+    <g transform="translate(18, 142)">
+      <rect width="429" height="42" rx="5" fill="#091428" stroke="#00FF88" stroke-width="1.2"/>
+      <rect x="0" y="0" width="130" height="42" rx="5" fill="#00FF88" fill-opacity="0.25"/>
+      <text x="12" y="25" fill="#00FF88" font-size="11" font-weight="bold">R_A (0xF0)</text>
+      <text x="145" y="19" fill="#E2E8F0" font-size="9.5" font-weight="bold">Active Radical: (Depth &lt;&lt; 4) | Polarity</text>
+      <text x="145" y="33" fill="#88A0C7" font-size="8.5">4-bit Depth [d: 0xF] &nbsp;+&nbsp; 4-bit Polarity [P: 0x0] → 1 Byte</text>
+    </g>
+  </g>
+
+  <!-- Right Bottom Panel: The Entropy Equation (Shannon Decomposition) -->
+  <g transform="translate(510, 310)">
+    <rect width="465" height="132" rx="8" fill="url(#cardGrad)" stroke="#1B315B" stroke-width="1.2"/>
+    <rect x="0" y="0" width="465" height="30" rx="8" fill="#112344"/>
+    <rect x="0" y="16" width="465" height="14" fill="#112344"/>
+    <text x="18" y="20" fill="#FFBD2E" font-size="11" font-weight="bold" letter-spacing="1">
+      ◆ THE ENTROPY EQUATION (LINDQVIST'S DISCOVERY)
+    </text>
+
+    <!-- Glowing Formula Box -->
+    <rect x="15" y="38" width="435" height="42" rx="5" fill="#050C1A" stroke="#FFBD2E" stroke-width="1"/>
+    <text x="232" y="64" fill="#FFD700" font-size="13" font-weight="bold" text-anchor="middle" filter="url(#glow)">
+      H(Text) = H(Meaning) + H(Syntax | Meaning)
+    </text>
+
+    <text x="20" y="98" fill="#E2E8F0" font-size="9.2">
+      • <tspan fill="#00F0FF" font-weight="bold">H(Meaning):</tspan> Pure geometric intent (3 Bytes over 915 MHz LoRa RF)
+    </text>
+    <text x="20" y="114" fill="#E2E8F0" font-size="9.2">
+      • <tspan fill="#9945FF" font-weight="bold">H(Syntax | Meaning):</tspan> Reconstructed locally at receiver from shared generative prior
+    </text>
+  </g>
+
+  <!-- Bottom Console Status Footer -->
+  <g transform="translate(25, 455)">
+    <rect width="950" height="105" rx="6" fill="#050A14" stroke="#16294C" stroke-width="1"/>
+    
+    <!-- Console Prompt & Text -->
+    <text x="20" y="24" fill="#00FF88" font-size="10.5" font-weight="bold">
+      [ZYMATICA@VANCE-TERMINAL ~]$ <tspan fill="#FFFFFF">cat &lt;&lt; 'LORE_FORENSIC_LOG'</tspan>
+    </text>
+    
+    <text x="20" y="44" fill="#A0AEC0" font-size="9.5" font-style="italic">
+      "My God," Lindqvist breathed. "Look at the entropy equation... Shannon was a genius, but in 1948 he set meaning aside.
+    </text>
+    <text x="20" y="60" fill="#A0AEC0" font-size="9.5" font-style="italic">
+      Language-U doesn't break Shannon's law—it respectfully steps through the door Shannon left open."
+    </text>
+    
+    <!-- Mini Telemetry Badges -->
+    <g transform="translate(20, 74)">
+      <rect width="170" height="20" rx="3" fill="#0B1C38" stroke="#00F0FF" stroke-width="0.8"/>
+      <text x="85" y="88" fill="#00F0FF" font-size="8.5" font-weight="bold" text-anchor="middle">COORD: [2,2,0,2,15,0]</text>
+      
+      <rect x="180" width="170" height="20" rx="3" fill="#170E30" stroke="#9945FF" stroke-width="0.8"/>
+      <text x="265" y="88" fill="#9945FF" font-size="8.5" font-weight="bold" text-anchor="middle">RADICALS: 0x22 0x02 0xF0</text>
+
+      <rect x="360" width="180" height="20" rx="3" fill="#092015" stroke="#00FF88" stroke-width="0.8"/>
+      <text x="450" y="88" fill="#00FF88" font-size="8.5" font-weight="bold" text-anchor="middle">HG-RLAC: 92.4% COMPRESSION</text>
+
+      <rect x="550" width="180" height="20" rx="3" fill="#201509" stroke="#FFBD2E" stroke-width="0.8"/>
+      <text x="640" y="88" fill="#FFBD2E" font-size="8.5" font-weight="bold" text-anchor="middle">AIRGAP: SX1302 LORA 915MHz</text>
+
+      <rect x="740" width="190" height="20" rx="3" fill="#1C0F22" stroke="#E53E3E" stroke-width="0.8"/>
+      <text x="835" y="88" fill="#FC8181" font-size="8.5" font-weight="bold" text-anchor="middle">ZERO-INTERNET TRANSMISSION</text>
+    </g>
+  </g>
+</svg>

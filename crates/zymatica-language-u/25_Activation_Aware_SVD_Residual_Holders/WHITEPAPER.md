@@ -1,5 +1,5 @@
 # Activation-Aware SVD Residual Holders
-*IP Class 24 | Apache License 2.0*
+*IP Class 24 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

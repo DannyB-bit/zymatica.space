@@ -27,5 +27,5 @@ func main() {
 	fmt.Printf("[2] Semantic decomposition bits: %d\n", totalSemanticBits)
 	fmt.Printf("[3] Net transmission space savings: %.2f%%\n", savings)
 
-	fmt.Println("\n[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.")
+	fmt.Println("\n[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.")
 }

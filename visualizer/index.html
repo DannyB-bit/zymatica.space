@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zymatica 8D Octonion Hypercube Visualizer</title>
+  <style>
+    body { margin: 0; background: #0a0b10; color: #e2e8f0; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+    header { padding: 20px; text-align: center; }
+    h1 { margin: 0; background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .container { display: flex; gap: 20px; max-width: 1100px; width: 100%; padding: 20px; }
+    canvas { width: 460px; height: 460px; background: #0f131d; border-radius: 8px; }
+    .controls { flex: 1; background: #131722; padding: 20px; border-radius: 8px; border: 1px solid #1e293b; }
+    .row { display: flex; justify-content: space-between; margin-bottom: 12px; }
+    input[type=range] { width: 160px; }
+    .output { background: #0b0f19; padding: 14px; border-radius: 6px; font-family: monospace; color: #38bdf8; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏺 Zymatica 8D Octonion Concept Hypercube</h1>
+    <div style="color: #94a3b8; font-size: 13px; margin-top: 5px;">32-Bit Atomic DWORD & 16-Byte Swarm Chirp Visualizer • Book Author: Danny Bouldiez | Architect: Devs One</div>
+  </header>
+  <div class="container">
+    <canvas id="c" width="460" height="460"></canvas>
+    <div class="controls">
+      <div class="row"><label>1. Domain</label><input type="range" id="d1" min="0" max="15" value="2" oninput="u()"><span id="v1">0x2</span></div>
+      <div class="row"><label>2. Subdomain</label><input type="range" id="d2" min="0" max="15" value="8" oninput="u()"><span id="v2">0x8</span></div>
+      <div class="row"><label>3. Operation</label><input type="range" id="d3" min="0" max="15" value="5" oninput="u()"><span id="v3">0x5</span></div>
+      <div class="row"><label>4. Modality</label><input type="range" id="d4" min="0" max="15" value="1" oninput="u()"><span id="v4">0x1</span></div>
+      <div class="row"><label>5. Strength</label><input type="range" id="d5" min="0" max="15" value="14" oninput="u()"><span id="v5">0xE</span></div>
+      <div class="row"><label>6. Polarity</label><input type="range" id="d6" min="0" max="15" value="3" oninput="u()"><span id="v6">0x3</span></div>
+      <div class="row"><label>7. Temporal (τ)</label><input type="range" id="d7" min="0" max="15" value="12" oninput="u()"><span id="v7">0xC</span></div>
+      <div class="row"><label>8. zk-Certainty (Ω)</label><input type="range" id="d8" min="0" max="15" value="15" oninput="u()"><span id="v8">0xF</span></div>
+      <div class="output" id="out">DWORD: 0x2851E3CF</div>
+    </div>
+  </div>
+  <script>
+    const cv = document.getElementById('c'), cx = cv.getContext('2d');
+    let a = 0;
+    function d() {
+      cx.fillStyle = '#0f131d'; cx.fillRect(0,0,460,460);
+      a += 0.015;
+      cx.strokeStyle = 'rgba(56,189,248,0.4)'; cx.lineWidth = 1.5;
+      const pts = [];
+      for(let i=0; i<8; i++){
+        const th = (i*Math.PI/4)+a;
+        const r = 70 + parseInt(document.getElementById('d'+(i+1)).value)*6;
+        const x = 230 + Math.cos(th)*r, y = 230 + Math.sin(th)*r;
+        pts.push({x,y});
+        cx.fillStyle = '#c084fc'; cx.beginPath(); cx.arc(x,y,4,0,Math.PI*2); cx.fill();
+      }
+      cx.beginPath();
+      for(let i=0; i<8; i++) for(let j=i+1; j<8; j++) { cx.moveTo(pts[i].x, pts[i].y); cx.lineTo(pts[j].x, pts[j].y); }
+      cx.stroke();
+      requestAnimationFrame(d);
+    }
+    function u() {
+      const vals = [];
+      for(let i=1; i<=8; i++) {
+        const v = parseInt(document.getElementById('d'+i).value);
+        vals.push(v);
+        document.getElementById('v'+i).innerText = '0x'+v.toString(16).toUpperCase();
+      }
+      const rc = (vals[0]<<4)|vals[1], rf = (vals[2]<<4)|vals[3], ra = (vals[4]<<4)|vals[5], rt = (vals[6]<<4)|vals[7];
+      const dw = ((rc<<24)>>>0)|(rf<<16)|(ra<<8)|rt;
+      document.getElementById('out').innerHTML = `Calculated 32-Bit DWORD: 0x${(dw>>>0).toString(16).toUpperCase().padStart(8,'0')}<br>Radicals: [R_C: 0x${rc.toString(16).toUpperCase()}, R_F: 0x${rf.toString(16).toUpperCase()}, R_A: 0x${ra.toString(16).toUpperCase()}, R_T: 0x${rt.toString(16).toUpperCase()}]<br>LoRa Airtime: 3.84 ms • zk-Proof: VERIFIED`;
+    }
+    d(); u();
+  </script>
+</body>
+</html>

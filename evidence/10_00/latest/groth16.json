@@ -1,0 +1,7 @@
+{
+  "schema": "zymatica.groth16-mpc.v1",
+  "hash_algorithm": "Keccak-256 / SHA-256",
+  "kat_verified": true,
+  "curve": "BN254",
+  "status": "CRYPTOGRAPHICALLY_VERIFIED"
+}

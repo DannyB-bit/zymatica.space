@@ -38,12 +38,17 @@ impl ConceptSemanticCache {
         }
 
         let query_concept = project_text_to_concept(query);
-        let query_words: std::collections::HashSet<String> = query.split_whitespace().map(|s| s.to_lowercase()).collect();
+        let query_words: std::collections::HashSet<String> =
+            query.split_whitespace().map(|s| s.to_lowercase()).collect();
         let mut min_dist = u32::MAX;
         let mut best_idx = None;
 
         for (idx, entry) in self.entries.iter().enumerate() {
-            let entry_words: std::collections::HashSet<String> = entry.query.split_whitespace().map(|s| s.to_lowercase()).collect();
+            let entry_words: std::collections::HashSet<String> = entry
+                .query
+                .split_whitespace()
+                .map(|s| s.to_lowercase())
+                .collect();
             let overlap = query_words.intersection(&entry_words).count();
             let raw_dist = query_concept.manhattan_distance(entry.concept);
             let dist = raw_dist.saturating_sub((overlap * 3) as u32);
@@ -78,7 +83,10 @@ mod tests {
     #[test]
     fn test_concept_semantic_cache_hit_and_miss() {
         let mut cache = ConceptSemanticCache::new(3);
-        cache.put("Check solar panel array voltage", "Solar array voltage is nominal at 48V.");
+        cache.put(
+            "Check solar panel array voltage",
+            "Solar array voltage is nominal at 48V.",
+        );
 
         // Semantic hit (concept projected text is close)
         let hit = cache.get("Check solar panel status");

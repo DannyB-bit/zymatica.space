@@ -1,0 +1,27 @@
+# Watermark: ip zymatica.space | astronautshe.com
+# Copyright (c) 2026 Zymatica. All rights reserved.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zymatica-voice-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/websocket-services: "zymatica-go-gateway-service"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "route"
+    nginx.ingress.kubernetes.io/session-cookie-hash: "sha1"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: voice.zymatica.space
+    http:
+      paths:
+      - path: /ws
+        pathType: Prefix
+        backend:
+          service:
+            name: zymatica-go-gateway-service
+            port:
+              number: 5000

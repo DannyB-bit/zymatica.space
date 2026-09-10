@@ -31,7 +31,7 @@
 
 | Milestone | Target | Deliverables |
 | :--- | :---: | :--- |
-| Solana Devnet Deployment | ✅ Achieved | Deployed Anchor program to Solana devnet (`2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy`) |
+| Solana Devnet Deployment | ✅ Achieved | Deployed Anchor program to Solana devnet (`BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M`) |
 | Solana Pay Micropayment Gateway | ✅ Code-Complete | Devnet demo: Solana Pay `encodeURL` + `findReference` pattern verified with native SOL mock transfers (USDC SPL integration pending mainnet) |
 | 3-Node Physical Mesh Testnet | Q3 2026 | RAK Wireless miners running `RakMiner-A1/B2` on 915 MHz LoRa, transmitting semantic coordinates over air |
 | On-Chain Attestation Registry | Q3 2026 | Every mesh-routed message writes a Merkle root to Solana with timestamp + node signature |
@@ -74,7 +74,7 @@
 | :--- | :---: | :--- |
 | PodJobs Consensus Swarm | 2028 | 12-agent consensus network using Google Gen AI SDK planners, context miners, and arbiters producing Merkle-root cryptographic attestations |
 | Semantic Intent Marketplace | 2028 | On-chain marketplace where agents publish and consume semantic intent coordinates — enabling machine-to-machine commerce |
-| Offline-First Sovereign AI | 2028 | Complete AI inference stack running on airgapped hardware with no cloud dependency — sovereign edge intelligence |
+| Offline-First Autonomous AI | 2028 | Complete AI inference stack running on airgapped hardware with no cloud dependency — autonomous edge intelligence |
 
 ---
 

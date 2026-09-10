@@ -1,0 +1,9 @@
+ZK-LoRa Milestone 1 Reference Benchmark
+Host: Linux-6.18.33+rpt-rpi-v8-aarch64-with-glibc2.41
+Python: 3.13.5
+Iterations: 250
+
+proof_generation_reference: min=0.086ms median=0.091ms mean=0.094ms max=0.185ms
+proof_verification_reference: min=0.015ms median=0.015ms mean=0.016ms max=0.038ms
+
+Scope: reference structural Groth16-style prototype, not production gnark/arkworks/halo2.

@@ -1,0 +1,68 @@
+2026-06-30T13:42:28Z LORA_CHIRP_RECOVERY_BEGIN role=node-a-tx spi=/dev/spidev0.0
+2026-06-30T13:42:28Z RECOVERY_LOG=/home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/secure_packet_rf/node-a-tx_20260630T134228Z/lora_chirp_recovery.log
+2026-06-30T13:42:28Z Stopping known gateway services so one process owns the concentrator
+2026-06-30T13:42:28Z RUN: sudo systemctl stop helium-gateway
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:28Z EXIT[1]: sudo systemctl stop helium-gateway
+2026-06-30T13:42:28Z RUN: sudo systemctl is-active helium-gateway
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:28Z EXIT[1]: sudo systemctl is-active helium-gateway
+2026-06-30T13:42:29Z RUN: sudo systemctl stop packet-forwarder
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:29Z EXIT[1]: sudo systemctl stop packet-forwarder
+2026-06-30T13:42:29Z RUN: sudo systemctl is-active packet-forwarder
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:29Z EXIT[1]: sudo systemctl is-active packet-forwarder
+2026-06-30T13:42:29Z RUN: sudo systemctl stop lora_pkt_fwd
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:29Z EXIT[1]: sudo systemctl stop lora_pkt_fwd
+2026-06-30T13:42:29Z RUN: sudo systemctl is-active lora_pkt_fwd
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:29Z EXIT[1]: sudo systemctl is-active lora_pkt_fwd
+2026-06-30T13:42:29Z RUN: sudo systemctl stop lora-packet-forwarder
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:30Z EXIT[1]: sudo systemctl stop lora-packet-forwarder
+2026-06-30T13:42:30Z RUN: sudo systemctl is-active lora-packet-forwarder
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:30Z EXIT[1]: sudo systemctl is-active lora-packet-forwarder
+2026-06-30T13:42:30Z RUN: sudo systemctl stop sx1302_hal
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:30Z EXIT[1]: sudo systemctl stop sx1302_hal
+2026-06-30T13:42:30Z RUN: sudo systemctl is-active sx1302_hal
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:30Z EXIT[1]: sudo systemctl is-active sx1302_hal
+2026-06-30T13:42:30Z RUN: sudo systemctl stop chirpstack-gateway-bridge
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:30Z EXIT[1]: sudo systemctl stop chirpstack-gateway-bridge
+2026-06-30T13:42:31Z RUN: sudo systemctl is-active chirpstack-gateway-bridge
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:31Z EXIT[1]: sudo systemctl is-active chirpstack-gateway-bridge
+2026-06-30T13:42:31Z RUN: sudo systemctl stop miner
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:31Z EXIT[1]: sudo systemctl stop miner
+2026-06-30T13:42:31Z RUN: sudo systemctl is-active miner
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:31Z EXIT[1]: sudo systemctl is-active miner
+2026-06-30T13:42:31Z Using reset script: /home/strawberry-z-model-1/sx1302_hal/libloragw/reset_lgw.sh
+2026-06-30T13:42:31Z RUN: sudo ./reset_lgw.sh stop
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:32Z EXIT[1]: sudo ./reset_lgw.sh stop
+2026-06-30T13:42:33Z RUN: sudo ./reset_lgw.sh start
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+2026-06-30T13:42:33Z EXIT[1]: sudo ./reset_lgw.sh start

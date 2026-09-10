@@ -1,0 +1,7 @@
+# EXAMPLE ONLY. Confirm ownership before copying entries into LICENSE_SCOPE.txt.
+# crates/zymatica-zspar/src/*.rs
+# crates/zymatica-zk-mesh/groth16/src/*.rs
+# crates/zymatica-engine/src/z_wormhole.rs
+# crates/zymatica-engine/src/z_mcts.rs
+# crates/zymatica-engine/src/hyper_manifold_kv_folding.rs
+# crates/zymatica-engine/src/epigenetic_manifold_crystallizer.rs

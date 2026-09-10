@@ -37,8 +37,15 @@ impl SimdPretokenizer {
     }
 
     /// Parallel multi-threaded document chunking across CPU threads for high-throughput ingestion.
-    pub fn parallel_chunk_document(text: &str, chunk_size_words: usize, overlap_words: usize) -> Vec<String> {
-        let paragraphs: Vec<&str> = text.split("\n\n").filter(|p| !p.trim().is_empty()).collect();
+    pub fn parallel_chunk_document(
+        text: &str,
+        chunk_size_words: usize,
+        overlap_words: usize,
+    ) -> Vec<String> {
+        let paragraphs: Vec<&str> = text
+            .split("\n\n")
+            .filter(|p| !p.trim().is_empty())
+            .collect();
         if paragraphs.len() <= 1 {
             let words = Self::pretokenize(text);
             if words.is_empty() {
@@ -93,13 +100,10 @@ impl SpecialTokenMatcher {
     }
 
     pub fn find_tool_call_bounds(buffer: &str) -> Option<(usize, usize)> {
-        if let Some(start) = buffer.find(Self::TOOL_CALL_START) {
-            let json_start = start + Self::TOOL_CALL_START.len();
-            if let Some(end) = buffer[json_start..].find(Self::TOOL_CALL_END) {
-                return Some((json_start, json_start + end));
-            }
-        }
-        None
+        let start = buffer.find(Self::TOOL_CALL_START)?;
+        let json_start = start + Self::TOOL_CALL_START.len();
+        let end = buffer[json_start..].find(Self::TOOL_CALL_END)?;
+        Some((json_start, json_start + end))
     }
 }
 
@@ -182,7 +186,7 @@ impl DirectLutBpeEncoder {
         // Seed basic ASCII byte tokens
         for i in 0..256u32 {
             let s = format!("{}", (i as u8) as char);
-            vocab.insert(s, i as u32);
+            vocab.insert(s, i);
         }
 
         // Seed common subword merges
@@ -220,11 +224,11 @@ impl DirectLutBpeEncoder {
 
                 for i in 0..ids.len() - 1 {
                     let pair = (ids[i], ids[i + 1]);
-                    if let Some(&rank) = self.ranks.get(&pair) {
-                        if rank < min_rank {
-                            min_rank = rank;
-                            min_idx = Some(i);
-                        }
+                    if let Some(&rank) = self.ranks.get(&pair)
+                        && rank < min_rank
+                    {
+                        min_rank = rank;
+                        min_idx = Some(i);
                     }
                 }
 
@@ -236,7 +240,8 @@ impl DirectLutBpeEncoder {
                 }
             }
 
-            self.pretoken_cache.insert(pretoken.to_string(), ids.clone());
+            self.pretoken_cache
+                .insert(pretoken.to_string(), ids.clone());
             token_ids.extend(ids);
         }
 
@@ -252,7 +257,11 @@ impl FastTokenCounter {
             return 0;
         }
         let pretokens = SimdPretokenizer::pretokenize(text);
-        pretokens.iter().map(|p| p.len().div_ceil(3)).sum::<usize>().max(1)
+        pretokens
+            .iter()
+            .map(|p| p.len().div_ceil(3))
+            .sum::<usize>()
+            .max(1)
     }
 }
 
@@ -298,7 +307,13 @@ mod tests {
         assert_eq!(cache.get("hello"), Some(vec![1, 2, 3]));
 
         assert_eq!(SimdVocabMask::classify_token("123"), TokenCategory::Numeric);
-        assert_eq!(SimdVocabMask::classify_token("word"), TokenCategory::Alphabetic);
-        assert_eq!(SimdVocabMask::classify_token("<tool>"), TokenCategory::Control);
+        assert_eq!(
+            SimdVocabMask::classify_token("word"),
+            TokenCategory::Alphabetic
+        );
+        assert_eq!(
+            SimdVocabMask::classify_token("<tool>"),
+            TokenCategory::Control
+        );
     }
 }

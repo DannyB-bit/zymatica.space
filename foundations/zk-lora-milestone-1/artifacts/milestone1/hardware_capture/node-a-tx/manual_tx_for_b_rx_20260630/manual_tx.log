@@ -1,0 +1,31 @@
+A manual TX for B RX correlation
+TX command UTC start: Tue Jun 30 00:33:35 UTC 2026
+Settings: 903.9 MHz, SF9, 125 kHz, 14 dBm
+
+Using GPIO tool: pinctrl
+SX1302 reset pin: GPIO25
+SX1261 reset pin: GPIO22
+SX1302 power enable skipped: no documented known-good power-enable GPIO for RakMiner-A
+GPIO state after reset sequence:
+25: op -- pd | lo // GPIO25 = output
+22: op -- pd | hi // GPIO22 = output
+A_LORA_TX_FILE_INPUT=/tmp/zk.bin
+A_LORA_TX_FILE_BYTES=240
+A_LORA_TX_FILE_FNV1A32=39fc52ff
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+A_LORA_TX_FILE_SEND_BEGIN=YES
+Safe no-op stop: leaving SPI and reset GPIO states unchanged.
+A_LORA_TX_FILE_SEND_COMPLETE=YES
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+
+TX_EXIT_STATUS=0
+TX command UTC end: Tue Jun 30 00:33:39 UTC 2026

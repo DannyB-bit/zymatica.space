@@ -1,0 +1,5 @@
+COMMAND: python3 run_proof.py --test
+START_UTC: Mon Jun 29 23:46:44 UTC 2026
+======================================================================
+ZYMATICA | ZK-LoRa Privacy Layer: Zero-Knowledge Proof Verification
+========================

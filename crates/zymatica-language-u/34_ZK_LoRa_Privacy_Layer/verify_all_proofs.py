@@ -200,22 +200,29 @@ def main():
     runtimes.append({"name": "Rust", "cmd": f'cargo run --manifest-path "{proofs_dir}/rust/Cargo.toml" --quiet', "desc": "Native compiled systems verification", "check": lambda: find_exe("cargo")})
     runtimes.append({"name": "Java", "cmd": f'java "{proofs_dir}/java/Proof.java"', "desc": "JVM single-source file verification", "check": lambda: find_exe("javac")})
     runtimes.append({"name": "PowerShell", "cmd": f'powershell -ExecutionPolicy Bypass -File "{proofs_dir}/powershell/proof.ps1"', "desc": "Windows shell native script validation", "check": lambda: find_exe("powershell")})
-    runtimes.append({"name": "Bash", "cmd": 'wsl bash -c "cd /mnt/c/Users/DannyB/Downloads/zymatica_clone/34_ZK_LoRa_Privacy_Layer/Multi_Language_Proofs/bash && bash proof.sh"', "desc": "Linux shell script validation via WSL", "check": lambda: find_exe("wsl")})
+    bash_dir = proofs_dir / "bash"
+    drive_letter = str(bash_dir.resolve()).split(":")[0].lower()
+    rest_path = str(bash_dir.resolve()).split(":")[1].replace("\\", "/")
+    wsl_bash_path = f"/mnt/{drive_letter}{rest_path}"
+    runtimes.append({"name": "Bash", "cmd": f'wsl bash -c "cd {wsl_bash_path} && bash proof.sh"', "desc": "Linux shell script validation via WSL", "check": lambda: find_exe("wsl")})
 
     # 7. C#
     cs_src = str(proofs_dir / "csharp" / "Proof.cs")
     cs_exe = str(proofs_dir / "csharp" / "Proof.exe")
     runtimes.append({"name": "C#", "cmd": f'"{csc_path}" /nologo /out:"{cs_exe}" "{cs_src}" && "{cs_exe}"', "desc": "Compiled .NET Framework verification", "check": lambda: os.path.exists(csc_path)})
 
+    sdk_include, _ = find_windows_sdk()
+    has_msvc_sdk = cl_path is not None and sdk_include is not None
+
     # 8. C
     c_src = str(proofs_dir / "c" / "proof.c")
     c_exe = str(proofs_dir / "c" / "proof.exe")
-    runtimes.append({"name": "C", "cmd": f'"{cl_path}" /nologo /Fe:"{c_exe}" "{c_src}" /link /NOLOGO && "{c_exe}"' if cl_path else "echo SKIP", "desc": "MSVC native compiled verification", "check": lambda: cl_path is not None, "env_override": msvc_env})
+    runtimes.append({"name": "C", "cmd": f'"{cl_path}" /nologo /Fe:"{c_exe}" "{c_src}" /link /NOLOGO && "{c_exe}"' if has_msvc_sdk else "echo SKIP", "desc": "MSVC native compiled verification", "check": lambda: has_msvc_sdk, "env_override": msvc_env})
 
     # 9. C++
     cpp_src = str(proofs_dir / "cpp" / "proof.cpp")
     cpp_exe = str(proofs_dir / "cpp" / "proof.exe")
-    runtimes.append({"name": "C++", "cmd": f'"{cl_path}" /nologo /EHsc /std:c++17 /Fe:"{cpp_exe}" "{cpp_src}" /link /NOLOGO && "{cpp_exe}"' if cl_path else "echo SKIP", "desc": "MSVC C++17 native compiled verification", "check": lambda: cl_path is not None, "env_override": msvc_env})
+    runtimes.append({"name": "C++", "cmd": f'"{cl_path}" /nologo /EHsc /std:c++17 /Fe:"{cpp_exe}" "{cpp_src}" /link /NOLOGO && "{cpp_exe}"' if has_msvc_sdk else "echo SKIP", "desc": "MSVC C++17 native compiled verification", "check": lambda: has_msvc_sdk, "env_override": msvc_env})
 
     # 10-20: New runtimes
     runtimes.append({"name": "Go", "cmd": f'go run "{proofs_dir}/go/proof.go"', "desc": "Compiled Go runtime verification", "check": lambda: find_exe("go") is not None})

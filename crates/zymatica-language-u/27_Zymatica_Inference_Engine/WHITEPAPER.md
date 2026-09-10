@@ -1,5 +1,5 @@
 # ZYMATICA: Zymatica Inference Engine & Benchmarking Parity Audit
-*IP Class 27 | Apache License 2.0*
+*IP Class 27 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

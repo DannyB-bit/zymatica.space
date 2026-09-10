@@ -7,7 +7,9 @@ From E-Waste to AI Grace
 Powered by Zcash | Secured by ZK | Built with ♻️
 
 Watermark: ip zymatica.space | astronautshe.com
-Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 """
 
 import os

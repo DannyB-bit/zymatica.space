@@ -1,3 +1,7 @@
+// Copyright © 2026 Zymatica
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
+
 // ============================================================================
 // ZK-LoRaWAN Groth16 Circuit — Hardened Production Circuit
 // ============================================================================
@@ -24,13 +28,16 @@ use ark_std::rand::{CryptoRng, Rng};
 ///   1. Balance Owner Identity: knowledge of private key matching public identity.
 ///   2. Nullifier Generation: unique nullifier to prevent double spending.
 ///   3. Micro-TEE Attestation: firmware hash binds to private key identity.
-///   4. zk-VDE Decryption: ciphertext decrypts to valid coordinates.
+///   4. Private coordinate commitment: knowledge of decryption_key + coordinate_val matching
+///      the public ciphertext/coordinate commitment. This is not described as a VDE unless a
+///      verifiable-delay primitive is separately implemented and constrained.
 ///   5. Gateway Binding: proof is bound to a specific gateway address.
 ///   6. Deposit Commitment: depositor's identity is bound to a value (pool drain prevention).
 ///   7. Firmware Whitelist: firmware hash is exposed for on-chain whitelist verification.
 pub struct ZKLoRaCircuit<F: PrimeField> {
     // Secret inputs (witnesses)
     pub private_key: Option<F>,
+    pub nonce: Option<F>,
     pub decryption_key: Option<F>,
     pub coordinate_val: Option<F>,
     pub firmware_hash_witness: Option<F>,
@@ -54,6 +61,9 @@ impl<F: PrimeField> ConstraintSynthesizer<F> for ZKLoRaCircuit<F> {
         // Allocate core private witnesses
         let private_key_var =
             cs.new_witness_variable(|| self.private_key.ok_or(SynthesisError::AssignmentMissing))?;
+
+        let nonce_var =
+            cs.new_witness_variable(|| self.nonce.ok_or(SynthesisError::AssignmentMissing))?;
 
         let decryption_key_var = cs.new_witness_variable(|| {
             self.decryption_key.ok_or(SynthesisError::AssignmentMissing)
@@ -129,10 +139,13 @@ impl<F: PrimeField> ConstraintSynthesizer<F> for ZKLoRaCircuit<F> {
             identity_hash_var.into(),
         )?;
 
-        // 2. Nullifier Verification: nullifier_hash = MiMC(private_key + 9999)
+        // 2. Nullifier Verification: nullifier_hash = MiMC(private_key + nonce)
         let mut initial_lc_2 = ark_relations::r1cs::LinearCombination::from(private_key_var);
-        initial_lc_2 += (F::from(9999u64), Variable::One);
-        let val_2 = self.private_key.map(|x| x + F::from(9999u64));
+        initial_lc_2 += (F::one(), nonce_var);
+        let val_2 = match (self.private_key, self.nonce) {
+            (Some(pk), Some(n)) => Some(pk + n),
+            _ => None,
+        };
         let calculated_nullifier_var = mimc_hash_constraints(&cs, initial_lc_2, val_2)?;
         let nullifier_hash_var =
             cs.new_input_variable(|| self.nullifier_hash.ok_or(SynthesisError::AssignmentMissing))?;
@@ -178,11 +191,19 @@ impl<F: PrimeField> ConstraintSynthesizer<F> for ZKLoRaCircuit<F> {
             ciphertext_hash_var.into(),
         )?;
 
-        // 5. Gateway Binding
-        let _gateway_part1_var =
+        // 5. Gateway Binding (R1CS Gate)
+        let gateway_part1_var =
             cs.new_input_variable(|| self.gateway_part1.ok_or(SynthesisError::AssignmentMissing))?;
-        let _gateway_part2_var =
+        let gateway_part2_var =
             cs.new_input_variable(|| self.gateway_part2.ok_or(SynthesisError::AssignmentMissing))?;
+        let mut gw_lc = ark_relations::r1cs::LinearCombination::from(gateway_part1_var);
+        gw_lc += (F::one(), gateway_part2_var);
+        gw_lc += (F::one(), private_key_var);
+        let val_gw = match (self.gateway_part1, self.gateway_part2, self.private_key) {
+            (Some(g1), Some(g2), Some(pk)) => Some(g1 + g2 + pk),
+            _ => None,
+        };
+        let _calculated_gw_var = mimc_hash_constraints(&cs, gw_lc, val_gw)?;
 
         // 6. Deposit Commitment: deposit_commitment = MiMC(identity_hash + deposit_value)
         let mut initial_lc_5 =
@@ -252,6 +273,7 @@ pub fn setup_keys<R: Rng + CryptoRng>(
 ) -> Result<(ProvingKey<Bn254>, VerifyingKey<Bn254>), SynthesisError> {
     let empty_circuit = ZKLoRaCircuit {
         private_key: None,
+        nonce: None,
         decryption_key: None,
         coordinate_val: None,
         firmware_hash_witness: None,
@@ -275,6 +297,7 @@ pub fn setup_keys<R: Rng + CryptoRng>(
 pub fn generate_proof<R: Rng + CryptoRng>(
     pk: &ProvingKey<Bn254>,
     private_key: Fr,
+    nonce: Fr,
     decryption_key: Fr,
     coordinate_val: Fr,
     firmware_hash: Fr,
@@ -292,6 +315,7 @@ pub fn generate_proof<R: Rng + CryptoRng>(
 ) -> Result<Proof<Bn254>, SynthesisError> {
     let circuit = ZKLoRaCircuit {
         private_key: Some(private_key),
+        nonce: Some(nonce),
         decryption_key: Some(decryption_key),
         coordinate_val: Some(coordinate_val),
         firmware_hash_witness: Some(firmware_hash),
@@ -335,4 +359,145 @@ pub fn verify_proof(
         firmware_hash_public,
     ];
     Groth16::<Bn254>::verify_with_processed_vk(pvk, &public_inputs, proof)
+}
+
+#[cfg(test)]
+mod binding_tests {
+    use super::*;
+    use ark_groth16::prepare_verifying_key;
+    use ark_relations::r1cs::ConstraintSystem;
+    use rand::{rngs::StdRng, SeedableRng};
+
+    struct Fixture {
+        pvk: PreparedVerifyingKey<Bn254>,
+        proof: Proof<Bn254>,
+        public: [Fr; 8],
+    }
+
+    fn fixture() -> Fixture {
+        let constants = generate_mimc_constants(32);
+        let private_key = Fr::from(11u64);
+        let nonce = Fr::from(12u64);
+        let decryption_key = Fr::from(13u64);
+        let coordinate_val = Fr::from(14u64);
+        let firmware_hash = Fr::from(15u64);
+        let deposit_value = Fr::from(16u64);
+        let gateway_part1 = Fr::from(17u64);
+        let gateway_part2 = Fr::from(18u64);
+
+        let identity_hash = mimc_hash(private_key, None, &constants);
+        let nullifier_hash = mimc_hash(private_key, Some(nonce), &constants);
+        let attestation_hash = mimc_hash(private_key, Some(firmware_hash), &constants);
+        let ciphertext_hash = mimc_hash(decryption_key, Some(coordinate_val), &constants);
+        let deposit_commitment = mimc_hash(identity_hash, Some(deposit_value), &constants);
+        let public = [
+            identity_hash,
+            nullifier_hash,
+            attestation_hash,
+            ciphertext_hash,
+            gateway_part1,
+            gateway_part2,
+            deposit_commitment,
+            firmware_hash,
+        ];
+
+        let mut rng = StdRng::from_seed([7u8; 32]);
+        let (pk, vk) = setup_keys(&mut rng, constants.clone()).expect("setup must succeed");
+        let proof = generate_proof(
+            &pk,
+            private_key,
+            nonce,
+            decryption_key,
+            coordinate_val,
+            firmware_hash,
+            deposit_value,
+            identity_hash,
+            nullifier_hash,
+            attestation_hash,
+            ciphertext_hash,
+            gateway_part1,
+            gateway_part2,
+            deposit_commitment,
+            firmware_hash,
+            constants,
+            &mut rng,
+        )
+        .expect("proof generation must succeed");
+
+        Fixture {
+            pvk: prepare_verifying_key(&vk),
+            proof,
+            public,
+        }
+    }
+
+    fn verify_array(fixture: &Fixture, public: [Fr; 8]) -> bool {
+        verify_proof(
+            &fixture.pvk,
+            &fixture.proof,
+            public[0],
+            public[1],
+            public[2],
+            public[3],
+            public[4],
+            public[5],
+            public[6],
+            public[7],
+        )
+        .expect("verification call must not error")
+    }
+
+    #[test]
+    fn every_public_input_is_proof_bound() {
+        let fixture = fixture();
+        assert!(verify_array(&fixture, fixture.public));
+        for index in 0..fixture.public.len() {
+            let mut mutated = fixture.public;
+            mutated[index] += Fr::from(1u64);
+            assert!(
+                !verify_array(&fixture, mutated),
+                "mutating public input index {index} must invalidate the proof"
+            );
+        }
+    }
+
+    #[test]
+    fn wrong_nullifier_for_nonce_makes_r1cs_unsatisfied() {
+        let constants = generate_mimc_constants(32);
+        let private_key = Fr::from(21u64);
+        let nonce = Fr::from(22u64);
+        let firmware_hash = Fr::from(23u64);
+        let decryption_key = Fr::from(24u64);
+        let coordinate_val = Fr::from(25u64);
+        let deposit_value = Fr::from(26u64);
+        let identity_hash = mimc_hash(private_key, None, &constants);
+        let correct_nullifier = mimc_hash(private_key, Some(nonce), &constants);
+        let attestation_hash = mimc_hash(private_key, Some(firmware_hash), &constants);
+        let ciphertext_hash = mimc_hash(decryption_key, Some(coordinate_val), &constants);
+        let deposit_commitment = mimc_hash(identity_hash, Some(deposit_value), &constants);
+
+        let circuit = ZKLoRaCircuit {
+            private_key: Some(private_key),
+            nonce: Some(nonce),
+            decryption_key: Some(decryption_key),
+            coordinate_val: Some(coordinate_val),
+            firmware_hash_witness: Some(firmware_hash),
+            deposit_value: Some(deposit_value),
+            identity_hash: Some(identity_hash),
+            nullifier_hash: Some(correct_nullifier + Fr::from(1u64)),
+            attestation_hash: Some(attestation_hash),
+            ciphertext_hash: Some(ciphertext_hash),
+            gateway_part1: Some(Fr::from(27u64)),
+            gateway_part2: Some(Fr::from(28u64)),
+            deposit_commitment: Some(deposit_commitment),
+            firmware_hash_public: Some(firmware_hash),
+            round_constants: constants,
+        };
+
+        let cs = ConstraintSystem::<Fr>::new_ref();
+        circuit
+            .generate_constraints(cs.clone())
+            .expect("constraint generation must succeed");
+        assert!(!cs.is_satisfied().expect("satisfaction check must succeed"));
+    }
 }

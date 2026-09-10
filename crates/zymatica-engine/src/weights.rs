@@ -626,18 +626,24 @@ fn dtype_size(dtype: Dtype) -> Result<usize> {
 
 fn decode_f32_slice(dtype: Dtype, data: &[u8]) -> Result<Vec<f32>> {
     let out = match dtype {
-        Dtype::F32 => data
-            .chunks_exact(4)
-            .map(|b| f32::from_le_bytes([b[0], b[1], b[2], b[3]]))
-            .collect(),
-        Dtype::F16 => data
-            .chunks_exact(2)
-            .map(|b| f16::from_le_bytes([b[0], b[1]]).to_f32())
-            .collect(),
-        Dtype::BF16 => data
-            .chunks_exact(2)
-            .map(|b| bf16::from_le_bytes([b[0], b[1]]).to_f32())
-            .collect(),
+        Dtype::F32 => {
+            let (chunks, _) = data.as_chunks::<4>();
+            chunks.iter().map(|b| f32::from_le_bytes(*b)).collect()
+        }
+        Dtype::F16 => {
+            let (chunks, _) = data.as_chunks::<2>();
+            chunks
+                .iter()
+                .map(|b| f16::from_le_bytes(*b).to_f32())
+                .collect()
+        }
+        Dtype::BF16 => {
+            let (chunks, _) = data.as_chunks::<2>();
+            chunks
+                .iter()
+                .map(|b| bf16::from_le_bytes(*b).to_f32())
+                .collect()
+        }
         other => bail!("unsupported dtype for f32 conversion: {:?}", other),
     };
     Ok(out)
@@ -666,23 +672,29 @@ fn dot_f32_slice(dtype: Dtype, data: &[u8], x: &[f32]) -> Result<f32> {
                     return Ok(crate::kernels::f32_dot(floats, x));
                 }
             }
-            data.chunks_exact(4)
+            let (chunks, _) = data.as_chunks::<4>();
+            chunks
+                .iter()
                 .zip(x)
-                .map(|(bytes, value)| {
-                    f32::from_le_bytes([bytes[0], bytes[1], bytes[2], bytes[3]]) * *value
-                })
+                .map(|(bytes, value)| f32::from_le_bytes(*bytes) * *value)
                 .sum()
         }
-        Dtype::F16 => data
-            .chunks_exact(2)
-            .zip(x)
-            .map(|(bytes, value)| f16::from_le_bytes([bytes[0], bytes[1]]).to_f32() * *value)
-            .sum(),
-        Dtype::BF16 => data
-            .chunks_exact(2)
-            .zip(x)
-            .map(|(bytes, value)| bf16::from_le_bytes([bytes[0], bytes[1]]).to_f32() * *value)
-            .sum(),
+        Dtype::F16 => {
+            let (chunks, _) = data.as_chunks::<2>();
+            chunks
+                .iter()
+                .zip(x)
+                .map(|(bytes, value)| f16::from_le_bytes(*bytes).to_f32() * *value)
+                .sum()
+        }
+        Dtype::BF16 => {
+            let (chunks, _) = data.as_chunks::<2>();
+            chunks
+                .iter()
+                .zip(x)
+                .map(|(bytes, value)| bf16::from_le_bytes(*bytes).to_f32() * *value)
+                .sum()
+        }
         other => bail!("unsupported dtype for f32 dot conversion: {:?}", other),
     };
     Ok(sum)

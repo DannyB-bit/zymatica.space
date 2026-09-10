@@ -1,3 +1,7 @@
+// Copyright © 2026 Zymatica
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
+
 // Watermark: ip zymatica.space
 // ZK-LoRaWAN Groth16 Prover & Verifier — Real BN254 Implementation
 // Fee Split: 100,000 lamports (gateway) + 50,000 lamports (protocol)
@@ -59,7 +63,8 @@ impl ZKLoRaWANProver {
 
         // If not forcing reproducible setup, try to load existing keys from disk first
         if !use_reproducible {
-            if let (Ok(pk_data), Ok(vk_data)) = (std::fs::read(PK_FILE), std::fs::read(VK_FILE)) {
+            let loaded = (std::fs::read(PK_FILE), std::fs::read(VK_FILE));
+            if let (Ok(pk_data), Ok(vk_data)) = loaded {
                 if let (Ok(pk), Ok(vk)) = (
                     ProvingKey::<Bn254>::deserialize_compressed(&pk_data[..]),
                     VerifyingKey::<Bn254>::deserialize_compressed(&vk_data[..]),
@@ -146,8 +151,9 @@ impl ZKLoRaWANProver {
 
         // Compute the public hashes
         let identity_hash = circuit::mimc_hash(private_key_fr, None, &self.constants);
-        let nullifier_hash =
-            circuit::mimc_hash(private_key_fr, Some(Fr::from(9999u64)), &self.constants);
+        let nonce_val: u64 = rand::Rng::gen(&mut rng);
+        let nonce_fr = Fr::from(nonce_val);
+        let nullifier_hash = circuit::mimc_hash(private_key_fr, Some(nonce_fr), &self.constants);
         let attestation_hash =
             circuit::mimc_hash(private_key_fr, Some(firmware_hash_fr), &self.constants);
         let ciphertext_hash =
@@ -159,6 +165,7 @@ impl ZKLoRaWANProver {
         let proof = circuit::generate_proof(
             &self.proving_key,
             private_key_fr,
+            nonce_fr,
             decryption_key_fr,
             coordinate_fr,
             firmware_hash_fr,
@@ -377,10 +384,12 @@ fn main() {
             let part2_bytes = [0u8; 32];
             let gateway_part2_fr = Fr::from_le_bytes_mod_order(&part2_bytes);
 
+            let nonce_fr = Fr::from(9999u64);
             let mut rng = rand::thread_rng();
             let proof = circuit::generate_proof(
                 &prover.proving_key,
                 private_key_fr,
+                nonce_fr,
                 decryption_key_fr,
                 coordinate_fr,
                 firmware_hash_fr,

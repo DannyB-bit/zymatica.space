@@ -1,0 +1,13 @@
+{
+  "schema": "zymatica.real-model-validation.v1",
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "prompt_count": 64,
+  "injection_supported": true,
+  "rank": 8,
+  "mean_compression_ratio": 4.12,
+  "next_step_top1_parity": 0.96875,
+  "next_step_kl_mean": 0.0214,
+  "mean_reconstruction_mse": 2.82e-07,
+  "max_reconstruction_error": 8.41e-05,
+  "total_tokens_evaluated": 4096
+}

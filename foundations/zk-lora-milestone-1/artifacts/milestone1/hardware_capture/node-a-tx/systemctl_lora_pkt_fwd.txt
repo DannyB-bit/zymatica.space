@@ -1,0 +1,5 @@
+COMMAND: systemctl status lora_pkt_fwd --no-pager
+START_UTC: Mon Jun 29 23:15:17 UTC 2026
+Unit lora_pkt_fwd.service could not be found.
+END_UTC: Mon Jun 29 23:15:17 UTC 2026
+EXIT_STATUS: 4

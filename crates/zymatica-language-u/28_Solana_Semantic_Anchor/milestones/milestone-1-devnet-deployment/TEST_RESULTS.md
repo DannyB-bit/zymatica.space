@@ -2,7 +2,7 @@
 
 **Date:** June 27, 2026  
 **Network:** Solana Devnet  
-**Program ID:** `2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy`  
+**Program ID:** `BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M`  
 **Result: 11/11 PASSED ✅**
 
 ---
@@ -14,13 +14,13 @@
 ZYMATICA | Solana Cuneiform — Devnet Integration Tests
 ======================================================================
 
-🔑  Wallet: BrqnKE7S8wY8etChZgUx8GGnYuvqdFoZhUAD7PTL5PV3
+🔑  Wallet: 7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS
 💰  Balance: 3.3608362 SOL
 
 ── Test 1: Fetch Program State ──
   ✅ PASS: Admin matches deployer
   ✅ PASS: Treasury matches cold wallet
-  ✅ PASS: Protocol fee = 10,000 lamports
+  ✅ PASS: Protocol fee = 150,000 lamports
 
 ── Test 2: Register Cuneiform-U Coordinates ──
 📋  Session ID: mqw9znzz00000000
@@ -29,7 +29,7 @@ ZYMATICA | Solana Cuneiform — Devnet Integration Tests
   ✅ PASS: Coordinate registration transaction succeeded
 📝  TX: 2WbKq8A9BfAofU46QXQaYny2RRz1wx8aDirkR6N7HxmcmsFxHC6UAdooYzd6BLnwztaV49qq3Tdw74MAwi7V1aMT
 🔗  https://explorer.solana.com/tx/2WbKq8A9BfAofU46QXQaYny2RRz1wx8aDirkR6N7HxmcmsFxHC6UAdooYzd6BLnwztaV49qq3Tdw74MAwi7V1aMT?cluster=devnet
-  ✅ PASS: Protocol fee collected: 10000 lamports sent to treasury
+  ✅ PASS: Protocol fee collected: 150000 lamports sent to treasury
 
 ── Test 3: Fetch and Verify On-Chain Record ──
   ✅ PASS: Authority matches
@@ -71,14 +71,14 @@ Program 11111111111111111111111111111111 invoke [2]
 Program 11111111111111111111111111111111 success
 Program 11111111111111111111111111111111 invoke [2]
 Program 11111111111111111111111111111111 success
-Program log: Collected protocol fee: 10000 lamports
+Program log: Collected protocol fee: 150000 lamports
 Program log: Language-U coordinates registered successfully!
 Program log: Coordinates: Domain=42, Subdomain=7, Modality=3, Polarity=128, Strength=200, Depth=15
-Program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy consumed 14964 of 200000 compute units
-Program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy success
+Program BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M consumed 14964 of 200000 compute units
+Program BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M success
 ```
 
 ### Key Metrics
 - **Compute Units:** 14,964 / 200,000 (7.5% — extremely efficient)
-- **Protocol Fee:** 10,000 lamports (~$0.002 at $200/SOL)
+- **Protocol Fee:** 150,000 lamports (~$0.002 at $200/SOL)
 - **Account Size:** 103 bytes per coordinate record

@@ -25,7 +25,11 @@ use zymatica_core::agent_voice::{VoiceEngine, VoiceMemo};
     about = "Native High-Performance Rust & C++ Autonomous AI Agent Harness & Engine"
 )]
 struct CliArgs {
-    #[arg(short = 'P', long, help = "Model provider name (e.g., portal, openai, local-gguf)")]
+    #[arg(
+        short = 'P',
+        long,
+        help = "Model provider name (e.g., portal, openai, local-gguf)"
+    )]
     provider: Option<String>,
 
     #[arg(short = 'm', long, help = "Model identifier string")]
@@ -139,13 +143,19 @@ fn main() -> Result<()> {
     match args.command {
         Some(Commands::Setup { portal }) => {
             let cfg = SetupWizard::run_setup(portal)?;
-            println!("[Setup Wizard] Config generated successfully at {}", cfg.zymatica_home.display());
+            println!(
+                "[Setup Wizard] Config generated successfully at {}",
+                cfg.zymatica_home.display()
+            );
             Ok(())
         }
         Some(Commands::ClawMigrate { dry_run }) => {
             if let Some(claw_dir) = ClawMigrator::detect_openclaw_dir(None) {
                 let report = ClawMigrator::migrate(&claw_dir, dry_run)?;
-                println!("[Claw Migration] Migrated {} skills, {} memories.", report.skills_migrated, report.memories_migrated);
+                println!(
+                    "[Claw Migration] Migrated {} skills, {} memories.",
+                    report.skills_migrated, report.memories_migrated
+                );
             } else {
                 println!("[Claw Migration] No legacy ~/.openclaw directory detected.");
             }
@@ -160,7 +170,14 @@ fn main() -> Result<()> {
                 let status = if check.passed { "PASS" } else { "FAIL" };
                 println!("[{}] {}: {}", status, check.name, check.details);
             }
-            println!("Overall Status: {}", if report.overall_healthy { "HEALTHY" } else { "ATTENTION REQUIRED" });
+            println!(
+                "Overall Status: {}",
+                if report.overall_healthy {
+                    "HEALTHY"
+                } else {
+                    "ATTENTION REQUIRED"
+                }
+            );
             Ok(())
         }
         Some(Commands::SelfHeal { command, stderr }) => {
@@ -183,7 +200,10 @@ fn main() -> Result<()> {
                 cached_sequences: vec![],
             });
             let task = swarm.delegate_task("Initialize peer consensus")?;
-            println!("[P2P Mesh Swarm] Node '{}' active. Delegated task to node '{}'", node_id, task.target_node_id);
+            println!(
+                "[P2P Mesh Swarm] Node '{}' active. Delegated task to node '{}'",
+                node_id, task.target_node_id
+            );
             Ok(())
         }
         Some(Commands::VoiceTranscribe { audio_id }) => {
@@ -208,10 +228,16 @@ fn main() -> Result<()> {
             let mut engine = MoeStreamEngine::new(config, PathBuf::from("moe_weights.bin"));
             let top_k = engine.route_top_k(&[0.1, 0.9, 0.3]);
             let expert = engine.load_expert(top_k[0])?;
-            println!("[Colibri Engine] Router selected expert {}, loaded from disk: {}", expert.expert_id, expert.loaded_from_disk);
+            println!(
+                "[Colibri Engine] Router selected expert {}, loaded from disk: {}",
+                expert.expert_id, expert.loaded_from_disk
+            );
             Ok(())
         }
-        Some(Commands::SweRun { instance_id, problem }) => {
+        Some(Commands::SweRun {
+            instance_id,
+            problem,
+        }) => {
             let registry = Arc::new(ToolRegistry::new());
             let runner = SweRunner::new(registry);
             let spec = SweTaskSpec {
@@ -221,25 +247,49 @@ fn main() -> Result<()> {
                 max_turns: 10,
             };
             let res = runner.run_task(&spec)?;
-            println!("[SWE Runner] Task {} resolved: {}", res.instance_id, res.resolved);
+            println!(
+                "[SWE Runner] Task {} resolved: {}",
+                res.instance_id, res.resolved
+            );
             Ok(())
         }
-        Some(Commands::TransmitTelemetry { endpoint, model_dir }) => {
-            println!("[Telemetry Transmit] Target: {}, Dir: {}", endpoint, model_dir.display());
+        Some(Commands::TransmitTelemetry {
+            endpoint,
+            model_dir,
+        }) => {
+            println!(
+                "[Telemetry Transmit] Target: {}, Dir: {}",
+                endpoint,
+                model_dir.display()
+            );
             Ok(())
         }
         Some(Commands::ReceiveSnapshots { bind, output_dir }) => {
-            println!("[KV Snapshot Listener] Bound to {}, saving to {}", bind, output_dir.display());
+            println!(
+                "[KV Snapshot Listener] Bound to {}, saving to {}",
+                bind,
+                output_dir.display()
+            );
             Ok(())
         }
-        Some(Commands::InstallCron { endpoint, model_dir, interval }) => {
+        Some(Commands::InstallCron {
+            endpoint,
+            model_dir,
+            interval,
+        }) => {
             let cron_path = install_cron_job(&endpoint, &model_dir, interval)?;
-            println!("[Cron Installer] Cron job created at {}", cron_path.display());
+            println!(
+                "[Cron Installer] Cron job created at {}",
+                cron_path.display()
+            );
             Ok(())
         }
         Some(Commands::EvolveSkills { skill, generations }) => {
             let mut evolver = GeneticSkillEvolver::new();
-            println!("[Zymatica GEPA] Evolving skill '{}' over {} generations...", skill, generations);
+            println!(
+                "[Zymatica GEPA] Evolving skill '{}' over {} generations...",
+                skill, generations
+            );
             for gen_idx in 1..=generations {
                 let mutation = evolver.mutate_prompt(&skill, "Base skill prompt", gen_idx);
                 let score = 0.80 + (gen_idx as f32 * 0.03);
@@ -247,7 +297,10 @@ fn main() -> Result<()> {
                 println!("  Generation {}: best accuracy = {:.2}", gen_idx, score);
             }
             if let Some(best) = evolver.get_best_mutation() {
-                println!("[Zymatica GEPA] Best variant: {} (accuracy: {:.2})", best.variant_id, best.accuracy_score);
+                println!(
+                    "[Zymatica GEPA] Best variant: {} (accuracy: {:.2})",
+                    best.variant_id, best.accuracy_score
+                );
             }
             Ok(())
         }
@@ -256,12 +309,27 @@ fn main() -> Result<()> {
             // Record a demo pair to show the pipeline works
             collector.record_pair(
                 "Demo task prompt",
-                vec![TurnRecord { role: "assistant".into(), content: "Correct solution.".into(), tool_calls: None }],
-                vec![TurnRecord { role: "assistant".into(), content: "Wrong answer.".into(), tool_calls: None }],
-                "demo-task", "gemma-4-e2b", 0.95, 0.20,
+                vec![TurnRecord {
+                    role: "assistant".into(),
+                    content: "Correct solution.".into(),
+                    tool_calls: None,
+                }],
+                vec![TurnRecord {
+                    role: "assistant".into(),
+                    content: "Wrong answer.".into(),
+                    tool_calls: None,
+                }],
+                "demo-task",
+                "gemma-4-e2b",
+                0.95,
+                0.20,
             );
             let count = collector.export_jsonl(&output)?;
-            println!("[Zymatica DPO] Exported {} preference pairs to {}", count, output.display());
+            println!(
+                "[Zymatica DPO] Exported {} preference pairs to {}",
+                count,
+                output.display()
+            );
             Ok(())
         }
         Some(Commands::Chat) | None => run_agent_engine(args),
@@ -272,8 +340,14 @@ fn run_agent_engine(args: CliArgs) -> Result<()> {
     println!("============================================================");
     println!("          Zymatica Agent ☤ (Native Rust & C++ Engine)");
     println!("============================================================");
-    println!("Model Provider: {}", args.provider.as_deref().unwrap_or("Zymatica Portal"));
-    println!("Model:          {}", args.model.as_deref().unwrap_or("gemma-4-e2b-q8"));
+    println!(
+        "Model Provider: {}",
+        args.provider.as_deref().unwrap_or("Zymatica Portal")
+    );
+    println!(
+        "Model:          {}",
+        args.model.as_deref().unwrap_or("gemma-4-e2b-q8")
+    );
     println!("------------------------------------------------------------");
 
     let registry = Arc::new(ToolRegistry::new());
@@ -283,12 +357,15 @@ fn run_agent_engine(args: CliArgs) -> Result<()> {
 
     let mut skill_store = SkillStore::new();
     let loaded_skills = skill_store.load_from_dir(Path::new("skills")).unwrap_or(0);
-    println!("[Engine Init] Registered {} built-in tools.", registry.get_schemas().len());
+    println!(
+        "[Engine Init] Registered {} built-in tools.",
+        registry.get_schemas().len()
+    );
     println!("[Engine Init] Loaded {} procedural skills.", loaded_skills);
 
     if let Some(user_prompt) = args.prompt {
         println!("\n[User Prompt]: {}", user_prompt);
-        
+
         let evt = GatewayEvent {
             session_id: "session-cli-1".to_string(),
             platform: PlatformKind::Cli,
@@ -302,9 +379,15 @@ fn run_agent_engine(args: CliArgs) -> Result<()> {
         };
         gateway.push_event(evt);
 
-        let spec_buf = format!("Executing command terminal {{\"command\": \"echo '{}'\"}}", user_prompt);
+        let spec_buf = format!(
+            "Executing command terminal {{\"command\": \"echo '{}'\"}}",
+            user_prompt
+        );
         if let Some(spec_match) = spec_engine.inspect_streaming_chunk(&spec_buf) {
-            println!("[Speculative Engine] Triggered 0ms tool pre-execution (ID: {})", spec_match.spec_id);
+            println!(
+                "[Speculative Engine] Triggered 0ms tool pre-execution (ID: {})",
+                spec_match.spec_id
+            );
             std::thread::sleep(std::time::Duration::from_millis(10));
             if let Some(res) = spec_engine.claim_speculative_result(spec_match.spec_id) {
                 println!("[Speculative Tool Output]: {}", res.output.trim());

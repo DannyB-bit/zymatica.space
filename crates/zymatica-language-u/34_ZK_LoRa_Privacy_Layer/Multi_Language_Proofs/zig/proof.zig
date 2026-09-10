@@ -1,5 +1,7 @@
 // Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+// Copyright (c) 2026 Zymatica.
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
 const std = @import("std");
 
 fn simple_sha256(input: []const u8, buf: *[64]u8) ![]const u8 {

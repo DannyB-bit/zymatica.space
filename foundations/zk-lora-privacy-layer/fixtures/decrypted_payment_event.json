@@ -1,0 +1,9 @@
+{
+  "tx_id": "fixture_tx_milestone_2_reconciliation_check",
+  "memo": "ref:demo_packet_hash_hello_zcash_mesh",
+  "gross_zat": 5000000,
+  "developer_fee_zat": 100000,
+  "developer_address": "u10rjztjhk6c2caz6t6hdh32zcf22exhumlm388vtd7exm63vsgwphhm5gt2azgzdksaumr9hn5hx7yy3tdjvdpt875c9tjqswwshz2v9d",
+  "source": "local_decrypted_wallet_event_fixture",
+  "confirmations": 0
+}

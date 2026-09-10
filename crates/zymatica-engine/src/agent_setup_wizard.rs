@@ -85,8 +85,11 @@ mod tests {
     #[test]
     fn test_setup_wizard_flow() -> Result<()> {
         let dir = tempdir()?;
-        let mut config = ZymaticaConfig::default();
-        config.zymatica_home = dir.path().to_path_buf();
+        let config = ZymaticaConfig {
+            zymatica_home: dir.path().to_path_buf(),
+            ..Default::default()
+        };
+        assert_eq!(config.zymatica_home, dir.path());
 
         let cfg = SetupWizard::run_setup(true)?;
         assert!(cfg.portal_enabled);

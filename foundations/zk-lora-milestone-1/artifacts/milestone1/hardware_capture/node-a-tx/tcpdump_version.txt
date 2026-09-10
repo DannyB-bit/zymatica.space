@@ -1,0 +1,8 @@
+COMMAND: tcpdump --version
+START_UTC: Mon Jun 29 23:16:06 UTC 2026
+tcpdump version 4.99.5
+libpcap version 1.10.5 (with TPACKET_V3)
+OpenSSL 3.5.6 7 Apr 2026
+64-bit build, 64-bit time_t
+END_UTC: Mon Jun 29 23:16:06 UTC 2026
+EXIT_STATUS: 0

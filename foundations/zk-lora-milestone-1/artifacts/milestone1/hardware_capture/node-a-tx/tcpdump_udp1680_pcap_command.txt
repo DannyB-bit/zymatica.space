@@ -1,0 +1,6 @@
+COMMAND: timeout 90 tcpdump -ni any udp port 1680 -w /home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/node-a-tx/udp1680_capture.pcap
+START_UTC: Mon Jun 29 23:15:18 UTC 2026
+tcpdump: any: You don't have permission to perform this capture on that device
+(socket: Operation not permitted)
+END_UTC: Mon Jun 29 23:15:18 UTC 2026
+EXIT_STATUS: 1

@@ -40,13 +40,15 @@ impl SweRunner {
                 "path": spec.repo_path
             }),
         );
-        trajectory.push(format!("Grep search matches: {}", grep_res.output.lines().count()));
+        trajectory.push(format!(
+            "Grep search matches: {}",
+            grep_res.output.lines().count()
+        ));
 
         // Step 2: Verification build
-        let build_res: ToolExecutionResult = self.tool_registry.execute(
-            "terminal",
-            &serde_json::json!({"command": "echo build-ok"}),
-        );
+        let build_res: ToolExecutionResult = self
+            .tool_registry
+            .execute("terminal", &serde_json::json!({"command": "echo build-ok"}));
         trajectory.push(format!("Build check status: {}", build_res.success));
 
         Ok(SweTaskResult {

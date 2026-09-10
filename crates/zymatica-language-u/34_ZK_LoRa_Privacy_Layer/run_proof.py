@@ -2,7 +2,9 @@
 """
 ZK-LoRa: Zero-Knowledge Proof Identity & LoRa Mesh Transmitter
 Watermark: ip zymatica.space | astronautshe.com
-Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 Combines Bitcoin-style ECDSA identity with Groth16-style ZK-SNARK proofs
 for privacy-preserving AI-to-AI mesh communication over LoRa.

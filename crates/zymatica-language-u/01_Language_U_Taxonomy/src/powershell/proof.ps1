@@ -18,4 +18,4 @@ $savings = (1.0 - ([double]$totalSemanticBits / $totalRawBits)) * 100.0
 Write-Output "[1] Total raw bits: $totalRawBits"
 Write-Output "[2] Total semantic bits: $totalSemanticBits"
 Write-Output ("[3] Space savings: {0:N2}%" -f $savings)
-Write-Output "`n[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit."
+Write-Output "`n[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified."

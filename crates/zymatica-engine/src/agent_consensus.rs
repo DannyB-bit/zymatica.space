@@ -15,11 +15,15 @@ pub struct ConsensusResult {
 pub struct ConsensusEngine;
 
 impl ConsensusEngine {
-    pub fn evaluate_consensus<F>(endpoints: &[ModelEndpoint], generate_fn: F) -> Result<ConsensusResult>
+    pub fn evaluate_consensus<F>(
+        endpoints: &[ModelEndpoint],
+        generate_fn: F,
+    ) -> Result<ConsensusResult>
     where
         F: Fn(&ModelEndpoint) -> Result<String> + Send + Sync + 'static,
     {
-        let enabled_endpoints: Vec<ModelEndpoint> = endpoints.iter().filter(|e| e.enabled).cloned().collect();
+        let enabled_endpoints: Vec<ModelEndpoint> =
+            endpoints.iter().filter(|e| e.enabled).cloned().collect();
         if enabled_endpoints.is_empty() {
             bail!("No enabled endpoints available for consensus voting");
         }
@@ -56,10 +60,8 @@ impl ConsensusEngine {
             *counts.entry(normalized).or_insert(0) += 1;
         }
 
-        let (best_normalized, max_votes) = counts
-            .into_iter()
-            .max_by_key(|(_, count)| *count)
-            .unwrap();
+        let (best_normalized, max_votes) =
+            counts.into_iter().max_by_key(|(_, count)| *count).unwrap();
 
         let winning_response = responses
             .into_iter()

@@ -1,0 +1,8 @@
+COORDINATED_ATTEMPT_START_UTC=Tue Jun 30 00:09:19 UTC 2026
+TCPDUMP_COMMAND_TEXT=timeout 120 tcpdump -ni any udp port 1680 -vv
+TCPDUMP_COMMAND_PCAP=timeout 120 tcpdump -ni any udp port 1680 -w /home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/node-a-tx/interactive_privileged_retry/udp1680_capture.pcap
+TX_COMMAND=/home/strawberry-z-model-1/LANGUAGEU_28CHIRPS_RF_PROOF_A/lora_tx_driver/A_LORA_TX_FILE --file /home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/node-a-tx/interactive_privileged_retry/zk_lora_payload.bin --frequency-mhz 903.9 --sf 9 --bandwidth-khz 125 --power-dbm 14
+TEXT_TCPDUMP_EXIT=1
+PCAP_TCPDUMP_EXIT=1
+COORDINATED_ATTEMPT_FINISH_UTC=Tue Jun 30 00:09:26 UTC 2026
+udp1680_capture.pcap not created

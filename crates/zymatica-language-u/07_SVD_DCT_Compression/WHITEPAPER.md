@@ -1,5 +1,5 @@
 # ZYMATICA: SVD/DCT Compression & Reconstructor Pipeline
-*IP Class 06 | Apache License 2.0*
+*IP Class 06 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

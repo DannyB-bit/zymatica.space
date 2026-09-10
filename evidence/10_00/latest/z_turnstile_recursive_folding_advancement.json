@@ -1,0 +1,48 @@
+{
+  "timestamp": 1788163759.0740733,
+  "conservation_delta_pct": 0.0,
+  "turnstile_status": "CONSERVED",
+  "final_folded_proof_bytes": 128,
+  "total_hops_folded": 5,
+  "invention_1_turnstile": {
+    "turnstile_status": "CONSERVED",
+    "energy_in": 1.342684,
+    "energy_cuneiform_6d": 315.669131,
+    "energy_out": 1.342684,
+    "conservation_delta_pct": 0.0
+  },
+  "invention_2_recursive_folding": {
+    "total_hops_folded": 5,
+    "folding_latency_ms": 2.363,
+    "final_folded_proof_bytes": 128,
+    "constant_proof_hex": "28155ee499e6f905f8f96a5591b33867...",
+    "hop_lineage": [
+      {
+        "hop": 1,
+        "node_id": "NODE_1_ONTARIO_SATELLITE",
+        "challenge": "0x2ba3f9f2..."
+      },
+      {
+        "hop": 2,
+        "node_id": "NODE_2_TORONTO_RELAY",
+        "challenge": "0x2b3a663d..."
+      },
+      {
+        "hop": 3,
+        "node_id": "NODE_3_MONTREAL_GATEWAY",
+        "challenge": "0x1146b6b0..."
+      },
+      {
+        "hop": 4,
+        "node_id": "NODE_4_BUFFALO_REPEATER",
+        "challenge": "0x2034dcd7..."
+      },
+      {
+        "hop": 5,
+        "node_id": "NODE_5_MAINNET_SETTLER",
+        "challenge": "0x1a1e28bb..."
+      }
+    ]
+  },
+  "verdict": "SIMULATION_PROTOTYPES_EMPIRICALLY_VALIDATED"
+}

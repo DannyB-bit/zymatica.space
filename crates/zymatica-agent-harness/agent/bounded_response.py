@@ -31,7 +31,7 @@ cancels the read) and return whatever partial bytes were collected.
 
 Ported and adapted from openclaw/openclaw#95108 ("bound Anthropic error
 streams"), generalized to cover Zymatica's three streaming error-body sites
-(native Gemini, Gemini Cloud Code, Antigravity Cloud Code).
+(native Gemini, Gemini Cloud Code, Devs One Cloud Code).
 """
 
 from __future__ import annotations

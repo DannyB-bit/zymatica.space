@@ -22,6 +22,6 @@ public class Proof {
         System.out.println("[2] Total Semantic bits: " + totalSemanticBits);
         System.out.printf("[3] Space savings: %.2f%%\n", savings);
 
-        System.out.println("\n[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.");
+        System.out.println("\n[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.");
     }
 }

@@ -1,5 +1,5 @@
 # ZYMATICA: Radical Coordinate Resonance Alignment (RCRA)
-*IP Class 11 | Apache License 2.0*
+*IP Class 11 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

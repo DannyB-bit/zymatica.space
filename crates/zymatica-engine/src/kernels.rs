@@ -182,7 +182,7 @@ pub fn q8_i8_dot_f32_scaled(row: &[i8], x: &[f32], scale: f32) -> f32 {
     {
         // SAFETY: slices are bounds-checked by length equality above; the NEON routine only reads
         // within row.len() and x.len().
-        return unsafe { q8_dot_f32_neon(row.as_ptr(), x.as_ptr(), row.len(), scale) };
+        unsafe { q8_dot_f32_neon(row.as_ptr(), x.as_ptr(), row.len(), scale) }
     }
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
     {
@@ -479,7 +479,7 @@ pub fn q8_u8_dot_f32_scaled(row: &[u8], x: &[f32], scale: f32) -> f32 {
     {
         // SAFETY: .zq8 stores two's-complement i8 payload bytes. Casting the read-only u8 pointer
         // to i8 preserves the byte pattern and the NEON routine only reads within the slice.
-        return unsafe { q8_dot_f32_neon(row.as_ptr().cast::<i8>(), x.as_ptr(), row.len(), scale) };
+        unsafe { q8_dot_f32_neon(row.as_ptr().cast::<i8>(), x.as_ptr(), row.len(), scale) }
     }
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
     {
@@ -991,9 +991,13 @@ unsafe fn q8_i8_dot2_f32_avx2_fma(
     (sum_a * scale_a, sum_b * scale_b)
 }
 
+/// # Safety
+///
+/// `row_a`, `row_b`, `row_c`, `row_d`, and `x` must point to valid arrays of `f32` of at least `len` elements.
+/// The host CPU must support AVX2 and FMA instructions.
 #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 #[target_feature(enable = "avx2,fma")]
-#[allow(unused_unsafe, clippy::too_many_arguments, clippy::missing_safety_doc)]
+#[allow(unused_unsafe, clippy::too_many_arguments)]
 pub unsafe fn f32_dot4_avx2_fma(
     row_a: *const f32,
     row_b: *const f32,
@@ -1055,9 +1059,13 @@ pub unsafe fn f32_dot4_avx2_fma(
     (sum_a, sum_b, sum_c, sum_d)
 }
 
+/// # Safety
+///
+/// `row_a` through `row_h` and `x` must point to valid arrays of `f32` of at least `len` elements.
+/// The host CPU must support AVX2 and FMA instructions.
 #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 #[target_feature(enable = "avx2,fma")]
-#[allow(unused_unsafe, clippy::too_many_arguments, clippy::missing_safety_doc)]
+#[allow(unused_unsafe, clippy::too_many_arguments)]
 pub unsafe fn f32_dot8_avx2_fma(
     row_a: *const f32,
     row_b: *const f32,
@@ -1280,22 +1288,27 @@ pub enum Q4DotKernel {
 #[inline]
 pub fn select_q4_dot_kernel() -> Q4DotKernel {
     if thermal_pressure_high() {
-        return Q4DotKernel::ThermalHigh;
-    }
-    #[cfg(target_arch = "aarch64")]
-    {
-        return Q4DotKernel::Neon;
-    }
-    #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
-    {
-        if is_x86_avx2_fma_available() {
-            return Q4DotKernel::Avx2Fma;
+        Q4DotKernel::ThermalHigh
+    } else {
+        #[cfg(target_arch = "aarch64")]
+        {
+            Q4DotKernel::Neon
         }
-        if is_x86_avx2_available() {
-            return Q4DotKernel::Avx2;
+        #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
+        {
+            if is_x86_avx2_fma_available() {
+                Q4DotKernel::Avx2Fma
+            } else if is_x86_avx2_available() {
+                Q4DotKernel::Avx2
+            } else {
+                Q4DotKernel::Scalar
+            }
+        }
+        #[cfg(not(any(target_arch = "aarch64", target_arch = "x86", target_arch = "x86_64")))]
+        {
+            Q4DotKernel::Scalar
         }
     }
-    Q4DotKernel::Scalar
 }
 
 #[inline]
@@ -1953,7 +1966,11 @@ unsafe fn q4_dot_f32_neon(row_packed: *const u8, x: *const f32, len: usize, scal
         let mut sum = vaddvq_f32(acc0) + vaddvq_f32(acc1);
         while i < len {
             let byte = *row_packed.add(i / 2);
-            let nibble = if i % 2 == 0 { byte & 0x0f } else { byte >> 4 };
+            let nibble = if i.is_multiple_of(2) {
+                byte & 0x0f
+            } else {
+                byte >> 4
+            };
             let q = nibble as i8 - 8;
             sum += q as f32 * *x.add(i);
             i += 1;
@@ -2380,8 +2397,14 @@ unsafe fn rms_norm_in_place_avx2_fma_impl(
     }
 }
 
+/// # Safety
+///
+/// `row_a` and `row_b` must point to valid arrays of `i8` of at least `len` elements.
+/// `x` must point to a valid array of `f32` of at least `len` elements.
+/// `out_a` and `out_b` must be valid mutable references.
 #[cfg(target_arch = "aarch64")]
 #[inline]
+#[allow(clippy::too_many_arguments)]
 pub unsafe fn q8_gemv_row_pair_neon(
     row_a: *const i8,
     row_b: *const i8,
@@ -2678,12 +2701,12 @@ pub fn q3_dot_f32_scaled(row_packed: &[u8], x: &[f32], scale: f32) -> f32 {
 #[inline]
 pub fn q1_58_dot_f32_scaled(row_packed: &[u8], x: &[f32], scale: f32, cols: usize) -> f32 {
     let mut sum = 0.0_f32;
-    for col in 0..cols {
+    for (col, &xv) in x.iter().take(cols).enumerate() {
         let byte = row_packed[col / 4];
         let code = (byte >> ((col % 4) * 2)) & 0x03;
         match code {
-            0 => sum -= x[col],
-            2 => sum += x[col],
+            0 => sum -= xv,
+            2 => sum += xv,
             _ => {}
         }
     }
@@ -2709,10 +2732,9 @@ pub fn q1_58_dot4_f32_scaled(
     let mut sum_c = 0.0_f32;
     let mut sum_d = 0.0_f32;
 
-    for col in 0..cols {
+    for (col, &xv) in x.iter().enumerate().take(cols) {
         let byte_idx = col / 4;
         let shift = (col % 4) * 2;
-        let xv = x[col];
 
         let code_a = (row_a_packed[byte_idx] >> shift) & 0x03;
         let code_b = (row_b_packed[byte_idx] >> shift) & 0x03;
@@ -3022,7 +3044,7 @@ mod tests {
         }
 
         let res = q1_58_dot_f32_scaled(&packed_a, &x, scale_a, 4);
-        let expected = (1.0 * 1.0 + 0.0 * (-2.0) + (-1.0) * 3.0 + 1.0 * (-4.0)) * scale_a;
+        let expected = -6.0 * scale_a;
         assert!((res - expected).abs() < 1e-5);
 
         let (r_a, r_b, r_c, r_d) = q1_58_dot4_f32_scaled(

@@ -72,13 +72,15 @@ mod tests {
 
         router.register_tool(ToolSpec {
             name: "solar_power_monitor".to_string(),
-            description: "Monitors solar panel array power, battery grid load, and voltage".to_string(),
+            description: "Monitors solar panel array power, battery grid load, and voltage"
+                .to_string(),
             input_schema: json!({}),
         });
 
         router.register_tool(ToolSpec {
             name: "water_flow_sensor".to_string(),
-            description: "Reads reservoir water levels, pump speeds, and fluid pressure".to_string(),
+            description: "Reads reservoir water levels, pump speeds, and fluid pressure"
+                .to_string(),
             input_schema: json!({}),
         });
 

@@ -1,0 +1,11 @@
+{
+  "protocol": "Tokenizer Chirp-28 v1.0",
+  "method": "L7:QualiaSeed+L5:BaseReference+ZLIB+FEC",
+  "watermark": "ip zymatica.space",
+  "mode": "reference",
+  "base_oracle": "Qwen/Qwen3.5-0.8B",
+  "num_packets": 28,
+  "packet_size": 255,
+  "compressed_bytes": 28,
+  "sha256": "efa2e7a7d3dc826434d24ae72eff77c94ab4cc48efc7ecd3838818454435c832"
+}

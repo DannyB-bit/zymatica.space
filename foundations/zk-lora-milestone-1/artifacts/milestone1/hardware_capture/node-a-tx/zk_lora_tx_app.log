@@ -1,0 +1,32 @@
+COMMAND: script -q -c python3 run_proof.py --test /dev/null
+START_UTC: Mon Jun 29 23:15:20 UTC 2026
+======================================================================
+ZYMATICA | ZK-LoRa Privacy Layer: Zero-Knowledge Proof Verification
+======================================================================
+
+[1] Generating Bitcoin-style ECDSA identity...
+    Agent: researcher-1
+    Public Key Hash: 9a6884340db74b285844c19239531eba...
+    ZK Proof Hash: e18e842bc96ef86657daac4a69580ae4
+    Protocol: groth16 on bn128
+
+[2] Verifying Groth16-style ZK-SNARK proof...
+    Verification Result: ✅ VALID
+    Proves: 'I know the private key' WITHOUT revealing it
+
+[3] Testing proof rejection with wrong public input...
+    Wrong Input Verification: ❌ REJECTED (correct!)
+
+[4] Generating 3 independent proofs (unlinkability test)...
+    Proof 1: e4d0c33159167e3ef1b4c81cee23e743
+    Proof 2: 9e8709da0a9c0bd77af77bf1b1f9c819
+    Proof 3: 95fbf6ca913c500a4a94424fc3552f01
+    All proofs unique (unlinkable): ✅ YES
+
+[5] Benchmarking proof generation (100 proofs)...
+    100 proofs generated in 0.008s (0.1ms per proof)
+
+[VERIFICATION] ZK-LoRa privacy layer proof verification complete.
+    All 5 tests passed. Zero-knowledge proof system operational.
+END_UTC: Mon Jun 29 23:15:20 UTC 2026
+EXIT_STATUS: 0

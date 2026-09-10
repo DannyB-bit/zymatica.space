@@ -835,7 +835,9 @@ mod tests {
             .system_prompt("You are a helpful assistant")
             .with_guardrails(
                 crate::agent_guardrails::GuardrailChain::new()
-                    .with_input_guard(Box::new(crate::agent_guardrails::PromptInjectionGuard::default()))
+                    .with_input_guard(Box::new(
+                        crate::agent_guardrails::PromptInjectionGuard::default(),
+                    ))
                     .with_output_guard(Box::new(crate::agent_guardrails::JsonValidationGuard)),
             );
 

@@ -1,0 +1,27 @@
+{
+    "node_id": "cuneiform-node-01",
+    "description": "Zymatica Computer Lab Mainhub Gateway",
+    "location": {
+        "name": "Rochester Academic Computer Lab",
+        "latitude": 43.0844,
+        "longitude": -77.6749,
+        "elevation_meters": 155.0
+    },
+    "power_profile": {
+        "power_source": "AC_GRID",
+        "battery_voltage_critical": 0.0,
+        "low_power_threshold_percent": 0.0,
+        "active_duty_cycle": 1.0
+    },
+    "lora_parameters": {
+        "frequency_mhz": 915.0,
+        "spreading_factor": 7,
+        "bandwidth_khz": 250.0,
+        "coding_rate": "4/5",
+        "tx_power_dbm": 20
+    },
+    "solana_pay": {
+        "recipient_address": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS",
+        "routing_fee_usdc": 0.015
+    }
+}

@@ -1,0 +1,39 @@
+COMMAND: python3 verify_all_proofs.py
+START_UTC: Mon Jun 29 23:15:18 UTC 2026
+================================================================================
+🛡️  ZYMATICA | ZK-LoRa FULL 20-Language Proof Suite Verifier
+================================================================================
+
+🚀 Running Python (Interpreted proof validation)...
+   Status: ✅ PASS (took 0.07s)
+
+🚀 Running TypeScript (Compiled ES Module runtime verification (JavaScript + WASM))...
+   Status: ✅ PASS (took 1.68s)
+
+⏭️  SKIP Rust — runtime not installed
+⏭️  SKIP Java — runtime not installed
+⏭️  SKIP PowerShell — runtime not installed
+⏭️  SKIP Bash — runtime not installed
+⏭️  SKIP C# — runtime not installed
+⏭️  SKIP C — runtime not installed
+⏭️  SKIP C++ — runtime not installed
+⏭️  SKIP Go — runtime not installed
+⏭️  SKIP Ruby — runtime not installed
+⏭️  SKIP PHP — runtime not installed
+🚀 Running Lua (Interpreted Lua runtime verification)...
+   Status: ✅ PASS (took 0.02s)
+
+⏭️  SKIP Zig — runtime not installed
+⏭️  SKIP Dart — runtime not installed
+⏭️  SKIP Kotlin — runtime not installed
+⏭️  SKIP Julia — runtime not installed
+⏭️  SKIP Swift — runtime not installed
+⏭️  SKIP Haskell — runtime not installed
+⏭️  SKIP Elixir — runtime not installed
+📝 Report written to: VERIFICATION_REPORT.md
+
+================================================================================
+  PASSED: 3  |  FAILED: 0  |  SKIPPED: 17  |  TOTAL: 20
+================================================================================
+END_UTC: Mon Jun 29 23:15:19 UTC 2026
+EXIT_STATUS: 0

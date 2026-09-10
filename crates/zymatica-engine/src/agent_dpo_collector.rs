@@ -28,16 +28,18 @@ pub struct PairMetadata {
 }
 
 /// Collects DPO preference pairs from agent conversation trajectories.
+#[derive(Default)]
 pub struct DpoCollector {
     pairs: Vec<PreferencePair>,
 }
 
 impl DpoCollector {
     pub fn new() -> Self {
-        Self { pairs: Vec::new() }
+        Self::default()
     }
 
     /// Record a preference pair from a successful vs failed attempt at the same task.
+    #[allow(clippy::too_many_arguments)]
     pub fn record_pair(
         &mut self,
         prompt: &str,

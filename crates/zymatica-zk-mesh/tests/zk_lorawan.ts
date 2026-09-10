@@ -86,7 +86,7 @@ describe("zk_lorawan", () => {
   );
 
   // Hardcoded treasury address matching lib.rs
-  const treasuryAddress = new anchor.web3.PublicKey("CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ");
+  const treasuryAddress = new anchor.web3.PublicKey("7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS");
 
   // Find PDA for registry
   const [registryPda, registryBump] = anchor.web3.PublicKey.findProgramAddressSync(

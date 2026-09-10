@@ -16,9 +16,9 @@ Milestone 1 delivers a fully operational Solana Anchor program deployed to devne
 
 | # | Deliverable | Status | Evidence |
 |---|---|---|---|
-| 1 | Anchor program deployed to devnet | ✅ | [Explorer Link](https://explorer.solana.com/address/2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy?cluster=devnet) |
+| 1 | Anchor program deployed to devnet | ✅ | [Explorer Link](https://explorer.solana.com/address/BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M?cluster=devnet) |
 | 2 | On-chain coordinate registration | ✅ | [Registration TX](https://explorer.solana.com/tx/2WbKq8A9BfAofU46QXQaYny2RRz1wx8aDirkR6N7HxmcmsFxHC6UAdooYzd6BLnwztaV49qq3Tdw74MAwi7V1aMT?cluster=devnet) |
-| 3 | Protocol fee collection to treasury | ✅ | 10,000 lamports per registration routed to cold wallet |
+| 3 | Protocol fee collection to treasury | ✅ | 150,000 lamports per registration routed to cold wallet |
 | 4 | TypeScript SDK (CuneiformClient) | ✅ | See `cuneiform_client.ts` |
 | 5 | On-chain coordinate updates | ✅ | [Update TX](https://explorer.solana.com/tx/4NEHNuGmqrkoqaf7upkyBKRV8rmSNhULr6ybFiZbeyan6qFXNJTDUEa6Ekz42p131uBUqKSfHcUNSLZPmMnYxLfT?cluster=devnet) |
 | 6 | Integration test suite (11/11 passing) | ✅ | See `test_devnet.ts` and `TEST_RESULTS.md` |
@@ -30,9 +30,9 @@ Milestone 1 delivers a fully operational Solana Anchor program deployed to devne
 
 | Resource | Address |
 |---|---|
-| **Program ID** | `2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy` |
-| **Treasury (Cold Wallet)** | `CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ` |
-| **Deployer Authority** | `BrqnKE7S8wY8etChZgUx8GGnYuvqdFoZhUAD7PTL5PV3` |
+| **Program ID** | `BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M` |
+| **Treasury (Cold Wallet)** | `7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS` |
+| **Deployer Authority** | `7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS` |
 | **Network** | Solana Devnet |
 
 ---
@@ -60,7 +60,7 @@ Milestone 1 delivers a fully operational Solana Anchor program deployed to devne
 │     model prior     │     │  │  │    Strength, Depth)      │  │
 │                     │     │  │  ├─ merkle_root: [u8; 32]   │  │
 │  Fee Payment:       │     │  │  ├─ timestamp: i64          │  │
-│  └─ 10,000 lamports │────▶│  │  └─ bump: u8               │  │
+│  └─ 150,000 lamports │────▶│  │  └─ bump: u8               │  │
 │     per registration│     │  └────────────────────────────┘  │
 │                     │     │                                  │
 │                     │     │  ┌────────────────────────────┐  │
@@ -91,7 +91,7 @@ Milestone 1 delivers a fully operational Solana Anchor program deployed to devne
 ## How to Verify (Evaluator Instructions)
 
 ### 1. View on Solana Explorer
-Visit: https://explorer.solana.com/address/2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy?cluster=devnet
+Visit: https://explorer.solana.com/address/BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M?cluster=devnet
 
 ### 2. Run Tests Locally
 ```bash
@@ -108,7 +108,7 @@ npx tsx app/src/test_devnet.ts
 ### 3. Verify Protocol Fee Collection
 ```bash
 # Check treasury balance (should increase with each registration)
-solana balance CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ --url devnet
+solana balance 7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS --url devnet
 ```
 
 ---
@@ -119,7 +119,7 @@ solana balance CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ --url devnet
 |---|---|---|
 | `initialize_program` | Sets admin, treasury address, and protocol fee | One-time (rent) |
 | `update_program_state` | Admin-only: update treasury or fee amount | Free |
-| `register_coordinates` | Register 6D semantic coordinates + Merkle root | 10,000 lamports |
+| `register_coordinates` | Register 6D semantic coordinates + Merkle root | 150,000 lamports |
 | `update_coordinates` | Update existing record (same session) | Free |
 
 ---
@@ -128,5 +128,7 @@ solana balance CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ --url devnet
 
 ```
 ip zymatica.space | astronautshe.com
-Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+Copyright (c) 2026 Zymatica.
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
 ```

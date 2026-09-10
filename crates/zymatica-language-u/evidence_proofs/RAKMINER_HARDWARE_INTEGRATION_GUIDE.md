@@ -1,5 +1,5 @@
 # ZYMATICA: RAK2287 LoRa Hardware Integration Guide
-*IP Class 06/11 | Apache License 2.0*
+*IP Class 06/11 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 > *Watermark: ip zymatica.space | astronautshe.com*
 

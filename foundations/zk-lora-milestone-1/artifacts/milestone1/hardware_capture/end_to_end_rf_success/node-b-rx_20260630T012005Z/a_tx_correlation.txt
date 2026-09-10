@@ -1,0 +1,4 @@
+A_ARTIFACT=artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-a-tx_20260630T012251Z
+A_COMMIT=6a47fd8
+A_TX_START=Tue Jun 30 01:23:02 UTC 2026
+A_TX_END=Tue Jun 30 01:24:14 UTC 2026

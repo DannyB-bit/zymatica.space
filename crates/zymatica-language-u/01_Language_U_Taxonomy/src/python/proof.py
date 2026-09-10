@@ -69,7 +69,7 @@ def run_proof():
     print(f"  - Total Semantic Bandwidth Required: {total_semantic_bits} bits")
     print(f"  - Net Transmission Space Savings:   {savings:.2f}%")
     print(f"  - Achieved Compression Ratio:        {compression_ratio:.2f}x")
-    print("\n[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.")
+    print("\n[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Zymatica Language-U Taxonomy & Semantic Decomposition Proof")

@@ -1,0 +1,8 @@
+{
+  "schema": "zymatica.speculative-engine.v1",
+  "engine": "Z-HQSpec Holomorphic Speculation",
+  "projection_latency_us": 120.0,
+  "speculative_depth": 6,
+  "vram_overhead_mb": 0.0,
+  "status": "SIMULATION_AND_PROTOTYPE"
+}

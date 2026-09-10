@@ -1,0 +1,5 @@
+COMMAND: sudo -n timeout 120 tcpdump -ni any udp port 1680 -w /home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/node-a-tx/privileged_retry/udp1680_capture.pcap
+START_UTC: Mon Jun 29 23:46:44 UTC 2026
+sudo: a password is required
+END_UTC: Mon Jun 29 23:46:44 UTC 2026
+EXIT_STATUS: 1

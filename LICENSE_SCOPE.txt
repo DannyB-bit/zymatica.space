@@ -1,0 +1,13 @@
+# Zymatica First-Party Covenant Scope
+# Governs original Zymatica engineering modules and algorithms.
+crates/zymatica-zspar/src/*.rs
+crates/zymatica-zk-mesh/groth16/src/*.rs
+crates/zymatica-zk-mesh/programs/zk_lorawan/src/*.rs
+crates/zymatica-engine/src/z_wormhole.rs
+crates/zymatica-engine/src/z_mcts.rs
+crates/zymatica-engine/src/hyper_manifold_kv_folding.rs
+crates/zymatica-engine/src/epigenetic_manifold_crystallizer.rs
+crates/zymatica-engine/src/cuneiform_8d_octonion_engine.rs
+crates/zymatica-engine/src/holomorphic_speculative_engine.rs
+crates/zymatica-engine/src/neural_swarm_hypergraph.rs
+tools/ten_out_of_ten/*.py

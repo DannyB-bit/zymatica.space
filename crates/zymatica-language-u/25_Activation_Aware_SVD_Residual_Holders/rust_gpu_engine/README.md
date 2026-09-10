@@ -63,4 +63,4 @@ export LD_LIBRARY_PATH="/home/user/.local/lib/python3.10/site-packages/torch/lib
 ```
 
 ---
-*Licensed under Apache License 2.0. Patent pending. © 2026 Zymatica Space.*
+*Governed by Zymatica Covenant License 2.0. Patent pending. © 2026 Zymatica Space.*

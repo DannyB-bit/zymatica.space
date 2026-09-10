@@ -1,0 +1,6 @@
+{
+  "schema": "zymatica.xor-fec.v1",
+  "erasure_loss_percentage": 20.0,
+  "recovery_exact": true,
+  "status": "SIMULATION_PROVEN"
+}

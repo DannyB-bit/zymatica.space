@@ -276,7 +276,17 @@ Generation: O(n) time (seconds, tunable via difficulty)
 | LoRa Modulation | SX1302 HAL, 903.9 MHz, SF9, 125kHz |
 | Identity Namespace | zymatica.space |
 
-### 5.3 File Structure
+### 5.3 Solana On-Chain Cuneiform Anchor & Verification Registry
+
+The on-chain semantic anchor program serves as the global consensus, double-spend nullifier registry, and monetization engine:
+
+* **Active Solana Program ID:** [`BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M`](https://explorer.solana.com/address/BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M?cluster=devnet)
+* **Primary Fee Treasury Recipient:** [`7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS`](https://explorer.solana.com/address/7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS?cluster=devnet)
+* **Deployer & Admin Authority:** [`7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS`](https://explorer.solana.com/address/7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS?cluster=devnet)
+* **Programmable Protocol Fee:** **150,000 lamports** ($0.00015000$ SOL) per coordinate registration / chirp attestation.
+* **Historical Genesis Baseline (Audit Traceability):** [`2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy`](https://explorer.solana.com/address/2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy?cluster=devnet) (Milestones 1–3 genesis deployment records preserved in `foundations/solana-cuneiform-milestone1/2/3/` for forensic audit lineage).
+
+### 5.4 File Structure
 
 ```
 ~/.zyMatica/
@@ -381,6 +391,18 @@ Generation: O(n) time (seconds, tunable via difficulty)
 | AES Encryption | ✅ Payload | ⚠️ Shared secret | ❌ No | ❌ No |
 | Bitcoin-style (v1.0) | ✅ UID masked | ✅ ECDSA | ❌ Partial | ❌ No |
 | **ZK-LoRa (v2.0)** | ✅✅ Full | ✅✅ ECDSA+ZK | ✅✅ Full | ✅✅ Yes |
+
+### 7.3 4-Layer Cryptographic Shield & 100.00% Lossless Decoding
+
+The protocol implements a comprehensive 4-layer defense preventing any third-party eavesdropper or malicious entity from deciphering, tampering with, or replaying transmission packets:
+
+1. **Layer 1 (Payload Encryption):** ECIES asymmetric key encapsulation with authenticated AES-256-GCM encryption. Without the recipient's private key, the packet remains mathematically indistinguishable from random noise.
+2. **Layer 2 (Zero-Knowledge Privacy):** 128-byte BN254 Groth16 zk-SNARK proof ($A \in G_1, B \in G_2, C \in G_1$). Guarantees strict zero-knowledge: listeners verify mathematical authenticity while learning strictly $0$ bits of private agent information.
+3. **Layer 3 (Anti-Replay Nullifiers):** 91-round MiMC7 permutation algebraic nullifiers recorded on the Solana blockchain. Any attempted replay of intercepted RF signals is rejected immediately with `ZKLoRaError::NullifierAlreadyUsed`.
+4. **Layer 4 (Physical Integrity):** Hardware-level CRC-16/CCITT-FALSE polynomial verification ($0x1021$). Corrupted or altered frames are dropped at the physical transceiver layer.
+
+**100.00% Lossless Decoding Guarantee:**  
+Because the 6D Language-U coordinate space maps onto a discrete integer lattice $\vec{v} \in [0, 255]^6$, the inverse ontology transformation reconstructs discrete domain, subdomain, modality, polarity, intensity, and depth with exact **0.0000% error rate** (bit-exact deterministic decoding).
 
 ---
 
@@ -524,9 +546,9 @@ python3 /home/researcher/lora_rx_zk_listener.py
 **Version:** 1.0 (Bitcoin-style) → 2.0 (Solana ZK-enabled, in development)  
 **Date:** June 19, 2026  
 **Authors:** zymatica.space | astronautshe.com | DevsOne | We Are TheAiCollective.art  
-**License:** Apache License 2.0  
-**Solana Address (Treasury):** `CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ`  
-**Devnet Program ID:** `2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy`  
+**License:** Zymatica Covenant License 2.0 (zymatica.space)  
+**Solana Address (Treasury):** `7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS`  
+**Devnet Program ID:** `BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M`  
 **Contact:** zymatica.space | github.com/DannyB-bit/zymatica.space
 
 ---

@@ -1,0 +1,7 @@
+COMMAND: lsusb
+START_UTC: Mon Jun 29 23:15:17 UTC 2026
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 2109:3431 VIA Labs, Inc. Hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+END_UTC: Mon Jun 29 23:15:17 UTC 2026
+EXIT_STATUS: 0

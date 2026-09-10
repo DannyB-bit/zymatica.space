@@ -1,0 +1,7 @@
+[package]
+name = "zk-lora-operator"
+version = "2.0.0"
+edition = "2021"
+
+[dependencies]
+# We keep dependencies to 0 or minimal to ensure instant compilation on any systems

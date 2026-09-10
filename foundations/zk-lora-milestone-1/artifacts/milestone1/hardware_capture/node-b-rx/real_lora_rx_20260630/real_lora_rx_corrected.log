@@ -1,0 +1,36 @@
+CORRECTED_REAL_LORA_RX_COMMAND_START_UTC=2026-06-30T00:32:58Z
+RX_WORKDIR=/home/strawberry-z-model-1/sx1302_hal/libloragw
+RESET_COMMAND=sudo ./reset_lgw.sh start
+RX_COMMAND=timeout 180 sudo ./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 903.9 -b 903.9 -k 0 -m 1 -j -z 255 -n 1
+EXPECTED_A_TX=~/tx --file /tmp/zk.bin --frequency-mhz 903.9 --sf 9 --bandwidth-khz 125 --power-dbm 14
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+RESET_EXIT_CODE=0
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 255
+INFO: Select channel mode 1
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+Waiting for packets...
+
+Nb valid packets received: 0 CRC OK (1)
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+=========== Test End ===========
+CORRECTED_REAL_LORA_RX_COMMAND_END_UTC=2026-06-30T00:36:04Z
+CORRECTED_REAL_LORA_RX_COMMAND_EXIT_CODE=124

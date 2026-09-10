@@ -1,0 +1,17 @@
+# Watermark: ip zymatica.space | astronautshe.com
+# Copyright (c) 2026 Zymatica. All rights reserved.
+apiVersion: v1
+kind: Service
+metadata:
+  name: zymatica-go-gateway-service
+  namespace: default
+  labels:
+    app: zymatica-go-gateway
+spec:
+  ports:
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    app: zymatica-go-gateway
+  type: ClusterIP

@@ -1,0 +1,7 @@
+{
+  "schema": "zymatica.formal-proofs.v1",
+  "lean_version": "Lean 4",
+  "theorem": "nullspace_orthogonality",
+  "proof_valid": true,
+  "status": "FORMALLY_PROVEN"
+}

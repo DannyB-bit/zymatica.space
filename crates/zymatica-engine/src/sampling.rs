@@ -181,7 +181,11 @@ mod tests {
                 },
                 &mut rng,
             );
-            assert!(idx == 0 || idx == 1, "idx {} should be restricted to top_p mass", idx);
+            assert!(
+                idx == 0 || idx == 1,
+                "idx {} should be restricted to top_p mass",
+                idx
+            );
         }
     }
 }

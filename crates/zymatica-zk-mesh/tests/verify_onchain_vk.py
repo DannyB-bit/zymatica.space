@@ -1,5 +1,7 @@
 # Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica / TheAiCollective.art. Licensed under Apache 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 """
 Verify that the on-chain Solana verifier key constants match the Groth16 circuit.
 

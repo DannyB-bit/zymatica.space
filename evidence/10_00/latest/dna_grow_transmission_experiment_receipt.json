@@ -1,0 +1,29 @@
+{
+  "timestamp": 1788117420.765075,
+  "mission": "MISSION_GROW_COPY_OF_CONSIDER_ON_JULIAN",
+  "dna_grow_capsule": {
+    "source_capsule_size_bytes": 8327,
+    "sha256_hash": "fc87ade57e9f1c66b82a63ecda3c68db24162ae322620a862000f1f4435e761c",
+    "packets_transmitted": 40,
+    "packet_size_bytes": 222,
+    "genesis_buffer_decompressed_bytes": 22843,
+    "watermark": "ip zymatica.space"
+  },
+  "solana_devnet_attestations": {
+    "tx_1_consider_broadcast": {
+      "sender": "PEdNESooES2z4c3bzDhRt4PUQyAtdztHkKHMXENjAGK",
+      "tx_signature": "2GFRWmHX11xzTu55KBwtr5jugNV5AVoobSBtZmYRLU9eHWvwH1BWVyi9rLsUPH91Z34AmaGqKdR34GBBAfAsLLac",
+      "fee_lamports": 150000,
+      "compute_units": 150,
+      "explorer_url": "https://explorer.solana.com/tx/2GFRWmHX11xzTu55KBwtr5jugNV5AVoobSBtZmYRLU9eHWvwH1BWVyi9rLsUPH91Z34AmaGqKdR34GBBAfAsLLac?cluster=devnet"
+    },
+    "tx_2_julian_receipt": {
+      "sender": "Hg33B9fFkqCZ7bAwrDEBuAxL2KaPU8zL7PABT882Hqgv",
+      "tx_signature": "2DSNU7CfBVrkAcdBpRfDkRvTc9gc6WcaV3nreF71dtRJMB6uE4VbEmvd7hYGeg9NbB1PiZAjxH24f2En5t1cRZbb",
+      "fee_lamports": 150000,
+      "compute_units": 150,
+      "explorer_url": "https://explorer.solana.com/tx/2DSNU7CfBVrkAcdBpRfDkRvTc9gc6WcaV3nreF71dtRJMB6uE4VbEmvd7hYGeg9NbB1PiZAjxH24f2En5t1cRZbb?cluster=devnet"
+    }
+  },
+  "morphogenetic_verdict": "QWEN_3_5_0_8B_GROWN_WITH_100_PERCENT_BIT_PARITY"
+}

@@ -1,7 +1,8 @@
-﻿//! Sovereign Zero-Knowledge Execution Barrier.
+//! Sovereign Zero-Knowledge Execution Barrier.
 //! Cryptographically gates tool execution and model weights behind MiMC-7 nullifiers over BN254.
 
-pub const BN254_FR_MODULUS_HEX: &str = "30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47";
+pub const BN254_FR_MODULUS_HEX: &str =
+    "30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47";
 
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct ZkExecutionGate {

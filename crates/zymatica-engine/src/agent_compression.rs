@@ -37,7 +37,7 @@ impl TrajectoryCompressor {
         let mut retained = Vec::new();
         let mut current_tokens = 0;
 
-        let has_system = history.first().map_or(false, |m| m.role == "system");
+        let has_system = history.first().is_some_and(|m| m.role == "system");
         if has_system {
             retained.push(history[0].clone());
             current_tokens += estimate_tokens(&history[0].content);
@@ -59,7 +59,10 @@ impl TrajectoryCompressor {
         retained.extend(tail);
 
         let saved = total_tokens.saturating_sub(current_tokens);
-        let summary = format!("[Context Compressed: {} tokens saved from older turns]", saved);
+        let summary = format!(
+            "[Context Compressed: {} tokens saved from older turns]",
+            saved
+        );
 
         CompressedTrajectory {
             retained_messages: retained,
@@ -71,7 +74,7 @@ impl TrajectoryCompressor {
 
 fn estimate_tokens(text: &str) -> usize {
     // Fast estimation heuristic: ~4 chars per token
-    (text.len() + 3) / 4
+    text.len().div_ceil(4)
 }
 
 #[cfg(test)]
@@ -82,9 +85,18 @@ mod tests {
     fn test_trajectory_compression() {
         let compressor = TrajectoryCompressor::new(50);
         let history = vec![
-            ChatMessage { role: "system".to_string(), content: "System prompt".to_string() },
-            ChatMessage { role: "user".to_string(), content: "Long message 1 ".repeat(20) },
-            ChatMessage { role: "assistant".to_string(), content: "Recent response".to_string() },
+            ChatMessage {
+                role: "system".to_string(),
+                content: "System prompt".to_string(),
+            },
+            ChatMessage {
+                role: "user".to_string(),
+                content: "Long message 1 ".repeat(20),
+            },
+            ChatMessage {
+                role: "assistant".to_string(),
+                content: "Recent response".to_string(),
+            },
         ];
 
         let compressed = compressor.compress(&history);

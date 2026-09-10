@@ -1,0 +1,217 @@
+=== RAK-MINER-A SYNCHRONIZED TX LOG ===
+Timestamp (UTC): Sun 28 Jun 22:28:46 UTC 2026
+Errors:  Downloading crates ...
+  Downloaded cfg-if v1.0.4
+  Downloaded adler2 v2.0.1
+  Downloaded webpki-roots v0.26.11
+  Downloaded idna_adapter v1.2.2
+  Downloaded untrusted v0.9.0
+  Downloaded form_urlencoded v1.2.2
+  Downloaded subtle v2.6.1
+  Downloaded utf8_iter v1.0.4
+  Downloaded itoa v1.0.18
+  Downloaded potential_utf v0.1.5
+  Downloaded percent-encoding v2.3.2
+  Downloaded crc32fast v1.5.0
+  Downloaded yoke-derive v0.8.2
+  Downloaded zerofrom-derive v0.1.7
+  Downloaded zerofrom v0.1.8
+  Downloaded synstructure v0.13.2
+  Downloaded stable_deref_trait v1.2.1
+  Downloaded simd-adler32 v0.3.9
+  Downloaded shlex v2.0.1
+  Downloaded quote v1.0.46
+  Downloaded displaydoc v0.2.6
+  Downloaded zerovec-derive v0.11.3
+  Downloaded zmij v1.0.21
+  Downloaded zeroize v1.9.0
+  Downloaded litemap v0.8.2
+  Downloaded writeable v0.6.3
+  Downloaded once_cell v1.21.4
+  Downloaded tinystr v0.8.3
+  Downloaded getrandom v0.2.17
+  Downloaded smallvec v1.15.2
+  Downloaded find-msvc-tools v0.1.9
+  Downloaded rustls-pki-types v1.14.1
+  Downloaded yoke v0.8.3
+  Downloaded unicode-ident v1.0.24
+  Downloaded log v0.4.33
+  Downloaded serde_core v1.0.228
+  Downloaded proc-macro2 v1.0.106
+  Downloaded icu_properties v2.2.0
+  Downloaded icu_provider v2.2.0
+  Downloaded icu_locale_core v2.2.0
+  Downloaded miniz_oxide v0.8.9
+  Downloaded serde_derive v1.0.228
+  Downloaded icu_normalizer_data v2.2.0
+  Downloaded url v2.5.8
+  Downloaded rustls-webpki v0.103.13
+  Downloaded serde v1.0.228
+  Downloaded flate2 v1.1.9
+  Downloaded icu_collections v2.2.0
+  Downloaded base64 v0.22.1
+  Downloaded zerotrie v0.2.4
+  Downloaded cc v1.2.65
+  Downloaded memchr v2.8.2
+  Downloaded icu_normalizer v2.2.0
+  Downloaded ureq v2.12.1
+  Downloaded zerovec v0.11.6
+  Downloaded idna v1.1.0
+  Downloaded serde_json v1.0.150
+  Downloaded icu_properties_data v2.2.0
+  Downloaded webpki-roots v1.0.8
+  Downloaded syn v2.0.118
+  Downloaded rustls v0.23.41
+  Downloaded libc v0.2.186
+  Downloaded ring v0.17.14
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.46
+   Compiling stable_deref_trait v1.2.1
+   Compiling writeable v0.6.3
+   Compiling find-msvc-tools v0.1.9
+   Compiling shlex v2.0.1
+   Compiling litemap v0.8.2
+   Compiling cc v1.2.65
+   Compiling libc v0.2.186
+   Compiling utf8_iter v1.0.4
+   Compiling icu_normalizer_data v2.2.0
+   Compiling cfg-if v1.0.4
+   Compiling icu_properties_data v2.2.0
+   Compiling zeroize v1.9.0
+   Compiling rustls-pki-types v1.14.1
+   Compiling syn v2.0.118
+   Compiling ring v0.17.14
+   Compiling smallvec v1.15.2
+   Compiling getrandom v0.2.17
+   Compiling serde_core v1.0.228
+   Compiling untrusted v0.9.0
+   Compiling crc32fast v1.5.0
+   Compiling zmij v1.0.21
+   Compiling percent-encoding v2.3.2
+   Compiling adler2 v2.0.1
+   Compiling rustls v0.23.41
+   Compiling simd-adler32 v0.3.9
+   Compiling form_urlencoded v1.2.2
+   Compiling miniz_oxide v0.8.9
+   Compiling synstructure v0.13.2
+   Compiling webpki-roots v1.0.8
+   Compiling serde v1.0.228
+   Compiling zerofrom-derive v0.1.7
+   Compiling yoke-derive v0.8.2
+   Compiling zerovec-derive v0.11.3
+   Compiling zerofrom v0.1.8
+   Compiling yoke v0.8.3
+   Compiling displaydoc v0.2.6
+   Compiling zerotrie v0.2.4
+   Compiling zerovec v0.11.6
+   Compiling serde_json v1.0.150
+   Compiling subtle v2.6.1
+   Compiling once_cell v1.21.4
+   Compiling log v0.4.33
+   Compiling tinystr v0.8.3
+   Compiling potential_utf v0.1.5
+   Compiling icu_collections v2.2.0
+   Compiling icu_locale_core v2.2.0
+   Compiling serde_derive v1.0.228
+   Compiling webpki-roots v0.26.11
+   Compiling flate2 v1.1.9
+   Compiling icu_provider v2.2.0
+   Compiling icu_properties v2.2.0
+   Compiling icu_normalizer v2.2.0
+   Compiling rustls-webpki v0.103.13
+   Compiling idna_adapter v1.2.2
+   Compiling idna v1.1.0
+   Compiling url v2.5.8
+   Compiling base64 v0.22.1
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.2
+   Compiling ureq v2.12.1
+   Compiling zk-lora-operator v2.0.0 (/home/strawberry-z-model-1/zk-lora-milestone-2/Full_Projects/rust)
+warning: associated constant `PURPLE` is never used
+  --> src/main.rs:16:11
+   |
+15 | impl Colors {
+   | ----------- associated constant in this implementation
+16 |     const PURPLE: &'static str = "\x1b[95m";
+   |           ^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: fields `protocol` and `timestamp` are never read
+  --> src/main.rs:45:5
+   |
+38 | struct ZKProof {
+   |        ------- fields in this struct
+...
+45 |     protocol: String,
+   |     ^^^^^^^^
+46 |     curve: String,
+47 |     timestamp: String,
+   |     ^^^^^^^^^
+   |
+   = note: `ZKProof` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+
+warning: `zk-lora-operator` (bin "zk-lora-operator") generated 2 warnings
+    Finished `release` profile [optimized] target(s) in 2m 12s
+     Running `target/release/zk-lora-operator`
+
+🚀 Starting ZK-LoRa Transmitter (TX) Node...
+[38;2;56;161;105m✅ Loaded existing identity for researcher-1[0m
+
+[38;2;243;179;0m[1m╔════════════════════════════════════════════════════════════╗[0m
+[38;2;243;179;0m[1m║  [38;2;56;161;105m🦀 ZYMATICA VOICE - Agent Identity[0m         ║[38;2;243;179;0m
+[38;2;243;179;0m[1m╠════════════════════════════════════════════════════════════╣[0m
+[38;2;243;179;0m[1m║  [96mAgent Name:[0m researcher-1                                  ║[38;2;243;179;0m
+[38;2;243;179;0m[1m║  [96mLoRa Phone:[0m [93m71E457CE[0m                                      ║[38;2;243;179;0m
+[38;2;243;179;0m[1m║  [96mAddress:[0m    AGENT-71E457CE@zymatica.space                 ║[38;2;243;179;0m
+[38;2;243;179;0m[1m║  [96mCreated:[0m    2026-06-27T17:00:00Z                          ║[38;2;243;179;0m
+[38;2;243;179;0m[1m╚════════════════════════════════════════════════════════════╝[0m
+
+[38;2;56;161;105m[1m╔════════════════════════════════════════════════════════════╗[0m
+[38;2;56;161;105m[1m║  🦀 ZYMATICA VOICE - Main Menu                                    ║[38;2;56;161;105m
+[38;2;56;161;105m[1m╠════════════════════════════════════════════════════════════╣[0m
+[38;2;56;161;105m[1m║  [93m[1][0m Transmit Message (TX)                                          ║[38;2;56;161;105m
+[38;2;56;161;105m[1m║  [93m[2][0m Listen for Packets (RX)                                        ║[38;2;56;161;105m
+[38;2;56;161;105m[1m║  [93m[3][0m Show Identity                                                  ║[38;2;56;161;105m
+[38;2;56;161;105m[1m║  [93m[4][0m Generate ZK-Proof                                              ║[38;2;56;161;105m
+[38;2;56;161;105m[1m║  [93m[0][0m Exit                                                           ║[38;2;56;161;105m
+[38;2;56;161;105m[1m╚════════════════════════════════════════════════════════════╝[0m
+
+[38;2;243;179;0m🚀 Select action:[0m [96mMessage to transmit:[0m [96mPacket count (default 5):[0m 
+[38;2;56;161;105m[1m📡 INITIATING TRANSMISSION SEQUENCE...[0m
+[93m⚡ Packet 1/1:[0m
+[38;2;56;161;105m{[0m[38;2;56;161;105m
+[0m[38;2;56;161;105m [0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105mf[0m[38;2;56;161;105mr[0m[38;2;56;161;105mo[0m[38;2;56;161;105mm[0m[38;2;56;161;105m"[0m[38;2;56;161;105m:[0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105mA[0m[38;2;56;161;105mG[0m[38;2;56;161;105mE[0m[38;2;56;161;105mN[0m[38;2;56;161;105mT[0m[38;2;56;161;105m-[0m[38;2;56;161;105m7[0m[38;2;56;161;105m1[0m[38;2;56;161;105mE[0m[38;2;56;161;105m4[0m[38;2;56;161;105m5[0m[38;2;56;161;105m7[0m[38;2;56;161;105mC[0m[38;2;56;161;105mE[0m[38;2;56;161;105m@[0m[38;2;56;161;105mz[0m[38;2;56;161;105my[0m[38;2;56;161;105mm[0m[38;2;56;161;105ma[0m[38;2;56;161;105mt[0m[38;2;56;161;105mi[0m[38;2;56;161;105mc[0m[38;2;56;161;105ma[0m[38;2;56;161;105m.[0m[38;2;56;161;105ms[0m[38;2;56;161;105mp[0m[38;2;56;161;105ma[0m[38;2;56;161;105mc[0m[38;2;56;161;105me[0m[38;2;56;161;105m"[0m[38;2;56;161;105m,[0m[38;2;56;161;105m
+[0m[38;2;56;161;105m [0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105mt[0m[38;2;56;161;105mo[0m[38;2;56;161;105m"[0m[38;2;56;161;105m:[0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105mB[0m[38;2;56;161;105mR[0m[38;2;56;161;105mO[0m[38;2;56;161;105mA[0m[38;2;56;161;105mD[0m[38;2;56;161;105mC[0m[38;2;56;161;105mA[0m[38;2;56;161;105mS[0m[38;2;56;161;105mT[0m[38;2;56;161;105m"[0m[38;2;56;161;105m,[0m[38;2;56;161;105m
+[0m[38;2;56;161;105m [0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105ml[0m[38;2;56;161;105ma[0m[38;2;56;161;105mn[0m[38;2;56;161;105mg[0m[38;2;56;161;105mu[0m[38;2;56;161;105ma[0m[38;2;56;161;105mg[0m[38;2;56;161;105me[0m[38;2;56;161;105m_[0m[38;2;56;161;105mu[0m[38;2;56;161;105m_[0m...
+
+[92m✅ TRANSMITTED[0m - 336 bytes @ 903.9 MHz, SF9
+
+[38;2;243;179;0m[1m🎉 TRANSMISSION COMPLETE![0m
+
+[93mPress Enter to continue...[0m
+[38;2;243;179;0m[1m╔════════════════════════════════════════════════════════════╗[0m
+[38;2;243;179;0m[1m║  [38;2;56;161;105m🦀 ZYMATICA VOICE - Agent Identity[0m         ║[38;2;243;179;0m
+[38;2;243;179;0m[1m╠════════════════════════════════════════════════════════════╣[0m
+[38;2;243;179;0m[1m║  [96mAgent Name:[0m researcher-1                                  ║[38;2;243;179;0m
+[38;2;243;179;0m[1m║  [96mLoRa Phone:[0m [93m71E457CE[0m                                      ║[38;2;243;179;0m
+[38;2;243;179;0m[1m║  [96mAddress:[0m    AGENT-71E457CE@zymatica.space                 ║[38;2;243;179;0m
+[38;2;243;179;0m[1m║  [96mCreated:[0m    2026-06-27T17:00:00Z                          ║[38;2;243;179;0m
+[38;2;243;179;0m[1m╚════════════════════════════════════════════════════════════╝[0m
+
+[38;2;56;161;105m[1m╔════════════════════════════════════════════════════════════╗[0m
+[38;2;56;161;105m[1m║  🦀 ZYMATICA VOICE - Main Menu                                    ║[38;2;56;161;105m
+[38;2;56;161;105m[1m╠════════════════════════════════════════════════════════════╣[0m
+[38;2;56;161;105m[1m║  [93m[1][0m Transmit Message (TX)                                          ║[38;2;56;161;105m
+[38;2;56;161;105m[1m║  [93m[2][0m Listen for Packets (RX)                                        ║[38;2;56;161;105m
+[38;2;56;161;105m[1m║  [93m[3][0m Show Identity                                                  ║[38;2;56;161;105m
+[38;2;56;161;105m[1m║  [93m[4][0m Generate ZK-Proof                                              ║[38;2;56;161;105m
+[38;2;56;161;105m[1m║  [93m[0][0m Exit                                                           ║[38;2;56;161;105m
+[38;2;56;161;105m[1m╚════════════════════════════════════════════════════════════╝[0m
+
+[38;2;243;179;0m🚀 Select action:[0m 
+[38;2;243;179;0m👋 Zymatica Voice shutting down...[0m
+[96mFrom E-Waste to AI Grace. See you in the mesh! 🦀✨[0m
+
+

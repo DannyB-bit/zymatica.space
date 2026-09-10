@@ -1,5 +1,5 @@
 # ZYMATICA: Chirp Packetization & FEC Scheme (28/78 chirps)
-*IP Class 05 | Apache License 2.0*
+*IP Class 05 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

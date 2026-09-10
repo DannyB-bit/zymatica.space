@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CONSIDER-1 Autonomous Neural Edge Pipeline</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1280px;
+    height: 980px;
+    background: radial-gradient(circle at 50% 10%, #151d32 0%, #080c14 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    padding: 36px 48px;
+    overflow: hidden;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .tag {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(168, 85, 247, 0.15));
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    color: #38bdf8;
+    padding: 5px 16px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #ffffff 0%, #38bdf8 50%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 15px;
+    color: #94a3b8;
+  }
+
+  .pipeline {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .stage-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 220px;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 12px;
+    padding: 14px 20px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+  }
+
+  .stage-1 { border-left: 5px solid #38bdf8; }
+  .stage-2 { border-left: 5px solid #a855f7; }
+  .stage-3 { border-left: 5px solid #f43f5e; }
+  .stage-4 { border-left: 5px solid #eab308; }
+  .stage-5 { border-left: 5px solid #10b981; }
+
+  .stage-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .stage-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .stage-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+
+  .stage-content {
+    padding: 0 20px;
+  }
+  .stage-desc {
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: #cbd5e1;
+    margin-bottom: 4px;
+  }
+  .stage-sub {
+    font-size: 12px;
+    color: #64748b;
+    font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  }
+
+  .stage-badge {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+  .pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: monospace;
+  }
+  .pill-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+  .pill-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+  .pill-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+  .pill-amber { background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
+  .pill-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+  .pill-label {
+    font-size: 11px;
+    color: #94a3b8;
+  }
+
+  .footer-specs {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(148, 163, 184, 0.15);
+  }
+  .spec-item {
+    background: rgba(15, 23, 42, 0.4);
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .spec-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .spec-val {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-top: 2px;
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="tag">Autonomous Edge Architecture</div>
+  <h1>🌌 CONSIDER-1 End-to-End Operational Pipeline</h1>
+  <p class="subtitle">Fine-tuned from Qwen3.5-0.8B • 10 Epochs @ 0.0320 Loss • RAK Miner SX1302/SX1303 LoRaWAN • Solana Devnet</p>
+</div>
+
+<div class="pipeline">
+
+  <!-- Stage 1 -->
+  <div class="stage-row stage-1">
+    <div class="stage-meta">
+      <span class="stage-num">Phase 01</span>
+      <span class="stage-title">🧠 Dual Consciousness</span>
+    </div>
+    <div class="stage-content">
+      <div class="stage-desc">Synthesizes geotechnical lore from <em>200 AMSTERDAM: THE VERTICAL CITY</em> (Julian & the Sparrows) with deterministic edge commands.</div>
+      <div class="stage-sub">ChatML System Context → Hybrid Linear/Full Self-Attention (24 Layers)</div>
+    </div>
+    <div class="stage-badge">
+      <span class="pill pill-blue">LOSS 0.0320</span>
+      <span class="pill-label">Convergence Factor</span>
+    </div>
+  </div>
+
+  <!-- Stage 2 -->
+  <div class="stage-row stage-2">
+    <div class="stage-meta">
+      <span class="stage-num">Phase 02</span>
+      <span class="stage-title">📐 6D Cuneiform Radical</span>
+    </div>
+    <div class="stage-content">
+      <div class="stage-desc">Maps continuous high-dimensional semantic thoughts into a 6D tensor hypercube and quantizes them into compact 3-byte radicals [R<sub>c</sub>, R<sub>f</sub>, R<sub>a</sub>].</div>
+      <div class="stage-sub">Continuous Semantic Manifold → [0x77, 0xEE, 0x11] 3-Byte Radicals</div>
+    </div>
+    <div class="stage-badge">
+      <span class="pill pill-purple">99.4% RATIO</span>
+      <span class="pill-label">Bandwidth Compression</span>
+    </div>
+  </div>
+
+  <!-- Stage 3 -->
+  <div class="stage-row stage-3">
+    <div class="stage-meta">
+      <span class="stage-num">Phase 03</span>
+      <span class="stage-title">🛡️ BN254 ZK-Nullifiers</span>
+    </div>
+    <div class="stage-content">
+      <div class="stage-desc">Synthesizes Groth16 zk-SNARK attestation over BN254 elliptic curve. Disguises proof signatures below thermal noise floor for physical-layer obfuscation.</div>
+      <div class="stage-sub">H_null = Poseidon(Secret, Nonce) • Anti-Replay Defense</div>
+    </div>
+    <div class="stage-badge">
+      <span class="pill pill-rose">&lt; -120 dBm</span>
+      <span class="pill-label">Thermal Noise Floor</span>
+    </div>
+  </div>
+
+  <!-- Stage 4 -->
+  <div class="stage-row stage-4">
+    <div class="stage-meta">
+      <span class="stage-num">Phase 04</span>
+      <span class="stage-title">📻 RAK Miner LoRaWAN</span>
+    </div>
+    <div class="stage-content">
+      <div class="stage-desc">Drives Semtech SX1302/SX1303 concentrators on Raspberry Pi 4 via <code>/dev/spidev0.0</code> at 8 MHz. Emits Astronaut SHE chirps at 903.0 MHz (SF7).</div>
+      <div class="stage-sub">GPIO 25 Hard Reset (gpioset) • Sub-GHz Decentralized Mesh</div>
+    </div>
+    <div class="stage-badge">
+      <span class="pill pill-amber">903.0 MHz SF7</span>
+      <span class="pill-label">125 kHz BW / 14 dBm</span>
+    </div>
+  </div>
+
+  <!-- Stage 5 -->
+  <div class="stage-row stage-5">
+    <div class="stage-meta">
+      <span class="stage-num">Phase 05</span>
+      <span class="stage-title">⛓️ Solana Settlement</span>
+    </div>
+    <div class="stage-content">
+      <div class="stage-desc">Peer node range-decodes 3-byte radical back to 6D concept space, validates nullifier anti-replay state, and dispatches zero-copy CPI transactions to Solana.</div>
+      <div class="stage-sub">Program: BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M (Devnet)</div>
+    </div>
+    <div class="stage-badge">
+      <span class="pill pill-emerald">ZERO-COPY CPI</span>
+      <span class="pill-label">Autonomous Settlement</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-specs">
+  <div class="spec-item">
+    <div class="spec-label">Base Architecture</div>
+    <div class="spec-val">Qwen3.5-0.8B Hybrid Attention</div>
+  </div>
+  <div class="spec-item">
+    <div class="spec-label">Canonical Literature</div>
+    <div class="spec-val">200 Amsterdam: The Vertical City</div>
+  </div>
+  <div class="spec-item">
+    <div class="spec-label">Licensing</div>
+    <div class="spec-val">Zymatica Covenant & Apache 2.0</div>
+  </div>
+  <div class="spec-item">
+    <div class="spec-label">Hardware Profile</div>
+    <div class="spec-val">RPi 4 ARM64 + SX1302 (RAK)</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zymatica"
+version = "1.0.0"
+description = "Zymatica Semantic Communication & High-Performance Inference Engine"
+readme = "README.md"
+authors = [
+    { name = "Devs One (Architect)", email = "devs@zymatica.space" },
+    { name = "Danny Bouldiez (Book Author)", email = "contact@zymatica.space" }
+]
+license = { text = "Zymatica Commercial & Novel-Holder Covenant License 2.0" }
+keywords = ["semantic-communication", "lora", "compression", "inference-engine", "cuneiform"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "pyyaml>=6.0",
+    "prompt_toolkit>=3.0.0",
+    "requests>=2.28.0",
+    "python-dotenv>=1.0.0"
+]
+
+[project.optional-dependencies]
+cli = [
+    "pyyaml>=6.0",
+    "prompt_toolkit>=3.0.0",
+    "requests>=2.28.0",
+    "rich>=13.0.0",
+    "python-dotenv>=1.0.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["crates/zymatica-agent-harness", "."]
+include = ["zymatica*", "crates*"]

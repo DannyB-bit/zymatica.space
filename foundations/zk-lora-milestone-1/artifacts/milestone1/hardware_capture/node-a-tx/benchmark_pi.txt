@@ -1,0 +1,13 @@
+COMMAND: python3 benchmark_milestone1.py --iterations 250
+START_UTC: Mon Jun 29 23:15:19 UTC 2026
+ZK-LoRa Milestone 1 Reference Benchmark
+Host: Linux-6.18.33+rpt-rpi-v8-aarch64-with-glibc2.41
+Python: 3.13.5
+Iterations: 250
+
+proof_generation_reference: min=0.072ms median=0.076ms mean=0.078ms max=0.139ms
+proof_verification_reference: min=0.013ms median=0.013ms mean=0.013ms max=0.017ms
+
+Scope: reference structural Groth16-style prototype, not production gnark/arkworks/halo2.
+END_UTC: Mon Jun 29 23:15:20 UTC 2026
+EXIT_STATUS: 0

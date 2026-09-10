@@ -36,7 +36,12 @@ mod tests {
     fn test_json_schema_generator_output() {
         let schema = JsonSchemaGenerator::build_tool_schema(&[
             ("command", "string", "Shell command line to execute", true),
-            ("timeout_ms", "integer", "Optional execution timeout in milliseconds", false),
+            (
+                "timeout_ms",
+                "integer",
+                "Optional execution timeout in milliseconds",
+                false,
+            ),
         ]);
 
         assert_eq!(schema["type"], "object");

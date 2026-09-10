@@ -1,0 +1,46 @@
+{
+  "protocol": "Z-SPAR",
+  "version": "1.0",
+  "field": "GF(16)",
+  "primitive_polynomial": "x^4 + x + 1 (0x13)",
+  "generator_element": 2,
+  "code": "RS(12,8)",
+  "test_vectors": [
+    {
+      "name": "Industrial Valve 7 Emergency Shutdown",
+      "model_a_intent": "Close valve 7 immediately because pressure is critical",
+      "state_8d": [1, 4, 8, 15, 10, 1, 2, 14],
+      "parity_4nibbles": [12, 6, 7, 15],
+      "packed_codeword_hex": "148fa12e67f0",
+      "drift_cases": [
+        {
+          "model_b_reconstruction": [1, 4, 3, 15, 10, 1, 2, 14],
+          "drifted_axes": [2],
+          "expected_status": "REPAIRED_1_AXIS",
+          "repaired_state": [1, 4, 8, 15, 10, 1, 2, 14]
+        },
+        {
+          "model_b_reconstruction": [1, 4, 2, 5, 10, 1, 2, 14],
+          "drifted_axes": [2, 3],
+          "expected_status": "REPAIRED_2_AXIS",
+          "repaired_state": [1, 4, 8, 15, 10, 1, 2, 14]
+        }
+      ]
+    },
+    {
+      "name": "Spacecraft Attitude Geodesic Reorientation",
+      "model_a_intent": "Lock star tracker azimuth to vector 14 within 5 seconds",
+      "state_8d": [7, 12, 14, 11, 15, 0, 5, 13],
+      "parity_4nibbles": [5, 4, 10, 9],
+      "packed_codeword_hex": "7cebf05d54a9",
+      "drift_cases": [
+        {
+          "model_b_reconstruction": [7, 12, 14, 11, 15, 0, 1, 13],
+          "drifted_axes": [6],
+          "expected_status": "REPAIRED_1_AXIS",
+          "repaired_state": [7, 12, 14, 11, 15, 0, 5, 13]
+        }
+      ]
+    }
+  ]
+}

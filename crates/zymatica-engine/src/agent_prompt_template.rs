@@ -18,7 +18,9 @@ impl PromptTemplate {
         // Step 1: Render {{#each key}} ... {{/each}} blocks
         while let Some(start_idx) = rendered.find("{{#each ") {
             let rest = &rendered[start_idx + 8..];
-            let key_end = rest.find("}}").ok_or_else(|| anyhow::anyhow!("Unclosed {{#each}} tag"))?;
+            let key_end = rest
+                .find("}}")
+                .ok_or_else(|| anyhow::anyhow!("Unclosed {{#each}} tag"))?;
             let array_key = rest[..key_end].trim();
 
             let block_start = start_idx + 8 + key_end + 2;
@@ -48,7 +50,9 @@ impl PromptTemplate {
         // Step 2: Render simple {{var}} placeholders
         while let Some(start_idx) = rendered.find("{{") {
             let rest = &rendered[start_idx + 2..];
-            let end_idx = rest.find("}}").ok_or_else(|| anyhow::anyhow!("Unclosed placeholder"))?;
+            let end_idx = rest
+                .find("}}")
+                .ok_or_else(|| anyhow::anyhow!("Unclosed placeholder"))?;
             let var_name = rest[..end_idx].trim();
 
             let replacement = match params.get(var_name) {
@@ -82,7 +86,8 @@ mod tests {
 
     #[test]
     fn test_prompt_template_array_iteration() -> Result<()> {
-        let template = PromptTemplate::compile("Context:\n{{#each docs}}- {{this}}\n{{/each}}Done.")?;
+        let template =
+            PromptTemplate::compile("Context:\n{{#each docs}}- {{this}}\n{{/each}}Done.")?;
         let output = template.render(&json!({
             "docs": ["First doc", "Second doc"]
         }))?;

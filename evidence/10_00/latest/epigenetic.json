@@ -1,0 +1,12 @@
+{
+  "schema": "zymatica.real-model-validation.v1",
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "target_module": "model.layers.0.mlp.down_proj",
+  "calibration_activation_rows": 256,
+  "max_abs_calibration_activation_delta": 3.4e-06,
+  "adapt_loss_relative_change": -0.142,
+  "base_loss_relative_change": 0.0041,
+  "nullspace_rank": 64,
+  "mgs_reorthogonalization_passes": 2,
+  "nan_inf_rejected": 0
+}

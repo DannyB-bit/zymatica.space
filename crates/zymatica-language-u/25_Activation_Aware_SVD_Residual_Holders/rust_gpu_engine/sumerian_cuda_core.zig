@@ -1,6 +1,8 @@
 // Gemma-4-31B Sumerian -- Zig CUDA & Cuneiform Core Library (Dynamic Loading Version)
 // Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+// Copyright © 2026 Zymatica
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
 // Compile with: zig build-lib sumerian_cuda_core.zig -O ReleaseFast -lc
 
 const std = @import("std");

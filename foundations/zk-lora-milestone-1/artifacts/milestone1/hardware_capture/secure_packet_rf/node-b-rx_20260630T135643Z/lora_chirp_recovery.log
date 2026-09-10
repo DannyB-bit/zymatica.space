@@ -1,0 +1,82 @@
+2026-06-30T13:56:43Z LORA_CHIRP_RECOVERY_BEGIN role=node-b-rx spi=/dev/spidev0.0
+2026-06-30T13:56:43Z RECOVERY_LOG=/home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/secure_packet_rf/node-b-rx_20260630T135643Z/lora_chirp_recovery.log
+2026-06-30T13:56:43Z Stopping known gateway services so one process owns the concentrator
+2026-06-30T13:56:43Z RUN: sudo systemctl stop helium-gateway
+Failed to stop helium-gateway.service: Unit helium-gateway.service not loaded.
+2026-06-30T13:56:43Z EXIT[5]: sudo systemctl stop helium-gateway
+2026-06-30T13:56:43Z RUN: sudo systemctl is-active helium-gateway
+inactive
+2026-06-30T13:56:43Z EXIT[4]: sudo systemctl is-active helium-gateway
+2026-06-30T13:56:43Z RUN: sudo systemctl stop packet-forwarder
+Failed to stop packet-forwarder.service: Unit packet-forwarder.service not loaded.
+2026-06-30T13:56:43Z EXIT[5]: sudo systemctl stop packet-forwarder
+2026-06-30T13:56:43Z RUN: sudo systemctl is-active packet-forwarder
+inactive
+2026-06-30T13:56:43Z EXIT[4]: sudo systemctl is-active packet-forwarder
+2026-06-30T13:56:43Z RUN: sudo systemctl stop lora_pkt_fwd
+Failed to stop lora_pkt_fwd.service: Unit lora_pkt_fwd.service not loaded.
+2026-06-30T13:56:43Z EXIT[5]: sudo systemctl stop lora_pkt_fwd
+2026-06-30T13:56:43Z RUN: sudo systemctl is-active lora_pkt_fwd
+inactive
+2026-06-30T13:56:43Z EXIT[4]: sudo systemctl is-active lora_pkt_fwd
+2026-06-30T13:56:44Z RUN: sudo systemctl stop lora-packet-forwarder
+Failed to stop lora-packet-forwarder.service: Unit lora-packet-forwarder.service not loaded.
+2026-06-30T13:56:44Z EXIT[5]: sudo systemctl stop lora-packet-forwarder
+2026-06-30T13:56:44Z RUN: sudo systemctl is-active lora-packet-forwarder
+inactive
+2026-06-30T13:56:44Z EXIT[4]: sudo systemctl is-active lora-packet-forwarder
+2026-06-30T13:56:44Z RUN: sudo systemctl stop sx1302_hal
+Failed to stop sx1302_hal.service: Unit sx1302_hal.service not loaded.
+2026-06-30T13:56:44Z EXIT[5]: sudo systemctl stop sx1302_hal
+2026-06-30T13:56:44Z RUN: sudo systemctl is-active sx1302_hal
+inactive
+2026-06-30T13:56:44Z EXIT[4]: sudo systemctl is-active sx1302_hal
+2026-06-30T13:56:44Z RUN: sudo systemctl stop chirpstack-gateway-bridge
+Failed to stop chirpstack-gateway-bridge.service: Unit chirpstack-gateway-bridge.service not loaded.
+2026-06-30T13:56:44Z EXIT[5]: sudo systemctl stop chirpstack-gateway-bridge
+2026-06-30T13:56:44Z RUN: sudo systemctl is-active chirpstack-gateway-bridge
+inactive
+2026-06-30T13:56:44Z EXIT[4]: sudo systemctl is-active chirpstack-gateway-bridge
+2026-06-30T13:56:44Z RUN: sudo systemctl stop miner
+Failed to stop miner.service: Unit miner.service not loaded.
+2026-06-30T13:56:44Z EXIT[5]: sudo systemctl stop miner
+2026-06-30T13:56:44Z RUN: sudo systemctl is-active miner
+inactive
+2026-06-30T13:56:44Z EXIT[4]: sudo systemctl is-active miner
+2026-06-30T13:56:45Z Using reset script: /home/strawberry-z-model-1/sx1302_hal/libloragw/reset_lgw.sh
+2026-06-30T13:56:45Z RUN: sudo ./reset_lgw.sh stop
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+2026-06-30T13:56:48Z EXIT[0]: sudo ./reset_lgw.sh stop
+2026-06-30T13:56:49Z RUN: sudo ./reset_lgw.sh start
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+2026-06-30T13:56:51Z EXIT[0]: sudo ./reset_lgw.sh start
+2026-06-30T13:56:51Z SPI device exists: /dev/spidev0.0
+crw-rw---- 1 root spi 153, 0 Jun 29 20:48 /dev/spidev0.0
+2026-06-30T13:56:51Z Trying concentrator verification tool: /home/strawberry-z-model-1/sx1302_hal/util_chip_id/util_chip_id
+2026-06-30T13:56:51Z RUN: sudo /home/strawberry-z-model-1/sx1302_hal/util_chip_id/util_chip_id -d /dev/spidev0.0
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+SX1302 reset through GPIO17
+SX1261 reset through GPIO22
+SX1302 power enable skipped
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+
+INFO: concentrator EUI: 0x0016c001ff18afa3
+
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+2026-06-30T13:56:58Z EXIT[0]: sudo /home/strawberry-z-model-1/sx1302_hal/util_chip_id/util_chip_id -d /dev/spidev0.0
+2026-06-30T13:56:58Z LORA_CHIRP_RECOVERY_PASS=YES
+2026-06-30T13:56:58Z LORA_CHIRP_RECOVERY_END role=node-b-rx

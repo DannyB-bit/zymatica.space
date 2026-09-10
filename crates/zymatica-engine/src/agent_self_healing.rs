@@ -11,12 +11,19 @@ pub struct ErrorDiagnosis {
 pub struct SelfHealingEngine;
 
 impl SelfHealingEngine {
-    pub fn diagnose_and_repair(command: &str, stderr: &str, exit_code: i32) -> Option<ErrorDiagnosis> {
+    pub fn diagnose_and_repair(
+        command: &str,
+        stderr: &str,
+        exit_code: i32,
+    ) -> Option<ErrorDiagnosis> {
         if exit_code == 0 {
             return None;
         }
 
-        if stderr.contains("CommandNotFound") || stderr.contains("is not recognized") || stderr.contains("not found") {
+        if stderr.contains("CommandNotFound")
+            || stderr.contains("is not recognized")
+            || stderr.contains("not found")
+        {
             let pkg = command.split_whitespace().next().unwrap_or(command);
             return Some(ErrorDiagnosis {
                 error_type: "MissingDependency".to_string(),
@@ -30,7 +37,8 @@ impl SelfHealingEngine {
             return Some(ErrorDiagnosis {
                 error_type: "PermissionDenied".to_string(),
                 original_command: command.to_string(),
-                root_cause: "Operation requires elevated permissions or path access grant".to_string(),
+                root_cause: "Operation requires elevated permissions or path access grant"
+                    .to_string(),
                 recommended_fix_command: Some(format!("sudo {}", command)),
             });
         }
@@ -55,6 +63,10 @@ mod tests {
         assert!(diag.is_some());
         let d = diag.unwrap();
         assert_eq!(d.error_type, "MissingDependency");
-        assert!(d.recommended_fix_command.unwrap().contains("winget install"));
+        assert!(
+            d.recommended_fix_command
+                .unwrap()
+                .contains("winget install")
+        );
     }
 }

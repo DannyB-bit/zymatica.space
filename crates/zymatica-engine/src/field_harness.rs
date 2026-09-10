@@ -125,7 +125,7 @@ pub fn run_field_readiness_audit() -> Result<FieldReadinessReport> {
 }
 
 pub fn local_multinode_proof() -> Result<FieldMultinodeReport> {
-    let mut nodes = vec![
+    let mut nodes = [
         LocalFieldNode {
             node_id: "edge-a".to_string(),
             causal_memory: frontier::SharedCausalMemory::new(),

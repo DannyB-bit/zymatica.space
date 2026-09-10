@@ -1,0 +1,42 @@
+# RustSec Cargo Audit Configuration & Governance Exceptions
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+
+[advisories]
+# Documented Security Exceptions & Justifications:
+# Every exception below is formally audited, with bounded practical risk, sandboxed runtime mitigation,
+# quarterly review schedule, and designated upstream migration milestone.
+ignore = [
+    # Exception 1: RUSTSEC-2025-0055
+    # Package: tracing-subscriber (transitive dependency via ark-groth16 / arkworks-rs 0.4)
+    # Practical Risk: Denial-of-service via malformed ANSI escape formatting in debug tracing.
+    # Mitigation: Debug tracing macros are compiled out in release builds; no untrusted network strings are formatted.
+    # Review Date: 2026-11-01
+    # Planned Removal: Upon arkworks 0.5 LTS general availability release.
+    "RUSTSEC-2025-0055",
+
+    # Exception 2: RUSTSEC-2026-0253
+    # Package: lru-cache (transitive dependency via ark-relations constraint synthesizer)
+    # Practical Risk: Algorithmic complexity exhaustion in unbounded LRU cache insertion.
+    # Mitigation: ZK-LoRaWAN circuit constraint count is strictly bounded at compile-time (220 MiMC rounds).
+    # Review Date: 2026-11-01
+    # Planned Removal: Upon arkworks 0.5 LTS general availability release.
+    "RUSTSEC-2026-0253",
+
+    # Exception 3: RUSTSEC-2024-0388
+    # Package: derivative (unmaintained macro utility in ark-ff/ark-ec 0.4)
+    # Practical Risk: Maintenance stagnation; no known functional or security vulnerabilities.
+    # Mitigation: Macro expands solely at compile-time into standard PartialEq/Clone implementations.
+    # Review Date: 2026-11-01
+    # Planned Removal: Upon arkworks 0.5 LTS migration.
+    "RUSTSEC-2024-0388",
+
+    # Exception 4: RUSTSEC-2024-0436
+    # Package: paste (unmaintained macro helper in arkworks)
+    # Practical Risk: Maintenance stagnation; no runtime code emitted.
+    # Mitigation: Compile-time identifier concatenation only; zero runtime surface.
+    # Review Date: 2026-11-01
+    # Planned Removal: Upon arkworks 0.5 LTS migration.
+    "RUSTSEC-2024-0436",
+]
+informational_warnings = ["unmaintained", "unsound"]

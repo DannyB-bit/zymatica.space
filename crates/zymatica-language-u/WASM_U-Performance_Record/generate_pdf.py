@@ -47,7 +47,7 @@ class NumberedCanvas(canvas.Canvas):
             self.drawCentredString(letter[0]/2.0, 48, "zymatica.space  |  astronautshe.com  |  Devs One")
             self.setFont("Helvetica-Bold", 8)
             self.setFillColor(colors.HexColor("#63B3ED"))
-            self.drawCentredString(letter[0]/2.0, 28, "We Are TheAiCollective.art  Apache License 2.0 2026©")
+            self.drawCentredString(letter[0]/2.0, 28, "We Are TheAiCollective.art  Zymatica Covenant License 2.0 (zymatica.space) 2026©")
         # Middle Pages (Running Headers & Footers)
         else:
             # Running Header
@@ -473,7 +473,7 @@ if __name__ == "__main__":
     print(f"[+] PDF copied to root workspace at: {root_pdf}")
     
     # Copy PDF to brain artifacts folder
-    brain_pdf = r"C:\Users\freed\.gemini\antigravity-ide\brain\217fb20d-ffc1-487f-82c0-643308a2ac3d\WASM_PERFORMANCE_RECORD.pdf"
+    brain_pdf = r"C:\Users\freed\.gemini\devs_one-ide\brain\217fb20d-ffc1-487f-82c0-643308a2ac3d\WASM_PERFORMANCE_RECORD.pdf"
     try:
         shutil.copy(pdf_file, brain_pdf)
         print(f"[+] PDF copied to brain artifacts folder at: {brain_pdf}")

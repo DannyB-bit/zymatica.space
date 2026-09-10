@@ -1,5 +1,5 @@
 # ZYMATICA: Frontier-Knowledge-Relay (Tiny Model Orchestration)
-*IP Class 19 | Apache License 2.0*
+*IP Class 19 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

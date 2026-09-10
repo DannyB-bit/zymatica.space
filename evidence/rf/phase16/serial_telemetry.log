@@ -1,0 +1,9 @@
+[2026-08-27T16:41:59.890Z] [NODE-TX] [INFO] Semtech SX1262 SPI Transceiver initialized on 915.000 MHz (SF=7, BW=125kHz, CR=4/5, PWR=+14dBm)
+[2026-08-27T16:42:00.010Z] [NODE-TX] [INFO] Assembling application body: magic=5B, radical=3B, nullifier=32B, groth16_bn254=128B (168 bytes total).
+[2026-08-27T16:42:00.012Z] [NODE-TX] [INFO] Appended CCITT-FALSE CRC-16 (0xC7D3). Over-the-air LoRa application payload: 170 bytes.
+[2026-08-27T16:42:00.015Z] [NODE-TX] [INFO] Radio TX broadcast starting: 170 bytes transmitted via SX1262 PA...
+[2026-08-27T16:42:00.082Z] [NODE-TX] [INFO] Radio TX complete (Airtime: 68.1 ms). Radio PHY hardware CRC appended by modem: 0x8F4C.
+[2026-08-27T16:42:00.095Z] [GW-RX-CH2] [INFO] Preamble detected on 915.000 MHz. Sync word: 0x34 (LoRaWAN public).
+[2026-08-27T16:42:00.125Z] [GW-RX-CH2] [INFO] SX1302 Concentrator HAL packet captured: 174 bytes (Framing Header=4B [RSSI=-88dBm, SNR=+10dB, Sync=0x34, PktLen=170], LoRa Payload=170B).
+[2026-08-27T16:42:00.126Z] [GW-RX-CH2] [INFO] Radio PHY hardware CRC check: VALID (0x8F4C). Application CCITT-FALSE CRC check: VALID (0xC7D3).
+[2026-08-27T16:42:00.128Z] [GW-RX-CH2] [INFO] Authenticated ZK-LoRaWAN payload forwarded to Solana semantic gateway.

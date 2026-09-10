@@ -1,0 +1,2 @@
+A-side manual TX completed just before: Tue 30 Jun 00:22:09 UTC 2026
+Inspect B-side captures/logs around: 2026-06-30 00:21:30 UTC to 2026-06-30 00:22:15 UTC

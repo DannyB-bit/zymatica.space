@@ -195,7 +195,7 @@ Upon successful execution, each language implementation is guaranteed to print a
 Each implementation will output standard diagnostic logs followed by the following verification signature:
 
 ```text
-[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.
+[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.
 ```
 
 If this signature is printed and the program exits with code `0`, the logic has been successfully validated.

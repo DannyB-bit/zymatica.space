@@ -70,10 +70,10 @@ To ensure zero degradation in representation fidelity, the codebase includes ver
 ---
 
 ## 5. Licensing & Copyright
-© 2026 Zymatica.space / Devs One. Licensed under the Apache License 2.0. Registered under open-source Genesis Specification protocols.
+© 2026 Zymatica.space / Devs One. Licensed under the Zymatica Covenant License 2.0 (zymatica.space). Registered under open-source Genesis Specification protocols.
 
 ---
-zymatica.space | astronautshe.com | Devs One | We Are TheAiCollective.art Apache License 2.0 2026©
+zymatica.space | astronautshe.com | Devs One | We Are TheAiCollective.art Covenant License 2.0 (zymatica.space) 2026©
 
 <p align="center">
   <img src="Logo.jpg" width="60%" />

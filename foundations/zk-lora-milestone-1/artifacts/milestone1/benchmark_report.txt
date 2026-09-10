@@ -1,0 +1,9 @@
+ZK-LoRa Milestone 1 Reference Benchmark
+Host: Windows-10-10.0.19045-SP0
+Python: 3.14.0
+Iterations: 250
+
+proof_generation_reference: min=0.521ms median=0.613ms mean=0.633ms max=1.101ms
+proof_verification_reference: min=0.004ms median=0.004ms mean=0.004ms max=0.009ms
+
+Scope: reference structural Groth16-style prototype, not production gnark/arkworks/halo2.

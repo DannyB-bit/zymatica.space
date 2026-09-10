@@ -1,0 +1,6 @@
+COMMAND: sudo setcap cap_net_raw,cap_net_admin=eip /usr/bin/tcpdump
+START_UTC: Mon Jun 29 23:46:44 UTC 2026
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+END_UTC: Mon Jun 29 23:46:44 UTC 2026
+EXIT_STATUS: 1

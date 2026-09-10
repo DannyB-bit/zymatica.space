@@ -1,6 +1,8 @@
 // Gemma-4-31B Sumerian -- Rust-Zig Hybrid GPU CUDA Inference Runner
 // Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+// Copyright © 2026 Zymatica
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
 // Run: cargo run --release (links to sumerian_cuda_core.lib)
 
 use std::fs::File;

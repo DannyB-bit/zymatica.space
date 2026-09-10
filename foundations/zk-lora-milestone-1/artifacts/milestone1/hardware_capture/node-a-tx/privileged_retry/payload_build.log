@@ -1,0 +1,8 @@
+<stdin>:10: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+{
+  "created_utc": "2026-06-29T23:46:44Z",
+  "source_file": "zk_lora_payload_source.log",
+  "payload_file": "zk_lora_tx_payload.bin",
+  "payload_bytes": 240,
+  "payload_sha256": "e83fa3acce50696d4c92b4f831d3fc54a505120f160b5b97c9ceaae9f5d9f038"
+}

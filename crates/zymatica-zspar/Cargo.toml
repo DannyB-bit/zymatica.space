@@ -1,0 +1,12 @@
+[package]
+name = "zymatica-zspar"
+version = "1.0.0"
+authors = ["Danny Bouldiez", "Devs One"]
+edition = "2021"
+license-file = "../../LICENSE"
+description = "Z-SPAR: Zymatica Semantic Parity and Repair Protocol v1 (GF(16) RS(12,8))"
+repository = "https://github.com/DannyB-bit/zymatica.space"
+
+[dependencies]
+
+[dev-dependencies]

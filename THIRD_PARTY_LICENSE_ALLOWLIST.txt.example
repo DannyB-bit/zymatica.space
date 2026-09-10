@@ -1,0 +1,3 @@
+# Repository-relative paths of genuine upstream files that must retain their original licenses.
+# Example:
+# crates/some-component/vendor/upstream_file.rs

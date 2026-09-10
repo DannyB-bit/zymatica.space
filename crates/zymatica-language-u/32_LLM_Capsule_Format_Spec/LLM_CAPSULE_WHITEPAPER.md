@@ -69,10 +69,10 @@ Upon receiving the reassembled `.LLM` capsule, the receiver grew the base weight
 ---
 
 ## 5. Licensing & Copyright
-© 2026 Zymatica.space / Devs One / astronautshe.com. Licensed under the Apache License 2.0.
+© 2026 Zymatica.space / Devs One / astronautshe.com. Licensed under the Zymatica Covenant License 2.0 (zymatica.space).
 
 ---
-zymatica.space | astronautshe.com | Devs One | We Are TheAiCollective.art Apache License 2.0 2026©
+zymatica.space | astronautshe.com | Devs One | We Are TheAiCollective.art Covenant License 2.0 (zymatica.space) 2026©
 
 <p align="center">
   <img src="Logo.jpg" width="60%" />

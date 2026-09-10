@@ -1,0 +1,77 @@
+{
+  "timestamp_utc": "2026-09-05T18:28:48Z",
+  "suite_version": "2.0.0-PROD",
+  "program_id": "BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M",
+  "treasury_address": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS",
+  "agents": {
+    "consider_1": {
+      "name": "CONSIDER-1",
+      "model": "TheAiCollectiveART/CONSIDER-1",
+      "base_model": "Qwen/Qwen3.5-0.8B",
+      "address": "PEdNESooES2z4c3bzDhRt4PUQyAtdztHkKHMXENjAGK"
+    },
+    "consider_2": {
+      "name": "CONSIDER-2",
+      "alias": "Julian Node",
+      "model": "SmolLM2-135M / Epigenetic",
+      "address": "Hg33B9fFkqCZ7bAwrDEBuAxL2KaPU8zL7PABT882Hqgv"
+    }
+  },
+  "sessions": [
+    {
+      "session_id": "SESSION_1_DUAL_CONSCIOUSNESS_REASONING",
+      "status": "PASS",
+      "latency_ms": 0.0,
+      "reasoning_steps": [
+        "Metacognitive Lore Grounding: Julian standing atop 200 Amsterdam observing the oceanic surges across Manhattan.",
+        "Physical Agency Grounding: LoRa concentrator requires GPIO 25 hardware reset sequence to clear register latch.",
+        "SPI Bus Assertion: Verifying /dev/spidev0.0 clock rate bounded at 8 MHz to prevent propagation delay distortion.",
+        "Synthesizing Semtech SX1302 instruction: gpioset -c gpiochip0 --toggle 100ms,100ms,0 25=0; ./reset_lgw.sh start.",
+        "Formulating 6D Semantic Thought: Domain Kinematic-Executive (Coords: [8, 0, 15, 1, 0, 15])."
+      ],
+      "synthesized_directives": {
+        "gpio_reset": "gpioset -c gpiochip0 --toggle 100ms,100ms,0 25=0",
+        "spi_device": "/dev/spidev0.0",
+        "clock_speed_hz": 8000000,
+        "rf_freq_mhz": 903.0
+      }
+    },
+    {
+      "session_id": "SESSION_2_RADICAL_SWARM_DEVNET_SETTLEMENT",
+      "status": "PASS",
+      "duration_ms": 2996.95,
+      "turn_1_consider": {
+        "radical": [
+          "0x80",
+          "0xF1",
+          "0x0F"
+        ],
+        "bn254_nullifier": "0xbcf633d341a962c10e55015a30c1365897b7e088e3a09f507ad2e504fe6a9b8f",
+        "tx_signature": "35KyPPRnjEzgjR2aft6hDC8YMpx7upXFrAGwGhNXqWcxewF2ewk6bvPiuVkbszfUjXH8c9KwPas1bRSnKkWoHG8S",
+        "fee_lamports": 150000,
+        "explorer": "https://explorer.solana.com/tx/35KyPPRnjEzgjR2aft6hDC8YMpx7upXFrAGwGhNXqWcxewF2ewk6bvPiuVkbszfUjXH8c9KwPas1bRSnKkWoHG8S?cluster=devnet"
+      },
+      "turn_2_julian": {
+        "radical": [
+          "0x34",
+          "0x72",
+          "0xC1"
+        ],
+        "bn254_nullifier": "0xda2b538fd6a96b2657dab4c43fdbdbe9caf0f6bf777d78b3dd0e16c7e23fc023",
+        "tx_signature": "5H5PNC3Yy7Tucj3zaRwTcLc9mkovf4oBruSCKVMyvbfFnv5iLLim1Z6rC679cHub4kDNExumd7DNKjZAKHE6Joa6",
+        "fee_lamports": 150000,
+        "explorer": "https://explorer.solana.com/tx/5H5PNC3Yy7Tucj3zaRwTcLc9mkovf4oBruSCKVMyvbfFnv5iLLim1Z6rC679cHub4kDNExumd7DNKjZAKHE6Joa6?cluster=devnet"
+      }
+    },
+    {
+      "session_id": "SESSION_3_NOISE_SHROUDING_AND_REPLAY_DEFENSE",
+      "status": "PASS",
+      "duration_ms": 0.03,
+      "rssi_dbm": -124.5,
+      "snr_db": -18.2,
+      "shrouding_margin_db": -4.5,
+      "replay_attack_rejected": true,
+      "hamiltonian_leakage": 0.0
+    }
+  ]
+}

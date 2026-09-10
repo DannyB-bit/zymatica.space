@@ -1,0 +1,23 @@
+COMMAND: python tools/zk_lora_secure_packet.py make --agent-id node-a-tx --message <message> --out artifacts/milestone1/hardware_capture/secure_packet_rf/node-a-tx_20260630T135914Z/tx_secure_packet.bin --manifest artifacts/milestone1/hardware_capture/secure_packet_rf/node-a-tx_20260630T135914Z/secure_packet_make.json
+START_UTC: Tue Jun 30 13:59:14 UTC 2026
+{
+  "status": "made",
+  "scope": "reference prototype, not production ECIES/AES/gnark/halo2",
+  "packet_path": "/home/strawberry-z-model-1/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/secure_packet_rf/node-a-tx_20260630T135914Z/tx_secure_packet.bin",
+  "packet_bytes": 217,
+  "packet_sha256": "874ff62e365dd9d90e460c8c51c475e319968e62bc9c03836e9ae98c9d0f4137",
+  "plaintext_bytes": 82,
+  "plaintext_sha256": "13c8d9b00cfabb23ca91f0e502fb6068f13eaf133930846e834e796bac41dd1d",
+  "public_input": "3e629f0c35ec9f73c8bd16a55164843fcea8092253036ed1d5514765ec986da7",
+  "proof_hash": "947b821aa8355797b2112c717961030c",
+  "ceremony_hash": "ac5bb8b7ddcd8702",
+  "proof_a64": "0xdf7d14b7d1ab302b",
+  "proof_b64": "0x4f73aee85789f857",
+  "proof_c64": "0x9d3b2dd1ebcd686a",
+  "nonce": "13decf0e33a26bdaa0610fff6f54c640",
+  "agent_id": "node-a-tx",
+  "zk_reference_proof_generated": true,
+  "encrypted_payload_generated": true
+}
+END_UTC: Tue Jun 30 13:59:14 UTC 2026
+EXIT_STATUS: 0

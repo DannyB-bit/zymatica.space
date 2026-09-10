@@ -1,5 +1,5 @@
 ---
-license: apache-2.0
+license: LicenseRef-Zymatica-Covenant-2.0
 tags:
 - llm-capsule
 - compressed-seed

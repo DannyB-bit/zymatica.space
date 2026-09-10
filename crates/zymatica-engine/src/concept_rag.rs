@@ -91,8 +91,9 @@ impl ConceptRagIndex {
 
         let dense_hits = self.query(query, limit * 2);
         let query_words = normalized_words(query);
-        
-        let mut sparse_scores: Vec<(usize, f32)> = self.docs
+
+        let mut sparse_scores: Vec<(usize, f32)> = self
+            .docs
             .iter()
             .map(|doc| {
                 let doc_words = normalized_words(&doc.text);
@@ -107,11 +108,16 @@ impl ConceptRagIndex {
             .collect();
 
         sparse_scores.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
-        let sparse_hits: Vec<usize> = sparse_scores.into_iter().take(limit * 2).map(|(id, _)| id).collect();
+        let sparse_hits: Vec<usize> = sparse_scores
+            .into_iter()
+            .take(limit * 2)
+            .map(|(id, _)| id)
+            .collect();
 
         // Reciprocal Rank Fusion (RRF)
         let k = 60.0;
-        let mut rrf_scores: std::collections::HashMap<usize, f32> = std::collections::HashMap::new();
+        let mut rrf_scores: std::collections::HashMap<usize, f32> =
+            std::collections::HashMap::new();
 
         for (rank, hit) in dense_hits.iter().enumerate() {
             *rrf_scores.entry(hit.id).or_insert(0.0) += 1.0 / (k + (rank as f32) + 1.0);
@@ -124,7 +130,8 @@ impl ConceptRagIndex {
         let mut fused: Vec<(usize, f32)> = rrf_scores.into_iter().collect();
         fused.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
 
-        fused.into_iter()
+        fused
+            .into_iter()
             .take(limit)
             .map(|(id, score)| HybridRagHit {
                 id,
@@ -160,7 +167,10 @@ impl QueryTransformer {
     }
 
     pub fn hyde_transform(query: &str) -> String {
-        format!("Hypothetical detailed resolution for query: {}. The technical details are as follows.", query)
+        format!(
+            "Hypothetical detailed resolution for query: {}. The technical details are as follows.",
+            query
+        )
     }
 }
 
@@ -174,7 +184,11 @@ impl ConceptReRanker {
             let overlap = query_words.iter().filter(|q| doc_words.contains(q)).count() as f32;
             hit.score += overlap * 0.5;
         }
-        hits.sort_by(|a, b| b.score.partial_cmp(&a.score).unwrap_or(std::cmp::Ordering::Equal));
+        hits.sort_by(|a, b| {
+            b.score
+                .partial_cmp(&a.score)
+                .unwrap_or(std::cmp::Ordering::Equal)
+        });
         hits
     }
 }
@@ -204,7 +218,10 @@ impl SemanticChunker {
         }
 
         let mut chunks = Vec::new();
-        let step = self.chunk_size_words.saturating_sub(self.overlap_words).max(1);
+        let step = self
+            .chunk_size_words
+            .saturating_sub(self.overlap_words)
+            .max(1);
         let mut start = 0;
 
         while start < words.len() {

@@ -102,8 +102,10 @@ impl QuantizedKvPage {
                 }
                 Ok(self
                     .packed
-                    .chunks_exact(4)
-                    .map(|chunk| f32::from_le_bytes(chunk.try_into().unwrap()))
+                    .as_chunks::<4>()
+                    .0
+                    .iter()
+                    .map(|chunk| f32::from_le_bytes(*chunk))
                     .collect())
             }
             KvPagePrecision::Int8 => {
@@ -1709,7 +1711,8 @@ pub fn restore_lossless_concepts_to_floats(tensor: &LosslessConceptTensor) -> Re
         bail!("lossless concept tensor has invalid concept count");
     }
     let mut values = Vec::with_capacity(tensor.original_len);
-    for pair in tensor.concepts.chunks_exact(2) {
+    let (chunks, _) = tensor.concepts.as_chunks::<2>();
+    for pair in chunks {
         let first = pair[0].axes();
         let second = pair[1].axes();
         if second[2..] != [0, 0, 0, 0] {

@@ -14,7 +14,7 @@ pipeline_tag: text-generation
 # LORA-OPERATOR: Native-Accelerated Joint Semantic-Source Coding
 
 **Authors:** Zymatica.space & astronautshe.com  
-**License:** Apache License 2.0  
+**License:** Zymatica Covenant License 2.0 (zymatica.space)  
 
 ![Zymatica Logo](Logo.jpg)
 

@@ -1,0 +1,148 @@
+A-side repeated deterministic payload TX for B RX correlation
+TX command UTC start: Tue Jun 30 01:23:02 UTC 2026
+Settings: 903.9 MHz, SF9, 125 kHz, 14 dBm
+Payload: /tmp/zk_lora_m1_payload.bin
+-rw-rw-r-- 1 strawberry-z-model-1 strawberry-z-model-1 240 Jun 29 21:22 /tmp/zk_lora_m1_payload.bin
+ef4b31ae0f7f159078191ea6169487bb66063a96c6927b83fe4070dcca0b4d3f  /tmp/zk_lora_m1_payload.bin
+
+TX_BURST_1 START Tue Jun 30 01:23:02 UTC 2026
+Using GPIO tool: pinctrl
+SX1302 reset pin: GPIO25
+SX1261 reset pin: GPIO22
+SX1302 power enable skipped: no documented known-good power-enable GPIO for RakMiner-A
+GPIO state after reset sequence:
+25: op -- pd | lo // GPIO25 = output
+22: op -- pd | hi // GPIO22 = output
+A_LORA_TX_FILE_INPUT=/tmp/zk_lora_m1_payload.bin
+A_LORA_TX_FILE_BYTES=240
+A_LORA_TX_FILE_FNV1A32=39fc52ff
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+A_LORA_TX_FILE_SEND_BEGIN=YES
+Safe no-op stop: leaving SPI and reset GPIO states unchanged.
+A_LORA_TX_FILE_SEND_COMPLETE=YES
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+TX_BURST_1 EXIT_STATUS 0
+TX_BURST_1 END Tue Jun 30 01:23:07 UTC 2026
+
+TX_BURST_2 START Tue Jun 30 01:23:17 UTC 2026
+Using GPIO tool: pinctrl
+SX1302 reset pin: GPIO25
+SX1261 reset pin: GPIO22
+SX1302 power enable skipped: no documented known-good power-enable GPIO for RakMiner-A
+GPIO state after reset sequence:
+25: op -- pd | lo // GPIO25 = output
+22: op -- pd | hi // GPIO22 = output
+A_LORA_TX_FILE_INPUT=/tmp/zk_lora_m1_payload.bin
+A_LORA_TX_FILE_BYTES=240
+A_LORA_TX_FILE_FNV1A32=39fc52ff
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+A_LORA_TX_FILE_SEND_BEGIN=YES
+Safe no-op stop: leaving SPI and reset GPIO states unchanged.
+A_LORA_TX_FILE_SEND_COMPLETE=YES
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+TX_BURST_2 EXIT_STATUS 0
+TX_BURST_2 END Tue Jun 30 01:23:21 UTC 2026
+
+TX_BURST_3 START Tue Jun 30 01:23:31 UTC 2026
+Using GPIO tool: pinctrl
+SX1302 reset pin: GPIO25
+SX1261 reset pin: GPIO22
+SX1302 power enable skipped: no documented known-good power-enable GPIO for RakMiner-A
+GPIO state after reset sequence:
+25: op -- pd | lo // GPIO25 = output
+22: op -- pd | hi // GPIO22 = output
+A_LORA_TX_FILE_INPUT=/tmp/zk_lora_m1_payload.bin
+A_LORA_TX_FILE_BYTES=240
+A_LORA_TX_FILE_FNV1A32=39fc52ff
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+A_LORA_TX_FILE_SEND_BEGIN=YES
+Safe no-op stop: leaving SPI and reset GPIO states unchanged.
+A_LORA_TX_FILE_SEND_COMPLETE=YES
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+TX_BURST_3 EXIT_STATUS 0
+TX_BURST_3 END Tue Jun 30 01:23:35 UTC 2026
+
+TX_BURST_4 START Tue Jun 30 01:23:45 UTC 2026
+Using GPIO tool: pinctrl
+SX1302 reset pin: GPIO25
+SX1261 reset pin: GPIO22
+SX1302 power enable skipped: no documented known-good power-enable GPIO for RakMiner-A
+GPIO state after reset sequence:
+25: op -- pd | lo // GPIO25 = output
+22: op -- pd | hi // GPIO22 = output
+A_LORA_TX_FILE_INPUT=/tmp/zk_lora_m1_payload.bin
+A_LORA_TX_FILE_BYTES=240
+A_LORA_TX_FILE_FNV1A32=39fc52ff
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+A_LORA_TX_FILE_SEND_BEGIN=YES
+Safe no-op stop: leaving SPI and reset GPIO states unchanged.
+A_LORA_TX_FILE_SEND_COMPLETE=YES
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+TX_BURST_4 EXIT_STATUS 0
+TX_BURST_4 END Tue Jun 30 01:23:49 UTC 2026
+
+TX_BURST_5 START Tue Jun 30 01:23:59 UTC 2026
+Using GPIO tool: pinctrl
+SX1302 reset pin: GPIO25
+SX1261 reset pin: GPIO22
+SX1302 power enable skipped: no documented known-good power-enable GPIO for RakMiner-A
+GPIO state after reset sequence:
+25: op -- pd | lo // GPIO25 = output
+22: op -- pd | hi // GPIO22 = output
+A_LORA_TX_FILE_INPUT=/tmp/zk_lora_m1_payload.bin
+A_LORA_TX_FILE_BYTES=240
+A_LORA_TX_FILE_FNV1A32=39fc52ff
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found; continuing without temperature telemetry.
+A_LORA_TX_FILE_SEND_BEGIN=YES
+Safe no-op stop: leaving SPI and reset GPIO states unchanged.
+A_LORA_TX_FILE_SEND_COMPLETE=YES
+Closing SPI communication interface
+WARNING: optional STTS751 temperature sensor close failed; ignored (err=-1)
+TX_BURST_5 EXIT_STATUS 0
+TX_BURST_5 END Tue Jun 30 01:24:04 UTC 2026
+
+TX command UTC end: Tue Jun 30 01:24:14 UTC 2026

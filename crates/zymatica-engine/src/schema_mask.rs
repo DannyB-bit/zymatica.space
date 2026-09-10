@@ -158,11 +158,12 @@ impl<'a> PrefixCursor<'a> {
     fn consume_fixed(&mut self, expected: &str) -> std::result::Result<(), PrefixFailure> {
         let remaining = self.remaining();
         if remaining.len() < expected.len() {
-            if expected.starts_with(remaining) {
+            return if expected.starts_with(remaining) {
                 self.pos = self.text.len();
-                return Err(PrefixFailure::Incomplete);
-            }
-            return Err(PrefixFailure::Invalid);
+                Err(PrefixFailure::Incomplete)
+            } else {
+                Err(PrefixFailure::Invalid)
+            };
         }
         if !remaining.starts_with(expected) {
             return Err(PrefixFailure::Invalid);
@@ -179,18 +180,20 @@ impl<'a> PrefixCursor<'a> {
         let mut chars = 0;
         loop {
             if self.is_at_end() {
-                if chars <= max_chars {
-                    return Err(PrefixFailure::Incomplete);
-                }
-                return Err(PrefixFailure::Invalid);
+                return if chars <= max_chars {
+                    Err(PrefixFailure::Incomplete)
+                } else {
+                    Err(PrefixFailure::Invalid)
+                };
             }
             let ch = self.remaining().chars().next().expect("not at end");
             if ch == '"' {
-                if chars < min_chars {
-                    return Err(PrefixFailure::Invalid);
-                }
-                self.pos += 1;
-                return Ok(());
+                return if chars < min_chars {
+                    Err(PrefixFailure::Invalid)
+                } else {
+                    self.pos += 1;
+                    Ok(())
+                };
             }
             if ch == '\\' || ch.is_control() {
                 return Err(PrefixFailure::Invalid);

@@ -1,0 +1,1 @@
+-rw-rw-r-- 1 strawberry-z-model-1 strawberry-z-model-1 240 Jun 29 21:22 /tmp/zk_lora_m1_payload.bin

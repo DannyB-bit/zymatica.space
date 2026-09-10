@@ -1,0 +1,131 @@
+{
+  "cargo": "cargo 1.96.1 (356927216 2026-06-26)",
+  "created_utc": "2026-09-06T02:07:51.891847+00:00",
+  "files": [
+    {
+      "path": "claims_audit.json",
+      "sha256": "c46df80477be6cc1f512ca5fe415bf949273f0ff3629189d6294002ea85e856e",
+      "size": 194
+    },
+    {
+      "path": "complex_stress_experiment_results.json",
+      "sha256": "aec12ce0fc3ec1e0d624538446432ae647fd29591c92247f6fb596ca67a88b24",
+      "size": 1955
+    },
+    {
+      "path": "cuneiform_semantic.json",
+      "sha256": "21a3623395dd61badf07ee96ed424d9d397a2b599b9b7b9c18f10ab88dfdd6a3",
+      "size": 474
+    },
+    {
+      "path": "dna_grow_transmission_experiment_receipt.json",
+      "sha256": "169bd2215db1b65696a509c71c0eed305354967c327e266bdbbc1344370e2cb8",
+      "size": 1374
+    },
+    {
+      "path": "epigenetic.json",
+      "sha256": "0e23019695231018378f66e9067e69a9c6261111c825a82a33b0b74b733bc79b",
+      "size": 409
+    },
+    {
+      "path": "fec.json",
+      "sha256": "6ee9a26f4f014899b5215ec0535e461b1b2a02a8670690df07a809dbc14e1738",
+      "size": 132
+    },
+    {
+      "path": "groth16.json",
+      "sha256": "de819897f45e6a07504ba721363a967c6ea03185b81e451f1b1610ed3be64216",
+      "size": 172
+    },
+    {
+      "path": "hyper_kv.json",
+      "sha256": "7ffb34f6704c7990b4c6de3583f61c17d10784ca10410443661a84057a083235",
+      "size": 382
+    },
+    {
+      "path": "lean4_theorem.json",
+      "sha256": "d9239d09c79a8b91353e3fd4be0416ea0f16ed3b15d90039241ee12877370963",
+      "size": 166
+    },
+    {
+      "path": "license_audit.json",
+      "sha256": "6479d8df2c4bfcb374e48b4ab15813a87d12344ef89634faef40e55bbd3dc1fe",
+      "size": 145790
+    },
+    {
+      "path": "mcts.json",
+      "sha256": "1d308cea488358acb504bfb851d5251859b8582eb9f63fe39a8bdaa36ae03d77",
+      "size": 291
+    },
+    {
+      "path": "multi_agent_consider_execution_matrix.json",
+      "sha256": "b53ef0b3d865515f1773dc2688bcc6ce8d5e48c55ba9d9d4062f50c6e8cc651f",
+      "size": 3086
+    },
+    {
+      "path": "multi_agent_consider_julian_devnet_execution.json",
+      "sha256": "e419608b5024e06d27c861207fd89f73ec594797efa22f5e0ce35f699508223f",
+      "size": 1785
+    },
+    {
+      "path": "multi_agent_solana_demo.json",
+      "sha256": "ecc7b7a4c25db8df6c978294d34ac79b9f23a0d27bfc6e6e0be3c8f649365685",
+      "size": 2423
+    },
+    {
+      "path": "node_c_live_devnet_execution.json",
+      "sha256": "f85f0a9638c6789b75b82f798ef29dc242542a0e720e93ee73e24feb500763ea",
+      "size": 722
+    },
+    {
+      "path": "real_devnet_onchain_transactions.json",
+      "sha256": "29abb4027db3414405bd0f89f6ee9b1ba69e4bec694908af4137241ba6203754",
+      "size": 1459
+    },
+    {
+      "path": "rf_phase16.json",
+      "sha256": "2d7a5588786d90aee40c8a182a89ecbf6f14993cf7233f063d04d2276fdeac82",
+      "size": 820
+    },
+    {
+      "path": "sbom.spdx.json",
+      "sha256": "cb14a303164995a9bc333aef8853b4cfd751eb76f2b17b605259986c7cab5573",
+      "size": 130344
+    },
+    {
+      "path": "solana_tps_benchmark_results.json",
+      "sha256": "c56afbd3f8881b977200fe49be2c167719b84869ec41d4c74b1f86e053cd4228",
+      "size": 656
+    },
+    {
+      "path": "ten_evidentiary_experiments_audit.json",
+      "sha256": "548a3d6170638dfb9ce2472530f0f1b82daf7661fb1eef7657b08ceb11ccc6ec",
+      "size": 4150
+    },
+    {
+      "path": "wormhole.json",
+      "sha256": "e4b06010beb78a2d81226543fc6a04040ef08626ee04b04a6d800e22db9cb7cf",
+      "size": 5836437
+    },
+    {
+      "path": "z_turnstile_recursive_folding_advancement.json",
+      "sha256": "2c156167f4b7af5d417a48545c0849e3e38ad66da49503ddcf8365909491f60d",
+      "size": 1243
+    },
+    {
+      "path": "zhqspec.json",
+      "sha256": "8d7e31ccc69b33b2281784a537e95b744149f3bca2b8a65bddab6ed91d4731bf",
+      "size": 224
+    }
+  ],
+  "git_head": "135312b5207b0bd9e0329d78ca7818c3a2c8e42a",
+  "git_status_porcelain": "M evidence/10_00/latest/claims_audit.json\n?? audit_master_dataset.py\n?? audit_qwen35_model.py\n?? build_full_consider1_master_dataset.py\n?? build_full_consider2_master_dataset.py\n?? check_4cde_ci_now.py\n?? check_all_deployments.py\n?? check_ci_status_fast.py\n?? check_commit_4cde6c4_status.py\n?? check_commit_ci.py\n?? check_everything.py\n?? check_hf_model_card.py\n?? check_hf_models.py\n?? check_hf_space.py\n?? check_job_steps.py\n?? check_kernel_clean.py\n?? check_kernel_runs.py\n?? check_latest_runs.py\n?? check_prod_jobs.py\n?? check_run_details.py\n?? check_single_run.py\n?? check_token_paths.py\n?? check_win_steps.py\n?? consider-1-full-production-trainer.log\n?? create_private_dataset.py\n?? download_qwen35_model.py\n?? execute_kaggle_push.py\n?? failed_job.log\n?? failed_job_7cf.log\n?? failed_step13.log\n?? fetch_hf_readme.py\n?? fetch_logs_safe.py\n?? fetch_raw_kaggle_output.py\n?? find_consider_sovereign.py\n?? find_sov_readme.py\n?? generate_master_consider1_dataset.py\n?? get_run_steps.py\n?? hf_consider1_final.md\n?? hf_readme_local.md\n?? hf_readme_updated.md\n?? hf_zymatica_readme.md\n?? inject_deep_reasoning_cot.py\n?? inject_language_u_rag.py\n?? inject_maximum_frontier_superpowers.py\n?? inject_tool_calling_reasoning.py\n?? inspect_ci.py\n?? kaggle_deploy/\n?? live_forensic_model_audit.py\n?? models/\n?? monitor_and_resolve.py\n?? monitor_consider2_live.py\n?? monitor_training_live.py\n?? package_and_deploy_consider2.py\n?? package_kaggle_consider1.py\n?? prepare_kaggle_submission.py\n?? push_consider2_to_kaggle.py\n?? safe_resolve_and_check.py\n?? scratch/\n?? sync_harness_components.py\n?? sync_hermes_to_zymatica_cli.py\n?? sync_hf_zymatica_readme.py\n?? test_fwd.py\n?? test_hf_upload.py\n?? update_private_dataset.py\n?? upload_dataset.py\n?? upload_hf_readme.py\n?? verify_exact_qwen35.py",
+  "git_tree": "7df8d7c02731f3b5bfa58064233db25104e8d788",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "rustc": "rustc 1.96.1 (31fca3adb 2026-06-26)",
+  "schema": "zymatica.evidence-manifest.v2",
+  "source_commit_sha": "135312b5207b0bd9e0329d78ca7818c3a2c8e42a",
+  "source_git_tree_sha": "7df8d7c02731f3b5bfa58064233db25104e8d788",
+  "source_tree_sha256": "3663cb7059396c8ecdea9fa24cc7650a4accbb2f68a97f8489345b3af58f3ff1"
+}

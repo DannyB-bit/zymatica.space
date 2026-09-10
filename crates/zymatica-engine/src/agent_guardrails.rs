@@ -86,7 +86,10 @@ impl InputGuardrail for MaxCharLengthGuard {
     fn validate_input(&self, prompt: &str) -> Result<GuardrailResult> {
         if prompt.chars().count() > self.max_chars {
             return Ok(GuardrailResult::Block {
-                reason: format!("Input exceeds maximum character limit of {}", self.max_chars),
+                reason: format!(
+                    "Input exceeds maximum character limit of {}",
+                    self.max_chars
+                ),
             });
         }
         Ok(GuardrailResult::Pass)
@@ -104,11 +107,19 @@ impl OutputGuardrail for JsonValidationGuard {
     fn validate_output(&self, response: &str) -> Result<GuardrailResult> {
         let trimmed = response.trim();
         let json_payload = if trimmed.starts_with("```json") {
-            trimmed.strip_prefix("```json").unwrap_or(trimmed)
-                   .strip_suffix("```").unwrap_or(trimmed).trim()
+            trimmed
+                .strip_prefix("```json")
+                .unwrap_or(trimmed)
+                .strip_suffix("```")
+                .unwrap_or(trimmed)
+                .trim()
         } else if trimmed.starts_with("```") {
-            trimmed.strip_prefix("```").unwrap_or(trimmed)
-                   .strip_suffix("```").unwrap_or(trimmed).trim()
+            trimmed
+                .strip_prefix("```")
+                .unwrap_or(trimmed)
+                .strip_suffix("```")
+                .unwrap_or(trimmed)
+                .trim()
         } else {
             trimmed
         };

@@ -1,0 +1,11 @@
+COMMAND: sudo -n timeout 120 tcpdump -ni any udp port 1680 -vv
+START_UTC: Mon Jun 29 23:46:44 UTC 2026
+sudo: a password is required
+END_UTC: Mon Jun 29 23:46:44 UTC 2026
+EXIT_STATUS: 1
+COMMAND: timeout 120 tcpdump -ni any udp port 1680 -vv
+START_UTC: Mon Jun 29 23:46:44 UTC 2026
+tcpdump: any: You don't have permission to perform this capture on that device
+(socket: Operation not permitted)
+END_UTC: Mon Jun 29 23:46:44 UTC 2026
+EXIT_STATUS: 1

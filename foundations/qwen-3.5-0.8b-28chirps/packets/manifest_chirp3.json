@@ -1,0 +1,194 @@
+{
+  "protocol": "Chirp-3 Full Model v2.0",
+  "method": "L7:QualiaSeed+L6:GradAtom+L1:LU4QA+ZLIB",
+  "watermark": "ip zymatica.space",
+  "source_model": "j:/Language-U/Language-U-V2/qwen-3.5-0.8b-local\\model.safetensors-00001-of-00001.safetensors",
+  "source_size_bytes": 1746942600,
+  "chirps": 9,
+  "chirp_size": 255,
+  "compressed_bytes": 545,
+  "raw_capsule_bytes": 571,
+  "weight_bytes": 144,
+  "qa_bytes": 395,
+  "num_layers": 16,
+  "total_tensors_in_model": 488,
+  "layers": [
+    {
+      "key": "model.language_model.layers.0.linear_attn.in_proj_qkv.weight",
+      "shape": [
+        6144,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.254,
+      "raw_bytes": 12582912
+    },
+    {
+      "key": "model.language_model.layers.0.linear_attn.in_proj_z.weight",
+      "shape": [
+        2048,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.102,
+      "raw_bytes": 4194304
+    },
+    {
+      "key": "model.language_model.layers.0.linear_attn.in_proj_b.weight",
+      "shape": [
+        16,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.907,
+      "raw_bytes": 32768
+    },
+    {
+      "key": "model.language_model.layers.0.linear_attn.in_proj_a.weight",
+      "shape": [
+        16,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.839,
+      "raw_bytes": 32768
+    },
+    {
+      "key": "model.language_model.layers.0.linear_attn.out_proj.weight",
+      "shape": [
+        1024,
+        2048
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.06,
+      "raw_bytes": 4194304
+    },
+    {
+      "key": "model.language_model.layers.1.linear_attn.in_proj_qkv.weight",
+      "shape": [
+        6144,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.063,
+      "raw_bytes": 12582912
+    },
+    {
+      "key": "model.language_model.layers.1.linear_attn.in_proj_z.weight",
+      "shape": [
+        2048,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.069,
+      "raw_bytes": 4194304
+    },
+    {
+      "key": "model.language_model.layers.1.linear_attn.in_proj_b.weight",
+      "shape": [
+        16,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.898,
+      "raw_bytes": 32768
+    },
+    {
+      "key": "model.language_model.layers.1.linear_attn.in_proj_a.weight",
+      "shape": [
+        16,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.899,
+      "raw_bytes": 32768
+    },
+    {
+      "key": "model.language_model.layers.1.linear_attn.out_proj.weight",
+      "shape": [
+        1024,
+        2048
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.082,
+      "raw_bytes": 4194304
+    },
+    {
+      "key": "model.language_model.layers.0.mlp.gate_proj.weight",
+      "shape": [
+        3584,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.046,
+      "raw_bytes": 7340032
+    },
+    {
+      "key": "model.language_model.layers.0.mlp.up_proj.weight",
+      "shape": [
+        3584,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.016,
+      "raw_bytes": 7340032
+    },
+    {
+      "key": "model.language_model.layers.0.mlp.down_proj.weight",
+      "shape": [
+        1024,
+        3584
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.027,
+      "raw_bytes": 7340032
+    },
+    {
+      "key": "model.language_model.layers.1.mlp.gate_proj.weight",
+      "shape": [
+        3584,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.041,
+      "raw_bytes": 7340032
+    },
+    {
+      "key": "model.language_model.layers.1.mlp.up_proj.weight",
+      "shape": [
+        3584,
+        1024
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.022,
+      "raw_bytes": 7340032
+    },
+    {
+      "key": "model.language_model.layers.1.mlp.down_proj.weight",
+      "shape": [
+        1024,
+        3584
+      ],
+      "level": 6,
+      "bytes": 9,
+      "align": 0.028,
+      "raw_bytes": 7340032
+    }
+  ],
+  "sha256": "e048bb104ee857017696f924a020f4c075c9f658cdb3f5cb0323ce62b9b67eb2"
+}

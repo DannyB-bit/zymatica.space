@@ -26,8 +26,8 @@ pub fn silu_product_in_place(values: &mut [f32], inputs: &[f32]) {
 }
 
 pub fn gelu_pytorch_tanh(x: f32) -> f32 {
-    const SQRT_2_OVER_PI: f32 = 0.797_884_6;
-    0.5 * x * (1.0 + (SQRT_2_OVER_PI * (x + 0.044_715 * x * x * x)).tanh())
+    let sqrt_2_over_pi = (2.0f32 / std::f32::consts::PI).sqrt();
+    0.5 * x * (1.0 + (sqrt_2_over_pi * (x + 0.044_715 * x * x * x)).tanh())
 }
 
 pub fn rms_norm(x: &[f32], weight: &[f32], eps: f32) -> Vec<f32> {

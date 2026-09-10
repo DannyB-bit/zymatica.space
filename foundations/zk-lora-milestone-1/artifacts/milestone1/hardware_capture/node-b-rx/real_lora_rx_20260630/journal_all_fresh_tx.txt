@@ -1,0 +1,96 @@
+Jun 29 20:31:38 RakMiner-B login[235355]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:31:38 RakMiner-B login[235355]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:31:42 RakMiner-B login[235355]: FAILED LOGIN 3 FROM ttyS0 FOR ,N*4D, Authentication failure
+Jun 29 20:31:53 RakMiner-B login[235355]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:31:53 RakMiner-B login[235355]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:31:57 RakMiner-B login[235355]: FAILED LOGIN 4 FROM ttyS0 FOR NMEA unknown msg*46, Authentication failure
+Jun 29 20:32:08 RakMiner-B login[235355]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:32:08 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Deactivated successfully.
+Jun 29 20:32:09 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Scheduled restart job, restart counter is at 22013.
+Jun 29 20:32:09 RakMiner-B systemd[1]: Started serial-getty@ttyS0.service - Serial Getty on ttyS0.
+Jun 29 20:32:11 RakMiner-B login[235460]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:32:11 RakMiner-B login[235460]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:32:14 RakMiner-B login[235460]: FAILED LOGIN 1 FROM ttyS0 FOR wn msg*46, Authentication failure
+Jun 29 20:32:26 RakMiner-B login[235460]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:32:26 RakMiner-B login[235460]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:32:29 RakMiner-B login[235460]: FAILED LOGIN 2 FROM ttyS0 FOR known msg*46, Authentication failure
+Jun 29 20:32:37 RakMiner-B sudo[235475]: strawberry-z-model-1 : PWD=/home/strawberry-z-model-1 ; USER=root ; COMMAND=/usr/bin/true
+Jun 29 20:32:37 RakMiner-B sudo[235475]: pam_unix(sudo:session): session opened for user root(uid=0) by strawberry-z-model-1(uid=1000)
+Jun 29 20:32:37 RakMiner-B sudo[235475]: pam_unix(sudo:session): session closed for user root
+Jun 29 20:32:40 RakMiner-B rpi-connect[177540]: turnc ERROR: 2026/06/29 20:32:40 Fail to refresh permissions: CreatePermission error response (error 400: Bad Request
+Jun 29 20:32:40 RakMiner-B rpi-connect[177540]: )
+Jun 29 20:32:41 RakMiner-B login[235460]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:32:41 RakMiner-B login[235460]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:32:44 RakMiner-B login[235460]: FAILED LOGIN 3 FROM ttyS0 FOR ,,,,99.99,99.99,99.99*2E, Authentication failure
+Jun 29 20:32:55 RakMiner-B login[235460]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:32:55 RakMiner-B login[235460]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:32:58 RakMiner-B login[235460]: FAILED LOGIN 4 FROM ttyS0 FOR ,,,N*2E, Authentication failure
+Jun 29 20:32:58 RakMiner-B sudo[235563]: strawberry-z-model-1 : PWD=/home/strawberry-z-model-1/sx1302_hal/libloragw ; USER=root ; COMMAND=./reset_lgw.sh start
+Jun 29 20:32:58 RakMiner-B sudo[235563]: pam_unix(sudo:session): session opened for user root(uid=0) by strawberry-z-model-1(uid=1000)
+Jun 29 20:33:01 RakMiner-B sudo[235563]: pam_unix(sudo:session): session closed for user root
+Jun 29 20:33:01 RakMiner-B sudo[235579]: strawberry-z-model-1 : PWD=/home/strawberry-z-model-1/sx1302_hal/libloragw ; USER=root ; COMMAND=./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 903.9 -b 903.9 -k 0 -m 1 -j -z 255 -n 1
+Jun 29 20:33:01 RakMiner-B sudo[235579]: pam_unix(sudo:session): session opened for user root(uid=0) by strawberry-z-model-1(uid=1000)
+Jun 29 20:33:10 RakMiner-B login[235460]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:33:10 RakMiner-B login[235460]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:33:10 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Deactivated successfully.
+Jun 29 20:33:11 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Scheduled restart job, restart counter is at 22014.
+Jun 29 20:33:11 RakMiner-B systemd[1]: Started serial-getty@ttyS0.service - Serial Getty on ttyS0.
+Jun 29 20:33:13 RakMiner-B login[235613]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:33:13 RakMiner-B login[235613]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:33:16 RakMiner-B login[235613]: FAILED LOGIN 1 FROM ttyS0 FOR msg*46, Authentication failure
+Jun 29 20:33:28 RakMiner-B login[235613]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:33:28 RakMiner-B login[235613]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:33:31 RakMiner-B login[235613]: FAILED LOGIN 2 FROM ttyS0 FOR $GNTXT,01,01,01,NMEA unknown msg*46, Authentication failure
+Jun 29 20:33:43 RakMiner-B login[235613]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:33:43 RakMiner-B login[235613]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:33:46 RakMiner-B login[235613]: FAILED LOGIN 3 FROM ttyS0 FOR n msg*46, Authentication failure
+Jun 29 20:33:57 RakMiner-B login[235613]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:33:57 RakMiner-B login[235613]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:34:00 RakMiner-B login[235613]: FAILED LOGIN 4 FROM ttyS0 FOR N*2E, Authentication failure
+Jun 29 20:34:12 RakMiner-B login[235613]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:34:12 RakMiner-B login[235613]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:34:13 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Deactivated successfully.
+Jun 29 20:34:13 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Scheduled restart job, restart counter is at 22015.
+Jun 29 20:34:13 RakMiner-B systemd[1]: Started serial-getty@ttyS0.service - Serial Getty on ttyS0.
+Jun 29 20:34:15 RakMiner-B login[235638]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:34:15 RakMiner-B login[235638]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:34:18 RakMiner-B login[235638]: FAILED LOGIN 1 FROM ttyS0 FOR ,NMEA unknown msg*46, Authentication failure
+Jun 29 20:34:30 RakMiner-B login[235638]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:34:30 RakMiner-B login[235638]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:34:34 RakMiner-B login[235638]: FAILED LOGIN 2 FROM ttyS0 FOR NTXT,01,01,01,NMEA unknown msg*46, Authentication failure
+Jun 29 20:34:40 RakMiner-B rpi-connect[177540]: turnc ERROR: 2026/06/29 20:34:40 Fail to refresh permissions: CreatePermission error response (error 400: Bad Request
+Jun 29 20:34:40 RakMiner-B rpi-connect[177540]: )
+Jun 29 20:34:45 RakMiner-B login[235638]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:34:45 RakMiner-B login[235638]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:34:47 RakMiner-B login[235638]: FAILED LOGIN 3 FROM ttyS0 FOR 1,01,NMEA unknown msg*46, Authentication failure
+Jun 29 20:35:00 RakMiner-B login[235638]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:35:00 RakMiner-B login[235638]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:35:02 RakMiner-B login[235638]: FAILED LOGIN 4 FROM ttyS0 FOR GNTXT,01,01,01,NMEA unknown msg*46, Authentication failure
+Jun 29 20:35:14 RakMiner-B login[235638]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:35:14 RakMiner-B login[235638]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:35:15 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Deactivated successfully.
+Jun 29 20:35:15 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Scheduled restart job, restart counter is at 22016.
+Jun 29 20:35:15 RakMiner-B systemd[1]: Started serial-getty@ttyS0.service - Serial Getty on ttyS0.
+Jun 29 20:35:17 RakMiner-B login[235666]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:35:17 RakMiner-B login[235666]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:35:20 RakMiner-B login[235666]: FAILED LOGIN 1 FROM ttyS0 FOR ,,,N*2E, Authentication failure
+Jun 29 20:35:32 RakMiner-B login[235666]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:35:32 RakMiner-B login[235666]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:35:34 RakMiner-B login[235666]: FAILED LOGIN 2 FROM ttyS0 FOR sg*46, Authentication failure
+Jun 29 20:35:47 RakMiner-B login[235666]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:35:47 RakMiner-B login[235666]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:35:50 RakMiner-B login[235666]: FAILED LOGIN 3 FROM ttyS0 FOR nknown msg*46, Authentication failure
+Jun 29 20:36:02 RakMiner-B login[235666]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:36:02 RakMiner-B login[235666]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:36:04 RakMiner-B sudo[235579]: pam_unix(sudo:session): session closed for user root
+Jun 29 20:36:05 RakMiner-B login[235666]: FAILED LOGIN 4 FROM ttyS0 FOR ,NMEA unknown msg*46, Authentication failure
+Jun 29 20:36:16 RakMiner-B login[235666]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:36:16 RakMiner-B login[235666]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:36:17 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Deactivated successfully.
+Jun 29 20:36:17 RakMiner-B systemd[1]: serial-getty@ttyS0.service: Scheduled restart job, restart counter is at 22017.
+Jun 29 20:36:17 RakMiner-B systemd[1]: Started serial-getty@ttyS0.service - Serial Getty on ttyS0.
+Jun 29 20:36:19 RakMiner-B login[235824]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:36:19 RakMiner-B login[235824]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=
+Jun 29 20:36:22 RakMiner-B login[235824]: FAILED LOGIN 1 FROM ttyS0 FOR ,99.99,,,,,,*56, Authentication failure
+Jun 29 20:36:34 RakMiner-B login[235824]: pam_unix(login:auth): check pass; user unknown
+Jun 29 20:36:34 RakMiner-B login[235824]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/ttyS0 ruser= rhost=

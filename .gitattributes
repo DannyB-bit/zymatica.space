@@ -1,0 +1,6 @@
+* text=auto eol=lf
+evidence/** text eol=lf
+*.json text eol=lf
+*.spdx.json text eol=lf
+*.md text eol=lf
+SHA256SUMS text eol=lf

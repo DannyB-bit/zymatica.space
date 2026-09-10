@@ -492,7 +492,7 @@ def main():
     pdf.set_x(18)
     pdf.set_font("Helvetica", "B", 8)
     pdf.set_text_color(45, 45, 45)
-    pdf.cell(0, 4, clean("© 2026 Apache License 2.0 Zymatica.space"), new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 4, clean("© 2026 Zymatica Covenant License 2.0 (zymatica.space) Zymatica.space"), new_x="LMARGIN", new_y="NEXT")
     pdf.set_x(18)
     pdf.cell(0, 4, clean("Zymatica.space • astronautshe.com • DevsOne"), new_x="LMARGIN", new_y="NEXT")
     pdf.set_x(18)
@@ -519,7 +519,7 @@ def main():
     
     pdf.set_text_color(99, 179, 237) # Hex #63B3ED
     pdf.set_font("Helvetica", "B", 7.5)
-    text2 = clean("We Are TheAiCollective.art  Apache License 2.0 2026©")
+    text2 = clean("We Are TheAiCollective.art  Zymatica Covenant License 2.0 (zymatica.space) 2026©")
     t2_w = pdf.get_string_width(text2)
     pdf.text((pdf.w - t2_w) / 2.0, pdf.h - 10, text2)
 

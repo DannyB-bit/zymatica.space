@@ -1,5 +1,5 @@
 # ZYMATICA: Tokenizer Prefix-Suffix Varint Differential Coding
-*IP Class 09 | Apache License 2.0*
+*IP Class 09 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

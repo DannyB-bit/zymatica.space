@@ -1,0 +1,128 @@
+[{"stream_name":"stdout","time":2.803665371,"data":"Initializing Language U Microscopy Pipeline...\n"}
+,{"stream_name":"stdout","time":2.807618322,"data":"Found 4 test volumes.\n"}
+,{"stream_name":"stdout","time":2.8103693119999997,"data":"Found support pack at: /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1\n"}
+,{"stream_name":"stdout","time":2.81157343,"data":"Installing offline dependencies from wheels...\n"}
+,{"stream_name":"stdout","time":5.358306016,"data":"Looking in links: /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels\n"}
+,{"stream_name":"stdout","time":5.40751586,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/tracksdata-0.1.0rc6.dev3+g980c2d30a-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":5.459959777,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/zarr-3.2.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":5.480302735,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/pyscipopt-6.2.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl\n"}
+,{"stream_name":"stdout","time":5.919897718,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff-1.2.0.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":5.936939591,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/geff_spec-1.1.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":5.950284839,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/ilpy-0.6.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":5.957382039,"data":"Requirement already satisfied: blosc2 in /usr/local/lib/python3.12/dist-packages (4.1.2)\n"}
+,{"stream_name":"stdout","time":5.964477684,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/donfig-0.8.1.post1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":5.979798955,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/numcodecs-0.15.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":6.144541469,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/bidict-0.23.1-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":6.151266948,"data":"Requirement already satisfied: psygnal in /usr/local/lib/python3.12/dist-packages (0.15.1)\n"}
+,{"stream_name":"stdout","time":6.158700289,"data":"Processing /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/wheels/rustworkx-0.18.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n"}
+,{"stream_name":"stdout","time":6.21874036,"data":"Installing collected packages: zarr, tracksdata, rustworkx, pyscipopt, numcodecs, ilpy, geff-spec, geff, donfig, bidict\n"}
+,{"stream_name":"stdout","time":7.605662565,"data":"Successfully installed bidict-0.23.1 donfig-0.8.1.post1 geff-1.2.0.1.1 geff-spec-1.1.1 ilpy-0.6.0 numcodecs-0.15.1 pyscipopt-6.2.1 rustworkx-0.18.0 tracksdata-0.1.0rc6.dev3+g980c2d30a zarr-3.2.1\n"}
+,{"stream_name":"stdout","time":7.669867651,"data":"Dependency installation completed.\n"}
+,{"stream_name":"stdout","time":8.275474513,"data":"Successfully monkeypatched polars package in site-packages and memory.\n"}
+,{"stream_name":"stdout","time":8.275505724,"data":"Copying directory /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/repo to tracking_repo...\n"}
+,{"stream_name":"stdout","time":8.335089766,"data":"Copying directory /kaggle/input/datasets/pilkwang/biohub-tracking-support-pack-50ep-v1/weights to tracking_repo/weights...\n"}
+,{"stream_name":"stdout","time":8.928498496,"data":"Neural environment setup completed successfully.\n"}
+,{"stream_name":"stdout","time":8.928829942,"data":"Running predictions: /usr/bin/python3 scripts/predict_unet_transformer.py --data-dir /kaggle/input/competitions/biohub-cell-tracking-during-development/test --splits kaggle_test_splits_50ep.json --split 0 --weights weights/unet_transformer/split_0/edge_predictor_best.pth --unet-batch-size 4 --det-threshold 0.99 --ilp-edge-weight -1.0 --ilp-appearance-weight 0.1 --ilp-disappearance-weight 0.1 --ilp-division-weight 1.0 --use-ilp\n"}
+,{"stream_name":"stderr","time":20.561799128,"data":"/usr/local/lib/python3.12/dist-packages/dask/array/image.py:7: FutureWarning: `find_available_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":20.561832262,"data":"  from skimage.io import imread as sk_imread\n"}
+,{"stream_name":"stderr","time":20.594883392,"data":"/usr/lib/python3.12/importlib/__init__.py:90: FutureWarning: `reset_plugins` is deprecated since version 0.25 and will be removed in version 0.27. The plugin infrastructure of `skimage.io` is deprecated. Instead, use `imageio` or other I/O packages directly.\n"}
+,{"stream_name":"stderr","time":20.594912371,"data":"  return _bootstrap._gcd_import(name[level:], package, level)\n"}
+,{"stream_name":"stderr","time":20.803278005,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":20.803307423,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":20.803312555,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":20.803316831,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":20.803320336,"data":"    \n"}
+,{"stream_name":"stderr","time":20.803323988,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":20.80332758,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":20.803331197,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":20.803334762,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":20.803338187,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":20.803341735,"data":"    \n"}
+,{"stream_name":"stderr","time":20.803345213,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":20.803589057,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":20.803617275,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":20.803622764,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":20.803627535,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":20.803638147,"data":"\n"}
+,{"stream_name":"stderr","time":20.803641971,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":20.992010702,"data":"Fold 0: 4 datasets | weights=weights/unet_transformer/split_0/edge_predictor_best.pth | device=cuda | window_size=2 | pool_kernel_um=3.0\n"}
+,{"stream_name":"stderr","time":21.766851928,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":21.766893502,"data":"  File \"/kaggle/working/tracking_repo/scripts/predict_unet_transformer.py\", line 677, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":21.767079773,"data":"    main()\n"}
+,{"stream_name":"stderr","time":21.767088886,"data":"  File \"/kaggle/working/tracking_repo/scripts/predict_unet_transformer.py\", line 662, in main\n"}
+,{"stream_name":"stderr","time":21.767367839,"data":"    predict(\n"}
+,{"stream_name":"stderr","time":21.767375634,"data":"  File \"/kaggle/working/tracking_repo/scripts/predict_unet_transformer.py\", line 547, in predict\n"}
+,{"stream_name":"stderr","time":21.767644821,"data":"    coords, edges = predict_video(\n"}
+,{"stream_name":"stderr","time":21.767657773,"data":"                    ^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.767661547,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n"}
+,{"stream_name":"stderr","time":21.768292339,"data":"    return func(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":21.768300299,"data":"           ^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.76831615,"data":"  File \"/kaggle/working/tracking_repo/scripts/predict_unet_transformer.py\", line 372, in predict_video\n"}
+,{"stream_name":"stderr","time":21.768568499,"data":"    unet_out, det_logits = model.encode(imgs)\n"}
+,{"stream_name":"stderr","time":21.768576722,"data":"                           ^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.768580489,"data":"  File \"/kaggle/working/tracking_repo/scripts/train_unet_transformer.py\", line 501, in encode\n"}
+,{"stream_name":"stderr","time":21.768860634,"data":"    unet_out = self.unet(window)  # (B, W, C_feat, *spatial)\n"}
+,{"stream_name":"stderr","time":21.768872378,"data":"               ^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.768876176,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":21.77076417,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":21.770779986,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.770782735,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n"}
+,{"stream_name":"stderr","time":21.771205339,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":21.771217425,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.771219898,"data":"  File \"/kaggle/working/tracking_repo/src/biohub_tracking/models/temporal_unet.py\", line 128, in forward\n"}
+,{"stream_name":"stderr","time":21.771383017,"data":"    x = self._run(block, x)\n"}
+,{"stream_name":"stderr","time":21.771390176,"data":"        ^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.771394396,"data":"  File \"/kaggle/working/tracking_repo/src/biohub_tracking/models/temporal_unet.py\", line 117, in _run\n"}
+,{"stream_name":"stderr","time":21.771552423,"data":"    return block(x)\n"}
+,{"stream_name":"stderr","time":21.771568311,"data":"           ^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.771572861,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":21.771986922,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":21.772002997,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.772007417,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n"}
+,{"stream_name":"stderr","time":21.772376175,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":21.772385451,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.772389614,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/container.py\", line 253, in forward\n"}
+,{"stream_name":"stderr","time":21.773246165,"data":"    input = module(input)\n"}
+,{"stream_name":"stderr","time":21.773260124,"data":"            ^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.773264073,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":21.773651334,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":21.773666427,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.77367084,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n"}
+,{"stream_name":"stderr","time":21.77405456,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":21.774063486,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.7740682,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/activation.py\", line 143, in forward\n"}
+,{"stream_name":"stderr","time":21.774820254,"data":"    return F.relu(input, inplace=self.inplace)\n"}
+,{"stream_name":"stderr","time":21.77483428,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.774838196,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/functional.py\", line 1719, in relu\n"}
+,{"stream_name":"stderr","time":21.775213378,"data":"    result = torch.relu_(input)\n"}
+,{"stream_name":"stderr","time":21.775222871,"data":"             ^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":21.775227437,"data":"torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device\n"}
+,{"stream_name":"stderr","time":21.775231448,"data":"Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\n"}
+,{"stream_name":"stderr","time":21.775235184,"data":"CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\n"}
+,{"stream_name":"stderr","time":21.775238572,"data":"For debugging consider passing CUDA_LAUNCH_BLOCKING=1\n"}
+,{"stream_name":"stderr","time":21.775242179,"data":"Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"}
+,{"stream_name":"stderr","time":21.775247035,"data":"\n"}
+,{"stream_name":"stdout","time":24.219105489,"data":"\n"}
+,{"stream_name":"stdout","time":24.219145566,"data":"[Hybrid Setup] Neural environment/inference failed: Command '['/usr/bin/python3', 'scripts/predict_unet_transformer.py', '--data-dir', '/kaggle/input/competitions/biohub-cell-tracking-during-development/test', '--splits', 'kaggle_test_splits_50ep.json', '--split', '0', '--weights', 'weights/unet_transformer/split_0/edge_predictor_best.pth', '--unet-batch-size', '4', '--det-threshold', '0.99', '--ilp-edge-weight', '-1.0', '--ilp-appearance-weight', '0.1', '--ilp-disappearance-weight', '0.1', '--ilp-division-weight', '1.0', '--use-ilp']' returned non-zero exit status 1.\n"}
+,{"stream_name":"stdout","time":24.219154387,"data":"Falling back to refined classical DoG tracking pipeline...\n"}
+,{"stream_name":"stdout","time":24.219158464,"data":"\n"}
+,{"stream_name":"stdout","time":24.219162176,"data":"Processing 44b6_0113de3b...\n"}
+,{"stream_name":"stdout","time":151.758038794,"data":"  [Dynamic Calibration] avg_cells=255.9 -\u003e min_track_len=4\n"}
+,{"stream_name":"stdout","time":152.209817561,"data":"  [SVD/DCT Trajectory Filter] Pruned 247 noisy trajectories.\n"}
+,{"stream_name":"stdout","time":152.307004607,"data":"Processing 44b6_0b24845f...\n"}
+,{"stream_name":"stdout","time":444.994192658,"data":"  [Dynamic Calibration] avg_cells=411.6 -\u003e min_track_len=4\n"}
+,{"stream_name":"stdout","time":448.760793508,"data":"  [SVD/DCT Trajectory Filter] Pruned 666 noisy trajectories.\n"}
+,{"stream_name":"stdout","time":448.885011746,"data":"Processing 6bba_05b6850b...\n"}
+,{"stream_name":"stdout","time":478.979367343,"data":"  [Dynamic Calibration] avg_cells=71.2 -\u003e min_track_len=4\n"}
+,{"stream_name":"stdout","time":479.076522273,"data":"  [SVD/DCT Trajectory Filter] Pruned 36 noisy trajectories.\n"}
+,{"stream_name":"stdout","time":479.094031681,"data":"Processing 6bba_05db0fb1...\n"}
+,{"stream_name":"stdout","time":1040.611197101,"data":"  [Dynamic Calibration] avg_cells=595.0 -\u003e min_track_len=6\n"}
+,{"stream_name":"stdout","time":1043.378851889,"data":"  [SVD/DCT Trajectory Filter] Pruned 660 noisy trajectories.\n"}
+,{"stream_name":"stdout","time":1044.215608047,"data":"Submission saved to submission.csv with 70748 nodes and 65779 edges.\n"}
+,{"stream_name":"stderr","time":1046.525016552,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1046.525065214,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1046.762020272,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1046.76205036,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1047.489680482,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1048.877974316,"data":"[NbConvertApp] Writing 450192 bytes to __results__.html\n"}
+]

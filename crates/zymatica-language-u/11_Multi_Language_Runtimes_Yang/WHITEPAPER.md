@@ -1,5 +1,5 @@
 # ZYMATICA: Multi-Language Runtimes & Ports
-*IP Class 10 | Apache License 2.0*
+*IP Class 10 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

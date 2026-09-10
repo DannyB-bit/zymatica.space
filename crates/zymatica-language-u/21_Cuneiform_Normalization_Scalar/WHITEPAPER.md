@@ -1,5 +1,5 @@
 # ZYMATICA: Cuneiform-U Normalization Scalar (Numerical Stability Tuning)
-*IP Class 20 | Apache License 2.0*
+*IP Class 20 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 

@@ -1,0 +1,29 @@
+{
+    "node_id": "cuneiform-node-04",
+    "description": "Solar-Powered Over-Water Path Relay",
+    "location": {
+        "name": "Lake Ontario Over-Water Boundary",
+        "latitude": 43.3456,
+        "longitude": -77.6101,
+        "elevation_meters": 75.0
+    },
+    "power_profile": {
+        "power_source": "SOLAR_BATTERY",
+        "battery_capacity_mah": 12000,
+        "solar_panel_watts": 15.0,
+        "battery_voltage_critical": 3.3,
+        "low_power_threshold_percent": 25.0,
+        "active_duty_cycle": 0.1
+    },
+    "lora_parameters": {
+        "frequency_mhz": 915.0,
+        "spreading_factor": 9,
+        "bandwidth_khz": 250.0,
+        "coding_rate": "4/6",
+        "tx_power_dbm": 20
+    },
+    "solana_pay": {
+        "recipient_address": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS",
+        "routing_fee_usdc": 0.015
+    }
+}

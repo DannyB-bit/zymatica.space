@@ -18,4 +18,4 @@ print("======================================================================\n"
     print(string.format("[1] Evaluated total raw bits: %d", total_raw_bits))
     print(string.format("[2] Semantic Decomposition: Transmitted Semantic Bits: %d bits", total_semantic_bits))
     print(string.format("[3] Net transmission space savings: %.2f%%", savings))
-print("\n[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.")
+print("\n[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.")

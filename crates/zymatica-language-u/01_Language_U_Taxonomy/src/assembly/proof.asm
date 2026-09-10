@@ -6,7 +6,7 @@ global main
 
 section .data
     title db "======================================================================", 10, "ZYMATICA | Language-U Taxonomy Proof (Assembly Edition)", 10, "======================================================================", 10, 10, 0
-    verify_msg db 10, "[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.", 10, 0
+    verify_msg db 10, "[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.", 10, 0
 log1 db "[1] Total raw bits: 1344", 10, 0
     log2 db "[2] Total semantic bits: 72", 10, 0
     log3 db "[3] Space savings: 94.64%", 10, 0

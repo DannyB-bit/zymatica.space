@@ -93,7 +93,10 @@ mod tests {
                 if feedback.is_none() {
                     Ok("Short summary".to_string())
                 } else {
-                    Ok("Detailed memory status summary: 84MB allocated across 3 pages.".to_string())
+                    Ok(
+                        "Detailed memory status summary: 84MB allocated across 3 pages."
+                            .to_string(),
+                    )
                 }
             },
             |_query, response| {

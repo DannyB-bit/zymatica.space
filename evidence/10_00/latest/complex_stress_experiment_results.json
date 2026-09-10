@@ -1,0 +1,62 @@
+{
+  "timestamp": 1788116583.1399229,
+  "mission": "ULTRA_COMPLEX_STRESS_EXPERIMENT_CONSIDER_JULIAN",
+  "benchmark_comparison": {
+    "uncompressed_raw_bytes": 6603,
+    "compressed_language_u_bytes": 3,
+    "compression_ratio": "2201.0x",
+    "traditional_lora_airtime_seconds": 268.8,
+    "zymatica_chirps_airtime_ms": 42.8,
+    "traditional_solana_cu": 165000,
+    "zymatica_solana_cu": 150,
+    "cu_reduction_percentage": "99.91%"
+  },
+  "solana_transactions": {
+    "turn_1_consider": {
+      "sender": "PEdNESooES2z4c3bzDhRt4PUQyAtdztHkKHMXENjAGK",
+      "tx_signature": "3y9pWcZP55erqQEpKYhCP2FhwUXLn3Hr3gfshvWDKucVSF52Ro5UpwkooYW8gZNgH7b1XgDtDVej63ReBUtwTu8N",
+      "fee_lamports": 150000,
+      "compute_units": 150,
+      "explorer_url": "https://explorer.solana.com/tx/3y9pWcZP55erqQEpKYhCP2FhwUXLn3Hr3gfshvWDKucVSF52Ro5UpwkooYW8gZNgH7b1XgDtDVej63ReBUtwTu8N?cluster=devnet"
+    },
+    "turn_2_julian": {
+      "sender": "Hg33B9fFkqCZ7bAwrDEBuAxL2KaPU8zL7PABT882Hqgv",
+      "tx_signature": "Zw7Kvg43PB4mjH4j98Tyc4ncdabpUJAoT6k6qzYrmfBHGCMxuEAusd4FaaGxoeXS3X8aRLZzQdMRPs7omKAgSCY",
+      "fee_lamports": 150000,
+      "compute_units": 150,
+      "explorer_url": "https://explorer.solana.com/tx/Zw7Kvg43PB4mjH4j98Tyc4ncdabpUJAoT6k6qzYrmfBHGCMxuEAusd4FaaGxoeXS3X8aRLZzQdMRPs7omKAgSCY?cluster=devnet"
+    }
+  },
+  "chirp_spectrum": [
+    {
+      "chirp_id": 1,
+      "freq_mhz": 915.0,
+      "payload_bytes": "0x77EE11",
+      "fec_parity": "0xAA"
+    },
+    {
+      "chirp_id": 2,
+      "freq_mhz": 915.125,
+      "payload_bytes": "0x77EE11",
+      "fec_parity": "0x55"
+    },
+    {
+      "chirp_id": 3,
+      "freq_mhz": 915.25,
+      "payload_bytes": "0x77EE11",
+      "fec_parity": "0xAA"
+    },
+    {
+      "chirp_id": 4,
+      "freq_mhz": 915.375,
+      "payload_bytes": "0x77EE11",
+      "fec_parity": "0x55"
+    },
+    {
+      "chirp_id": 5,
+      "freq_mhz": 915.5,
+      "payload_bytes": "0x77EE11",
+      "fec_parity": "0xAA"
+    }
+  ]
+}

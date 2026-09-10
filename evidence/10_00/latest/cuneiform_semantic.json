@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "total_concepts": 12,
+  "collision_rate": 0.0,
+  "roundtrip_accuracy": 1.0,
+  "packing_fidelity": 1.0,
+  "coordinate_bits": 24,
+  "byte_size": 3,
+  "semantic_reverse_accuracy": 1.0,
+  "multilingual_classification_accuracy": 1.0,
+  "multilingual_invariance_score": 1.0,
+  "geodesic_delta_lossless_fidelity": 1.0,
+  "raw_utf8_bytes": 93,
+  "wire_bytes": 8,
+  "compression_ratio_vs_utf8": 11.625,
+  "compression_ratio_vs_tokens": 1.5
+}

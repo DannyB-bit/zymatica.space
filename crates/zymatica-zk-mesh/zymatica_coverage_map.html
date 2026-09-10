@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zymatica | H3 Geospatial Coverage & Proof-of-Coverage (PoC) Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #090d16;
+      color: #e2e8f0;
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(13, 18, 30, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .metrics {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .metric-label {
+      font-size: 0.68rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .metric-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: #10b981;
+    }
+    #map-container {
+      flex: 1;
+      position: relative;
+    }
+    #map {
+      width: 100%;
+      height: 100%;
+      background: #060911;
+    }
+    .sidebar {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 360px;
+      background: rgba(13, 18, 30, 0.92);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 18px;
+      z-index: 1000;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .sidebar h2 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #f8fafc;
+    }
+    .node-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .node-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      background: rgba(56, 189, 248, 0.05);
+    }
+    .node-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      color: #38bdf8;
+    }
+    .node-meta {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.5;
+    }
+    .node-payout {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .payout-val {
+      color: #fbbf24;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .legend {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(13, 18, 30, 0.92);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px 18px;
+      z-index: 1000;
+      font-size: 0.75rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .legend-item:last-child { margin-bottom: 0; }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-green { background: #10b981; box-shadow: 0 0 10px #10b981; }
+    .dot-gold { background: #fbbf24; box-shadow: 0 0 10px #fbbf24; }
+    .dot-purple { background: #a855f7; box-shadow: 0 0 10px #a855f7; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <h1>📡 ZYMATICA H3 GEOSPATIAL MESH</h1>
+      <span class="badge">GEODNET-Style Hex Engine</span>
+      <span class="badge">10-Mo PoC Threshold</span>
+    </div>
+    <div class="metrics">
+      <div class="metric-item">
+        <span class="metric-label">Dec 25 Christmas Pool</span>
+        <span class="metric-value">689.65 SOL ($100,000 USD)</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">Avg Power Draw</span>
+        <span class="metric-value">3.2 Watts (&lt;$0.40/mo)</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">Settlement Currency</span>
+        <span class="metric-value" style="color: #38bdf8;">Native SOL / USDC</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="map-container">
+    <div id="map"></div>
+
+    <div class="sidebar">
+      <h2>🎄 Christmas Proof-of-Coverage Nodes</h2>
+      
+      <div class="node-card">
+        <div class="node-title">
+          <span>🌲 Node 5: Rural Wilderness Relay</span>
+          <span style="color: #10b981;">100% Scale</span>
+        </div>
+        <div class="node-meta">
+          Hex ID: 87000036000050 (Solo Hex)<br>
+          Hardware: Solar SX1302 + Pi Zero (1.8W)<br>
+          Uptime: 320 Days (Eligible: YES)
+        </div>
+        <div class="node-payout">
+          <span>Estimated Christmas Airdrop:</span>
+          <span class="payout-val">$19,999.97 USD (137.9 SOL)</span>
+        </div>
+      </div>
+
+      <div class="node-card">
+        <div class="node-title">
+          <span>⛰️ Node 2: Mountain Park Relay</span>
+          <span style="color: #fbbf24;">Shared Hex</span>
+        </div>
+        <div class="node-meta">
+          Hex ID: 87000036000051 (Multi-Node)<br>
+          Hardware: Solar SX1303 + RAK4631 (2.2W)<br>
+          Uptime: 315 Days (Eligible: YES)
+        </div>
+        <div class="node-payout">
+          <span>Estimated Christmas Airdrop:</span>
+          <span class="payout-val">$12,499.98 USD (86.2 SOL)</span>
+        </div>
+      </div>
+
+      <div class="node-card">
+        <div class="node-title">
+          <span>🏙️ Node 3: Urban Concrete Relay</span>
+          <span style="color: #fbbf24;">Shared Hex</span>
+        </div>
+        <div class="node-meta">
+          Hex ID: 87000036000051 (Multi-Node)<br>
+          Hardware: Flashed RAK V2 Hotspot (3.5W)<br>
+          Uptime: 305 Days (Eligible: YES)
+        </div>
+        <div class="node-payout">
+          <span>Estimated Christmas Airdrop:</span>
+          <span class="payout-val">$12,499.98 USD (86.2 SOL)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="dot dot-green"></div>
+        <span>Standalone Coverage Hex (1.0x Full Multiplier)</span>
+      </div>
+      <div class="legend-item">
+        <div class="dot dot-gold"></div>
+        <span>Dense Urban Hex (Shared Density Scale)</span>
+      </div>
+      <div class="legend-item">
+        <div class="dot dot-purple"></div>
+        <span>Over-The-Air 915 MHz RF Mesh Path</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map', {
+      zoomControl: false,
+      attributionControl: false
+    }).setView([43.85, -79.15], 9);
+
+    // Dark Matter tile layer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19
+    }).addTo(map);
+
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+    // Sample Nodes
+    const nodes = [
+      { id: "node-1-lab", name: "Node 1: Computer Lab Hub", lat: 43.6532, lon: -79.3832, hex: "87000036000051", color: "#fbbf24", mult: "0.75x" },
+      { id: "node-2-mountain", name: "Node 2: Mountain Park Relay", lat: 44.1200, lon: -78.9500, hex: "87000036000051", color: "#fbbf24", mult: "0.75x" },
+      { id: "node-3-urban", name: "Node 3: Urban High-Rise", lat: 43.7000, lon: -79.4000, hex: "87000036000051", color: "#fbbf24", mult: "0.75x" },
+      { id: "node-4-lake", name: "Node 4: Lake Ontario Relay", lat: 43.6000, lon: -79.3000, hex: "87000036000051", color: "#fbbf24", mult: "0.75x" },
+      { id: "node-5-rural", name: "Node 5: Rural Wilderness", lat: 44.5000, lon: -78.2000, hex: "87000036000050", color: "#10b981", mult: "1.00x (Solo)" }
+    ];
+
+    // Draw Hexagons
+    function createHexagon(lat, lon, radiusKm, color) {
+      const points = [];
+      const latOffset = radiusKm / 111.0;
+      const lonOffset = radiusKm / (111.0 * Math.cos(lat * Math.PI / 180));
+      for (let i = 0; i < 6; i++) {
+        const angle = (Math.PI / 3) * i;
+        points.push([
+          lat + latOffset * Math.sin(angle),
+          lon + lonOffset * Math.cos(angle)
+        ]);
+      }
+      return L.polygon(points, {
+        color: color,
+        fillColor: color,
+        fillOpacity: 0.15,
+        weight: 1.5
+      }).addTo(map);
+    }
+
+    // Render Nodes and Hexes
+    nodes.forEach(n => {
+      createHexagon(n.lat, n.lon, 4.5, n.color);
+      
+      const marker = L.circleMarker([n.lat, n.lon], {
+        radius: 7,
+        fillColor: n.color,
+        color: '#ffffff',
+        weight: 2,
+        fillOpacity: 0.9
+      }).addTo(map);
+
+      marker.bindPopup(`
+        <div style="color: #0f172a; font-family: sans-serif; font-size: 12px;">
+          <strong>${n.name}</strong><br>
+          Hex: <code>${n.hex}</code><br>
+          PoC Multiplier: <strong>${n.mult}</strong><br>
+          Daily Proof-of-Usage: Active<br>
+          Christmas Airdrop: <strong>Eligible (&gt;10 Months)</strong>
+        </div>
+      `);
+    });
+
+    // Mesh lines
+    const meshPath = [
+      [43.6532, -79.3832],
+      [43.7000, -79.4000],
+      [43.6000, -79.3000],
+      [44.1200, -78.9500],
+      [44.5000, -78.2000]
+    ];
+    L.polyline(meshPath, {
+      color: '#a855f7',
+      weight: 2,
+      dashArray: '6, 8',
+      opacity: 0.8
+    }).addTo(map);
+  </script>
+</body>
+</html>

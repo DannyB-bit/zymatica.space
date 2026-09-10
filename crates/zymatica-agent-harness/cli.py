@@ -537,20 +537,18 @@ def load_cli_config() -> Dict[str, Any]:
             logger.warning("Failed to load cli-config.yaml: %s", e)
 
     # Expand ${ENV_VAR} references in config values before bridging to env vars.
-    from zymatica_cli.config import _expand_env_vars
-    defaults = _expand_env_vars(defaults)
+    try:
+        from zymatica_cli.config import _expand_env_vars
+        defaults = _expand_env_vars(defaults)
+    except Exception:
+        pass
 
-    # Managed scope: overlay administrator-pinned values LAST so they win over
-    # the user's config here too. cli.py builds its config independently of
-    # zymatica_cli.config._load_config_impl (which has its own managed merge), so
-    # without this the entire interactive CLI/TUI surface — skin, display prefs,
-    # etc. read from CLI_CONFIG — would silently ignore managed scope while
-    # `zymatica config`/`doctor`/guards (which use load_config) honor it. The
-    # shared helper mirrors _load_config_impl (env-only expansion, root-model
-    # normalization, leaf-merge) and is fail-open.
-    from zymatica_cli import managed_scope
-
-    defaults = managed_scope.apply_managed_overlay(defaults)
+    # Managed scope: overlay administrator-pinned values LAST
+    try:
+        from zymatica_cli import managed_scope
+        defaults = managed_scope.apply_managed_overlay(defaults)
+    except Exception:
+        pass
 
     # Apply terminal config to environment variables (so terminal_tool picks them up)
     terminal_config = defaults.get("terminal", {})
@@ -10804,23 +10802,17 @@ class ZymaticaCLI(CLIAgentSetupMixin, CLICommandsMixin, CLIBillingMixin):
                     self._voice_continuous = False
                     self._no_speech_count = 0
                     _cprint(f"{_DIM}No speech detected 3 times, continuous mode stopped.{_RST}")
-                    return
+                elif self._voice_continuous and not self._voice_recording:
+                    def _restart_recording():
+                        try:
+                            self._voice_start_recording()
+                            if hasattr(self, '_app') and self._app:
+                                self._app.invalidate()
+                        except Exception as e:
+                            _cprint(f"{_DIM}Voice auto-restart failed: {e}{_RST}")
+                    threading.Thread(target=_restart_recording, daemon=True).start()
             else:
                 self._no_speech_count = 0
-
-            # If no transcript was submitted but continuous mode is active,
-            # restart recording so the user can keep talking.
-            # (When transcript IS submitted, process_loop handles restart
-            # after chat() completes.)
-            if self._voice_continuous and not submitted and not self._voice_recording:
-                def _restart_recording():
-                    try:
-                        self._voice_start_recording()
-                        if hasattr(self, '_app') and self._app:
-                            self._app.invalidate()
-                    except Exception as e:
-                        _cprint(f"{_DIM}Voice auto-restart failed: {e}{_RST}")
-                threading.Thread(target=_restart_recording, daemon=True).start()
 
     def _voice_speak_response_async(self, text: str) -> None:
         """Schedule TTS and mark it pending before continuous recording can restart."""

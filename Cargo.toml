@@ -1,7 +1,6 @@
-﻿[workspace]
+[workspace]
 members = [
     "crates/zymatica-zk-mesh/groth16",
-    "crates/zymatica-zk-mesh/programs/zk_lorawan",
     "crates/zymatica-engine",
     "crates/zymatica-language-u/01_Language_U_Taxonomy/src/rust",
     "crates/zymatica-language-u/02_Cuneiform_U_Hypercube_Yin/src/rust",
@@ -23,5 +22,18 @@ members = [
     "crates/zymatica-language-u/21_Cuneiform_Normalization_Scalar/src/rust",
     "crates/zymatica-language-u/24_English_Hidden_State_Steering/src/rust",
     "crates/zymatica-language-u/26_Perpetual_Motion_Eigenspace_Loops/src/rust",
+    "crates/zymatica-zspar",
 ]
 resolver = "2"
+
+[workspace.package]
+version = "2.0.0"
+authors = ["Danny Bouldiez", "Devs One"]
+edition = "2021"
+license-file = "LICENSE"
+repository = "https://github.com/DannyB-bit/zymatica.space"
+homepage = "https://zymatica.space"
+
+[profile.release]
+codegen-units = 1
+lto = "thin"

@@ -1,6 +1,7 @@
 *.7z filter=lfs diff=lfs merge=lfs -text
 *.arrow filter=lfs diff=lfs merge=lfs -text
 *.bin filter=lfs diff=lfs merge=lfs -text
+30_Qwen_3.5_0.8b_DNA_GROW/packets_final/*.bin !filter !diff !merge text
 *.bz2 filter=lfs diff=lfs merge=lfs -text
 *.ckpt filter=lfs diff=lfs merge=lfs -text
 *.ftz filter=lfs diff=lfs merge=lfs -text

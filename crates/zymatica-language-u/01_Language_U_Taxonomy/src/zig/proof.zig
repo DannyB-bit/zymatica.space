@@ -1,5 +1,7 @@
 // Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+// Copyright © 2026 Zymatica
+// SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+// See LICENSE for terms.
 
 const std = @import("std");
 
@@ -21,5 +23,5 @@ pub fn main() void {
     std.debug.print("[1] Evaluated total raw bits: {d}\n", .{total_raw_bits});
     std.debug.print("[2] Semantic Decomposition: Transmitted Semantic Bits: {d} bits\n", .{total_semantic_bits});
     std.debug.print("[3] Net transmission space savings: {d:.2}%\n", .{savings});
-    std.debug.print("\n[VERIFICATION] Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.\n", .{});
+    std.debug.print("\n[VERIFICATION] Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.\n", .{});
 }

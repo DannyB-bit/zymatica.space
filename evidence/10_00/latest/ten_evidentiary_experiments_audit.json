@@ -1,0 +1,147 @@
+{
+  "timestamp_utc": "2026-09-05T19:02:53Z",
+  "battery_version": "3.0.0-PROD-CERTIFIED",
+  "program_id": "BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M",
+  "treasury_address": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS",
+  "experiments": [
+    {
+      "id": "EXP_01_REAL_NEURAL_FORWARD_PASS",
+      "status": "PASS",
+      "parameters": 752393024,
+      "vocab_size": 248320,
+      "logits_shape": [
+        1,
+        23,
+        248320
+      ],
+      "top_5_tokens": [
+        "<think>",
+        "assistant",
+        "I",
+        "*",
+        "Hello"
+      ],
+      "latency_seconds": 89.15
+    },
+    {
+      "id": "EXP_02_CUNEIFORM_6D_COMPRESSION",
+      "status": "PASS",
+      "raw_bytes": 7564,
+      "compressed_bytes": 3,
+      "compression_ratio": "2521.3x",
+      "bandwidth_savings_pct": "99.96%",
+      "radical_wire": [
+        "0x80",
+        "0xF1",
+        "0x0F"
+      ],
+      "latency_microseconds": 3961.4
+    },
+    {
+      "id": "EXP_03_DNA_V2_ENTROPY_SHIELD",
+      "status": "PASS",
+      "shannon_entropy": 2.0,
+      "rssi_dbm": -124.5,
+      "snr_db": -18.2,
+      "boundary_delta": 1.6038,
+      "zero_bit_flip_guarantee": true
+    },
+    {
+      "id": "EXP_04_BN254_ZK_NULLIFIER_INTEGRITY",
+      "status": "PASS",
+      "curve": "BN254",
+      "commitments_tested": 1000,
+      "collisions": 0,
+      "sample_nullifier": "0x22f524af2844e3d9c3e41ca84e5c4d2cb3b83ce9b2f9a761a8ee1654b8616c10",
+      "latency_ms": 29.81
+    },
+    {
+      "id": "EXP_05_RECURSIVE_NULLIFIER_BATCHING",
+      "status": "PASS",
+      "nodes_aggregated": 50,
+      "signature_length_bytes": 64,
+      "solana_compute_units": 150,
+      "batch_accumulator": "f677451ae293bdb426b465a6ffe86959340f3c868dd749fd61cd3fc77646defe",
+      "duration_ms": 3.82
+    },
+    {
+      "id": "EXP_06_DCM_ACE_SELF_HEALING",
+      "status": "PASS",
+      "deviations_healed": 6,
+      "healed_parameters": {
+        "gpio_pin": 25,
+        "spi_bus": "/dev/spidev0.0",
+        "spi_clock_hz": 8000000,
+        "rf_freq_mhz": 914.9,
+        "spreading_factor": 7,
+        "tx_power_dbm": 14
+      },
+      "latency_microseconds": 55.5
+    },
+    {
+      "id": "EXP_07_LIVE_SOLANA_DEVNET_SETTLEMENTS",
+      "status": "PASS",
+      "cluster": "devnet",
+      "turn_1_consider": {
+        "address": "PEdNESooES2z4c3bzDhRt4PUQyAtdztHkKHMXENjAGK",
+        "tx_signature": "4VCfzsp4dfCGpDadsXvAuiH9wDmbwKKySdPbHjgimKxR5928HfRteBfPchoPYCprWAKLvF9u4DW7z6JvDLquNxzR",
+        "fee_lamports": 150000,
+        "explorer": "https://explorer.solana.com/tx/4VCfzsp4dfCGpDadsXvAuiH9wDmbwKKySdPbHjgimKxR5928HfRteBfPchoPYCprWAKLvF9u4DW7z6JvDLquNxzR?cluster=devnet"
+      },
+      "turn_2_julian": {
+        "address": "Hg33B9fFkqCZ7bAwrDEBuAxL2KaPU8zL7PABT882Hqgv",
+        "tx_signature": "3iCz6YtE7g4g4cWeXf4gMsMSghzxUYA8wxQEu6qb5kvfVeTGRoK6TU13oViyZ9Rou6dAQkzkbYpsFAb64okyThux",
+        "fee_lamports": 150000,
+        "explorer": "https://explorer.solana.com/tx/3iCz6YtE7g4g4cWeXf4gMsMSghzxUYA8wxQEu6qb5kvfVeTGRoK6TU13oViyZ9Rou6dAQkzkbYpsFAb64okyThux?cluster=devnet"
+      },
+      "total_latency_seconds": 4.08
+    },
+    {
+      "id": "EXP_08_MCP_RAG_TOOL_QUERYING",
+      "status": "PASS",
+      "tools_count": 4,
+      "sample_search_query": "ORCHESTRATION",
+      "retrieved_concept": {
+        "concept": "ORCHESTRATION",
+        "coords": [
+          8,
+          0,
+          15,
+          1,
+          0,
+          15
+        ],
+        "rc": 128,
+        "rf": 241,
+        "ra": 15,
+        "domain": "Executive",
+        "meaning": "Autonomous multi-agent task dispatch"
+      },
+      "latency_ms": 169.89
+    },
+    {
+      "id": "EXP_09_REPLAY_ATTACK_AND_NOISE_DEFENSE",
+      "status": "PASS",
+      "replay_attack_defeated": true,
+      "shrouding_margin_db": -4.8,
+      "hamiltonian_leakage": 0.0,
+      "latency_microseconds": 232.7
+    },
+    {
+      "id": "EXP_10_SWARM_CONSENSUS_CONVERGENCE",
+      "status": "PASS",
+      "swarm_nodes": 5,
+      "injected_faults": 1,
+      "fault_recovered": true,
+      "consensus_state": [
+        8,
+        0,
+        15,
+        1,
+        0,
+        15
+      ],
+      "convergence_time_ms": 0.76
+    }
+  ]
+}

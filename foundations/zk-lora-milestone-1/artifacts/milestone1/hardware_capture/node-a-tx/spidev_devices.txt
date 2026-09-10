@@ -1,0 +1,10 @@
+COMMAND: ls /dev/spidev0.0 /dev/spidev0.1 /dev/spidev1.0 /dev/spidev1.1 /dev/spidev2.0 /dev/spidev2.1
+START_UTC: Mon Jun 29 23:15:17 UTC 2026
+ls: cannot access '/dev/spidev1.0': No such file or directory
+ls: cannot access '/dev/spidev1.1': No such file or directory
+ls: cannot access '/dev/spidev2.0': No such file or directory
+ls: cannot access '/dev/spidev2.1': No such file or directory
+/dev/spidev0.0
+/dev/spidev0.1
+END_UTC: Mon Jun 29 23:15:17 UTC 2026
+EXIT_STATUS: 2

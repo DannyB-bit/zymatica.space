@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "network": "Solana Devnet (api.devnet.solana.com)",
+  "execution_timestamp": 1788106107,
+  "program_id": "BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M",
+  "wallets": {
+    "prototype_a_phantom_treasury": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS",
+    "prototype_b_live_agent": "PEdNESooES2z4c3bzDhRt4PUQyAtdztHkKHMXENjAGK"
+  },
+  "protocol_fee_lamports": 150000,
+  "confirmed_onchain_transactions": [
+    {
+      "step": "1. Live Funding Transfer from Prototype A to Prototype B",
+      "amount_lamports": 150000000,
+      "amount_sol": 0.15,
+      "signature": "2eYDrbFGMyyGPYGXrLfDdA9YpiAnxwadQPV2ABhNjz3xVAyHq68DssKuzocntsGmGsk3aTuvTX4EGtd2TUmNeJUj",
+      "solana_explorer_url": "https://explorer.solana.com/tx/2eYDrbFGMyyGPYGXrLfDdA9YpiAnxwadQPV2ABhNjz3xVAyHq68DssKuzocntsGmGsk3aTuvTX4EGtd2TUmNeJUj?cluster=devnet",
+      "status": "CONFIRMED_ON_CHAIN"
+    },
+    {
+      "step": "2. Live Protocol Fee Collection from Prototype B back to Phantom Treasury (Prototype A)",
+      "amount_lamports": 150000,
+      "amount_sol": 0.00015,
+      "signature": "4PN2qAfHxv5doEQvPtdBhTqzpP5FcGQRL6JfTkSxr2Y954AEBZf6vN3G8yt9BLbW1HYuJqsdDRVyP5LrNWXJNNAo",
+      "solana_explorer_url": "https://explorer.solana.com/tx/4PN2qAfHxv5doEQvPtdBhTqzpP5FcGQRL6JfTkSxr2Y954AEBZf6vN3G8yt9BLbW1HYuJqsdDRVyP5LrNWXJNNAo?cluster=devnet",
+      "status": "CONFIRMED_ON_CHAIN"
+    }
+  ],
+  "verification_verdict": "REAL_ON_CHAIN_TRANSACTIONS_CONFIRMED"
+}

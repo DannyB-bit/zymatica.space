@@ -28,35 +28,32 @@ impl SpeculativeToolEngine {
 
     pub fn inspect_streaming_chunk(&self, streaming_buffer: &str) -> Option<SpeculativeToolMatch> {
         // Detect tool invocation signature e.g., {"tool": "read_file", "args": {"path": "..."}}
-        if let Some(tool_name) = self.extract_tool_name(streaming_buffer) {
-            if let Some(partial_args) = self.extract_args(streaming_buffer) {
-                let spec_id = {
-                    let mut id = self.next_id.lock().unwrap();
-                    let current = *id;
-                    *id += 1;
-                    current
-                };
+        let tool_name = self.extract_tool_name(streaming_buffer)?;
+        let partial_args = self.extract_args(streaming_buffer)?;
+        let spec_id = {
+            let mut id = self.next_id.lock().unwrap();
+            let current = *id;
+            *id += 1;
+            current
+        };
 
-                let spec_match = SpeculativeToolMatch {
-                    tool_name: tool_name.clone(),
-                    partial_args: partial_args.clone(),
-                    spec_id,
-                };
+        let spec_match = SpeculativeToolMatch {
+            tool_name: tool_name.clone(),
+            partial_args: partial_args.clone(),
+            spec_id,
+        };
 
-                // Trigger speculative execution in background worker thread
-                let registry = Arc::clone(&self.registry);
-                let cache = Arc::clone(&self.cache);
-                thread::spawn(move || {
-                    let res = registry.execute(&tool_name, &partial_args);
-                    if let Ok(mut c) = cache.lock() {
-                        c.insert(spec_id, res);
-                    }
-                });
-
-                return Some(spec_match);
+        // Trigger speculative execution in background worker thread
+        let registry = Arc::clone(&self.registry);
+        let cache = Arc::clone(&self.cache);
+        thread::spawn(move || {
+            let res = registry.execute(&tool_name, &partial_args);
+            if let Ok(mut c) = cache.lock() {
+                c.insert(spec_id, res);
             }
-        }
-        None
+        });
+
+        Some(spec_match)
     }
 
     pub fn claim_speculative_result(&self, spec_id: u64) -> Option<ToolExecutionResult> {
@@ -65,7 +62,13 @@ impl SpeculativeToolEngine {
     }
 
     fn extract_tool_name(&self, buf: &str) -> Option<String> {
-        for name in &["read_file", "write_to_file", "terminal", "grep_search", "list_dir"] {
+        for name in &[
+            "read_file",
+            "write_to_file",
+            "terminal",
+            "grep_search",
+            "list_dir",
+        ] {
             if buf.contains(name) {
                 return Some(name.to_string());
             }
@@ -74,19 +77,14 @@ impl SpeculativeToolEngine {
     }
 
     fn extract_args(&self, buf: &str) -> Option<Value> {
-        if let Some(start) = buf.find('{') {
-            if let Some(end) = buf.rfind('}') {
-                if end > start {
-                    let slice = &buf[start..=end];
-                    if let Ok(val) = serde_json::from_str::<Value>(slice) {
-                        if val.is_object() {
-                            return Some(val);
-                        }
-                    }
-                }
-            }
+        let start = buf.find('{')?;
+        let end = buf.rfind('}')?;
+        if end <= start {
+            return None;
         }
-        None
+        let slice = &buf[start..=end];
+        let val = serde_json::from_str::<Value>(slice).ok()?;
+        if val.is_object() { Some(val) } else { None }
     }
 }
 

@@ -37,7 +37,11 @@ impl MoeStreamEngine {
     pub fn route_top_k(&self, router_logits: &[f32]) -> Vec<usize> {
         let mut indexed: Vec<(usize, f32)> = router_logits.iter().cloned().enumerate().collect();
         indexed.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
-        indexed.iter().take(self.config.active_experts_per_token).map(|(idx, _)| *idx).collect()
+        indexed
+            .iter()
+            .take(self.config.active_experts_per_token)
+            .map(|(idx, _)| *idx)
+            .collect()
     }
 
     pub fn load_expert(&mut self, expert_id: usize) -> Result<ExpertSlice> {

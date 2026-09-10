@@ -59,11 +59,13 @@ fn mmap_populate_enabled() -> bool {
     env_flag("ZYMATICA_MMAP_POPULATE")
 }
 
+#[allow(dead_code)]
 #[cfg(all(unix, not(target_family = "wasm")))]
 fn mmap_hugepage_advice_enabled() -> bool {
     env_flag_default("ZYMATICA_MMAP_HUGEPAGE", true)
 }
 
+#[allow(dead_code)]
 #[cfg(all(unix, not(target_family = "wasm")))]
 fn mmap_willneed_advice_enabled() -> bool {
     env_flag("ZYMATICA_MMAP_WILLNEED")

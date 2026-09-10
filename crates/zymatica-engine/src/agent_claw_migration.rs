@@ -11,14 +11,13 @@ pub struct MigrationReport {
     pub success: bool,
 }
 
+#[derive(Default)]
 pub struct ClawMigrator;
 
 impl ClawMigrator {
     pub fn detect_openclaw_dir(custom_path: Option<&Path>) -> Option<PathBuf> {
-        if let Some(p) = custom_path {
-            if p.exists() {
-                return Some(p.to_path_buf());
-            }
+        if let Some(p) = custom_path.filter(|p| p.exists()) {
+            return Some(p.to_path_buf());
         }
         let home = dirs_home()?;
         let claw_path = home.join(".openclaw");
@@ -44,18 +43,14 @@ impl ClawMigrator {
 
         // Migrate skills
         let skills_dir = claw_dir.join("skills");
-        if skills_dir.exists() {
-            if let Ok(entries) = fs::read_dir(&skills_dir) {
-                report.skills_migrated = entries.count();
-            }
+        if let Ok(entries) = fs::read_dir(&skills_dir) {
+            report.skills_migrated = entries.count();
         }
 
         // Migrate memories
         let memory_dir = claw_dir.join("memories");
-        if memory_dir.exists() {
-            if let Ok(entries) = fs::read_dir(&memory_dir) {
-                report.memories_migrated = entries.count();
-            }
+        if let Ok(entries) = fs::read_dir(&memory_dir) {
+            report.memories_migrated = entries.count();
         }
 
         // Migrate keys
@@ -63,7 +58,9 @@ impl ClawMigrator {
         if env_file.exists() {
             report.keys_migrated += 1;
             if !dry_run {
-                let zymatica_home = dirs_home().unwrap_or_else(|| PathBuf::from(".")).join(".zymatica");
+                let zymatica_home = dirs_home()
+                    .unwrap_or_else(|| PathBuf::from("."))
+                    .join(".zymatica");
                 let _ = fs::create_dir_all(&zymatica_home);
                 let _ = fs::copy(&env_file, zymatica_home.join(".env"));
             }

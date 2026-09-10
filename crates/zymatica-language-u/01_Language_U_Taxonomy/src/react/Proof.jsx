@@ -6,7 +6,7 @@ export default function Proof() {
     return (
         <div>
             <h1>ZYMATICA | Language-U Taxonomy Proof (React Edition)</h1>
-            <p>Verification Anchor: Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.</p>
+            <p>Verification Anchor: Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.</p>
         </div>
     );
 }

@@ -38,12 +38,18 @@ impl P2pSwarmEngine {
     pub fn select_best_subagent_node(&self) -> Option<String> {
         self.nodes
             .values()
-            .max_by(|a, b| a.active_capacity_pct.partial_cmp(&b.active_capacity_pct).unwrap_or(std::cmp::Ordering::Equal))
+            .max_by(|a, b| {
+                a.active_capacity_pct
+                    .partial_cmp(&b.active_capacity_pct)
+                    .unwrap_or(std::cmp::Ordering::Equal)
+            })
             .map(|n| n.node_id.clone())
     }
 
     pub fn delegate_task(&self, instruction: &str) -> Result<DelegatedSwarmTask> {
-        let target_node = self.select_best_subagent_node().unwrap_or_else(|| self.local_node_id.clone());
+        let target_node = self
+            .select_best_subagent_node()
+            .unwrap_or_else(|| self.local_node_id.clone());
         Ok(DelegatedSwarmTask {
             task_id: format!("swarm-task-{}", instruction.len()),
             target_node_id: target_node,

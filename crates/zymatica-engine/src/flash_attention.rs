@@ -1,4 +1,4 @@
-﻿//! Sovereign Tiled FlashAttention Kernel with Online Softmax.
+//! Sovereign Tiled FlashAttention Kernel with Online Softmax.
 //! Evaluates fused multi-head self-attention without materializing N x N attention matrices in RAM.
 //! Memory complexity: O(1) working SRAM per head.
 
@@ -26,12 +26,12 @@ impl FlashAttentionConfig {
 /// Compute FlashAttention forward pass for a single query token against key/value history.
 /// Uses online softmax scaling: m_new = max(m_old, m_block), l_new = l_old * exp(m_old - m_new) + sum(exp(m_block - m_new)).
 pub fn flash_attention_forward(
-    q: &[f32],          // [num_heads, head_dim]
-    k_cache: &[f32],    // [seq_len, num_kv_heads, head_dim]
-    v_cache: &[f32],    // [seq_len, num_kv_heads, head_dim]
+    q: &[f32],       // [num_heads, head_dim]
+    k_cache: &[f32], // [seq_len, num_kv_heads, head_dim]
+    v_cache: &[f32], // [seq_len, num_kv_heads, head_dim]
     seq_len: usize,
     config: &FlashAttentionConfig,
-    out: &mut [f32],    // [num_heads, head_dim]
+    out: &mut [f32], // [num_heads, head_dim]
 ) {
     let num_heads = config.num_heads;
     let num_kv_heads = config.num_kv_heads;

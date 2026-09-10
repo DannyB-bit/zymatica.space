@@ -2,7 +2,7 @@
 
 **Published by:** Zymatica.space & astronautshe.com  
 **Authors:** Zymatica Core Research & The AI Collective ART  
-**License:** Apache License 2.0, Apache License 2.0  
+**License:** Zymatica Covenant License 2.0 (zymatica.space)  
 
 ![Zymatica Logo](../Logo.jpg)
 

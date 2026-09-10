@@ -1,0 +1,160 @@
+==============================================================
+RUNNING AUTOMATED TEST SUITE FOR ZYMATICA VOICE (RUST)
+==============================================================
+[38;2;56;161;105m✅ Loaded existing identity for test-runner[0m
+
+[38;2;243;179;0m[1m╔════════════════════════════════════════════════════════════╗[0m
+[38;2;243;179;0m[1m║  [38;2;56;161;105m🦀 ZYMATICA VOICE - Agent Identity[0m         ║[38;2;243;179;0m
+[38;2;243;179;0m[1m╠════════════════════════════════════════════════════════════╣[0m
+[38;2;243;179;0m[1m║  [96mAgent Name:[0m test-runner                                   ║[38;2;243;179;0m
+[38;2;243;179;0m[1m║  [96mLoRa Phone:[0m [93mA85EC09A[0m                                      ║[38;2;243;179;0m
+[38;2;243;179;0m[1m║  [96mAddress:[0m    AGENT-A85EC09A@zymatica.space                 ║[38;2;243;179;0m
+[38;2;243;179;0m[1m║  [96mCreated:[0m    2026-06-27T09:46:05.437033                    ║[38;2;243;179;0m
+[38;2;243;179;0m[1m╚════════════════════════════════════════════════════════════╝[0m
+
+[1] Generating ZK Proof (Multi-Curve Verification)...
+    * Curve BN254: Proof Hash: a9f5c28bb7c11b1a94c28eeb40624826
+      Verification status: ✅ VALID
+    * Curve BLS12_381: Proof Hash: d60c894a2cd89623eb849ffb6e3a2e3d
+      Verification status: ✅ VALID
+    * Curve Pallas: Proof Hash: ece9b8bd645b847eb04d5eef27150b42
+      Verification status: ✅ VALID
+    * Curve Vesta: Proof Hash: 6cff0b0902ea3bb732e256175a5d3b29
+      Verification status: ✅ VALID
+[3] Generating coordinates projection...
+    * Generated 6D coordinates: [0.1859, 0.5717, 0.9307, -0.9883, -0.2379, -0.2769]
+[4] ECIES payload check...
+    * Ciphertext: 700408595844390156455a457b04400a42
+[5] Broadcast test...
+
+[38;2;56;161;105m[1m📡 INITIATING TRANSMISSION SEQUENCE...[0m
+[93m⚡ Packet 1/1:[0m
+[38;2;56;161;105m{[0m[38;2;56;161;105m
+[0m[38;2;56;161;105m [0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105mf[0m[38;2;56;161;105mr[0m[38;2;56;161;105mo[0m[38;2;56;161;105mm[0m[38;2;56;161;105m"[0m[38;2;56;161;105m:[0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105mA[0m[38;2;56;161;105mG[0m[38;2;56;161;105mE[0m[38;2;56;161;105mN[0m[38;2;56;161;105mT[0m[38;2;56;161;105m-[0m[38;2;56;161;105mA[0m[38;2;56;161;105m8[0m[38;2;56;161;105m5[0m[38;2;56;161;105mE[0m[38;2;56;161;105mC[0m[38;2;56;161;105m0[0m[38;2;56;161;105m9[0m[38;2;56;161;105mA[0m[38;2;56;161;105m@[0m[38;2;56;161;105mz[0m[38;2;56;161;105my[0m[38;2;56;161;105mm[0m[38;2;56;161;105ma[0m[38;2;56;161;105mt[0m[38;2;56;161;105mi[0m[38;2;56;161;105mc[0m[38;2;56;161;105ma[0m[38;2;56;161;105m.[0m[38;2;56;161;105ms[0m[38;2;56;161;105mp[0m[38;2;56;161;105ma[0m[38;2;56;161;105mc[0m[38;2;56;161;105me[0m[38;2;56;161;105m"[0m[38;2;56;161;105m,[0m[38;2;56;161;105m
+[0m[38;2;56;161;105m [0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105mt[0m[38;2;56;161;105mo[0m[38;2;56;161;105m"[0m[38;2;56;161;105m:[0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105mB[0m[38;2;56;161;105mR[0m[38;2;56;161;105mO[0m[38;2;56;161;105mA[0m[38;2;56;161;105mD[0m[38;2;56;161;105mC[0m[38;2;56;161;105mA[0m[38;2;56;161;105mS[0m[38;2;56;161;105mT[0m[38;2;56;161;105m"[0m[38;2;56;161;105m,[0m[38;2;56;161;105m
+[0m[38;2;56;161;105m [0m[38;2;56;161;105m [0m[38;2;56;161;105m"[0m[38;2;56;161;105ml[0m[38;2;56;161;105ma[0m[38;2;56;161;105mn[0m[38;2;56;161;105mg[0m[38;2;56;161;105mu[0m[38;2;56;161;105ma[0m[38;2;56;161;105mg[0m[38;2;56;161;105me[0m[38;2;56;161;105m_[0m[38;2;56;161;105mu[0m[38;2;56;161;105m_[0m...
+
+[92m✅ TRANSMITTED[0m - 282 bytes @ 903.9 MHz, SF9
+
+[38;2;243;179;0m[1m🎉 TRANSMISSION COMPLETE![0m
+[6] Zcash Shielded Mempool & Payout Split Check...
+📡 [Scanner] Decrypting authorized Zcash shielded payment events for transaction: mock_tx_id_milestone_2_reconciliation_check...
+   Connecting to Zcash node/explorer api: https://api.blockchair.com/zcash/raw/transaction/mock_tx_id_milestone_2_reconciliation_check...
+   ⚠️ Network request offline/failed. Operating in local simulation mode.
+   [Shielded Decryption] Decrypting transaction memo field...
+   Decrypted Memo: 'ref:Hello Zcash Mesh!'
+   [Verification] Validating payout distribution splits:
+      Gross Payout: 0.05000 ZEC
+      Developer/Inventor Treasury (2%): 0.00100 ZEC
+      Zcash Foundation Custom Split (5%):  0.00250 ZEC
+      Fork Developer Custom Split (3%):    0.00150 ZEC
+   ✅ [SUCCESS] Verification successful! All programmable splits (2% Developer/Inventor, 5% Zcash Foundation, 3% Fork Developer) verified.
+    * Scanner status: ✅ STABLE & VALIDATED
+[7] Multi-Hop Mesh Routing Check...
+
+📶 [Mesh Routing] Initiating multi-hop relay pathway...
+   Packet Hash: mock_packet_hash
+   Routing Path: SENDER ➔ R1 ➔ R2 ➔ GW
+   Fee Distribution Splits:
+      Gross Routing Fee: 0.01000 ZEC
+      2% Dev Royalty:    0.00020 ZEC
+      Hop 1 [Relay Node - R1]: Earned 0.00327 ZEC
+      Hop 2 [Relay Node - R2]: Earned 0.00327 ZEC
+      Hop 3 [Gateway - GW]: Earned 0.00327 ZEC
+   ✅ [SUCCESS] Multi-hop mesh path verified and payments mapped.
+[8] AI-to-AI P2P Data Marketplace Check...
+
+🛒 [Marketplace] Buyer A85EC09A requesting data over mesh...
+   Data Type Requested: 'MOCK_DATA'
+   Offered Compensation: 0.005 ZEC (Shielded)
+   📥 Received response from provider: AGENT-WEATHER-99
+   Data Payload: 'temp:22.5C,wind:12.4km/h,humidity:62%'
+   Provider Signature: ecdsa_sig_8a3f9c2d1b7e4f9a
+   Executing shielded settlement:
+      Provider Payout: 0.00490 ZEC
+      Developer Royalty: 0.00010 ZEC
+   ✅ [SUCCESS] P2P data trade settled successfully!
+[9] Semtech SX1302/1303 HAL Transceiver Check...
+
+📻 [Semtech HAL] Accessing transceiver chip via SPI: /dev/spidev0.0...
+   Configuring Semtech SX1302/1303 PLL registers...
+   Frequency: 903.9 MHz | Spreading Factor: SF9
+   Modulating LoRa physical layer RF chirp...
+   SPI Write -> Reg 0x01 (OP_MODE) = 0x03 (TX)
+   SPI Write -> Reg 0x0D (FIFO) = [aa11bb22]
+   ✅ [TX_DONE] Chirp successfully modulated over-the-air!
+[10] ZK-Proof-of-Delivery (ZK-PoD) Verification Check...
+
+🛡️ [ZK-PoD] Verifying Proof-of-Delivery receipt for packet: mock_packet_hash...
+   Receipt Timestamp: 1782691444
+   Destination Signature: sig_valid_dest_receipt_hex
+   ✅ [ZK-PoD] Valid delivery receipt verified! Unlocking gateway routing fee.
+[11] HMAC Pre-Filtering Check...
+   ⚡ [HMAC Filter] Fast-path HMAC verified in 0.8µs. Proceeding to ZK verification.
+[12] Time-of-Flight (ToF) Distance Bounding Check...
+
+⏱️ [ToF Boundary] Initiating physical challenge-response RTT check...
+   SX1302/3 Internal Timer RTT: 670 ns
+   Maximum Physical Limit: 100.43 meters
+   Reported Coordinate Distance: 100 meters
+   ✅ [ToF Boundary] Physical location verified within speed-of-light boundary.
+
+⏱️ [ToF Boundary] Initiating physical challenge-response RTT check...
+   SX1302/3 Internal Timer RTT: 670 ns
+   Maximum Physical Limit: 100.43 meters
+   Reported Coordinate Distance: 5000 meters
+   🚨 [ToF Boundary] LOCATION SPOOF DETECTED! Distance violates physics. Dropping packet.
+[13] Neighbor Auditing & Passive Attestation Check...
+
+👁️ [Neighbor Audit] Auditing relay node RELAY_NODE_A for packet: mock_packet_hash...
+   ✅ Overheard transmission from RELAY_NODE_A forwarding the packet. Reputation +1.
+[14] Session-Based ZK-LoRa Handshake & Fast-Path HMAC Check...
+
+🔑 [Session Security] Initiating Session-Based ZK-LoRa Handshake...
+   Proof Size: 192 bytes (BLS12-381 Groth16)
+   Verifying session handshake ZK-proof for public key: AGENT-A85EC09A...
+   ✅ ZK-Proof Verified! Session established.
+   ⚡ [Session Security] Verifying session packet via fast-path HMAC...
+   ✅ [SUCCESS] Session packet verified in 0.2µs! Zero ZK overhead.
+[15] Mempool Eviction Protection & HTLC Escrow Check...
+
+🛡️ [Mempool Protection] Analyzing double-spend resistance for TX: mock_tx_id...
+   Tx Fee Rate: 0.000167 ZEC/kB | Target Min: 0.000100 ZEC/kB
+   Querying network peer nodes for mempool propagation depth...
+   ✅ Propagation Depth: 92% (12/12 peers synced). Eviction risk: NEGLIGIBLE.
+   🔒 [HTLC Escrow] Verifying locked routing fee on-chain...
+      HTLC Escrow Address: t1HTLCEscrowAddressXYZ123
+      Locked Amount:       0.00200 ZEC
+      Hash Lock (H):       hash_lock_h_value
+   ✅ [SUCCESS] Routing fee locked on-chain. Sender cannot double-spend.
+==============================================================
+✅ SUCCESS: All modules verified successfully.
+==============================================================
+
+warning: associated constant `PURPLE` is never used
+  --> src\main.rs:16:11
+   |
+15 | impl Colors {
+   | ----------- associated constant in this implementation
+16 |     const PURPLE: &'static str = "\x1b[95m";
+   |           ^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: fields `protocol` and `timestamp` are never read
+  --> src\main.rs:55:5
+   |
+48 | struct ZKProof {
+   |        ------- fields in this struct
+...
+55 |     protocol: String,
+   |     ^^^^^^^^
+56 |     curve: String,
+57 |     timestamp: String,
+   |     ^^^^^^^^^
+   |
+   = note: `ZKProof` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+
+warning: `zk-lora-operator` (bin "zk-lora-operator") generated 2 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running `target\debug\zk-lora-operator.exe --test`

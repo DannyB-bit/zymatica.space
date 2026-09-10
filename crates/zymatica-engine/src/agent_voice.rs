@@ -28,6 +28,12 @@ pub struct VoiceEngine {
     default_language: String,
 }
 
+impl Default for VoiceEngine {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl VoiceEngine {
     pub fn new() -> Self {
         Self {
@@ -37,7 +43,11 @@ impl VoiceEngine {
 
     pub fn transcribe_memo(&self, memo: &VoiceMemo) -> Result<TranscriptionResult> {
         // High-speed Whisper STT transcription simulation pipeline
-        let mock_text = format!("Transcribed audio memo {} ({} samples)", memo.audio_id, memo.pcm_samples.len());
+        let mock_text = format!(
+            "Transcribed audio memo {} ({} samples)",
+            memo.audio_id,
+            memo.pcm_samples.len()
+        );
         Ok(TranscriptionResult {
             audio_id: memo.audio_id.clone(),
             text: mock_text,

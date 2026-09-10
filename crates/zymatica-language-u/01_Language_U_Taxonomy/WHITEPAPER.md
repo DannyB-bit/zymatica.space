@@ -1,5 +1,5 @@
 # ZYMATICA: Language-U Framework (Taxonomy/Decomposition)
-*IP Class 01 | Apache License 2.0*
+*IP Class 01 | Zymatica Covenant License 2.0 (zymatica.space)*
 
 ![Zymatica Logo](../Logo.jpg)
 
@@ -58,7 +58,7 @@ graph LR
 
 ### Critique 1.2: System Synchronization & Cascade Error Propagation
 * **The Skeptic's View:** What happens when the transmitter and receiver fall out of synchronization? Since the range coding (LLD-AC) relies on exact logit distributions at step $t$, any single-bit channel error or float16 non-determinism (e.g., library mismatch, CPU/GPU execution differences) will cause the receiver's probability calculations to drift. This will result in cascading, irreversible decoding corruption.
-* **The Mathematical Defense:** During generation, deterministic seeding (`torch.manual_seed`) and fixed-order sequential execution kernels guarantee exact logit parity between nodes, eliminating the risk of runtime drift. If a transmission error occurs, the receiver utilizes local Laplace-smoothed transition statistics to maintain synchronization over the channel, bypassing channel noise without retransmission.
+* **The Mathematical Defense:** During generation, deterministic seeding (`torch.manual_seed`) and fixed-order sequential execution kernels achieve deterministic logit parity between nodes, eliminating the risk of runtime drift. If a transmission error occurs, the receiver utilizes local Laplace-smoothed transition statistics to maintain synchronization over the channel, bypassing channel noise without retransmission.
 
 ### Critique 1.3: Empirical Verification vs. Mathematical Proof of Generality
 * **The Skeptic's View:** The benchmarks are performed on highly specialized domain-specific datasets (SX1302 reset lines, LoRa setup, etc.). The protocol is not demonstrated to generalize losslessly to arbitrary open-ended general English conversations (e.g., creative writing) where the semantic variance is infinite and cannot be easily bound by a 6D coordinate hypercube.
@@ -187,7 +187,7 @@ This invention's logic is cross-validated dynamically across **23 programming la
 
 | Verification Mode | Languages | Run Command | Expected Anchor Output |
 |:---|:---|:---|:---|
-| **Dynamic Execution** | Python, Go, Rust, Java, TypeScript, Zig, Pure C, Bash, PowerShell, Kotlin, Elixir, MATLAB/Octave, GLSL, WAT, C++, C#, Lua, Julia, Dart, Haskell, Assembly, Faust, Swift | Run dynamically via the test runner suite:<br>`python scratch/test_ports.py` | `Semantic decomposition limits proven. Bypassed Shannon Syntactic Channel limit.` |
+| **Dynamic Execution** | Python, Go, Rust, Java, TypeScript, Zig, Pure C, Bash, PowerShell, Kotlin, Elixir, MATLAB/Octave, GLSL, WAT, C++, C#, Lua, Julia, Dart, Haskell, Assembly, Faust, Swift | Run dynamically via the test runner suite:<br>`python scratch/test_ports.py` | `Semantic decomposition limits proven. Task-Oriented Semantic Rate-Distortion Verified.` |
 
 Refer to [README.md](../01_Language_U_Taxonomy/src/README.md) inside the `src/` directory for system prerequisites, compiler options, and build steps for each language.
 

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
-use std::collections::BinaryHeap;
 use std::cmp::Ordering;
+use std::collections::BinaryHeap;
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct ScheduledJob {
@@ -31,6 +31,12 @@ pub struct CronSchedulerEngine {
     job_queue: BinaryHeap<ScheduledJob>,
 }
 
+impl Default for CronSchedulerEngine {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl CronSchedulerEngine {
     pub fn new() -> Self {
         Self {
@@ -45,23 +51,20 @@ impl CronSchedulerEngine {
     pub fn pop_due_jobs(&mut self, current_timestamp_ms: u64) -> Vec<ScheduledJob> {
         let mut due = Vec::new();
         while let Some(job) = self.job_queue.peek() {
-            if job.next_run_timestamp_ms <= current_timestamp_ms {
-                if let Some(mut job) = self.job_queue.pop() {
-                    job.run_count += 1;
-                    due.push(job);
-                }
-            } else {
+            if job.next_run_timestamp_ms > current_timestamp_ms {
                 break;
+            }
+            if let Some(mut job) = self.job_queue.pop() {
+                job.run_count += 1;
+                due.push(job);
             }
         }
         due
     }
 
     pub fn reschedule_job(&mut self, mut job: ScheduledJob, interval_ms: u64) {
-        if let Some(max) = job.max_iterations {
-            if job.run_count >= max {
-                return;
-            }
+        if job.max_iterations.is_some_and(|max| job.run_count >= max) {
+            return;
         }
         job.next_run_timestamp_ms += interval_ms;
         self.add_job(job);

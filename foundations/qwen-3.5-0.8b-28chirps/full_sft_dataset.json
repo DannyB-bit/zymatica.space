@@ -1,0 +1,987 @@
+[
+  {
+    "prompt": "Q: What GPIO pin is the SX1302 reset line on Raspberry Pi 4?\nA:",
+    "completion": " GPIO pin 25. The SX1302 reset is connected to GPIO 25 on gpiochip0.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What is the exact command to reset the LoRa concentrator with gpioset?\nA:",
+    "completion": " gpioset -c gpiochip0 --toggle 100ms,100ms,0 25=0",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What script handles the SX1302 hardware reset?\nA:",
+    "completion": " reset_lgw.sh handles the SX1302 hardware reset sequence.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: On Raspberry Pi 5, which gpiochip and pin is the SX1302 reset mapped to?\nA:",
+    "completion": " GPIO 17 on gpiochip4 on Raspberry Pi 5.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What frequency does the Astronaut SHE Handshake Protocol use?\nA:",
+    "completion": " 903.0 MHz. The Astronaut SHE Handshake Protocol operates at 903.0 MHz.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What Spreading Factor is used for the Astronaut SHE handshake?\nA:",
+    "completion": " SF7. The Astronaut SHE handshake uses Spreading Factor 7 (SF7).",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What is the transmit power for the Astronaut SHE RAK Miner beacon?\nA:",
+    "completion": " 14 dBm. The Astronaut SHE RAK Miner beacon transmits at 14 dBm.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What does --pwid 15 represent in test_loragw_hal_tx?\nA:",
+    "completion": " 14 dBm power calibration index. --pwid 15 sets gain to 14 dBm.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What is the full test_loragw_hal_tx command for the Astronaut SHE handshake?\nA:",
+    "completion": " ./test_loragw_hal_tx -r 1250 -f 903.0 -m LORA -s 7 -b 125 -n 1 --pwid 15 -p 14 -z 32",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What is the payload size for the Astronaut SHE handshake beacon?\nA:",
+    "completion": " 32 bytes. The Astronaut SHE handshake beacon payload is 32 bytes.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: How many dimensions does the Cuneiform-U v3.0 semantic hypercube have?\nA:",
+    "completion": " 6 dimensions. The Cuneiform-U v3.0 semantic hypercube is 6-dimensional.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What are the 6 axes of Cuneiform-U v3.0?\nA:",
+    "completion": " DOMAIN, SUBDOMAIN, OPERATION, MODALITY, DEPTH, POLARITY",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What is the Classifier Radical R_C in Cuneiform-U v3.0?\nA:",
+    "completion": " R_C packs DOMAIN in upper 4 bits and SUBDOMAIN in lower 4 bits.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What are the radical coordinates of the ACK glyph (0x807E)?\nA:",
+    "completion": " R_C=0x00, R_F=0x7E, R_A=0x0B for the ACK glyph 0x807E.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What is the Shannon Orthogonality equation in Language U?\nA:",
+    "completion": " H(text) = H(meaning) + H(syntax | meaning)",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What does LLD-AC stand for?\nA:",
+    "completion": " LLM-Logits-Driven Range Coding. LLD-AC uses LLM probability distributions.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What is a collapse signal in LLD-AC range coding?\nA:",
+    "completion": " When probability approaches 1.0, encoding cost approaches 0 bits \u2014 a collapse signal.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What frequency scale does the LLD-AC range coder use?\nA:",
+    "completion": " 1,000,000. The LLD-AC range coder scales frequencies to 1,000,000 integer units.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: How is the physical hardware reset sequence executed on an SX1302 chip?\nA:",
+    "completion": " Via external pins. Control POWER_EN to high, pull physical RESET Low to clear registers, hold for 100ms, then drive High to boot.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What does getting a Chip Version of 0x00 represent during SPI check on SX1302?\nA:",
+    "completion": " Power/reset sequence failure or connection failure. The host cannot communicate with the registers, typically due to misconfigured GPIO mappings.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What SPI mode settings (CPOL, CPHA) does the Semtech SX1302 host interface require?\nA:",
+    "completion": " CPOL = 0 and CPHA = 0 (SPI Mode 0). Transactions occur in synchronous full-duplex with CSN pulled Low at the start of a frame.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: Why must the CSN line remain Low between bytes of a single write/read register transaction on SX1302?\nA:",
+    "completion": " To maintain address context. Raising CSN terminates the SPI transaction frame and resets the address byte counter on the slave chip.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What is the relation between Spreading Factor (SF) and Symbol Duration in LoRa modulation?\nA:",
+    "completion": " Symbol Duration Ts = (2^SF) / BW, where BW is the bandwidth. Each increment in SF doubles the duration of a symbol.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What does Link ADR (Adaptive Data Rate) allow in a LoRaWAN network?\nA:",
+    "completion": " Dynamically adjusting node Tx power and Data Rate based on SNR and packet loss metrics to optimize battery life and network capacity.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: How is a Link budget calculated in RF design?\nA:",
+    "completion": " Link Budget (dB) = Tx Power (dBm) + Tx Gain (dBi) - Path Loss (dB) - Rx Cable Loss (dB) + Rx Antenna Gain (dBi).",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What is the thermal noise floor for a 125 kHz LoRa channel at room temperature (290 K)?\nA:",
+    "completion": " Approximately -123 dBm. Derived from P = k * T * B, where k is Boltzmann's constant, T is temperature, and B is bandwidth.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What regional frequency channel plan does US915 specify for LoRaWAN uplink?\nA:",
+    "completion": " 64 channels of 125 kHz bandwidth from 902.3 to 914.9 MHz (spaced by 200 kHz) and 8 channels of 500 kHz bandwidth from 903.0 to 914.2 MHz.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: How does Duty Cycle restriction differ from dwell time limits in LoRa bands?\nA:",
+    "completion": " Duty Cycle limits nodes to transmit for a percentage of time (e.g., 1% in EU868), while Dwell Time limits the maximum continuous duration of a transmission (e.g., 400ms in US915).",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What is Shannon's Source Coding Theorem?\nA:",
+    "completion": " It establishes that it is impossible to losslessly compress data to a rate lower than its Entropy H, without introducing errors.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: How does Range Coding represent an output sequence as a single number?\nA:",
+    "completion": " By recursively dividing a floating-point interval [0, 1) based on symbol probabilities, outputting any number within the final narrow sub-interval.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: Why does LLD-AC require integer range arithmetic instead of standard float point operations?\nA:",
+    "completion": " To prevent cross-platform float precision drift. Floating-point variations across host hardware would cause decoding errors.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What is the update equation for the lower boundary 'L' and range width 'W' in range coding?\nA:",
+    "completion": " L_next = L + W * cumulative_freq[symbol]; W_next = W * symbol_freq[symbol]. Both values are normalized dynamically.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: Why is cumulative frequency used in interval subdivision during range coding?\nA:",
+    "completion": " To establish the precise starting offset of the target symbol's sub-interval relative to the other symbols in the vocabulary alphabet.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What is entropy H(X) defined mathematically for a discrete variable X?\nA:",
+    "completion": " H(X) = -sum( P(x) * log2(P(x)) ) over all possible outcomes x in the distribution.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What is cross-entropy loss used for in language model training?\nA:",
+    "completion": " It measures the divergence between the true distribution (ground truth labels) and the predicted distribution outputs of the network.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What does KL Divergence measure in information theory?\nA:",
+    "completion": " The relative entropy or information gain lost when approximating a true probability distribution P using a model distribution Q.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What does a code length of -log2(P(x)) represent in optimal coding?\nA:",
+    "completion": " The information content of symbol x. More frequent symbols (higher P(x)) require fewer bits to represent under an optimal code.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Q: What is Renyi Entropy and how does it generalize Shannon Entropy?\nA:",
+    "completion": " A family of function indices generalizing Shannon, collision, and min-entropy, parametrized by an order alpha which weights probabilities differently.",
+    "type": "rf_info_theory"
+  },
+  {
+    "prompt": "Question: Suppose there is an open (external) hash table with four buckets, numbered 0,1,2,3, and integers are hashed into these buckets using hash function h(x) = x mod 4. If the sequence of perfect squares 1,4,9, ... , i^2, ... is hashed into the table, then, as the total number of entries in the table grows, what will happen?\nA. Two of the buckets will each get approximately half the entries, and the other two will remain empty.\nB. All buckets will receive approximately the same number of entries.\nC. All entries will go into one particular bucket.\nD. All buckets will receive entries, but the difference between the buckets with smallest and largest number of entries will grow.\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following statements is FALSE about memory reclamation based on reference counting?\nA. Reference counting is well suited for reclaiming cyclic structures.\nB. Reference counting incurs additional space overhead for each memory cell.\nC. Reference counting is an alternative to mark-and-sweep garbage collection.\nD. Reference counting need not keep track of which cells point to other cells.\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: The main difference between a network operating system and a distributed operating system is that\nA. A network operating system hides the existence of many machines from the user, but a distributed operating system makes the existence of many machines visible\nB. A distributed operating system hides the existence of many machines from the user, but a network operating system makes the existence of many machines visible\nC. A network operating system uses a local-area network, while a distributed operating system uses a wide-area network\nD. A distributed operating system uses a local-area network, while a network operating system uses a wide-area network\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Let f(X) = if x = 1 then 0 else [x * f(x - 1) + x**2]. The value of f(4) is\nA. 53\nB. 29\nC. 50\nD. 100\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Sometimes the object module produced by a compiler includes information (from the symbol table) mapping all source program names to their addresses. The most likely purpose of this information is\nA. for use as input to a debugging aid\nB. to increase the run-time efficiency of the program\nC. for the reduction of the symbol-table space needed by the compiler\nD. to tell the loader where each variable belongs\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Of the following page-replacement policies, which is guaranteed to incur the minimum number of page faults?\nA. Replace the page whose next reference will be the longest time in the future.\nB. Replace the page whose next reference will be the shortest time in the future.\nC. Replace the page whose most recent reference was the shortest time in the past.\nD. Replace the page whose most recent reference was the longest time in the past.\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Suppose it takes 1 second to factor a general 100 x 100 matrix using Gaussian elimination. Of the following, which is the best estimate of the number of seconds it will take to factor a 500 x 500 matrix based on the relative dimensions?\nA. 5\nB. 10\nC. 25\nD. 125\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following evaluation strategies must be defined in order to execute a logic program on a sequential machine?\nI. Evaluation order of rules\nII. Evaluation order of clauses\nIII. Evaluation order of arguments in each clause\nA. II only\nB. I and II only\nC. I and III only\nD. I, II, and III\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Church's thesis equates the concept of \"computable function\" with those functions computable by, for example, Turing machines. Which of the following is true of Church's thesis?\nA. It was first proven by Alan Turing.\nB. It has not yet been proven, but finding a proof is a subject of active research.\nC. It can never be proven.\nD. It is now in doubt because of the advent of parallel computers.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: If L is a language accepted by some automaton M, which of the following is (are) true?\nI. If M is a nondeterministic finite automaton, then L is accepted by some deterministic finite automaton.\nII. If M is a deterministic pushdown automaton, then L is accepted by some nondeterministic pushdown automaton.\nIII. If M is a nondeterministic pushdown automaton, then L is accepted by some deterministic Turing machine.\nA. III only\nB. I and II only\nC. II and III only\nD. I, II, and III\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Mr. Carson drove 1,027 miles in April. He drove 988 miles in May. Mr. Carson used the expression below to find how many more miles he drove in April than in May. 1,027 \u2013 988 How many more miles did Mr. Carson drive in April than in May?\nA. 39 miles\nB. 139 miles\nC. 161 miles\nD. 1,961 miles\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which expression is equivalent to 4 x 9?\nA. (4x 4) + (4x5)\nB. (4+4) x (4+5)\nC. (4+4)+(4+5)\nD. (4x 4) x (4x5)\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Jan scored 3 more points in the basketball game than Salah. Cindy scored 22 points, which was twice as many points as Jan. How many points did Salah score?\nA. 8\nB. 11\nC. 14\nD. 19\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Residents of a small city voted on whether to allow a developer to build a shopping center. The number of votes in favor of the shopping center was 4,400. The number of votes against the shopping center was 17,600. What percent of the voters were in favor of building the shopping center?\nA. 20%\nB. 25%\nC. 40%\nD. 44%\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: What is the square of 15?\nA. 15\nB. 15-Jan\nC. 225\nD. 256\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Wendy bought 30 packs of gum. Each pack had 5 pieces. She multiplied 30 \u00d7 5 to find the number of pieces of gum she bought. How many pieces of gum did Wendy buy?\nA. 15\nB. 35\nC. 150\nD. 305\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: If 50% of a number is 20, what is 75% of the number?\nA. 8\nB. 15\nC. 30\nD. 45\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Solve for y. y \u2013 2 + 3y = 10\nA. 2\nB. 3\nC. 4\nD. 5\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Dawn needs to fix windows in her house. She must buy 3 feet of wood, which costs $7 per foot. She also needs to buy 4 pieces of glass. Each piece of glass costs $23. What will be the total cost for fixing the windows?\nA. $30 \nB. $90 \nC. $113 \nD. $176 \nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Collin spent 7 hours volunteering last month. Vanessa spent 21 hours volunteering last month. Which equation correctly shows how many times more hours Vanessa spent volunteering last month than Collin?\nA. 7 \u00d7 3 = 21\nB. 7 \u00d7 14 = 21\nC. 21 \u00d7 3 = 63\nD. 21 \u00d7 7 = 147\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: As of 2020, about what percentage of the population in Sub-Saharan Africa, is living on less than $1.90?\nA. 10%\nB. 20%\nC. 40%\nD. 80%\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Controlling for inflation and PPP-adjustment, about how much did GDP per capita increase from 1950 to 2016 in India?\nA. by 4 fold\nB. by 8 fold\nC. by 16 fold\nD. by 32 fold\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: In 1948 how many Americans believed the Kinsey Report on Sexuality in the Male to be a bad thing?\nA. 92%\nB. 64%\nC. 27%\nD. 11%\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following is true about the global growth rate?\nA. The global growth rate was four times as high 50 years ago as it is in 2020.\nB. The global growth rate was two times as high 50 years ago as it is in 2020.\nC. The global growth rate is two times as high as it is in 2020.\nD. The global growth rate is four times as high today as it is in 2020.\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: In which of the following country did the largest number of children die under the age of five years in 2017?\nA. China\nB. United States\nC. Indonesia\nD. Pakistan\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: There are two billion children in the world today (2020), aged 0 to 15 years old. How many children will there be in the year 2100 according to the United Nations?\nA. 4 billion\nB. 3 billion\nC. 2 billion\nD. 1 billion\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: As of 2014, about what percentage of primary aged children in Sub-Saharan Africa were out-of-school?\nA. 10%\nB. 20%\nC. 35%\nD. 50%\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Most Latin American countries achieved independence\nA. shortly after World War II\nB. in the 1960s\nC. around the time of World War I\nD. in the early nineteenth century\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: After the Atom bomb how many Americans support giving aid to Japan even at the cost of food shortages?\nA. 33%\nB. 50%\nC. 66%\nD. 85%\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Total global healthcare expenditure is about what percentage of global GDP as of 2017?\nA. 1%\nB. 2%\nC. 5%\nD. 10%\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: A spherical balloon filled with helium is floating in air. If the balloon is inflated until its radius is doubled, how will the buoyant force on the balloon be affected?\nA. It will decrease by a factor of 4.\nB. It will increase by a factor of 4.\nC. It will increase by a factor of 8.\nD. It will not be affected.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Given that the Earth\u2019s mass is m, its tangential speed as it revolves around the Sun is v, and the distance from the Sun to the Earth is R, which of the following correctly describes the work done by the centripetal force, Wc, in one year\u2019s time?\nA. Wc > 2R(mv^2/R)\nB. Wc = 2R(mv^2/R)\nC. Wc < 2R(mv^2/R)\nD. Cannot be determined\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: A swimmer is able to propel himself forward through the water by moving his arms. Which of the following correctly states the applicant and recipient of the force responsible for the swimmer\u2019s forward acceleration?\nA. The force of the surrounding water on the swimmer\u2019s arms\nB. The force of the swimmer\u2019s arms on the swimmer\u2019s torso\nC. The force of the swimmer\u2019s arms on the surrounding water\nD. The force of the swimmer\u2019s torso on the swimmer\u2019s arms\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: A light bulb rated at 100 W is twice as bright as a bulb rated at 50 W when both are connected in parallel directly to a 100-V source. Now imagine that these bulbs are instead connected in series with each other. Which is brighter, and by how much?\nA. The bulbs have the same brightness.\nB. The 100-W bulb is twice as bright.\nC. The 50-W bulb is twice as bright.\nD. The 100-W bulb is four times as bright.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: A projectile is launched on level ground in a parabolic path so that its range would normally be 500 m. When the projectile is at the peak of its flight, the projectile breaks into two pieces of equal mass. One of these pieces falls straight down, with no further horizontal motion. How far away from the launch point does the other piece land?\nA. 250 m\nB. 375 m\nC. 500 m\nD. 750 m\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: In the laboratory, a cart experiences a single horizontal force as it moves horizontally in a straight line. Of the following data collected about this experiment, which is sufficient to determine the work done on the cart by the horizontal force?\nA. The magnitude of the force, the cart\u2019s initial speed, and the cart\u2019s final speed\nB. The mass of the cart and the distance the cart moved\nC. The mass of the cart, the cart\u2019s initial speed, and the cart\u2019s final speed\nD. The mass of the cart and the magnitude of the force\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: A pair of protective headphones reduces the sound of a jet engine from 140 dB to 110 dB. What percent of the noise is being blocked?\nA. 99.90%\nB. 78.60%\nC. 21.40%\nD. 0.10%\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: An equal number of hydrogen and carbon dioxide molecules are placed in a sealed container. The gases are initially at a temperature of 300 K when the container is placed in an oven and brought to a new equilibrium temperature of 600 K. Which of the following best describes what is happening to the molecular speeds and kinetic energies of the gases\u2019 molecules as they move from 300 K to 600 K?\nA. The molecules of both gases, on average, end with the speed and the same average kinetic energy.\nB. The molecules of hydrogen, on average, end with a higher speed, but the molecules of both gases end with the same average kinetic energy.\nC. The molecules of hydrogen, on average, speed up more and end with a higher average kinetic energy.\nD. As heat flows into the container, the entropy rises, and it is not possible to determine the average velocity and average kinetic energy of the gases.\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: A uniform bar is lying on a flat table. Besides the gravitational and normal forces (which cancel), the bar is acted upon by two other forces, F1 and F2, which are parallel to the surface of the table. If the net force on the rod is zero, then which one of the following is true?\nA. The net torque on the bar must also be zero.\nB. The bar can accelerate translationally if F1 and F2 are not applied at the same point.\nC. The net torque will be zero if F1 and F2 are applied at the same point.\nD. The bar cannot accelerate translationally or rotationally.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: If L, M, and T denote the dimensions of length, mass, and time, respectively, what are the dimensions of power?\nA. (L^2)M/T^2\nB. (M^2)L/T^2\nC. (L^2)M/T^3\nD. M(L^2)/T^3\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following salts is expected to produce an alkaline solution when one mole is dissolved in one liter of water?\nA. NaClO4\nB. CaCl2\nC. NH4Br\nD. Na2S\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Based on periodic relationships, the bond strength, and the concept relating bond strength to acid strengths, which of the following correctly predicts the strength of binary acids from strongest to weakest?\nA. H2Se > H2O > H2S\nB. H2Se > H2S > H2O\nC. H2O < H2S < H2Se\nD. H2O > H2S > H2Se\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: 4NH3(g) + 5O2(g) \u2192 4NO(g) + 6H2O(g) This reaction will experience a rate increase by the addition of a cataylst such as platinum. Which of the following best explains why?\nA. The catalyst increases the overall frequency of collisions in the reactant molecules.\nB. The catalyst increases the frequency of collisions that occur at the proper orientation in the reactant molecules.\nC. The catalyst introduces a new reaction mechanism for the reaction.\nD. The catalyst increases the activation energy for the reaction.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following pairs of ions would make the best buffer with a basic pH? Ka for HC3H2O2 = 1.75 \u00d7 10^-5. Ka for HPO42- = 4.8 \u00d7 10^-13.\nA. H2SO4 and H2PO4\nB. HPO42- and NaH2PO4-\nC. HC3H2O2 and NaC3H2O2\nD. NaOH and HC2H3O2\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Consider the Lewis structures for the following molecules: CO2, CO32-, NO2-, and NO3-. Which molecule would have the smallest bond angle between terminal atoms?\nA. CO2\nB. CO32-\nC. NO2-\nD. NO3-\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following lists the electromagnetic spectral regions in order of decreasing wavelength?\nA. ultraviolet, visible, infrared, X-ray\nB. X-ray, visible, ultraviolet, infrared\nC. X-ray, ultraviolet, visible, infrared\nD. infrared, visible, ultraviolet, X-ray\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: An element in its ground state\nA. has all of its electrons in the lowest possible energy levels\nB. is an element as found in nature\nC. is an element that is unreactive and found free in nature\nD. has all of its electrons paired\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Consider the following reaction showing photosynthesis: 6CO2(g) + 6H2O(l) \u2192 C6H12O6(s) + 6O2(g) DH = + 2800 kJ/mol Which of the following is true regarding the thermal energy in this system?\nA. It is transferred from the surroundings to the reaction.\nB. It is transferred from the reaction to the surroundings.\nC. It is transferred from the reactants to the products.\nD. It is transferred from the products to the reactants.\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: The electron configuration 1s2 2s2 2p6 3s2 3p6 4s2 signifies the ground state of the element\nA. V\nB. Ti\nC. Co\nD. Ca\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: An experiment was performed to determine the moles of hydrogen gas formed (collected over water) when an acid reacts with magnesium metal. To do this, a piece of dry magnesium was weighed. Then 50 mL of hydrogen was collected. Next the Mg was dried to remove about 0.1 mL of water and weighed again to see how much Mg had reacted. The volume of hydrogen was measured and converted into moles of hydrogen. Which mistake will give the largest error in the result?\nA. Forgetting to dry the magnesium before both weighings\nB. Failing to take the vapor pressure of water (23 torr at 25 \u00b0C) into account\nC. Failing to convert \u00b0C to K\nD. Reading the gas-collecting container to \u00b120 mL\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: A fruit fly population has a gene with two alleles, A1 and A2. Tests show that 70% of the gametes produced in the population contain the A1 allele. If the population is in Hardy-Weinberg equilibrium, what proportion of the flies carry both A1 and A2?\nA. 0.7\nB. 0.49\nC. 0.21\nD. 0.42\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following statements is correct about a man who has hemophilia and whose wife does not have the disease and who does not have any relatives with the disease?\nA. All his daughters will have the disease.\nB. All his sons will have the disease.\nC. All his sons will be carriers.\nD. All his daughters will be carriers.\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following does NOT take place in the small intestine?\nA. Pancreatic lipase breaks down fats to fatty acids and glycerol.\nB. Pepsin breaks down proteins to amino acids.\nC. Pancreatic amylase breaks down carbohydrates into simple sugars.\nD. Bile emulsifies fats into smaller fat particles.\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Similar evolutionary changes occurring in two species that can be related or unrelated.\nA. Divergent evolution\nB. Convergent evolution\nC. Parallel evolution\nD. Coevolution\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following processes occur in the cytoplasm of an eukaryotic cell? I. DNA replication II. Transcription III. Translation\nA. I only\nB. III only\nC. II and III only\nD. I, II, and III\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: All of the following statements describe the unique characteristics of water EXCEPT\nA. it is a polar solvent\nB. it forms hydrogen bonds with disaccharides\nC. it can dissociate into hydrogen ions and hydroxide ions\nD. it is a hydrophobic solvent\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: In a certain population of squirrels that is in Hardy-Weinberg equilibrium, black color is a recessive phenotype present in 9 percent of the squirrels, and 91 percent are gray. What percentage of the population is homozygous dominant for this trait?\nA. 21 percent\nB. 30 percent\nC. 49 percent\nD. 70 percent\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Destruction of all beta cells in the pancreas will cause which of the following to occur?\nA. Glucagon secretion will stop and blood glucose levels will increase.\nB. Glucagon secretion will stop and blood glucose levels will decrease.\nC. Glucagon secretion will stop and digestive enzymes will be secreted.\nD. Insulin secretion will stop and blood glucose levels will increase.\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: In reptile eggs, the extraembryonic membrane that functions in excretion and respiration is the\nA. amnion\nB. chorion\nC. allantois\nD. yolk sac\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following changes in a gamete is most likely to lead to a heritable change in a protein?\nA. Deleting two nucleotides from the middle of an intron\nB. Deleting two nucleotides immediately upstream of a gene promoter\nC. Inserting two nucleotides in the genome at the beginning of a codon\nD. Adding two nucleotides to the poly(A) tail of an mRNA\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  According to Marquis, which of the following are benefits of his position on abortion?\nA. It gets around problems with personhood accounts such as how to account for infanticide being wrong.\nB. It provides a plausible analysis of personhood.\nC. both of the above\nD. neither of the above\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  The idea of moral injury involves\nA. the natural law idea of the doctrine of double effect.\nB. the Rossian idea of prima facie duties.\nC. the utilitarian idea of greatest good for the greatest number.\nD. the Kantian idea of the equal dignity of all persons.\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  In Altman's terminology, which of the following would qualify as \"low value\" speech in a university context?\nA. hate speech couched in the discourse of science\nB. the use of a racial epithet by one student directed at another\nC. both A and B\nD. neither A nor B\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  Van den Haag suggests that the actual costs of imposing the death penalty are trumped by\nA. equality.\nB. morality.\nC. deterrence.\nD. justice.\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  According to Mill, the only things desirable as ends are\nA. virtuous character traits.\nB. satisfactions of prima facie duties.\nC. pleasure and freedom from pain.\nD. satisfactions of the categorical imperative.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  The \"double standard\" with which states and nonstate entities are judged, according to Andrew Valls, is that\nA. violence by nonstate entities is more easily accepted than state violence.\nB. state violence is treated differently from nonmilitary action by the state (e.g., economic sanctions).\nC. state violence is more easily accepted than violence by nonstate entities.\nD. state violence is evaluated via just war theory, but violence by nonstate entities is evaluated via consequentialism.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  Which of the following is an example of a virtue?\nA. pleasure\nB. hunger\nC. desire\nD. courage\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  In response to Sandel's \"social justice\" argument, Kamm argues that\nA. even if we were able to enhance ourselves or others, we would not thereby be obligated to do so.\nB. there is a difference between (i) choosing that one have a certain trait and (ii) being responsible for bearing the costs of that choice.\nC. having the option to enhance will lead to fewer instances of people who require the assistance of others.\nD. all of the above\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  The principle of proportionality requires that\nA. murderers receive the death penalty.\nB. punishments must be in proportion to the crime.\nC. we should do to the wrongdoer the same kind of action done to the victim.\nD. punishments must be equal to the crime.\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question:  During his discussion of Japan, Caren claims that to answer the question of whether limitations on freedom of entry are justified, we have to weigh the claims of those trying to get in _____ the claims of those who are already inside.\nA. more heavily with\nB. less heavily with\nC. independently of\nD. equally with\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: The \"fear of becoming fat\" observed in patients with AN is best understood as a:\n\nA. Paranoid delusion\nB. Somatic delusion\nC. Overvalued idea\nD. Obsessive idea\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following is a function of vitamin B12?\n\nA. Synthesis of TMP (thymidine monophosphate)\nB. Decarboxylation of amino acids to form amine neurotransmitters\nC. Synthesis of methionine from homocysteine\nD. Carboxylation of pyruvate to oxaloacetate\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Deficiency of which of the following vitamins results in megaloblastic anaemia?\n\nA. Folate\nB. Niacin\nC. Riboflavin\nD. Vitamin B6\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Malnutrition in older adults is associated with which of the following?\n\nA. An increased mortality and morbidity\nB. Reduced length of hospital\nC. An improvement in physical function\nD. A reduced susceptibility to infection\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following is the most frequently used anthropometric measure to estimate body mass?\n\nA. Fat-free mass\nB. Body fat\nC. Body height\nD. Body weight\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following will result in an increase in the rate of tissue protein synthesis?\n\nA. Increased glucagon secretion in the fasting state.\nB. Increased insulin secretion in the fed state.\nC. Increased availability of lysine in the fed state.\nD. Secretion of cortisol under conditions of stress.\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following vitamins is involved in transamination of amino acids?\n\nA. Niacin\nB. Riboflavin\nC. Thiamin\nD. Vitamin B6\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following factors inhibits non-haem iron bioavailability the most?\n\nA. Phytic acid\nB. Citric acid\nC. Vegetable protein\nD. Calcium\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: On average, obese people have a higher basal metabolic rate (BMR) than lean people, mainly because the body of the obese has more\u0085 (in kg):\n\nA. adipose tissue (fat mass)\nB. Lean mass (fat-free mass)\nC. glycogen\nD. water\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: What was the Green Revolution?\n\nA. The term refers to the use of plant residues ('green manure') for fertiliser.\nB. It is a reference to the 1992 UN Conference on Environment and Development.\nC. It refers to the appointment of Green Party ministers in Germany's coalition governments between 1998 and 2005.\nD. It refers to the widespread adoption of high-yielding cereal crop varieties by farmers in many developing countries starting in the mid-1960s.\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Brandt views his rule-utilitarianism as a:\nA. normative ethical thesis.\nB. metaethical thesis.\nC. purely descriptive thesis.\nD. both a and b.\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: The purpose of the veil of ignorance is to:\nA. prevent contractors from adopting principles of justice that unfairly advantage themselves.\nB. make the decision of which principles of justice to adopt simpler and easier.\nC. ensure that the principles of justice selected are not too complicated for ordinary people to follow.\nD. all of the above.\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Baggini says that almost all deniers of meaning in life really seem to be rejecting only the idea that life has _____.\nA. internal meaning\nB. external meaning\nC. religious meaning\nD. secular meaning\nAnswer:",
+    "completion": " B",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Descartes reasons that the very fact that he is thinking shows that _____.\nA. he does not exist\nB. he is not being deceived\nC. he exists\nD. he is dreaming\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: The view that we ought to relieve the agony of one stranger rather than the minor pain of another is endorsed by:\nA. Taurek and Parfit.\nB. Taurek, but not Parfit.\nC. Parfit, but not Taurek.\nD. neither Parfit nor Taurek.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Questions like \u201cWhat is knowledge?\u201d and \u201cWhat is truth?\u201d are mainstays in the branch of philosophy known as _____.\nA. logic\nB. metaphysics\nC. epistemology\nD. aesthetics\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Butler argues that the belief that there is a conflict between public goods and private goods arises from our notions of:\nA. justice.\nB. benevolence.\nC. property.\nD. charity.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: According to Nagel, the view that moral luck is paradoxical is:\nA. a logical mistake.\nB. an ethical mistake.\nC. a factual mistake.\nD. not a mistake.\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: According to Kant, the basis of morality is the concept of:\nA. charity.\nB. fairness.\nC. piety.\nD. freedom.\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: In Plato's idealism, the unchanging Ideas or \"Forms\" in terms of which sensible objects both exist and are known must transcend (that is, exist beyond) the changing realm of appearances; because if Forms changed, then:\nA. the only things in the sensible world that we could ever experience would be concepts.\nB. the sensible realm (in contrast to the intelligible realm) would consist only of copies of real things.\nC. nothing in the experienced world could be or be identified as one determinate thing or another.\nD. the sensible world would consist of unchanging Forms.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: The idea that processes like weathering and erosion are responsible for the present condition of the earth is known as:\nA. uniformitarianism.\nB. natural selection.\nC. creationism.\nD. adaptation.\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following was NOT a factor in the extinction of the Neandertals?\nA. They were specialized for an environment that suddenly changed.\nB. Their tool technology was less advanced.\nC. They were unsuited to the hotter climates of the sub-Saharan savanna.\nD. The Neandertal body type required greater amounts of calories to sustain.\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following appears to be a hybridization of Neandertal and modern human stone tool technologies?\nA. Ch\u00e2telperronian\nB. Levallois\nC. Aurignacian\nD. Mousterian\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Capacocha was an Incan ritual that involved what?\nA. drinking maize beer and feasting on the hearts of slain enemies\nB. sacrificing virgins in order to appease the serpent god\nC. sacrificing captives of war in order to propitiate the sun god\nD. sacrificing children in order to propitiate the spirits of the mountains\nAnswer:",
+    "completion": " D",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Human domination of the planet is a culmination of:\nA. the development of sophisticated tools, controlled use of fire, working cooperatively, and reliance on intelligence.\nB. evolution of a larger body, increased strength, hunting, and increased warfare.\nC. bipedalism, working independently, increased violence, and survival of the fittest.\nD. all of the above.\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Some argue that Homo erectus in fact comprised several related but geographically distinct species. If so, this includes which of the following?\nA. Homo ergaster in Asia, Homo erectus in Europe, Homo antecessor in Africa\nB. Homo ergaster in Europe, Homo erectus in Africa, Homo antecessor in Asia\nC. Homo ergaster in Africa, Homo erectus in Asia, Homo antecessor in Europe\nD. Homo ergaster in Europe, Homo erectus in Africa and Asia, Homo antecessor in Australia\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: The village of Snaketown covers more than one square mile and had a well-developed irrigation network and evidence of a ceremonial ballgame. It was the largest village of which complex society?\nA. Ancestral Puebloan\nB. Hohokam\nC. Mississippian\nD. Adena\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: A preserved pile of trash, often containing food remains, is called a _____________. At the Danish site of Meilgaard, one of these places contained millions of ______________.\nA. midden; mollusk shells\nB. camelid; pottery sherds\nC. rachis; bones of domesticated cattle.\nD. littoral; microblades\nAnswer:",
+    "completion": " A",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: When Hernan Cortes entered the Aztec city of Tenochtitl\u00e1n in A.D. __________, its population was estimated to be _____________.\nA. 1319; 50,000\nB. 1419; 100,000\nC. 1519; 200,000\nD. 1619; 400,000\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Which of the following signifies that a person was very young when they died?\nA. the fusion of the epiphyses to the diaphysis\nB. the absence of cranial sutures\nC. the presence of deciduous dentition\nD. all of the above\nAnswer:",
+    "completion": " C",
+    "type": "mmlu"
+  },
+  {
+    "prompt": "Question: Grace started her own landscaping business. She charges $6 an hour for mowing lawns, $11 for pulling weeds and $9 for putting down mulch. In September she mowed lawns for 63 hours, pulled weeds for 9 hours and put down mulch for 10 hours. How much money did she earn in September?\nAnswer: Let's think step by step.\n",
+    "completion": "Grace mowed lawns for 63 hours at $6/hour, so earned 63 * 6 = $<<63*6=378>>378.\nGrace pulled weeds for 9 hours at $11/hour, so earned 9 * 11 = $<<9*11=99>>99.\nGrace put down mulch for 10 hours at $9/hour, so earned 10 * 9 = $<<10*9=90>>90.\nDuring September Grace earned $378 + $99 + $90 = $<<378+99+90=567>>567.\n#### 567",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Samir climbed 318 stairs yesterday. Veronica climbed 18 more than half that amount. How many stairs did Veronica and Samir climb together yesterday?\nAnswer: Let's think step by step.\n",
+    "completion": "Half of 318 is <<318/2=159>>159\n159 + 18 = <<159+18=177>>177 stairs\n318 + 177 = <<318+177=495>>495\nTogether they climbed 495 stairs yesterday.\n#### 495",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Salvadore earned $1956. Santo earned half of what Salvadore earned. How much money did the two men earn together?\nAnswer: Let's think step by step.\n",
+    "completion": "Santo = (1/2) 1956 = $978\n1956 + 978 = $<<1956+978=2934>>2934\nTogether Salvadore and Santo earned $<<2934=2934>>2934.\n#### 2934",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Sarah makes 5 times more money per hour than Connor does. If Connor earns $7.20 per hour, how much does Sarah make in an 8-hour day?\nAnswer: Let's think step by step.\n",
+    "completion": "Sarah makes $7.2 * 5 = $<<7.2*5=36>>36 per hour\nSarah makes $36 * 8 = $<<36*8=288>>288 per day.\n#### 288",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Cindy and Olaf made 15 candied apples which they will be selling for $2 each, and 12 candied grapes which they will be selling for $1.5. How much will they earn if they sell everything?\nAnswer: Let's think step by step.\n",
+    "completion": "They will earn 15 x $2 = $<<15*2=30>>30 for the candied apples.\nThey will earn 12 x $1.5 = $<<12*1.5=18>>18 for the candied grapes.\nTherefore, Cindy and Olaf will earn $30 + $18 = $<<30+18=48>>48 if they sell everything.\n#### 48",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: The pizza delivery person has 12 pizzas to deliver.  If two of the stops are for orders of two pizzas and the rest are for single pizzas, how many minutes per stop does the delivery person need to average to deliver all of the pizzas in 40 minutes?\nAnswer: Let's think step by step.\n",
+    "completion": "If two pizzas will be delivered at two of the stops, the total number of stops will be 12-2=<<12-2=10>>10 stops.\nIf there are 10 stops in 40 minutes, then the delivery person needs to average 40/10=<<40/10=4>>4 minutes per stop.\n#### 4",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Noemi lost $400 on roulette and $500 on blackjack. How much money did Noemi begin with if she still had $800 in her purse?\nAnswer: Let's think step by step.\n",
+    "completion": "The total amount of money that she lost is $400+$500 = $<<400+500=900>>900\nIf she remained with $900, she initially had $900+$800 = $<<900+800=1700>>1700\n#### 1700",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: On national lipstick day, half of the students who attended class wore colored lipstick.  Of those students who wore lipstick, one quarter wore red lipstick.  There were one-fifth as many students wearing blue lipstick as were wearing red lipstick.  If 200 students attended school that day, how many wore blue lipstick?\nAnswer: Let's think step by step.\n",
+    "completion": "Of 200 students who attended class, half wore colored lipstick, or 200/2=<<200/2=100>>100 students wore colored lipstick.\nOf those students who wore lipstick, one quarter wore red lipstick, or 100/4=<<100/4=25>>25 students wore red lipstick.\nSince there were one-fifth as many students wearing blue lipstick as were wearing red lipstick, then 25/5=<<25/5=5>>5 students wore blue lipstick.\n#### 5",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: There are 200 more red apples than green apples in a grocery store. A truck arrives and delivers another 340 green apples. If there were originally 32 green apples, how many more green apples than red apples are there in the store now?\nAnswer: Let's think step by step.\n",
+    "completion": "There are 200 + 32 = <<200+32=232>>232 red apples.\nAfter the delivery there are 340 + 32 = <<340+32=372>>372 green apples\nThere are now 372 - 232 = <<372-232=140>>140 more green apples than red apples now.\n#### 140",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: How many shirts should Shenny pack for her next vacation if she's planning to use the same shirt when departing on Monday and returning on Sunday and two different shirts each other day?\nAnswer: Let's think step by step.\n",
+    "completion": "Between Monday and Sunday there are 7 days. If she will be using the same shirt for 2 days then she will need clothes for 7 - 2 = <<7-2=5>>5 days\nBecause she wants to use 2 different shirts each of those 5 days then she needs 2 * 5 = <<2*5=10>>10 shirts\nIn total she will need 10 shirts between Tuesday and Saturday and 1 shirt for Monday and Sunday = <<10+1=11>>11 shirts\n#### 11",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: There are 3 ducks in a pond and they all eat some pieces of bread thrown in the water. One duck eats half of all the pieces of bread. Another duck eats only 13 pieces of the bread and the last duck eats 7 pieces of bread. There are 30 pieces of bread left in the water, how many total pieces of bread were thrown in the pond?\nAnswer: Let's think step by step.\n",
+    "completion": "There are 30+7+13=<<30+7+13=50>>50 pieces of bread after the first duck ate\nThe first duck ate half of all bread so 50*2=<<50*2=100>>100 pieces of bread were thrown in the pond\n#### 100",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Mrs. Amaro has 80 roses in her garden. Three-fourths of her roses are red, one-fourth of the remaining are yellow, and the rest are white. How many of Mrs. Amaro's roses are either red or white?\nAnswer: Let's think step by step.\n",
+    "completion": "Mrs. Amaro has 80 x 3/4 = <<80*3/4=60>>60 red roses.\nSo, 80 - 60 = <<80-60=20>>20 roses are not red.\nThen, 20 x 1/4 = 5 of those 20 non-red roses are yellow.\nHence, 20 - 5 = <<20-5=15>>15 roses are white.\nTherefore, 60 + 15 = <<60+15=75>>75 roses are either red or white.\n#### 75",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Pete has a bag with 10 marbles. 40% are blue and the rest are red. His friend will trade him two blue marbles for every red one. If Pete keeps 1 red marble, how many total marbles does he have after trading with his friend?\nAnswer: Let's think step by step.\n",
+    "completion": "He starts with 4 blue marbles because 10 x .4 = <<10*.4=4>>4\n60% of the marbles are red because 100 - 40 = <<100-40=60>>60\nHe has 6 red marbles because 10 x .6 = <<10*.6=6>>6\nHe trades 5 red marbles because 6 - 1 = <<6-1=5>>5\nHe gets 10 blue marbles because 5 x 2 = <<5*2=10>>10\nHe has 15 marbles now because 4 + 1 + 10 = <<4+1+10=15>>15\n#### 15",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: A portable computer drive has enough kilobytes of storage space to store 2000 photos. Each photo is 1.5 kilobytes in size. How many 200-kilobyte videos can it store if it already has 400 photos on it?\nAnswer: Let's think step by step.\n",
+    "completion": "The drive has 1.5 * 2000 = <<1.5*2000=3000>>3000 kilobytes of storage space.\nIt already has 1.5 * 400 = <<1.5*400=600>>600 kilobytes of storage space taken up.\nThus, it has 3000 - 600 = <<3000-600=2400>>2400 kilobytes of space left.\nThe portable drive can store 2400 / 200 = <<2400/200=12>>12 200-kilobyte videos on it with 400 photos.\n#### 12",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Keenan needs to write an essay that is 1200 words. Her essay is due at midnight. She writes 400 words per hour for the first two hours. After that, she writes 200 words per hour. How many hours before the deadline does she need to start to finish on time?\nAnswer: Let's think step by step.\n",
+    "completion": "In the first two hours, Keenan writes 800 words because 400*2=<<400*2=800>>800.\nAfter that, she still needs to write 400 words because 1200-800=<<1200-800=400>>400.\nSince she writes 200 words per hour, she will take 2 hours to write the last 400 words because 400/200=<<400/200=2>>2.\nThus, she needs to start 4 hours before the deadline because 2+2=<<4=4>>4.\n#### 4",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: James decides to sell 80% of his toys.  He bought them for $20 each and sells them for $30 each.  If he had 200 toys how much more money did he have compared to before he bought them?\nAnswer: Let's think step by step.\n",
+    "completion": "He bought all the toys for 20*200=$<<20*200=4000>>4000\nHe sold 200*.8=<<200*.8=160>>160 toys\nHe made 160*30=$<<160*30=4800>>4800 from selling them\nSo he profits 4800-4000=$<<4800-4000=800>>800 profit\n#### 800",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Robby doesn't like the color brown and will not eat the brown M&M's.  On his first bag, he sets aside  9 brown M&M's.  On the second bag, he sets aside 12.  On his third & fourth bag, there are 8 brown M&M's that he doesn't eat. On his fifth bag, there are only 3 brown M&M's that he doesn't eat.  What's the average number of brown M&M's in a bag?\nAnswer: Let's think step by step.\n",
+    "completion": "Out of 5 bags, he had 9+12+8+8+3 = <<9+12+8+8+3=40>>40 brown M&M's\nHe ate 5 bags so the average number of brown M&M's per bag was 40/5 = <<40/5=8>>8 brown M&M's\n#### 8",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: The bus driver drives an average of 2 hours each day, 5 days a week. From Monday to Wednesday he drove at an average speed of 12 kilometers per hour, and from Thursday to Friday at an average speed of 9 kilometers per hour. How many kilometers did the driver travel during these 5 days?\nAnswer: Let's think step by step.\n",
+    "completion": "From Monday to Wednesday, there are 3 * 2 = <<3*2=6>>6 hours of work.\nDuring this time the driver drove 6 * 12 = <<6*12=72>>72 kilometers.\nOn Thursday and Friday, there are 2 * 2 = <<2*2=4>>4 hours of work in total.\nDuring this time the driver drove 4 * 9 = <<4*9=36>>36 kilometers.\nSo in total, the driver traveled 72 + 36 = <<72+36=108>>108 kilometers during these five days.\n#### 108",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Will's mom gave him $74 to go shopping. He bought a sweater for $9, a T-shirt for $11 and a pair of shoes for $30. He then returned his shoes for a 90% refund.  How much money does Will have left?\nAnswer: Let's think step by step.\n",
+    "completion": "Will paid $30 for his shoes but then returned them and got 90% of the money back, so he lost 10% of the money, which means 10/100 * $30 = $<<10/100*30=3>>3 is gone.\nWill spent $9 + $11 + $3 = $<<9+11+3=23>>23.\nWill started with $74 - $23 that he spent = $<<74-23=51>>51 remaining.\n#### 51",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Matt is playing basketball. In the first quarter, he made 2-point shots four times and 3-point shots twice. How many points did he score for that quarter?\nAnswer: Let's think step by step.\n",
+    "completion": "His total score for the 2-point shots is 2 x 4 = <<2*4=8>>8.\nHis total score for the 3-point shots is 3 x 2 = <<3*2=6>>6.\nHis total score for the first quarter is 8 + 6 = <<8+6=14>>14.\n#### 14",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Jan is making candy necklaces for herself and a few friends. Everyone receives a candy necklace each and each candy necklace is made up of 10 pieces of candies. The pieces of candies come from blocks of candy, which each produce 30 pieces of candy. If Jan breaks down 3 blocks of candy and every single piece of candy from this is used in the candy necklaces, how many friends receive a candy necklace?\nAnswer: Let's think step by step.\n",
+    "completion": "There are a total of 3 blocks of candy * 30 pieces of candy per candy block = <<3*30=90>>90 pieces of candy.\nUsing this, Jan can create 90 pieces of candy / 10 pieces of candy per candy necklace = <<90/10=9>>9 candy necklaces.\nAs Jan is keeping a candy necklace too, there must have been enough candy necklaces for 9 candy necklaces \u2013 1 candy necklace for Jan = <<9-1=8>>8 friends.\n#### 8",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Sasha added 48 cards into a box. Her sister, Karen, then took out 1/6 of the cards Sasha added. If there are now 83 cards in the box, how many cards were originally in the box?\nAnswer: Let's think step by step.\n",
+    "completion": "Karen took out 48/6 = <<48/6=8>>8 cards from the box.\nOriginally, the box had 83-40 = <<83-40=43>>43 cards.\n#### 43",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: A special school has a deaf-student population 3 times its blind-student population. If there are 180 students in total, how many blind students are there?\nAnswer: Let's think step by step.\n",
+    "completion": "Let the number of blind students be x.\nThe number of deaf students will then be 3*x = 3x students.\nThe total number of students is x + 3x = 180 students.\nCombining like terms gives 4x = 180.\nSo the value of x is 180/4 = <<180/4=45>>45.\n#### 45",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Monica made cookies for herself and her family. Her father ate 10 cookies and her mother ate half as much as the father. Her brother ate 2 more than her mother. How many cookies are left for Monica if she made 30 cookies in total?\nAnswer: Let's think step by step.\n",
+    "completion": "Monica's mother ate half as many cookies as Monica's father, so she ate 10 cookies / 2 = <<10/2=5>>5 cookies.\nMonica's brother ate 5 cookies + 2 cookies = <<5+2=7>>7 cookies.\nThere were 30 cookies - 7 cookies - 5 cookies - 10 cookies = <<30-7-5-10=8>>8 cookies left for Monica.\n#### 8",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Gary counted the number of whiskers on the faces of his two cats.  Princess Puff has 14 whiskers, while Catman Do has 6 less than twice the number of whiskers as Princess puff.  How many whiskers does Catman Do have?\nAnswer: Let's think step by step.\n",
+    "completion": "Twice the number of whiskers as Catman Do is 14*2=<<14*2=28>>28 whiskers.\nCatman Do has 6 less than twice the number of whiskers as Princess puff, for a total of 28-6=<<28-6=22>>22 whiskers.\n#### 22",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Stan hires a magician for $60 an hour.  He works 3 hours every day for 2 weeks.  How much money does he pay the magician?\nAnswer: Let's think step by step.\n",
+    "completion": "The magician works for 2*7=<<2*7=14>>14 days\nSo the magician works 14*3=<<14*3=42>>42 hours\nSo that means he pays 42*60=$<<42*60=2520>>2520\n#### 2520",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: An entrepreneur is crowdfunding a new business effort. He has three different dollar amount levels of financial backing options and each level is ten times as high as the previous one. He needs to raise $12000 to get his business off the ground. He succeeded after getting two backers at the highest level of financial backing, three at the second level, and ten at the lowest level. How many dollars was the highest level of financial backing?\nAnswer: Let's think step by step.\n",
+    "completion": "Let L represent the lowest level of financial backing.\nThus, the second level is 10L and the highest level is 10 * 10L = 100L.\nThe entrepreneur got 2 highest level backers, 3 second level backers, and 10 lowest level backers, so 2 * 100L + 3 * 10L + 10L = 200L + 30L + 10L = 240L = $12000.\nTherefore, the lowest level of financial backing was L = 12000 / 240 = $<<12000/240=50>>50.\nThus, the highest level of financial backing was 10 * 10 * 50 = $<<10*10*50=5000>>5000.\n#### 5000",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Max can trade 3 coconuts for a crab and 6 crabs for a goat. If he has 342 coconuts and he wants to convert all of them into goats, how many goats will he have?\nAnswer: Let's think step by step.\n",
+    "completion": "First find the number of crabs Max can get by dividing the number of coconuts by the exchange rate with crabs: 342 coconuts / 3 coconuts/crab = <<342/3=114>>114 crabs\nThen divide the number of crabs by the exchange rate with goats: 114 crabs / 6 crabs/goat = <<114/6=19>>19 goats\n#### 19",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Sofia and her mother go to the grocery store and buys 10kgs of oranges to be used in their home for the week. While at the store, Sofia's father calls and says they're to add 5 more kgs since their neighbor also wanted some supplies. When they reach home, they estimated that for the next coming two weeks they'll have to buy twice as many oranges each week for the supplies to be enough. What the total quantity of oranges they would have bought after the three weeks.\nAnswer: Let's think step by step.\n",
+    "completion": "For the first week, they bought 10 + 5 = <<10+5=15>>15kgs.\nFor the next week, they bought twice the quantity of oranges which is 2*15 = <<2*15=30>>30kgs.\nFor the next two weeks, the total quantity of oranges bought is 30*2 = <<30*2=60>>60 kgs.\nThe total quantity for the three weeks is 60+15=<<60+15=75>>75 kgs\n#### 75",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Aria has twice as many high school credits as Emily, who has twice the number of high school credits as Spencer. If Emily has 20 credits, what's twice the total number of high school credits the three have?\nAnswer: Let's think step by step.\n",
+    "completion": "If Emily has 20 credits, and Aria has 2 times as many, then Aria has 2*20=<<20*2=40>>40 high school credits.\nEmily has twice the number of high school credits Spencer has, meaning Spencer has 20/2=<<20/2=10>>10 high school credits.\nAltogether, the three have 40 + 20 + 10=<<40+20+10=70>>70 high school credits.\nTwice the total number of high school credits the three have is 2*70=<<2*70=140>>140\n#### 140",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: The number of students who wish to go on a skiing trip is twice as many as those who wish to go on a scavenger hunting trip. If there are 4000 students who wish to go on the scavenger hunting trip, how many students are there altogether?\nAnswer: Let's think step by step.\n",
+    "completion": "The number of students who wish to go on the skiing trip is 2 * 4000 students = <<2*4000=8000>>8000 students.\nThe total number of students is 4000 students + 8000 students = <<4000+8000=12000>>12000 students.\n#### 12000",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Mary is writing a story, and wants her 60 characters to be split according to their initials. Half of her characters have the initial A, and half of this amount have the initial C. Mary wants the rest of her characters to have the initials D and E, but she wants there to be twice as many characters with the initial D as there are characters with the initial E. How many of Mary\u2019s characters have the initial D?\nAnswer: Let's think step by step.\n",
+    "completion": "Half the characters have the initial A, which is a total of 60 / 2 = <<60/2=30>>30 characters.\nThis means that 30 / 2 = <<30/2=15>>15 characters have the initial C.\nMary wants the remaining 60 \u2013 30 \u2013 15 = <<60-30-15=15>>15 characters to have the initials D or E.\nFor there to be twice as many characters with the initial D, the characters are divided into 2 + 1 = <<2+1=3>>3 parts.\nDividing by this means there are 15 / 3 = <<15/3=5>>5 characters with the initial E.\nThis leaves 15 \u2013 5 = <<15-5=10>>10 characters with the initial D.\n#### 10",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Issac has to buy pens and pencils for the upcoming school year. Issac buys 108 writing utensils total. He buys 12 more than 5 times the number of pencils than pens. How many pens did Issac buy?\nAnswer: Let's think step by step.\n",
+    "completion": "Let x be the number of pens bought\nHe bought 12+5x pencils\nx+(12+5x)=108\n6x+12=108\n6x=96\nx=<<16=16>>16 pens\n#### 16",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: If Billy rode his bike 17 times, John rode his bike twice as many times, and their mother rode her bike 10 times more than John, how many times did they ride their bikes in total?\nAnswer: Let's think step by step.\n",
+    "completion": "To find the number of total bike rides, we must first determine how many times John rode his bike. We do this by performing 17*2= <<17*2=34>>34 times for John\nSince John's mother rode 10 times more than John did, we find her total by performing 34+10=<<34+10=44>>44 times\nFor all three people put together then, we perform 44+34+17=<<44+34+17=95>>95 times in total\n#### 95",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Troy makes soup.  He buys 4 pounds of beef and 6 pounds of vegetables.  The vegetables cost $2 per pound and the beef is 3 times that price.  How much does everything cost?\nAnswer: Let's think step by step.\n",
+    "completion": "The vegetables cost 2*6=$<<2*6=12>>12\nThe beef cost 2*3=$<<2*3=6>>6 per pound\nSo the beef cost 4*6=$<<4*6=24>>24\nSo the total cost is 12+24=$<<12+24=36>>36\n#### 36",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Carl has a goal of selling 96 cupcakes in 2 days. Carl needs to give 24 cupcakes to Bonnie as payment for using her storefront. How many cupcakes must Carl sell per day to reach his goal?\nAnswer: Let's think step by step.\n",
+    "completion": "Carl needs to sell 96 cupcakes + 24 cupcakes = <<96+24=120>>120 cupcakes total.\nEach day Carl needs to sell 120 cupcakes / 2 days = <<120/2=60>>60 cupcakes to reach his goal.\n#### 60",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Free Christmas decorations are being given out to families. Each box of decorations contains 4 pieces of tinsel, 1 Christmas tree and 5 snow globes. If 11 families receive a box of decorations and another box is given to the community center, how many decorations have been handed out?\nAnswer: Let's think step by step.\n",
+    "completion": "Each box contains 4 tinsel + 1 tree + 5 snow globes = <<4+1+5=10>>10 decorations.\nA total of 11 family boxes + 1 community center box = <<11+1=12>>12 boxes have been given out.\nSo the total number of decorations given out is 10 decorations * 12 boxes = <<10*12=120>>120 decorations.\n#### 120",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Belle eats 4 dog biscuits and 2 rawhide bones every evening. If each rawhide bone is $1, and each dog biscuit is $0.25, then how much does it cost, in dollars, to feed Belle these treats for a week?\nAnswer: Let's think step by step.\n",
+    "completion": "A week's worth of rawhide bones cost 1*2*7=<<1*2*7=14>>14 dollars.\nA week's worth of dog biscuits cost 0.25*4*7=<<0.25*4*7=7>>7 dollars,\nThus, in total, it cost 14+7=<<14+7=21>>21 dollars\n#### 21",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: In Sam's collection, there are ten more black pens than blue pens and twice as many blue pens as pencils. There are also eight pencils and two fewer red pens than pencils. How many pens in all are there in Sam's collection?\nAnswer: Let's think step by step.\n",
+    "completion": "8 x 2 = <<8*2=16>>16 are blue pens.\n16 + 10 = <<16+10=26>>26 are black pens.\n8 - 2 = <<8-2=6>>6 are red pens.\nTherefore, there are 16 + 26 + 6 = <<16+26+6=48>>48 pens in all in Sam's collection.\n#### 48",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Tamara, Nora, and Lulu have been saving to pay off a $40 debt. So far, Nora has saved five times what Lulu has, but three times Tamara\u2019s savings.  Lulu has saved $6. If they pay off the debt and divide the remaining money equally, how many dollars will each girl get?\nAnswer: Let's think step by step.\n",
+    "completion": "Nora has saved 5*6 = <<5*6=30>>30 dollars\nThis means that Tamara has saved 30/3 = <<30/3=10>>10 dollars\nAll together, they have saved 30 + 10 + 6 = <<30+10+6=46>>46 dollars\nIf they pay off the debt they will remain with 46 - 40 = <<46-40=6>>6 dollars\nDividing the remaining money equally will give each girl 6/3 = <<6/3=2>>2 dollars.\n#### 2",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: John has a party and invites 30 people.  Of the people he invited 20% didn't show up.  75% of the people who show up get steak and the rest get chicken.  How many people ordered chicken?\nAnswer: Let's think step by step.\n",
+    "completion": "There were 30*.2=<<30*.2=6>>6 people who didn't show up\nSo 30-6=<<30-6=24>>24 people showed up\nOf the people who showed up, 24*.75=<<24*.75=18>>18 got steak\nSo 24-18=<<24-18=6>>6 got chicken\n#### 6",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: A truck driver\u2019s heavy semi truck can go 3 miles per gallon of gas. The truck driver needs to put gas in his truck at one gas station, but wants to put the minimum amount he needs to get him to a much cheaper gas station 90 miles away. He already has 12 gallons of gas in his tank. How many more gallons does the truck driver need to put in his semi to make it to the cheaper gas station?\nAnswer: Let's think step by step.\n",
+    "completion": "The truck driver can go 3 * 12 = <<3*12=36>>36 miles on the gas in his tank.\nHe needs to go 90 - 36 = <<90-36=54>>54 more miles.\nThus, the truck driver needs to put 54 / 3 = <<54/3=18>>18 more gallons of gas in his semi.\n#### 18",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Gina and Tom were playing football. On the first day, Gina scored two goals, which was three less than Tom. On the second day, Gina scored two goals less than Tom who scored six goals. How many goals did Gina and Tom score during these two days?\nAnswer: Let's think step by step.\n",
+    "completion": "On the second day, Gina scored 6 - 2 = <<6-2=4>>4 goals.\nSo in total, on the second day, Gina and Tom scored 4 + 6 = <<4+6=10>>10 goals.\nOn the first day Tom scored 2 + 3 = <<2+3=5>>5 goals.\nSo in total on the first day, both players scored 5 + 2 = <<5+2=7>>7 goals.\nDuring these two days, Gina and Tom scored 10 + 7 = <<10+7=17>>17 goals.\n#### 17",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: A fruit stand is selling apples for $2 each. Emmy has $200 while Gerry has $100. If they want to buy apples, how many apples can Emmy and Gerry buy altogether?\nAnswer: Let's think step by step.\n",
+    "completion": "Emmy and Gerry have a total of $200 + $100 = $<<200+100=300>>300.\nTherefore, Emmy and Gerry can buy $300/$2 = <<300/2=150>>150 apples altogether.\n#### 150",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Nick's cell phone was initially empty but was then charged for 45 minutes and has reached a 25% charge. How much longer must the cell phone be charged to reach 100% charge?\nAnswer: Let's think step by step.\n",
+    "completion": "The ratio between the time charged and the time to be charged is 100 / 25 = <<100/25=4>>4.\nTo reach 100%, the cell must be charged for 45 minutes * 4 = <<45*4=180>>180 minutes.\nSubtracting the 45 minutes that Jimmy already used to charge the cell phone, there are still 180 - 45 =<<180-45=135>>135 minutes of charging time left.\n#### 135",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: The cheerleading coach is ordering new uniforms. There are 4 cheerleaders who need a size 2, a certain number who need a size 6, and half that number who need a size 12. If there are 19 cheerleaders total, how many cheerleaders need a size 6?\nAnswer: Let's think step by step.\n",
+    "completion": "Let s be the number of cheerleaders who need a size 6 and t be the number who need a size 12. We know that s = 2t and s + t + 4 = 19.\nSubstituting the first equation into the second equation, we get 2t + t + 4 = 19\nCombining like terms, we get 3t + 4 = 19\nSubtracting 4 from both sides, we get 3t = 15\nDividing both sides by 3, we get t = 5\nSubstituting that value back into the equation s = 2t, we get s = 2 * 5 = <<2*5=10>>10\n#### 10",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Jenna is planning a road trip. She plans on driving the first 200 miles, and her friend will drive the last 100 miles. They plan on taking 2 30-minute breaks. If Jenna drives 50 miles per hour and her friend drives 20 miles per hour, how many hours will they spend on the road trip?\nAnswer: Let's think step by step.\n",
+    "completion": "Jenna will drive 200 miles at a rate of 50 miles per hour, so she will drive for 4 hours.\nHer friend will drive 100 miles at a rate of 20 miles per hour, so Jenna's friend will drive for 5 hours.\nThey will spend a total of 60 minutes on breaks because 30 minutes + 30 minutes = <<30+30=60>>60 minutes.\nThus, they will spend 1 hour on breaks because there are 60 minutes in an hour.\nThe road trip will take a total of 1+4+5 = <<1+4+5=10>>10 hours.\n#### 10",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: Normally Ann can frost a cake in 5 minutes. However, today she has a sprained wrist and it takes her 8 minutes to frost a cake. How much longer would it take her to frost 10 cakes with her sprained wrist?\nAnswer: Let's think step by step.\n",
+    "completion": "Normally, it would take her 5*10=<<5*10=50>>50 minutes\nWith her sprained wrist it will take her 8*10=<<8*10=80>>80 minutes\n80-50=<<80-50=30>>30 more minutes\n#### 30",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: A third of the contestants at a singing competition are female, and the rest are male. If there are 18 contestants in total, how many of them are male?\nAnswer: Let's think step by step.\n",
+    "completion": "There are 18/3 = <<18/3=6>>6 female contestants.\nThere are 18-6 = <<18-6=12>>12 male contestants.\n#### 12",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Question: A swarm of ants discovered a pile of sugar that spilled from a dropped bag. They begin to harvest it and carry it off to their anthill. Every hour, the ants remove 4 ounces of sugar. The bag of sugar held 24 ounces before it was dropped. After three hours, how many more hours will the ants need to harvest the remaining sugar?\nAnswer: Let's think step by step.\n",
+    "completion": "After 3 hours, the ants have removed 4 * 3 = <<4*3=12>>12 ounces of sugar.\nThere are 24 - 12 = <<24-12=12>>12 ounces of sugar left.\nThus, the ants need 12 / 4 = <<12/4=3>>3 more hours to harvest the remaining sugar.\n#### 3",
+    "type": "gsm8k"
+  },
+  {
+    "prompt": "Q: How does the Qwen-3.5-0.8B-UFO model decompress and reconstruct itself offline?\nA:",
+    "completion": " It utilizes the pre-installed base model as an oracle coordinate basis and applies Level 6 Gradient Atom updates. The 2-bit symbols from the 9 LoRa packet chirps are mapped to magnitude midpoints (+/- 5.5 and +/- 1.5) in the spectral domain, followed by Inverse Discrete Cosine Transform (IDCT) to reconstruct SVD column factors. A local PEFT SFT healing loop (typically 300-400 steps) then fine-tunes the model using the embedded dataset to restore complete generation coherence, requiring zero cloud reference or internet by default.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What files are needed for the zero-cloud offline reconstruction of the model?\nA:",
+    "completion": " The receiver requires Python with PyTorch/Transformers libraries, the baseline uncompressed Qwen 3.5 0.8B weights, and the decoder script (decode_teleport.py). All the variable dataset examples, Qualia Seed parameters, and Level 6 Gradient Atom weights are fully packed inside the 9 LoRa chirps (2,295 bytes), making external downloads unnecessary.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: Is internet or cloud connection required to decode the model?\nA:",
+    "completion": " No, internet or cloud reference is not required. The 9 LoRa packet chirps contain the complete Huffman-encoded dataset and Gradient Atom update anchors, enabling fully offline reconstruction. Internet/cloud download of the base model weights (e.g., from Hugging Face) is only provided as an optional fallback directive if the base model is not pre-installed on the device.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: How does decode_grad_genesis.py decompress the full Level 6 Gradient Atom genesis file?\nA:",
+    "completion": " It parses the version 9 perfect genesis binary file to extract the 2-bit packed symbols (4 per byte) representing the DCT coefficients of the SVD components U and V for 245 layers. It maps them back to midpoints (+/- 5.5 or +/- 1.5), multiplies by the column scale, runs the Inverse Discrete Cosine Transform (IDCT) to reconstruct the column vectors, and computes the layer weights in-place, adding INT8 scaled residual updates for the top 48 layers before saving model.safetensors.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: How does the Genesis Ultra Runtime achieve 30 MB VRAM inference?\nA:",
+    "completion": " By leveraging layer-by-layer streaming (The Genesis Streaming Way). Instead of loading all layers into VRAM at once, the runtime loads the SVD/procedural coordinates, reconstructs only the active layer's weight matrix on-the-fly, executes the matrix multiplication for that layer, and immediately frees the memory before moving to the next layer. This keeps the active weight footprint at the single-layer size (~30 MB).",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: How is the KV cache optimized during layer streaming in the Genesis Ultra Runtime?\nA:",
+    "completion": " To maximize KV cache efficiency, the runtime pins the KV cache of previous tokens in system RAM (CPU) and streams only the active layer's key/value matrices to the GPU for the current token computation. By executing attention projections within the single active layer memory block and utilizing page/flash attention, it avoids activation memory spikes and keeps the peak GPU memory floor near 30 MB.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: How do you maximize token activations and throughput in the Genesis Streaming Way?\nA:",
+    "completion": " Token activations are maximized by using dynamic batching clusters to process multiple sequences or token generations concurrently. This amortizes the overhead of layer parameter loading and reconstruction (reading SVD/procedural coordinates from disk/RAM to GPU) across many active tokens, keeping the computation pipeline saturated.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: How does the model dynamically detect hardware constraints to adjust its execution parameters?\nA:",
+    "completion": " The host runtime runs active self-diagnostic checks using PyTorch: it checks for CUDA availability via torch.cuda.is_available(), queries GPU VRAM capacity via torch.cuda.get_device_properties(0).total_memory, and evaluates CPU RAM. It then writes a dynamic config that configures layer streaming under 30 MB VRAM if memory is under 2 GB, uses hybrid offloading for balanced setups, or preloads weights fully if VRAM exceeds 4 GB.",
+    "type": "language_u"
+  },
+  {
+    "prompt": "Q: What is the benefit of dynamic self-detection and execution calibration in the Genesis framework?\nA:",
+    "completion": " It allows a single model package to automatically scale and operate optimally across heterogeneous edge devices (from 1GB RAK Miners to high-end multi-GPU workstations) by dynamically tuning active attention config, flash-attention options, and layer-by-layer VRAM offloading thresholds on startup.",
+    "type": "language_u"
+  }
+]

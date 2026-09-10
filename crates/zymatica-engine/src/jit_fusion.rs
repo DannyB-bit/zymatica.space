@@ -1,4 +1,4 @@
-﻿//! Sovereign JIT Kernel Fusion.
+//! Sovereign JIT Kernel Fusion.
 //! Fuses RMSNorm, Rotary Position Embeddings (RoPE), and SwiGLU activation into a single unrolled pass.
 
 /// In-place fused RMSNorm layer

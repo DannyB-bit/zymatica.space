@@ -1,5 +1,7 @@
 # Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 # Author: Zymatica / The AI Collective
 
 """
@@ -36,7 +38,9 @@ def create_fastest_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     rust_server = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 use std::net::SocketAddr;
 use tokio::net::TcpListener;
 
@@ -49,7 +53,9 @@ async fn main() {
 }
 """
     cpp_cuda = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 #include <cuda_runtime.h>
 #include <iostream>
 
@@ -65,7 +71,9 @@ extern "C" void launch_svd_kernel(const float* h_in, float* h_out, int size) {
 }
 """
     asm_simd = """; Watermark: ip zymatica.space | astronautshe.com
-; Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+; Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 section .text
 global fast_xor_simd
 fast_xor_simd:
@@ -82,13 +90,17 @@ fast_xor_simd:
     ret
 """
     faust_dsp = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import("stdfaust.lib");
 process = fi.lowpass(4, 3400) : fi.highpass(4, 300);
 """
     wat_decoder = """(module
   ;; Watermark: ip zymatica.space | astronautshe.com
-  ;; Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+  ;; Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
   (func $decode (param $input i32) (param $len i32) (result i32)
     i32.const 1
   )
@@ -108,7 +120,9 @@ def create_common_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     fastapi_server = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 from fastapi import FastAPI
 import uvicorn
 
@@ -122,7 +136,9 @@ if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=5000)
 """
     node_server = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import express from 'express';
 const app = express();
 
@@ -133,7 +149,9 @@ app.get('/api', (req, res) => {
 app.listen(5000, () => console.log('Node Server active on port 5000'));
 """
     react_tailwind = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import React from 'react';
 
 export default function App() {
@@ -156,7 +174,9 @@ def create_robust_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     elixir_supervisor = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 defmodule Zymatica.VoiceRobustSupervisor do
   use Supervisor
@@ -175,7 +195,9 @@ defmodule Zymatica.VoiceRobustSupervisor do
 end
 """
     go_pipeline = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 package main
 
 import (
@@ -297,7 +319,9 @@ func main() {
 }
 """
     c_validator = """/* Watermark: ip zymatica.space | astronautshe.com */
-/* Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0. */
+/* Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -312,7 +336,9 @@ int validate_audio_headers(const unsigned char* buffer, size_t len) {
 }
 """
     react_fallback = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import React, { Component, ErrorInfo, ReactNode } from "react";
 
 interface Props {
@@ -351,7 +377,9 @@ export class RobustErrorBoundary extends Component<Props, State> {
 """
 
     k8s_ingress = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -379,7 +407,9 @@ spec:
               number: 5000
 """
     k8s_service = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 apiVersion: v1
 kind: Service
 metadata:
@@ -410,7 +440,9 @@ def create_secure_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     rust_axum = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 use axum::{routing::get, Json, Router};
 use serde::Serialize;
 
@@ -437,7 +469,9 @@ async fn status_handler() -> Json<StatusResponse> {
 """
     wat_sandbox = """(module
   ;; Watermark: ip zymatica.space | astronautshe.com
-  ;; Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+  ;; Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
   (memory 1)
   (func $safe_parse (param $ptr i32) (param $len i32) (result i32)
     local.get $ptr
@@ -447,14 +481,18 @@ async fn status_handler() -> Json<StatusResponse> {
 )
 """
     dockerfile = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 FROM scratch
 COPY zymatica_voice_bin /zymatica_voice_bin
 USER 1000:1000
 ENTRYPOINT ["/zymatica_voice_bin"]
 """
     ts_app = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import React from 'react';
 
 type SecurityPayload = {
@@ -476,7 +514,9 @@ export const SecureUI: React.FC = () => {
 };
 """
     powershell_signed = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 # SIG # Begin Signature Block
 # [Signed script payload simulation]
 Write-Host "=============================================="
@@ -497,7 +537,9 @@ def create_modern_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     bun_server = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 Bun.serve({
   port: 5000,
@@ -512,7 +554,9 @@ Bun.serve({
 console.log("[MODERN STACK] Bun server active on port 5000");
 """
     zig_processor = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 const std = @import("std");
 
 pub fn process_audio_buffer(input: []const f32, output: []f32) void {
@@ -524,7 +568,9 @@ pub fn process_audio_buffer(input: []const f32, output: []f32) void {
 }
 """
     worklet_ts = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 class ZymaticaWorkletProcessor extends AudioWorkletProcessor {
     process(inputs: Float32[][][], outputs: Float32[][][], parameters: Record<string, Float32Array>): boolean {
@@ -536,7 +582,9 @@ class ZymaticaWorkletProcessor extends AudioWorkletProcessor {
 registerProcessor('zymatica-worklet-processor', ZymaticaWorkletProcessor);
 """
     nextjs_page = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import React from 'react';
 
 export default async function Page() {
@@ -562,7 +610,9 @@ def create_quantum_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     qsharp_circuit = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 namespace Zymatica.VoiceQuantum {
     open Microsoft.Quantum.Diagnostics;
     open Microsoft.Quantum.Measurement;
@@ -579,7 +629,9 @@ namespace Zymatica.VoiceQuantum {
 }
 """
     openqasm_src = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 OPENQASM 2.0;
 include "qelib1.inc";
 
@@ -593,7 +645,9 @@ ry(0.42) q[1];
 measure q -> c;
 """
     qiskit_sim = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import numpy as np
 
 def simulate_quantum_audio_state():
@@ -616,9 +670,11 @@ def create_blockchain_stack(target_dir):
     print("[*] Generating the BLOCKCHAIN stack components...")
     os.makedirs(target_dir, exist_ok=True)
     
-    solidity_contract = """// SPDX-License-Identifier: MIT
+    solidity_contract = """# SPDX-License-Identifier: MIT
 // Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 pragma solidity ^0.8.20;
 
 contract ZymaticaNodeRegistry {
@@ -644,7 +700,9 @@ contract ZymaticaNodeRegistry {
 }
 """
     web3_bridge = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import { ethers } from "ethers";
 
 export async function fetchModelWeightsCID(contractAddress: string, providerAddress: string): Promise<string> {
@@ -654,7 +712,9 @@ export async function fetchModelWeightsCID(contractAddress: string, providerAddr
 }
 """
     solana_program = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 use solana_program::{
     account_info::AccountInfo, entrypoint, entrypoint::ProgramResult, pubkey::Pubkey,
 };
@@ -682,7 +742,9 @@ def create_iot_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     esp32_firmware = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 #include <Arduino.h>
 
 void setup() {
@@ -696,7 +758,9 @@ void loop() {
 }
 """
     rust_embedded = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 #![no_std]
 
 pub fn parse_embedded_audio_frame(buffer: &[u8]) -> i32 {
@@ -711,7 +775,9 @@ pub fn verify_embedded() -> &'static str {
 }
 """
     micropython_gateway = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import machine
 import time
 
@@ -733,7 +799,9 @@ def create_ai_driven_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
 
     pytorch_inference = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import torch
 import torch.nn as nn
 
@@ -756,7 +824,9 @@ if __name__ == "__main__":
     out = model(dummy_input)
 """
     onnx_bridge = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 import * as ort from "onnxruntime-web";
 
 export async function runNeuralInference(inputData: Float32Array): Promise<Float32Array> {
@@ -766,14 +836,18 @@ export async function runNeuralInference(inputData: Float32Array): Promise<Float
 }
 """
     mojo_kernel = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 fn matrix_multiply_svd_kernel(inout output: DTypePointer[DType.float32], input: DTypePointer[DType.float32], rank_u: DTypePointer[DType.float32], size: Int):
     print("[AI DRIVEN STACK] Mojo SVD matrix multiplier kernel compiled.")
     print("[VERIFICATION] Zymatica Voice LLM AI-Driven Stack verified.")
 """
     agent_orchestrator = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 class ZymaticaVoiceAgent:
     def __init__(self):
@@ -790,7 +864,9 @@ if __name__ == "__main__":
 """
 
     concept_dict = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 # Author: Zymatica / The AI Collective
 
 DIMENSION_MAPPING = {
@@ -819,7 +895,9 @@ def create_telecom_driven_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     erlang_gateway = """%% Watermark: ip zymatica.space | astronautshe.com
-%% Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+%% Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 -module(zymatica_voice_telecom_driven_gateway).
 -behaviour(gen_server).
 
@@ -843,7 +921,9 @@ terminate(_Reason, _State) ->
     ok.
 """
     c_codec = """/* Watermark: ip zymatica.space | astronautshe.com */
-/* Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0. */
+/* Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms. */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -853,7 +933,9 @@ void zymatica_telecom_codec_encode_frame(const float* speech_samples, unsigned c
 }
 """
     sv_fec = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 module zymatica_voice_telecom_driven_fec (
     input logic clk,
@@ -879,7 +961,9 @@ module zymatica_voice_telecom_driven_fec (
 endmodule
 """
     volte_orchestrator = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 class VoLTEOrchestrator:
     def __init__(self):
@@ -906,7 +990,9 @@ def create_cloud_native_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     cf_worker = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 export default {
     async fetch(request, env, ctx) {
         console.log("[CLOUD NATIVE STACK] Cloudflare Worker intercepting edge request.");
@@ -918,7 +1004,9 @@ export default {
 };
 """
     aws_lambda = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 package main
 
 import (
@@ -941,7 +1029,9 @@ func main() {
 }
 """
     terraform_config = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 provider "aws" {
   region = "us-east-1"
@@ -970,7 +1060,9 @@ def create_spatial_audio_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     unity_controller = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 using System;
 using UnityEngine;
 
@@ -986,7 +1078,9 @@ public class ZymaticaSpatialAudioController : MonoBehaviour {
 }
 """
     unreal_plugin = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 #include "CoreMinimal.h"
 #include "IAudioExtensionPlugin.h"
 
@@ -999,7 +1093,9 @@ public:
 };
 """
     hlsl_shader = """/* Watermark: ip zymatica.space | astronautshe.com */
-/* Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0. */
+/* Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms. */
 
 [numthreads(64, 1, 1)]
 void CSMain(uint3 DTid : SV_DispatchThreadID) {
@@ -1018,7 +1114,9 @@ def create_fintech_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     onload_bypass = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 #include <iostream>
 #include <sys/socket.h>
 #include <onload/extensions.h>
@@ -1029,7 +1127,9 @@ void execute_onload_bypass_socket() {
 }
 """
     java_disruptor = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 package com.zymatica.fintech;
 
 public class ZymaticaDisruptorProcessor {
@@ -1040,7 +1140,9 @@ public class ZymaticaDisruptorProcessor {
 }
 """
     sv_ticker = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 module zymatica_voice_fintech_hft_tick (
     input logic clk,
@@ -1069,7 +1171,9 @@ def create_automotive_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     misra_cpp = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 #include <cstdint>
 
 // Conforming to MISRA C++:2008 Rules for safety-critical cabin systems
@@ -1088,7 +1192,9 @@ private:
 };
 """
     ada_body = """-- Watermark: ip zymatica.space | astronautshe.com
--- Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+-- Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 package body Zymatica_Voice_Automotive_Can_Bus is
    procedure Send_Voice_Frame (Frame : in Frame_Type) is
@@ -1099,7 +1205,9 @@ package body Zymatica_Voice_Automotive_Can_Bus is
 end Zymatica_Voice_Automotive_Can_Bus;
 """
     ada_spec = """-- Watermark: ip zymatica.space | astronautshe.com
--- Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+-- Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 package Zymatica_Voice_Automotive_Can_Bus is
    pragma Preelaborate;
@@ -1125,7 +1233,9 @@ def create_cybersecurity_stack(target_dir):
     os.makedirs(target_dir, exist_ok=True)
     
     ebpf_c = """/* Watermark: ip zymatica.space | astronautshe.com */
-/* Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0. */
+/* Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms. */
 #include <linux/bpf.h>
 #include <bpf/bpf_helpers.h>
 
@@ -1140,7 +1250,9 @@ char _license[] SEC("license") = "GPL";
 """
     yara_rules = """/*
   Watermark: ip zymatica.space | astronautshe.com
-  Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+  Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 */
 rule ZymaticaAudioStreamAudit {
     meta:
@@ -1152,7 +1264,9 @@ rule ZymaticaAudioStreamAudit {
 }
 """
     go_agent = """// Watermark: ip zymatica.space | astronautshe.com
-// Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright © 2026 Zymatica
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 package main
 
 import "fmt"
@@ -1172,7 +1286,9 @@ def create_readme_file(target_dir):
     print("[*] Generating the architectural README.md guide...")
     readme_content = """# Zymatica Voice LLM - Quindecim-Architecture (15-Stack Paradigm Showcase Kit)
 Watermark: ip zymatica.space | astronautshe.com
-Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 This directory houses the fifteen optimal architectural combinations of the Zymatica Voice LLM, showcasing the pipeline deployed across various domains, runtimes, hardware profiles, and security environments.
 
@@ -1210,7 +1326,9 @@ This directory houses the fifteen optimal architectural combinations of the Zyma
 def create_makefile(target_dir):
     print("[*] Generating the unified master Makefile build runner...")
     makefile_content = """# Watermark: ip zymatica.space | astronautshe.com
-# Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+# Copyright (c) 2026 Zymatica.
+# SPDX-License-Identifier: LicenseRef-Zymatica-Covenant-2.0
+# See LICENSE for terms.
 
 .PHONY: all help build-all verify-all clean run-fastest run-common run-robust run-secure run-modern
 

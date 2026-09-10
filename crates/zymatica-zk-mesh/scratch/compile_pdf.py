@@ -73,7 +73,7 @@ class NumberedCanvas(canvas.Canvas):
             self.setFillColor(colors.HexColor("#718096"))
             self.drawString(54, 85, "LEGAL NOTICE: To safeguard developer intellectual property, the ZK-LoRaWAN codebase and all its multi-language")
             self.drawString(54, 75, "implementations are currently published under a protected, proprietary license pending grant evaluation. Upon formal")
-            self.drawString(54, 65, "approval of the Solana Foundation Grant, the entire repository will be re-licensed under the open-source Apache License, Version 2.0.")
+            self.drawString(54, 65, "governed under the Zymatica Commercial & Novel-Holder Covenant License 2.0 (zymatica.space).")
 
             self.restoreState()
             return

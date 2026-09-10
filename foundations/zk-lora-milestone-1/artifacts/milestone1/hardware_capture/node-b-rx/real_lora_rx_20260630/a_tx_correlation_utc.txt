@@ -1,0 +1,6 @@
+A-side manual TX for B real LoRa RX correlation:
+TX start UTC: Tue Jun 30 00:33:35 UTC 2026
+TX end UTC: Tue Jun 30 00:33:39 UTC 2026
+A_LORA_TX_FILE_SEND_COMPLETE=YES
+TX_EXIT_STATUS=0
+A-side commit: eaa56df Add node-a-tx manual TX for B RX correlation

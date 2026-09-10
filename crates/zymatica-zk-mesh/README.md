@@ -198,4 +198,4 @@ Developed by **TheAiCollective.art**:
 *   **astronautshe.com** — Embedded systems and hardware lead.
 *   **DevsOne** — AI agentic systems engineering.
 
-Currently published under a **Proprietary License pending grant evaluation** by the Solana Foundation (transitioning to open-source **Apache License 2.0** upon grant approval) — see [LICENSE](./LICENSE) for details.
+Governed by the **[ZYMATICA COMMERCIAL & NOVEL-HOLDER COVENANT LICENSE (Version 2.0)](../../LICENSE)** (SPDX: `LicenseRef-Zymatica-Covenant-2.0`) — see [LICENSE](./LICENSE) and [LICENSES.md](../../LICENSES.md) for full terms. Upstream open-source components (e.g. Arkworks Groth16) retain their independent MIT/Apache-2.0 licenses.

@@ -1,0 +1,21 @@
+{
+  "network": "Solana Devnet",
+  "program_id": "BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M",
+  "treasury": "7kZ3XwggVosBMag5mAJt6JVM2uP86YLoBaY9rQXccKS",
+  "protocol_fee_lamports": 150000,
+  "metrics": {
+    "num_transactions": 50,
+    "points_per_batch": 16,
+    "total_coordinates_anchored": 800,
+    "raw_tx_tps": 271.85,
+    "effective_semantic_coordinate_tps": 4349.67,
+    "avg_latency_ms": 3.67,
+    "p50_latency_ms": 2.98,
+    "p90_latency_ms": 3.98,
+    "p99_latency_ms": 28.88,
+    "compute_units_single": 4520,
+    "compute_units_batch_16": 18450,
+    "compute_units_per_coordinate": 1153.1,
+    "theoretical_max_coords_per_block": 1214
+  }
+}

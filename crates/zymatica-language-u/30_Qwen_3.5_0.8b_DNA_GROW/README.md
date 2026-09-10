@@ -1,5 +1,5 @@
 ---
-license: apache-2.0
+license: LicenseRef-Zymatica-Covenant-2.0
 base_model: Qwen/Qwen3.5-0.8B
 tags:
   - qwen3.5
@@ -189,7 +189,7 @@ This repository contains components from multiple origins. Licenses are assigned
 | **psutil** | Giampaolo Rodola | BSD 3-Clause | Process memory monitoring and diagnostic benchmarks |
 | **Python standard library** | PSF | PSF License | Standard modules |
 
-### Components List — Apache License 2.0
+### Components List — Zymatica Covenant License 2.0 (zymatica.space)
 
 | Component | Origin | License | Description |
 | :--- | :--- | :--- | :--- |

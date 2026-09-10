@@ -1,4 +1,4 @@
-﻿//! 381-Byte Genesis Seed Cold-Start Morphogenetic Tensor Instantiator.
+//! 381-Byte Genesis Seed Cold-Start Morphogenetic Tensor Instantiator.
 //! Instantiates dense latent neural projection matrices from a deterministic 381-byte radio capsule.
 
 pub const GENESIS_SEED_CAPSULE_SIZE: usize = 381;
@@ -25,12 +25,20 @@ impl GenesisCapsule {
 
         // Linear Congruential PRNG keyed by genesis anchor
         let mut state = u64::from_le_bytes([
-            self.raw_bytes[0], self.raw_bytes[1], self.raw_bytes[2], self.raw_bytes[3],
-            self.raw_bytes[4], self.raw_bytes[5], self.raw_bytes[6], self.raw_bytes[7],
+            self.raw_bytes[0],
+            self.raw_bytes[1],
+            self.raw_bytes[2],
+            self.raw_bytes[3],
+            self.raw_bytes[4],
+            self.raw_bytes[5],
+            self.raw_bytes[6],
+            self.raw_bytes[7],
         ]);
 
         for i in 0..total_elements {
-            state = state.wrapping_mul(6364136223846793005).wrapping_add(1442695040888963407);
+            state = state
+                .wrapping_mul(6364136223846793005)
+                .wrapping_add(1442695040888963407);
             let byte_mod = self.raw_bytes[i % GENESIS_SEED_CAPSULE_SIZE] as f32;
             let norm_val = ((state >> 32) as f32) / (u32::MAX as f32) - 0.5;
             let val = (norm_val * 0.02) + (byte_mod * 0.0001);

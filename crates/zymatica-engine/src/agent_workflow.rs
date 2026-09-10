@@ -49,16 +49,18 @@ impl AgentGraph {
         let mut iterations = 0;
 
         while iterations < 100 {
-            let step = self.steps.get(&current_node).ok_or_else(|| {
-                anyhow::anyhow!("Workflow step '{}' not found", current_node)
-            })?;
+            let step = self
+                .steps
+                .get(&current_node)
+                .ok_or_else(|| anyhow::anyhow!("Workflow step '{}' not found", current_node))?;
 
             let output = step.execute(ctx)?;
             executed_path.push(format!("{}: {}", current_node, output));
 
-            let edge = self.edges.get(&current_node).ok_or_else(|| {
-                anyhow::anyhow!("Workflow edge for '{}' not found", current_node)
-            })?;
+            let edge = self
+                .edges
+                .get(&current_node)
+                .ok_or_else(|| anyhow::anyhow!("Workflow edge for '{}' not found", current_node))?;
 
             match edge {
                 WorkflowEdge::Next(next_name) => {
@@ -115,7 +117,12 @@ mod tests {
         graph.add_step(
             Box::new(IngestionStep),
             WorkflowEdge::Conditional(Box::new(|ctx| {
-                if ctx.state.get("data_valid").and_then(|v| v.as_bool()).unwrap_or(false) {
+                if ctx
+                    .state
+                    .get("data_valid")
+                    .and_then(|v| v.as_bool())
+                    .unwrap_or(false)
+                {
                     "processing".to_string()
                 } else {
                     "finish".to_string()

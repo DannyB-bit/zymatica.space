@@ -44,7 +44,8 @@ mod tests {
 
     #[test]
     fn test_simd_parser_json_extraction() {
-        let text = r#"Streaming text from LLM... read_file {"path": "src/lib.rs"} continue streaming"#;
+        let text =
+            r#"Streaming text from LLM... read_file {"path": "src/lib.rs"} continue streaming"#;
         let parsed = SimdParser::parse_json_simd(text);
         assert!(parsed.is_some());
         let val = parsed.unwrap();

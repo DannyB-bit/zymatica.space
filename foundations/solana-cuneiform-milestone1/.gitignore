@@ -1,0 +1,30 @@
+# Build artifacts
+target/
+target-sbf/
+*.so
+
+# Dependencies
+node_modules/
+
+# Solana
+.anchor/
+test-ledger/
+
+# Platform tools (too large for git)
+rustc_wrapper.py
+rustc_wrapper.bat
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Archives
+*.tar.bz2
+
+# Keep the deployed .so in milestones
+!milestones/**/*.so

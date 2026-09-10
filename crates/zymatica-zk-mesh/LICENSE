@@ -1,7 +1,88 @@
-PROPRIETARY LICENSE PENDING GRANT EVALUATION
+﻿ZYMATICA COMMERCIAL & NOVEL-HOLDER COVENANT LICENSE
+Version 2.0 (Ironclad Edition - 2026) — Zymatica.space
 
-To safeguard developer intellectual property, the ZK-LoRaWAN codebase and all its multi-language implementations are currently published under a protected, proprietary license zymatica.space pending grant evaluation by the Solana Foundation. 
+Book Author: Danny Bouldiez | Codebase Author: Devs One
+Official Website: https://zymatica.space
+Literature Reference: "200 AMSTERDAM: THE VERTICAL CITY" (Book One of ZYMATICA A TRILOGY)
+Availability: Available Worldwide on Amazon.com (Paperback, Hardcover, & Kindle eBook)
 
-All rights reserved. Unauthorized copying, distribution, or modifications of this software, via any medium, is strictly prohibited.
+================================================================================
+1. GRANT OF LICENSE THROUGH NOVEL OWNERSHIP (AMAZON.COM)
+================================================================================
+Subject to the terms, covenants, and conditions of this Agreement, the Authors
+(Book Author: Danny Bouldiez | Codebase Author: Devs One) hereby grant to any individual
+or legal entity ("Licensee"):
 
-Upon formal approval of the Solana Foundation Grant, the entire repository will be re-licensed under the open-source Apache License, Version 2.0.
+  (a) Individual Developers, Academic Researchers, and Solo Creators:
+      Holds a valid, legally purchased copy (Kindle eBook, Paperback, or Hardcover)
+      of the novel "200 AMSTERDAM: THE VERTICAL CITY" by Danny Bouldiez
+      (available on Amazon.com).
+
+  (b) Commercial Companies, AI Labs, and Enterprise Organizations:
+      Holds verifiable proof of purchase of novel copies on Amazon.com equivalent
+      to AT LEAST 10% (TEN PERCENT) of their total active workforce (including full-time
+      employees and direct technical contractors), OR holds an explicit, executed
+      commercial enterprise agreement directly from https://zymatica.space.
+
+A perpetual, worldwide, non-exclusive, revocable (upon breach) license to compile,
+execute, modify, fork, integrate, and deploy the Software (including all Language-U
+semantic modules, Cuneiform-U 6D hypercube algorithms, custom Groth16 circuit
+architectures, procedural genesis seeds, and native Rust inference engines created
+by Devs One) for both personal and commercial purposes.
+
+================================================================================
+2. COVENANTS OF OWNERSHIP, ATTRIBUTION & FORKING
+================================================================================
+Every Licensee, forker, and downstream developer agrees to the following covenants:
+  1. Mandatory Attribution: The above copyright notice, this permission notice,
+     direct links to https://zymatica.space, and formal attribution ("Book Author: Danny Bouldiez |
+     Codebase Author: Devs One") along with notice of the novel "200 AMSTERDAM: THE VERTICAL CITY"
+     (available on Amazon.com) must be retained prominently in all copies, forks,
+     distributions, and substantial portions of the Software.
+  2. Proof of Purchase: Commercial operators and AI labs deploying derivative
+     products must maintain verifiable Amazon.com receipts or purchase records
+     satisfying the 10% workforce threshold or an active enterprise agreement
+     from zymatica.space.
+  3. Non-Circumvention: Licensees shall not remove, obscure, or alter any copyright,
+     trademark, or authorship notices embedded within the source files or documentation.
+
+================================================================================
+3. THIRD-PARTY & UPSTREAM OPEN-SOURCE DEPENDENCIES (MIT / APACHE 2.0)
+================================================================================
+The Software utilizes certain upstream, open-source mathematical and cryptographic
+libraries (such as the Arkworks SNARK ecosystem, including ark-groth16, ark-bn254,
+and ark-relations), which are independently licensed under their respective MIT and/or
+Apache 2.0 licenses. 
+  - Nothing in this Covenant restricts, diminishes, or overrides the rights granted
+     to the public under those specific upstream MIT/Apache open-source licenses for
+     their respective library components.
+  - This Covenant governs all original Zymatica architecture, custom circuit designs,
+     Language-U 6D tensor algorithms, seed formats, and native execution runtimes.
+
+================================================================================
+4. TERMINATION & AUTOMATIC REVOCATION
+================================================================================
+Any breach of this Agreement—including unauthorized commercial deployment without
+the required 10% workforce novel purchases or active enterprise license, removal of
+required attribution, or intellectual property infringement—shall result in the
+immediate and automatic termination of all rights granted hereunder without prior notice.
+
+================================================================================
+5. DISCLAIMER OF FICTION & TECHNICAL NATURE
+================================================================================
+"200 AMSTERDAM: THE VERTICAL CITY" is a work of fiction. Names, characters,
+organizations, places, events, and incidents depicted in the narrative are products
+of the author's imagination or used in a fictitious context. The mathematical frameworks,
+zero-knowledge circuits, and communication algorithms contained in this repository
+are real, functioning open-source and proprietary engineering systems.
+
+================================================================================
+6. NO WARRANTY & LIMITATION OF LIABILITY
+================================================================================
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS,
+COPYRIGHT HOLDERS, OR AFFILIATED ENTITIES BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

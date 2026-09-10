@@ -47,7 +47,7 @@ class NumberedCanvas(canvas.Canvas):
             self.drawCentredString(letter[0]/2.0, 48, "zymatica.space  |  astronautshe.com  |  Devs One")
             self.setFont("Helvetica-Bold", 8)
             self.setFillColor(colors.HexColor("#63B3ED"))
-            self.drawCentredString(letter[0]/2.0, 28, "We Are TheAiCollective.art  Apache License 2.0 2026©")
+            self.drawCentredString(letter[0]/2.0, 28, "We Are TheAiCollective.art  Zymatica Covenant License 2.0 (zymatica.space) 2026©")
         # Middle Pages (Running Headers & Footers)
         else:
             # Running Header

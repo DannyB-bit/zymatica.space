@@ -1,0 +1,14 @@
+Candidate executable metadata
+Tue Jun 30 00:28:45 UTC 2026
+--- /home/strawberry-z-model-1/sx1302_hal/libloragw/test_loragw_hal_rx
+-rwxrwxr-x 1 strawberry-z-model-1 strawberry-z-model-1 193952 Jun  3 19:25 /home/strawberry-z-model-1/sx1302_hal/libloragw/test_loragw_hal_rx
+/home/strawberry-z-model-1/sx1302_hal/libloragw/test_loragw_hal_rx: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=678e7c0de293589b653f91ff834eb6da512fa54a, for GNU/Linux 3.7.0, not stripped
+--- /home/strawberry-z-model-1/LANGUAGEU_28CHIRPS_RF_PROOF_B/scripts/B_PHASE1A_STOCK_HAL_RX_9039_SF9.sh
+-rwxrwxr-x 1 strawberry-z-model-1 strawberry-z-model-1 2848 Jun 10 05:02 /home/strawberry-z-model-1/LANGUAGEU_28CHIRPS_RF_PROOF_B/scripts/B_PHASE1A_STOCK_HAL_RX_9039_SF9.sh
+/home/strawberry-z-model-1/LANGUAGEU_28CHIRPS_RF_PROOF_B/scripts/B_PHASE1A_STOCK_HAL_RX_9039_SF9.sh: Bourne-Again shell script, ASCII text executable
+--- /home/strawberry-z-model-1/LANGUAGEU_28CHIRPS_RF_PROOF_B/scripts/B_RX_ONE_FRAME_TEST.sh
+-rwxrwxr-x 1 strawberry-z-model-1 strawberry-z-model-1 3753 Jun  9 04:49 /home/strawberry-z-model-1/LANGUAGEU_28CHIRPS_RF_PROOF_B/scripts/B_RX_ONE_FRAME_TEST.sh
+/home/strawberry-z-model-1/LANGUAGEU_28CHIRPS_RF_PROOF_B/scripts/B_RX_ONE_FRAME_TEST.sh: Bourne-Again shell script, ASCII text executable
+--- /home/strawberry-z-model-1/phase17_b_rx_pass2_r1250.sh
+-rwxrwxr-x 1 strawberry-z-model-1 strawberry-z-model-1 1470 Jun 12 15:14 /home/strawberry-z-model-1/phase17_b_rx_pass2_r1250.sh
+/home/strawberry-z-model-1/phase17_b_rx_pass2_r1250.sh: Bourne-Again shell script, ASCII text executable

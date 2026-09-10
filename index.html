@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="Zymatica Kernel & Bootstrap Installer — Sovereign Neural Edge Intelligence, Language-U 6D Hypercube, and ZK-LoRa Mesh.">
+    <title>ZYMATICA KERNEL // Sovereign Bootstrap Installer</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2352d9ff'/%3E%3Cpath d='M16 15h34L26 49h22' fill='none' stroke='%2307111f' stroke-width='8' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050811;
+            --surface: rgba(13, 20, 36, 0.75);
+            --surface-hover: rgba(18, 28, 50, 0.85);
+            --border: rgba(82, 217, 255, 0.18);
+            --border-hover: rgba(82, 217, 255, 0.45);
+            --cyan: #52d9ff;
+            --gold: #ffd700;
+            --green: #10b981;
+            --purple: #a855f7;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
+            --glow: 0 0 35px rgba(82, 217, 255, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 0%, #0e1c38 0%, var(--bg) 75%);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 1.5rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1080px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .badge-bar {
+            display: flex;
+            gap: 0.6rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(82, 217, 255, 0.08);
+            border: 1px solid rgba(82, 217, 255, 0.25);
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--cyan);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .badge.gold {
+            color: var(--gold);
+            border-color: rgba(255, 215, 0, 0.3);
+            background: rgba(255, 215, 0, 0.08);
+        }
+
+        .badge.green {
+            color: var(--green);
+            border-color: rgba(16, 185, 129, 0.3);
+            background: rgba(16, 185, 129, 0.08);
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--cyan) 80%, var(--purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.8rem;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--muted);
+            max-width: 720px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .author-tag {
+            font-size: 0.95rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .author-tag span {
+            color: var(--gold);
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+            border-radius: 18px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow), var(--glow);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            color: var(--muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .command-box {
+            background: #020408;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.84rem;
+            color: var(--cyan);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            word-break: break-all;
+            margin-top: auto;
+        }
+
+        .copy-btn {
+            background: rgba(82, 217, 255, 0.15);
+            color: var(--cyan);
+            border: 1px solid rgba(82, 217, 255, 0.3);
+            padding: 0.4rem 0.85rem;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .copy-btn:hover {
+            background: var(--cyan);
+            color: #020408;
+        }
+
+        .links-bar {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1.4rem;
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .action-link:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.84rem;
+            color: var(--muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 2rem;
+            width: 100%;
+        }
+
+        footer a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge-bar">
+                <span class="badge gold">Production Release</span>
+                <span class="badge">Kernel Architecture</span>
+                <span class="badge green">Devnet Consensus</span>
+            </div>
+            <h1>ZYMATICA KERNEL</h1>
+            <p class="subtitle">
+                The Sovereign Root Kernel, Language-U 6D Semantic Hypercube, ZK-LoRaWAN Groth16 Privacy Mesh & Native Rust Engine.
+            </p>
+            <div class="author-tag">
+                Book Author: <span>Danny Bouldiez</span> &nbsp;|&nbsp; Codebase Author: <span>Devs One</span>
+            </div>
+        </header>
+
+        <main class="grid-cards">
+            <!-- Card 1: Linux / macOS Bootstrap -->
+            <div class="card">
+                <div>
+                    <h3>🐧 Linux & macOS Bootstrap</h3>
+                    <p>One-command POSIX shell installer. Fetches toolchains, verifies Rust native SIMD dependencies, and configures the sovereign runtime environment.</p>
+                </div>
+                <div class="command-box">
+                    <code id="cmd-linux">curl -sSf https://raw.githubusercontent.com/DannyB-bit/zymatica-kernel/main/install.sh | bash</code>
+                    <button class="copy-btn" onclick="copyText('cmd-linux', this)">COPY</button>
+                </div>
+            </div>
+
+            <!-- Card 2: Windows PowerShell Bootstrap -->
+            <div class="card">
+                <div>
+                    <h3>🪟 Windows PowerShell Bootstrap</h3>
+                    <p>Automated PowerShell installer for Windows 10/11 with MSVC/AVX2 support, CMake configuration, and native edge kernel verification.</p>
+                </div>
+                <div class="command-box">
+                    <code id="cmd-win">irm https://raw.githubusercontent.com/DannyB-bit/zymatica-kernel/main/install.ps1 | iex</code>
+                    <button class="copy-btn" onclick="copyText('cmd-win', this)">COPY</button>
+                </div>
+            </div>
+
+            <!-- Card 3: CONSIDER-1 Neural Edge Weights -->
+            <div class="card">
+                <div>
+                    <h3>🌌 CONSIDER-1 Neural Model</h3>
+                    <p>Autonomous neural edge intelligence fine-tuned from Qwen3.5-0.8B across 10 epochs to 0.0320 loss for RAK Miner SX1302 LoRaWAN hardware, 6D Cuneiform radicals, BN254 ZK-nullifiers, and Solana settlements. Bound under Zymatica Covenant License 2026 alongside upstream Apache 2.0 and Tongyi Qianwen License Agreement honoring Alibaba Cloud's Qwen architecture.</p>
+                </div>
+                <div class="command-box">
+                    <code>huggingface.co/TheAiCollectiveART/CONSIDER-1</code>
+                    <a href="https://huggingface.co/TheAiCollectiveART/CONSIDER-1" target="_blank" class="copy-btn" style="text-decoration:none;">VISIT</a>
+                </div>
+            </div>
+
+            <!-- Card 4: Solana Devnet Semantic Anchor -->
+            <div class="card">
+                <div>
+                    <h3>☀️ Solana Cuneiform Anchor</h3>
+                    <p>Devnet Anchor Program ID: <code>BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M</code>. Zero-copy discriminator parsing & automatic protocol treasury fee routing.</p>
+                </div>
+                <div class="command-box">
+                    <code id="cmd-solana">BJKrKzXX4YfEYMZaVT2dbuaNuq7aqN3Xmib27JLALs3M</code>
+                    <button class="copy-btn" onclick="copyText('cmd-solana', this)">COPY</button>
+                </div>
+            </div>
+        </main>
+
+        <section class="links-bar">
+            <a href="studio_dashboard.html" class="action-link">📊 Launch Studio Dashboard</a>
+            <a href="demo_hypercube.html" class="action-link">🔮 6D Hypercube Visualizer</a>
+            <a href="https://www.amazon.com/dp/B0HGVC777F" target="_blank" class="action-link">📖 200 Amsterdam on Amazon</a>
+            <a href="https://github.com/DannyB-bit/zymatica.space" target="_blank" class="action-link">💻 GitHub: zymatica.space</a>
+            <a href="https://github.com/DannyB-bit/zymatica-kernel" target="_blank" class="action-link">⚡ GitHub: zymatica-kernel</a>
+        </section>
+
+        <footer>
+            <p>
+                Licensed under the <a href="LICENSE">Zymatica Commercial & Novel-Holder Covenant License v2.0 (2026)</a>.<br>
+                Literature Reference: <em>200 AMSTERDAM: THE VERTICAL CITY</em> by Danny Bouldiez. Codebase engineered by Devs One.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function copyText(elemId, btn) {
+            const text = document.getElementById(elemId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const orig = btn.innerText;
+                btn.innerText = 'COPIED!';
+                btn.style.background = '#10b981';
+                btn.style.color = '#020408';
+                setTimeout(() => {
+                    btn.innerText = orig;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+    "node_id": "cuneiform-node-03",
+    "description": "High-Obstruction Urban Concrete Relay",
+    "location": {
+        "name": "Downtown Rochester Urban Sector",
+        "latitude": 43.1566,
+        "longitude": -77.6088,
+        "elevation_meters": 150.0
+    },
+    "power_profile": {
+        "power_source": "STREETLIGHT_GRID",
+        "battery_voltage_critical": 0.0,
+        "low_power_threshold_percent": 0.0,
+        "active_duty_cycle": 1.0
+    },
+    "lora_parameters": {
+        "frequency_mhz": 915.0,
+        "spreading_factor": 8,
+        "bandwidth_khz": 125.0,
+        "coding_rate": "4/5",
+        "tx_power_dbm": 20
+    },
+    "solana_pay": {
+        "recipient_address": "6Jic53RyT3zV1FpvLtBsk2eYkdiZngXZm6xV8466cDVt",
+        "routing_fee_usdc": 0.015
+    }
+}

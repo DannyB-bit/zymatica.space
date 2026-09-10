@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = [
+    "programs/solana-cuneiform-anchor"
+]
+
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+panic = "abort"
