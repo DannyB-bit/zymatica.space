@@ -1,7 +1,7 @@
 # ZYMATICA KERNEL
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DannyB-bit/zymatica.space/main/assets/ZYMATICA_ANGEL.png" alt="ZYMATICA Angel Emblem" width="520">
+  <img src="assets/Zymatica-Portal-Prototype.jpg" alt="ZYMATICA Sovereign Portal" width="760">
 </p>
 
 <p align="center">
